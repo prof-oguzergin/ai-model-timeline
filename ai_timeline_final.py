@@ -130,6 +130,7 @@ data = [
     ("DeepSeek-R1", "DeepSeek", "2025-01-20", True),
     ("DeepSeek-V3.1", "DeepSeek", "2025-08-21", False),
     ("DeepSeek-V3.2", "DeepSeek", "2025-12-01", False),
+    ("DeepSeek-V4", "DeepSeek", "2026-04-24", True),
 
     # Z.ai (Zhipu AI)
     ("ChatGLM", "Z.ai", "2023-03-14", True),
@@ -223,7 +224,7 @@ short_labels = {
     "Gemini 2.5 Flash":     "2.5 Flash",
     "Gemini 3 Pro":         "3 Pro",
     "Gemini 3 Flash":       "3 Flash",
-    "Gemini 3 Deep Think":  "3 Deep Think",
+    "Gemini 3 Deep Think":  "3 D. Think",
     "Gemini 3.1 Pro":       "3.1 Pro",
     "Gemini 3.1 Flash-Lite": "3.1 FL",
 
@@ -309,6 +310,7 @@ short_labels = {
     "DeepSeek-R1-0528": "R1-0528",
     "DeepSeek-V3.1":    "V3.1",
     "DeepSeek-V3.2":    "V3.2",
+    "DeepSeek-V4":      "V4",
 
     # Z.ai GLM
     "ChatGLM":          "ChatGLM",
@@ -522,9 +524,9 @@ manual_overrides = {
     "1.0 Pro":          (0, -55),
     "3 Pro":            (-80, 55),
     "3 Flash":          (0, 55),
-    "3 Deep Think":     (-120, -55),
+    "3 D. Think":       (0, -55),
     "3.1 Pro":          (0, 55),
-    "3.1 FL":           (0, -55),
+    "3.1 FL":           (120, -55),
 
     # DeepSeek
     "V3.1":             (0, 55),
