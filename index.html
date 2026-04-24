@@ -129,6 +129,20 @@
     height: 680px !important;
     display: block;
   }
+  .vending-controls {
+    display: flex; gap: 8px; justify-content: center;
+    margin-bottom: 12px;
+  }
+  .vending-btn {
+    background: var(--card); color: var(--text);
+    border: 1px solid var(--border);
+    padding: 8px 18px; font-size: 0.9rem; font-weight: 600;
+    cursor: pointer; border-radius: 8px;
+    transition: all 0.2s;
+  }
+  .vending-btn:hover {
+    background: var(--primary); color: white; border-color: var(--primary);
+  }
   .vending-wrap {
     background: #0d1117;
     border-radius: 8px;
@@ -252,6 +266,10 @@
   <div id="pane-vending" class="pane">
     <p id="desc-vending" class="desc"></p>
     <div class="timeline-container">
+      <div class="vending-controls">
+        <button class="vending-btn" onclick="vendingToggleAll(true)" id="btn-show-all">Hepsini Göster</button>
+        <button class="vending-btn" onclick="vendingToggleAll(false)" id="btn-hide-all">Hepsini Gizle</button>
+      </div>
       <div class="vending-wrap">
         <canvas id="vendingChart" width="1400" height="680"></canvas>
       </div>
@@ -285,6 +303,8 @@
       dl_linkedin: "LinkedIn Biçimi",
       dl_fullpage: "Tam Sayfa Aç",
       dl_source: "Kaynak: Andon Labs",
+      show_all: "Hepsini Göster",
+      hide_all: "Hepsini Gizle",
       desc_llm: "<strong>120+ büyük dil modeli</strong>, çıkış tarihine göre sıralı. 15 şirket (açık ve kapalı kaynak), Kasım 2022'den günümüze.",
       desc_image: "<strong>16 görsel üretme aracı, 74 sürüm.</strong> DALL-E, Midjourney, Imagen, FLUX, Stable Diffusion ve daha fazlası — 2021'den günümüze.",
       desc_compare: "<strong>Frontier LLM karşılaştırma tablosu.</strong> 11 model × 33 benchmark. Her satırın en yüksek skoru çerçeveli. Anthropic, OpenAI, Google, DeepSeek modelleri yan yana.",
@@ -313,6 +333,8 @@
       dl_linkedin: "LinkedIn Format",
       dl_fullpage: "Open Full Page",
       dl_source: "Source: Andon Labs",
+      show_all: "Show All",
+      hide_all: "Hide All",
       desc_llm: "<strong>120+ large language models</strong>, sorted by release date. 15 companies (open and closed source), from November 2022 to today.",
       desc_image: "<strong>16 image generation tools, 74 versions.</strong> DALL-E, Midjourney, Imagen, FLUX, Stable Diffusion and more — from 2021 to today.",
       desc_compare: "<strong>Frontier LLM comparison table.</strong> 11 models × 33 benchmarks. Top score per row is framed. Anthropic, OpenAI, Google, DeepSeek models side by side.",
@@ -449,7 +471,7 @@
     "MiniMax":   "#F59E0B",
     "DeepSeek":  "#ef4444",
     "xAI":       "#0891B2",
-    "Kimi":      "#14B8A6",
+    "Kimi":      "#EC4899",
   };
 
   const companyDisplay = {
@@ -525,7 +547,8 @@
                 label: {
                   display: true, content: isTR ? "Sıfır çizgisi" : "Zero line",
                   position: "end", color: "#ef4444",
-                  backgroundColor: "rgba(0,0,0,0)",
+                  backgroundColor: "rgba(13,17,23,0.85)",
+                  padding: 4, yAdjust: -14,
                   font: {weight: "bold", size: 11}
                 }
               },
@@ -535,7 +558,8 @@
                 label: {
                   display: true, content: isTR ? "Başlangıç $500" : "Starting $500",
                   position: "end", color: "#fbbf24",
-                  backgroundColor: "rgba(0,0,0,0)",
+                  backgroundColor: "rgba(13,17,23,0.85)",
+                  padding: 4, yAdjust: -14,
                   font: {weight: "bold", size: 11}
                 }
               },
@@ -603,6 +627,32 @@
   window.addEventListener("resize", () => {
     if (vendingChart && state.category === "vending") vendingChart.resize();
   });
+
+  // Hepsini Goster/Gizle fonksiyonu
+  function vendingToggleAll(show) {
+    if (!vendingChart) return;
+    vendingChart.data.datasets.forEach((_, i) => {
+      vendingChart.setDatasetVisibility(i, show);
+    });
+    vendingChart.update();
+  }
+
+  // Buton metinleri dil desteği
+  function applyVendingButtonLang() {
+    const L = labels[state.lang];
+    const showBtn = document.getElementById("btn-show-all");
+    const hideBtn = document.getElementById("btn-hide-all");
+    if (showBtn) showBtn.textContent = L.show_all || (state.lang === "tr" ? "Hepsini Göster" : "Show All");
+    if (hideBtn) hideBtn.textContent = L.hide_all || (state.lang === "tr" ? "Hepsini Gizle" : "Hide All");
+  }
+
+  // applyLang sonrası buton metinleri guncellensin
+  const _origApplyLang = applyLang;
+  applyLang = function() {
+    _origApplyLang();
+    applyVendingButtonLang();
+  };
+  applyVendingButtonLang();
 </script>
 
 </body>
