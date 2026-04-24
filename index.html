@@ -352,11 +352,11 @@
     document.getElementById("dl-compare").href = L.iframe_compare;
     document.getElementById("dl-compare").textContent = L.dl_fullpage;
 
-    // Vending
-    document.getElementById("img-vending").src = L.img_vending;
-    document.getElementById("img-vending").alt = L.alt_vending;
-    document.getElementById("dl-vending").href = L.img_vending;
-    document.getElementById("dl-vending").textContent = L.dl_main;
+    // Vending — canvas tabanli, PNG linki fallback
+    const dlVending = document.getElementById("dl-vending");
+    if (dlVending) {
+      dlVending.href = L.img_vending;
+    }
 
     // Flag button active states
     document.getElementById("btn-lang-tr").classList.toggle("active", state.lang === "tr");
