@@ -455,7 +455,7 @@ flag_images = {
     "Canada":        "C:/Users/Z GAMES/flags/ca.png",
 }
 
-company_order = ["ByteDance", "Cohere", "Google", "Anthropic", "OpenAI", "xAI", "Meta Muse", "Amazon",
+company_order = ["OpenAI", "Google", "Anthropic", "xAI", "Meta Muse", "Amazon", "ByteDance", "Cohere",
                  "Meta", "Microsoft", "Google Gemma", "Mistral",
                  "Qwen", "DeepSeek", "Z.ai", "Kimi", "MiniMax"]
 
@@ -471,9 +471,9 @@ ax.set_facecolor("#0d1117")
 # =========================================
 # BACKGROUND SHADING for closed/open source
 # =========================================
-separator_y = (y_positions["Amazon"] + y_positions["Meta"]) / 2
+separator_y = (y_positions["Cohere"] + y_positions["Meta"]) / 2
 y_min = y_positions[company_order[-1]] - 1.8
-y_max = y_positions[company_order[0]] + 1.8
+y_max = y_positions[company_order[0]] + 2.8
 
 # Shading starts at the first model date, extends to match x-axis limit (Jun 2026)
 shade_left = mdates.date2num(df["Date"].min() - pd.Timedelta(days=15))
@@ -501,7 +501,7 @@ ax.text(df["Date"].min() + pd.Timedelta(days=30), y_positions["MiniMax"] + 0.5,
         "OPEN SOURCE / OPEN WEIGHT",
         fontsize=56, color="#3fb950", va="center", ha="left",
         fontweight="bold", alpha=0.22)
-ax.text(df["Date"].min() + pd.Timedelta(days=30), y_positions["Amazon"] + 0.5,
+ax.text(df["Date"].min() + pd.Timedelta(days=30), y_positions["Cohere"] + 0.5,
         "CLOSED SOURCE",
         fontsize=56, color="#f778ba", va="center", ha="left",
         fontweight="bold", alpha=0.22)
