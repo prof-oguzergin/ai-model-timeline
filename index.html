@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yapay Zeka Modelleri Zaman Çizelgesi | AI Models Timeline — Prof. Dr. Oğuz Ergin</title>
+<meta name="description" content="Büyük dil modellerinin (LLM) sürüm tarihleri ve dönüm noktaları. Prof. Dr. Oğuz Ergin tarafından derlenmektedir.">
+<meta property="og:title" content="Yapay Zeka Modelleri Zaman Çizelgesi">
+<meta property="og:description" content="Büyük dil modellerinin sürüm tarihleri ve dönüm noktaları.">
+<meta property="og:image" content="ai_timeline_final_tr.png">
+<meta property="og:type" content="website">
+<style>
+  :root {
+    --primary: #c8102e;
+    --dark: #1a1a2e;
+    --text: #2c2c2c;
+    --muted: #6b6b6b;
+    --bg: #fafafa;
+    --card: #ffffff;
+    --border: #e5e5e5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  header {
+    background: linear-gradient(135deg, var(--dark) 0%, #2d2d4a 100%);
+    color: white;
+    padding: 40px 24px 32px;
+    text-align: center;
+  }
+  header h1 {
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  header p {
+    font-size: clamp(0.9rem, 2vw, 1.05rem);
+    opacity: 0.85;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  header .author {
+    margin-top: 16px;
+    font-size: 0.9rem;
+    opacity: 0.75;
+  }
+  header .author a { color: #ffd6dc; text-decoration: none; }
+  header .author a:hover { text-decoration: underline; }
+  .updated {
+    display: inline-block;
+    background: rgba(255,255,255,0.12);
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    margin-top: 12px;
+  }
+  .lang-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    background: white;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .lang-tabs button {
+    background: transparent;
+    border: 1px solid var(--border);
+    padding: 8px 20px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--muted);
+    cursor: pointer;
+    border-radius: 20px;
+    transition: all 0.2s;
+  }
+  .lang-tabs button.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+  }
+  .lang-tabs button:hover:not(.active) {
+    background: #f0f0f0;
+    color: var(--text);
+  }
+  main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 32px 16px;
+  }
+  .timeline-container {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    overflow: hidden;
+  }
+  .timeline-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 6px;
+  }
+  .timeline-container.hidden { display: none; }
+  .download-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .download-bar a {
+    background: white;
+    color: var(--text);
+    text-decoration: none;
+    padding: 8px 16px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+  }
+  .download-bar a:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+  }
+  footer {
+    text-align: center;
+    padding: 32px 16px;
+    color: var(--muted);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border);
+    margin-top: 40px;
+    background: white;
+  }
+  footer a { color: var(--primary); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+  @media (max-width: 600px) {
+    header { padding: 28px 16px 24px; }
+    .timeline-container { padding: 8px; }
+    main { padding: 20px 8px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1 id="title">Yapay Zeka Modelleri Zaman Çizelgesi</h1>
+  <p id="subtitle">Büyük dil modellerinin (LLM) sürüm tarihleri ve dönüm noktaları</p>
+  <div class="author">
+    Derleyen: <a href="https://www.oguzergin.net" target="_blank">Prof. Dr. Oğuz Ergin</a>
+  </div>
+  <div class="updated" id="updated">Son güncelleme: 24 Nisan 2026</div>
+</header>
+
+<div class="lang-tabs">
+  <button id="btn-tr" class="active" onclick="setLang('tr')">Türkçe</button>
+  <button id="btn-en" onclick="setLang('en')">English</button>
+</div>
+
+<main>
+  <div id="container-tr" class="timeline-container">
+    <img src="ai_timeline_final_tr.png" alt="Yapay Zeka Modelleri Zaman Çizelgesi" loading="eager">
+    <div class="download-bar">
+      <a href="ai_timeline_final_tr.png" download>Yüksek Çözünürlük (PNG)</a>
+      <a href="ai_timeline_final_tr_linkedin.png" download>LinkedIn Formatı</a>
+    </div>
+  </div>
+
+  <div id="container-en" class="timeline-container hidden">
+    <img src="ai_timeline_final.png" alt="AI Models Timeline" loading="lazy">
+    <div class="download-bar">
+      <a href="ai_timeline_final.png" download>High Resolution (PNG)</a>
+      <a href="ai_timeline_final_linkedin.png" download>LinkedIn Format</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>Bu çizelge düzenli olarak güncellenmektedir. Eksik veya hatalı bir model gördüyseniz lütfen <a href="mailto:bilgi@oguzergin.net">bilgi@oguzergin.net</a> adresine bildirin.</p>
+  <p style="margin-top:8px;">&copy; 2026 Prof. Dr. Oğuz Ergin · <a href="https://www.oguzergin.net">oguzergin.net</a></p>
+</footer>
+
+<script>
+  const labels = {
+    tr: {
+      title: "Yapay Zeka Modelleri Zaman Çizelgesi",
+      subtitle: "Büyük dil modellerinin (LLM) sürüm tarihleri ve dönüm noktaları",
+      updated: "Son güncelleme: 24 Nisan 2026",
+      htmlLang: "tr"
+    },
+    en: {
+      title: "AI Models Timeline",
+      subtitle: "Release dates and milestones of large language models (LLMs)",
+      updated: "Last updated: April 24, 2026",
+      htmlLang: "en"
+    }
+  };
+  function setLang(lang) {
+    document.getElementById("title").textContent = labels[lang].title;
+    document.getElementById("subtitle").textContent = labels[lang].subtitle;
+    document.getElementById("updated").textContent = labels[lang].updated;
+    document.documentElement.lang = labels[lang].htmlLang;
+    document.getElementById("container-tr").classList.toggle("hidden", lang !== "tr");
+    document.getElementById("container-en").classList.toggle("hidden", lang !== "en");
+    document.getElementById("btn-tr").classList.toggle("active", lang === "tr");
+    document.getElementById("btn-en").classList.toggle("active", lang === "en");
+  }
+</script>
+
+</body>
+</html>
