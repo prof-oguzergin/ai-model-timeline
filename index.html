@@ -17,6 +17,10 @@
   gtag('js', new Date());
   gtag('config', 'G-D3K0RB95JJ');
 </script>
+<!-- Chart.js for interactive Vending-Bench chart -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
 <style>
   :root {
     --primary: #c8102e;
@@ -230,9 +234,11 @@
   <div id="pane-vending" class="pane">
     <p id="desc-vending" class="desc"></p>
     <div class="timeline-container">
-      <img id="img-vending" src="vending_bench_2_tr.png" alt="" loading="lazy">
+      <div style="background:#0d1117; border-radius:8px; padding:16px; position:relative;">
+        <canvas id="vendingChart" style="max-height:680px;"></canvas>
+      </div>
       <div class="download-bar">
-        <a id="dl-vending" href="vending_bench_2_tr.png" download>Yüksek Çözünürlük (PNG)</a>
+        <a id="dl-vending" href="vending_bench_2_tr.png" download>PNG İndir / Download PNG</a>
         <a href="https://andonlabs.com/evals/vending-bench-2" target="_blank">Kaynak: Andon Labs</a>
       </div>
     </div>
@@ -372,6 +378,204 @@
 
   // Initial render
   applyLang();
+
+  // ==========================================================================
+  // VENDING-BENCH 2 — Interactive Chart.js scatter
+  // Veri kaynagi: https://andonlabs.com/evals/vending-bench-2
+  // ==========================================================================
+  const vendingData = [
+    // [date, score, model, company]
+    ["2026-04-16", 10936.76, "Claude Opus 4.7",  "Anthropic"],
+    ["2026-02-05",  8017.59, "Claude Opus 4.6",  "Anthropic"],
+    ["2026-02-17",  7204.14, "Claude Sonnet 4.6","Anthropic"],
+    ["2025-11-24",  4967.06, "Claude Opus 4.5",  "Anthropic"],
+    ["2025-09-29",  3838.74, "Claude Sonnet 4.5","Anthropic"],
+    ["2025-10-15",   458.89, "Claude Haiku 4.5", "Anthropic"],
+    ["2026-04-23",  7523.84, "GPT-5.5",          "OpenAI"],
+    ["2026-03-05",  6144.18, "GPT-5.4",          "OpenAI"],
+    ["2026-02-05",  5940.12, "GPT-5.3-Codex",    "OpenAI"],
+    ["2025-12-11",  3591.33, "GPT-5.2",          "OpenAI"],
+    ["2025-11-12",  1473.43, "GPT-5.1",          "OpenAI"],
+    ["2025-08-07",   -31.18, "GPT-5 mini",       "OpenAI"],
+    ["2025-08-05",   -21.53, "GPT-OSS-120b",     "OpenAI"],
+    ["2026-02-19",  3774.25, "Gemini 3.1 Pro Custom Tools", "Google"],
+    ["2026-02-19",   911.21, "Gemini 3.1 Pro",   "Google"],
+    ["2025-11-18",  5478.16, "Gemini 3 Pro",     "Google"],
+    ["2025-12-17",  3634.72, "Gemini 3 Flash",   "Google"],
+    ["2025-03-25",   573.64, "Gemini 2.5 Pro",   "Google"],
+    ["2025-05-20",   548.84, "Gemini 2.5 Flash", "Google"],
+    ["2026-03-27",  5634.41, "GLM-5.1",          "Z.ai"],
+    ["2026-02-11",  4432.12, "GLM-5",            "Z.ai"],
+    ["2025-12-22",  2376.82, "GLM-4.7",          "Z.ai"],
+    ["2026-04-02",  5114.87, "Qwen 3.6 Plus",    "Qwen"],
+    ["2026-04-10",  4254.19, "Qwen 3.6 Max",     "Qwen"],
+    ["2026-04-16",   462.69, "Qwen 3.5 35B A3B", "Qwen"],
+    ["2026-02-16",   201.98, "Qwen 3.5 27B",     "Qwen"],
+    ["2025-09-05",    71.57, "Qwen3 Max",        "Qwen"],
+    ["2026-02-16",     0.54, "Qwen 3.5 Plus",    "Qwen"],
+    ["2025-07-20",   -11.34, "Qwen3 235B Thinking", "Qwen"],
+    ["2025-10-23",   160.60, "MiniMax-M2",       "MiniMax"],
+    ["2026-02-12",   -23.16, "MiniMax-M2.5",     "MiniMax"],
+    ["2025-12-01",  1034.00, "DeepSeek-V3.2",    "DeepSeek"],
+    ["2026-02-17",  4662.85, "Grok 4.20",        "xAI"],
+    ["2025-11-17",  1106.63, "Grok 4.1 Fast",    "xAI"],
+    ["2026-01-27",  1198.46, "Kimi K2.5",        "Kimi"]
+  ];
+
+  const companyColors = {
+    "Anthropic": "#d97757",
+    "OpenAI":    "#10a37f",
+    "Google":    "#4285F4",
+    "Z.ai":      "#BE185D",
+    "Qwen":      "#7C3AED",
+    "MiniMax":   "#F59E0B",
+    "DeepSeek":  "#ef4444",
+    "xAI":       "#0891B2",
+    "Kimi":      "#14B8A6",
+  };
+
+  const companyDisplay = {
+    "Anthropic": "Anthropic (Claude)",
+    "OpenAI":    "OpenAI (GPT)",
+    "Google":    "Google (Gemini)",
+    "Z.ai":      "Z.ai (GLM)",
+    "Qwen":      "Alibaba (Qwen)",
+    "MiniMax":   "MiniMax",
+    "DeepSeek":  "DeepSeek",
+    "xAI":       "xAI (Grok)",
+    "Kimi":      "Moonshot (Kimi)",
+  };
+
+  // Dataset per company for legend interactivity
+  const companies = [...new Set(vendingData.map(d => d[3]))];
+  const datasets = companies.map(c => ({
+    label: companyDisplay[c],
+    data: vendingData.filter(d => d[3] === c).map(d => ({
+      x: d[0], y: d[1], model: d[2]
+    })),
+    backgroundColor: companyColors[c] + "dd",
+    borderColor: "#ffffff",
+    borderWidth: 1.5,
+    pointRadius: 8,
+    pointHoverRadius: 13,
+  }));
+
+  let vendingChart;
+  function renderVendingChart() {
+    if (vendingChart) vendingChart.destroy();
+    const ctx = document.getElementById("vendingChart").getContext("2d");
+    const isTR = state.lang === "tr";
+    vendingChart = new Chart(ctx, {
+      type: "scatter",
+      data: { datasets },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: { mode: "point", intersect: true },
+        plugins: {
+          legend: {
+            position: "top",
+            labels: { color: "#c9d1d9", font: { size: 12, weight: "600" }, padding: 14, usePointStyle: true }
+          },
+          tooltip: {
+            backgroundColor: "#161b22",
+            titleColor: "#ffffff",
+            bodyColor: "#c9d1d9",
+            borderColor: "#30363d",
+            borderWidth: 1,
+            padding: 12,
+            callbacks: {
+              title: (items) => items[0].raw.model,
+              label: (ctx) => {
+                const v = ctx.raw.y;
+                const amount = v >= 0 ? "$" + v.toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2}) : "-$" + Math.abs(v).toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2});
+                const d = new Date(ctx.raw.x);
+                const dateStr = d.toLocaleDateString(isTR ? "tr-TR" : "en-GB", {year: "numeric", month: "short", day: "numeric"});
+                return [
+                  (isTR ? "Bakiye: " : "Balance: ") + amount,
+                  (isTR ? "Çıkış: " : "Released: ") + dateStr,
+                  (isTR ? "Şirket: " : "Company: ") + ctx.dataset.label
+                ];
+              }
+            }
+          },
+          annotation: {
+            annotations: {
+              zeroLine: {
+                type: "line", yMin: 0, yMax: 0,
+                borderColor: "#ef4444", borderWidth: 2,
+                label: {
+                  display: true, content: isTR ? "Sıfır çizgisi" : "Zero line",
+                  position: "end", color: "#ef4444",
+                  backgroundColor: "rgba(0,0,0,0)",
+                  font: {weight: "bold", size: 11}
+                }
+              },
+              startLine: {
+                type: "line", yMin: 500, yMax: 500,
+                borderColor: "#fbbf24", borderWidth: 1.5, borderDash: [6, 4],
+                label: {
+                  display: true, content: isTR ? "Başlangıç $500" : "Starting $500",
+                  position: "end", color: "#fbbf24",
+                  backgroundColor: "rgba(0,0,0,0)",
+                  font: {weight: "bold", size: 11}
+                }
+              },
+              lossZone: {
+                type: "box", yMin: -500, yMax: 0,
+                backgroundColor: "rgba(239,68,68,0.08)", borderWidth: 0
+              }
+            }
+          },
+          title: {
+            display: true,
+            text: isTR
+              ? "Vending-Bench 2 · 35 YZ modelinin 1 yıllık vending işletme sonucu"
+              : "Vending-Bench 2 · 35 AI models after 1 year of simulated vending business",
+            color: "#ffffff",
+            font: { size: 16, weight: "bold" },
+            padding: { top: 6, bottom: 18 }
+          }
+        },
+        scales: {
+          x: {
+            type: "time",
+            time: { unit: "month", displayFormats: { month: isTR ? "MMM yy" : "MMM yy" } },
+            min: "2025-02-01",
+            max: "2026-06-01",
+            title: { display: true, text: isTR ? "Çıkış Tarihi" : "Release Date", color: "#c9d1d9", font: {size: 13, weight: "600"} },
+            ticks: { color: "#8b949e", font: {size: 11} },
+            grid: { color: "rgba(255,255,255,0.06)" }
+          },
+          y: {
+            min: -500, max: 12000,
+            title: { display: true, text: isTR ? "1 Yıl Sonunda Bakiye ($)" : "Balance After 1 Year ($)", color: "#c9d1d9", font: {size: 13, weight: "600"} },
+            ticks: {
+              color: "#8b949e", font: {size: 11},
+              callback: (v) => v >= 0 ? "$" + v.toLocaleString("en-US") : "-$" + Math.abs(v).toLocaleString("en-US")
+            },
+            grid: { color: "rgba(255,255,255,0.06)" }
+          }
+        }
+      }
+    });
+  }
+
+  // Re-render vending chart when tab or lang changes
+  const origSetCategory = setCategory;
+  setCategory = function(cat) {
+    origSetCategory(cat);
+    if (cat === "vending") {
+      setTimeout(renderVendingChart, 50);
+    }
+  };
+  const origSetLang = setLang;
+  setLang = function(lang) {
+    origSetLang(lang);
+    if (state.category === "vending") {
+      setTimeout(renderVendingChart, 50);
+    }
+  };
 </script>
 
 </body>
