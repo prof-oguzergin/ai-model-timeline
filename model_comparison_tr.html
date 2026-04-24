@@ -80,8 +80,8 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  /* Esit kolon genislikleri: label 160px, kalan 11 kolon esit pay */
-  thead th:not(:first-child) { width: calc((100% - 160px) / 11); }
+  /* Tek satirda benchmark adlari icin label kolonu genis, digerleri esit pay */
+  thead th:not(:first-child) { width: calc((100% - 280px) / 11); }
 
   thead th .date {
     display: block;
@@ -95,7 +95,7 @@
   thead th:first-child {
     text-align: left;
     color: #888;
-    width: 160px;
+    width: 280px;
     white-space: nowrap;
     padding-right: 12px;
   }
@@ -185,9 +185,9 @@
     color: #ccc;
     padding-right: 12px;
     border-radius: 8px 0 0 8px;
-    width: 160px;
+    width: 280px;
     font-size: 13px;
-    white-space: normal;
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }

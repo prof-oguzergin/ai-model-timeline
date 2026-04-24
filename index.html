@@ -164,6 +164,7 @@
     main { padding: 20px 8px; }
     .category-tabs button { padding: 8px 12px; font-size: 0.85rem; }
     .iframe-wrap iframe { min-height: 1200px; }
+    #pane-vending > .timeline-container > div:first-of-type { height: 520px !important; }
   }
 </style>
 </head>
@@ -234,8 +235,8 @@
   <div id="pane-vending" class="pane">
     <p id="desc-vending" class="desc"></p>
     <div class="timeline-container">
-      <div style="background:#0d1117; border-radius:8px; padding:16px; position:relative;">
-        <canvas id="vendingChart" style="max-height:680px;"></canvas>
+      <div style="background:#0d1117; border-radius:8px; padding:20px 16px; position:relative; height: 720px;">
+        <canvas id="vendingChart"></canvas>
       </div>
       <div class="download-bar">
         <a id="dl-vending" href="vending_bench_2_tr.png" download>PNG İndir / Download PNG</a>
