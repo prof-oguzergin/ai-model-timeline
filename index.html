@@ -124,6 +124,23 @@
     width: 100%; min-height: 1700px; border: none; display: block;
     background: #0a0a0f;
   }
+  #vendingChart {
+    width: 100% !important;
+    height: 680px !important;
+    display: block;
+  }
+  .vending-wrap {
+    background: #0d1117;
+    border-radius: 8px;
+    padding: 20px 16px;
+    position: relative;
+    height: 720px;
+    min-height: 720px;
+  }
+  @media (max-width: 900px) {
+    #vendingChart { height: 500px !important; }
+    .vending-wrap { height: 540px; min-height: 540px; }
+  }
   .note {
     margin-top: 12px; padding: 10px 14px;
     background: #fff8e1; border: 1px solid #ffe082;
@@ -235,8 +252,8 @@
   <div id="pane-vending" class="pane">
     <p id="desc-vending" class="desc"></p>
     <div class="timeline-container">
-      <div style="background:#0d1117; border-radius:8px; padding:20px 16px; position:relative; height: 720px;">
-        <canvas id="vendingChart"></canvas>
+      <div class="vending-wrap">
+        <canvas id="vendingChart" width="1400" height="680"></canvas>
       </div>
       <div class="download-bar">
         <a id="dl-vending" href="vending_bench_2_tr.png" download>PNG İndir / Download PNG</a>
@@ -567,16 +584,25 @@
   setCategory = function(cat) {
     origSetCategory(cat);
     if (cat === "vending") {
-      setTimeout(renderVendingChart, 50);
+      // Birden fazla frame bekle - DOM layout tamamlansın diye
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        renderVendingChart();
+        if (vendingChart) vendingChart.resize();
+      }));
     }
   };
   const origSetLang = setLang;
   setLang = function(lang) {
     origSetLang(lang);
     if (state.category === "vending") {
-      setTimeout(renderVendingChart, 50);
+      requestAnimationFrame(() => requestAnimationFrame(renderVendingChart));
     }
   };
+
+  // Pencere boyutu degistiginde chart'i yeniden boyutlandir
+  window.addEventListener("resize", () => {
+    if (vendingChart && state.category === "vending") vendingChart.resize();
+  });
 </script>
 
 </body>
