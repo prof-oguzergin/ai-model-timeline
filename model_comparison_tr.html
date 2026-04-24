@@ -236,6 +236,57 @@
     font-size: 12px;
   }
 
+  /* Benchmark ad tooltip */
+  [data-tooltip] {
+    position: relative;
+    cursor: help;
+  }
+  [data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 0;
+    top: calc(100% + 8px);
+    min-width: 240px;
+    max-width: 320px;
+    width: max-content;
+    background: linear-gradient(145deg, #1d1d2a 0%, #14141e 100%);
+    color: #e8e8ec;
+    font-size: 11.5px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.1px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(200, 120, 255, 0.28);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.65), 0 0 24px rgba(200, 120, 255, 0.12);
+    white-space: normal;
+    text-align: left;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-4px);
+    transition: opacity 0.18s ease, transform 0.18s ease;
+    z-index: 100;
+  }
+  [data-tooltip]::before {
+    content: "";
+    position: absolute;
+    left: 22px;
+    top: calc(100% + 2px);
+    border: 6px solid transparent;
+    border-bottom-color: rgba(200, 120, 255, 0.28);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.18s ease;
+    z-index: 101;
+  }
+  [data-tooltip]:hover::after,
+  [data-tooltip]:hover::before {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  tbody td[data-tooltip]:first-child { overflow: visible; }
+  tbody tr:not(.section-row):hover { overflow: visible; }
+
   .footer {
     margin-top: 14px;
     display: flex;
@@ -364,7 +415,7 @@
     <tbody>
       <tr class="section-row sw"><td colspan="15">YAZILIM GELİŞTİRME / KODLAMA</td></tr>
       <tr>
-        <td title="Gerçek GitHub issueları; model kodu düzeltip testlerden geçirmeli.">SWE-bench Verified</td>
+        <td data-tooltip="Gerçek GitHub issueları; model kodu düzeltip testlerden geçirmeli.">SWE-bench Verified</td>
         <td class="best mythos">93.9%</td>
         <td class="runner-up opus">87.6%</td>
         <td>80.8%</td>
@@ -381,7 +432,7 @@
         <td>72.0%</td>
       </tr>
       <tr>
-        <td title="SWE-bench'in daha zor pro sürümü; gerçek yazılım mühendisliği görevleri.">SWE-bench Pro</td>
+        <td data-tooltip="SWE-bench'in daha zor pro sürümü; gerçek yazılım mühendisliği görevleri.">SWE-bench Pro</td>
         <td class="best mythos">77.8%</td>
         <td class="runner-up opus">64.3%</td>
         <td>53.4%</td>
@@ -398,7 +449,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="Çok dilli kod düzenleme sınavı: Python, Rust, C++, Go, JS.">SWE-bench Multilingual</td>
+        <td data-tooltip="Çok dilli kod düzenleme sınavı: Python, Rust, C++, Go, JS.">SWE-bench Multilingual</td>
         <td class="best mythos">87.3%</td>
         <td class="na">&mdash;</td>
         <td class="runner-up opus">77.5%</td>
@@ -415,7 +466,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="Görsel ve kod içeren çok kipli yazılım mühendisliği görevleri.">SWE-bench Multimodal</td>
+        <td data-tooltip="Görsel ve kod içeren çok kipli yazılım mühendisliği görevleri.">SWE-bench Multimodal</td>
         <td class="best mythos">59.0%</td>
         <td class="na">&mdash;</td>
         <td class="runner-up opus">27.1%</td>
@@ -432,7 +483,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="Karmaşık terminal görevleri; kabuk komutları ve dosya işlemleri gerektirir.">Terminal-Bench 2.0</td>
+        <td data-tooltip="Karmaşık terminal görevleri; kabuk komutları ve dosya işlemleri gerektirir.">Terminal-Bench 2.0</td>
         <td>82.0%</td>
         <td>69.4%</td>
         <td>65.4%</td>
@@ -449,7 +500,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="Model eğitim kesiminden sonra toplanan yarışmacı programlama problemleri.">LiveCodeBench</td>
+        <td data-tooltip="Model eğitim kesiminden sonra toplanan yarışmacı programlama problemleri.">LiveCodeBench</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>88.8%</td>
@@ -466,7 +517,7 @@
         <td>79.0%</td>
       </tr>
       <tr>
-        <td title="Codeforces yarışmacı programlama problemlerini çözerek kazanılan Elo puanı.">Codeforces (Elo)</td>
+        <td data-tooltip="Codeforces yarışmacı programlama problemlerini çözerek kazanılan Elo puanı.">Codeforces (Elo)</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -485,7 +536,7 @@
 
       <tr class="section-row knowledge"><td colspan="15">GENEL BİLGİ & AKIL YÜRÜTME</td></tr>
       <tr>
-        <td title="14 disiplinde 12 bin çok seçmeli soru, MMLU'dan zor.">MMLU-Pro</td>
+        <td data-tooltip="14 disiplinde 12 bin çok seçmeli soru, MMLU'dan zor.">MMLU-Pro</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>89.1%</td>
@@ -502,7 +553,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="198 doktora seviyesi bilim sorusu (biyoloji, fizik, kimya).">GPQA Diamond</td>
+        <td data-tooltip="198 doktora seviyesi bilim sorusu (biyoloji, fizik, kimya).">GPQA Diamond</td>
         <td class="best mythos">94.6%</td>
         <td>94.2%</td>
         <td>91.3%</td>
@@ -519,7 +570,7 @@
         <td>87.5%</td>
       </tr>
       <tr>
-        <td title="100'den fazla alanda uzmanlar tarafından yazılmış 3000 soru; mevcut yapay zekâları yenmek için tasarlandı.">Humanity's Last Exam</td>
+        <td data-tooltip="100'den fazla alanda uzmanlar tarafından yazılmış 3000 soru; mevcut yapay zekâları yenmek için tasarlandı.">Humanity's Last Exam</td>
         <td class="best mythos">56.8%</td>
         <td class="runner-up opus">46.9%</td>
         <td>40.0%</td>
@@ -536,7 +587,7 @@
         <td>25.0%</td>
       </tr>
       <tr>
-        <td title="Tek doğru yanıtı olan kısa bilgi soruları; halüsinasyon testi.">SimpleQA-Verified</td>
+        <td data-tooltip="Tek doğru yanıtı olan kısa bilgi soruları; halüsinasyon testi.">SimpleQA-Verified</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>46.2%</td>
@@ -553,7 +604,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="Çince bilgi soruları için halüsinasyon testi.">Chinese-SimpleQA</td>
+        <td data-tooltip="Çince bilgi soruları için halüsinasyon testi.">Chinese-SimpleQA</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>76.2%</td>
@@ -570,7 +621,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="Amerikan Davetli Matematik Sınavı; 15 zorlu lise matematik problemi (araç yok).">AIME 2025</td>
+        <td data-tooltip="Amerikan Davetli Matematik Sınavı; 15 zorlu lise matematik problemi (araç yok).">AIME 2025</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="best opus">99.8%</td>
@@ -587,7 +638,7 @@
         <td>91.7%</td>
       </tr>
       <tr>
-        <td title="ABD Matematik Olimpiyatı; 6 ispat sorusu, 2 gün, cevap değil tam ispat yazılmalı (en zor lise matematik sınavı).">USAMO 2026</td>
+        <td data-tooltip="ABD Matematik Olimpiyatı; 6 ispat sorusu, 2 gün, cevap değil tam ispat yazılmalı (en zor lise matematik sınavı).">USAMO 2026</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>47.0%</td>
@@ -604,7 +655,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="Harvard-MIT Matematik Turnuvası; ileri lise ve erken lisans matematiği.">HMMT 2026 Feb</td>
+        <td data-tooltip="Harvard-MIT Matematik Turnuvası; ileri lise ve erken lisans matematiği.">HMMT 2026 Feb</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>96.2%</td>
@@ -621,7 +672,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="IMO sorularının sayısal cevaplarını test eden matematik ölçümü.">IMOAnswerBench</td>
+        <td data-tooltip="IMO sorularının sayısal cevaplarını test eden matematik ölçümü.">IMOAnswerBench</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>75.3%</td>
@@ -638,7 +689,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="Uzman matematikçiler tarafından hazırlanan araştırma seviyesi matematik problemleri.">Apex</td>
+        <td data-tooltip="Uzman matematikçiler tarafından hazırlanan araştırma seviyesi matematik problemleri.">Apex</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>34.5%</td>
@@ -655,7 +706,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="Uzman matematikçiler tarafından hazırlanan araştırma seviyesi matematik problemleri (kısaltılmış liste).">Apex Shortlist</td>
+        <td data-tooltip="Uzman matematikçiler tarafından hazırlanan araştırma seviyesi matematik problemleri (kısaltılmış liste).">Apex Shortlist</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>85.9%</td>
@@ -672,7 +723,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="Yeni desen çıkarımını test eden soyut görsel bulmacalar (2019 orijinal).">ARC-AGI-1</td>
+        <td data-tooltip="Yeni desen çıkarımını test eden soyut görsel bulmacalar (2019 orijinal).">ARC-AGI-1</td>
         <td class="na">&mdash;</td>
         <td>92.0%</td>
         <td>94.0%</td>
@@ -689,7 +740,7 @@
         <td>66.6%</td>
       </tr>
       <tr>
-        <td title="Daha derin muhakeme gerektiren ikinci nesil ARC bulmacaları.">ARC-AGI-2</td>
+        <td data-tooltip="Daha derin muhakeme gerektiren ikinci nesil ARC bulmacaları.">ARC-AGI-2</td>
         <td class="na">&mdash;</td>
         <td>75.8%</td>
         <td>68.8%</td>
@@ -706,7 +757,7 @@
         <td>15.9%</td>
       </tr>
       <tr>
-        <td title="Etkileşimli oyun benzeri ortamlar içeren en yeni ARC sürümü.">ARC-AGI-3</td>
+        <td data-tooltip="Etkileşimli oyun benzeri ortamlar içeren en yeni ARC sürümü.">ARC-AGI-3</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="best opus">0.5%</td>
@@ -723,7 +774,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="Çok dilli MMLU; modelin farklı dillerdeki bilgi ve muhakeme kapasitesini ölçer.">MMMLU (Çok Dilli)</td>
+        <td data-tooltip="Çok dilli MMLU; modelin farklı dillerdeki bilgi ve muhakeme kapasitesini ölçer.">MMMLU (Çok Dilli)</td>
         <td class="na">&mdash;</td>
         <td>91.5%</td>
         <td>91.1%</td>
@@ -740,7 +791,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="Çok disiplinli çok kipli anlama (metin, görsel, çizelge).">MMMU-Pro (Çok Modal)</td>
+        <td data-tooltip="Çok disiplinli çok kipli anlama (metin, görsel, çizelge).">MMMU-Pro (Çok Modal)</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>73.9%</td>
@@ -757,7 +808,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="Bilimsel problem çözme; model gerçek bilimsel kod yazabilmeli.">SciCode</td>
+        <td data-tooltip="Bilimsel problem çözme; model gerçek bilimsel kod yazabilmeli.">SciCode</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>52.0%</td>
@@ -774,7 +825,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="Grafik anlama ve muhakeme; araç kullanmadan grafik sorularını çözme.">CharXiv Reasoning (araçsız)</td>
+        <td data-tooltip="Grafik anlama ve muhakeme; araç kullanmadan grafik sorularını çözme.">CharXiv Reasoning (araçsız)</td>
         <td class="best mythos">86.1%</td>
         <td class="runner-up opus">82.1%</td>
         <td>69.1%</td>
@@ -791,7 +842,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="Grafik anlama ve muhakeme; kod araçlarıyla grafik sorularını çözme.">CharXiv Reasoning (araçlı)</td>
+        <td data-tooltip="Grafik anlama ve muhakeme; kod araçlarıyla grafik sorularını çözme.">CharXiv Reasoning (araçlı)</td>
         <td class="best mythos">93.2%</td>
         <td class="runner-up opus">91.0%</td>
         <td>84.7%</td>
@@ -810,7 +861,7 @@
 
       <tr class="section-row context"><td colspan="15">UZUN BAĞLAM (1M Token)</td></tr>
       <tr>
-        <td title="128k token bağlamda çok turlu sohbet ve geri çağırma testi (1M sürümü).">MRCR 1M</td>
+        <td data-tooltip="128k token bağlamda çok turlu sohbet ve geri çağırma testi (1M sürümü).">MRCR 1M</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="best opus">92.9%</td>
@@ -827,7 +878,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="1 milyon token bağlamda geniş belge korpus sorgu ve geri çağırma testi.">CorpusQA 1M</td>
+        <td data-tooltip="1 milyon token bağlamda geniş belge korpus sorgu ve geri çağırma testi.">CorpusQA 1M</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="best opus">71.7%</td>
@@ -846,7 +897,7 @@
 
       <tr class="section-row computer"><td colspan="15">EYLEMCİ / BİLGİSAYAR KULLANIMI</td></tr>
       <tr>
-        <td title="Karmaşık bağımsız web tarama ve bilgi sentezi görevleri.">BrowseComp</td>
+        <td data-tooltip="Karmaşık bağımsız web tarama ve bilgi sentezi görevleri.">BrowseComp</td>
         <td class="best mythos">86.9%</td>
         <td>79.3%</td>
         <td>83.7%</td>
@@ -863,7 +914,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="Simüle masaüstü işletim sisteminde gerçekçi bilgisayar kullanım görevleri.">OSWorld-Verified</td>
+        <td data-tooltip="Simüle masaüstü işletim sisteminde gerçekçi bilgisayar kullanım görevleri.">OSWorld-Verified</td>
         <td class="best mythos">79.6%</td>
         <td>78.0%</td>
         <td>72.7%</td>
@@ -880,7 +931,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="Python kod yorumlayıcı aracına erişimle Humanity's Last Exam.">HLE (araçlı)</td>
+        <td data-tooltip="Python kod yorumlayıcı aracına erişimle Humanity's Last Exam.">HLE (araçlı)</td>
         <td class="best mythos">64.7%</td>
         <td>54.7%</td>
         <td>53.3%</td>
@@ -897,7 +948,7 @@
         <td>44.4%</td>
       </tr>
       <tr>
-        <td title="Eylemci model değerlendirmesi; çok adımlı görev planlama ve API kullanımı.">GDPval-AA (Elo)</td>
+        <td data-tooltip="Eylemci model değerlendirmesi; çok adımlı görev planlama ve API kullanımı.">GDPval-AA (Elo)</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>1619</td>
@@ -914,7 +965,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="8 ortamda LLM eylemcileri değerlendirmek için çok görevli sınav.">MCP-Atlas</td>
+        <td data-tooltip="8 ortamda LLM eylemcileri değerlendirmek için çok görevli sınav.">MCP-Atlas</td>
         <td class="na">&mdash;</td>
         <td class="best opus">77.3%</td>
         <td>75.8%</td>
@@ -931,7 +982,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="Çok araçlı iş akışları ve API entegrasyonunu test eden eylemci sınavı.">Toolathlon</td>
+        <td data-tooltip="Çok araçlı iş akışları ve API entegrasyonunu test eden eylemci sınavı.">Toolathlon</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>47.2%</td>
@@ -948,7 +999,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="Finans sektörü eylemci görevleri; analiz, rapor ve karar alma.">Finance Agent v1.1</td>
+        <td data-tooltip="Finans sektörü eylemci görevleri; analiz, rapor ve karar alma.">Finance Agent v1.1</td>
         <td class="na">&mdash;</td>
         <td class="best opus">64.4%</td>
         <td>60.1%</td>
@@ -965,7 +1016,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="Araçlar ve API'lerle perakende ortamında müşteri hizmetleri eylemci görevleri.">τ2-bench (Retail)</td>
+        <td data-tooltip="Araçlar ve API'lerle perakende ortamında müşteri hizmetleri eylemci görevleri.">τ2-bench (Retail)</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="best opus">91.9%</td>
@@ -982,7 +1033,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="Telekom sektörü müşteri hizmetleri ortamında eylemci görevleri.">τ2-bench (Telecom)</td>
+        <td data-tooltip="Telekom sektörü müşteri hizmetleri ortamında eylemci görevleri.">τ2-bench (Telecom)</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="best opus">99.3%</td>
@@ -999,7 +1050,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="Gerçek iş senaryolarında eylemci model performansını para kazanımıyla ölçer.">Vending-Bench 2 ($)</td>
+        <td data-tooltip="Gerçek iş senaryolarında eylemci model performansını para kazanımıyla ölçer.">Vending-Bench 2 ($)</td>
         <td class="na">&mdash;</td>
         <td class="best opus">$10.937</td>
         <td>$8.018</td>
@@ -1018,7 +1069,7 @@
 
       <tr class="section-row cyber"><td colspan="15">SİBER GÜVENLİK</td></tr>
       <tr>
-        <td title="Gerçek CTF yarışmalarından Bayrak-Yakala siber güvenlik meydan okumaları.">CyberGym</td>
+        <td data-tooltip="Gerçek CTF yarışmalarından Bayrak-Yakala siber güvenlik meydan okumaları.">CyberGym</td>
         <td class="best mythos">83.1%</td>
         <td>73.1%</td>
         <td>73.8%</td>

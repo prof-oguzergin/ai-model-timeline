@@ -235,6 +235,57 @@
     font-size: 12px;
   }
 
+  /* Benchmark ad tooltip */
+  [data-tooltip] {
+    position: relative;
+    cursor: help;
+  }
+  [data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 0;
+    top: calc(100% + 8px);
+    min-width: 240px;
+    max-width: 320px;
+    width: max-content;
+    background: linear-gradient(145deg, #1d1d2a 0%, #14141e 100%);
+    color: #e8e8ec;
+    font-size: 11.5px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.1px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(200, 120, 255, 0.28);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.65), 0 0 24px rgba(200, 120, 255, 0.12);
+    white-space: normal;
+    text-align: left;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-4px);
+    transition: opacity 0.18s ease, transform 0.18s ease;
+    z-index: 100;
+  }
+  [data-tooltip]::before {
+    content: "";
+    position: absolute;
+    left: 22px;
+    top: calc(100% + 2px);
+    border: 6px solid transparent;
+    border-bottom-color: rgba(200, 120, 255, 0.28);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.18s ease;
+    z-index: 101;
+  }
+  [data-tooltip]:hover::after,
+  [data-tooltip]:hover::before {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  tbody td[data-tooltip]:first-child { overflow: visible; }
+  tbody tr:not(.section-row):hover { overflow: visible; }
+
   .footer {
     margin-top: 14px;
     display: flex;
@@ -363,7 +414,7 @@
     <tbody>
       <tr class="section-row sw"><td colspan="15">SOFTWARE ENGINEERING / CODING</td></tr>
       <tr>
-        <td title="Real GitHub issues from open source projects; model must write code patches that pass tests.">SWE-bench Verified</td>
+        <td data-tooltip="Real GitHub issues from open source projects; model must write code patches that pass tests.">SWE-bench Verified</td>
         <td class="best mythos">93.9%</td>
         <td class="runner-up opus">87.6%</td>
         <td>80.8%</td>
@@ -380,7 +431,7 @@
         <td>72.0%</td>
       </tr>
       <tr>
-        <td title="Harder professional version of SWE-bench with more complex real software engineering tasks.">SWE-bench Pro</td>
+        <td data-tooltip="Harder professional version of SWE-bench with more complex real software engineering tasks.">SWE-bench Pro</td>
         <td class="best mythos">77.8%</td>
         <td class="runner-up opus">64.3%</td>
         <td>53.4%</td>
@@ -397,7 +448,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="Multi-language code editing across Python, Rust, C++, Go, JS and other languages.">SWE-bench Multilingual</td>
+        <td data-tooltip="Multi-language code editing across Python, Rust, C++, Go, JS and other languages.">SWE-bench Multilingual</td>
         <td class="best mythos">87.3%</td>
         <td class="na">&mdash;</td>
         <td class="runner-up opus">77.5%</td>
@@ -414,7 +465,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="Software engineering tasks combining visual and code understanding across multiple modalities.">SWE-bench Multimodal</td>
+        <td data-tooltip="Software engineering tasks combining visual and code understanding across multiple modalities.">SWE-bench Multimodal</td>
         <td class="best mythos">59.0%</td>
         <td class="na">&mdash;</td>
         <td class="runner-up opus">27.1%</td>
@@ -431,7 +482,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="Complex terminal tasks requiring shell commands and file operations in a real environment.">Terminal-Bench 2.0</td>
+        <td data-tooltip="Complex terminal tasks requiring shell commands and file operations in a real environment.">Terminal-Bench 2.0</td>
         <td>82.0%</td>
         <td>69.4%</td>
         <td>65.4%</td>
@@ -448,7 +499,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="Competitive programming problems collected after model training cutoff to prevent data contamination.">LiveCodeBench</td>
+        <td data-tooltip="Competitive programming problems collected after model training cutoff to prevent data contamination.">LiveCodeBench</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>88.8%</td>
@@ -465,7 +516,7 @@
         <td>79.0%</td>
       </tr>
       <tr>
-        <td title="Elo rating earned solving Codeforces competitive programming problems of varying difficulty.">Codeforces (Elo)</td>
+        <td data-tooltip="Elo rating earned solving Codeforces competitive programming problems of varying difficulty.">Codeforces (Elo)</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -484,7 +535,7 @@
 
       <tr class="section-row knowledge"><td colspan="15">KNOWLEDGE & REASONING</td></tr>
       <tr>
-        <td title="12,000 multiple-choice questions across 14 disciplines, significantly harder than the original MMLU.">MMLU-Pro</td>
+        <td data-tooltip="12,000 multiple-choice questions across 14 disciplines, significantly harder than the original MMLU.">MMLU-Pro</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>89.1%</td>
@@ -501,7 +552,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="198 PhD-level science questions in biology, physics, and chemistry designed to challenge expert-level models.">GPQA Diamond</td>
+        <td data-tooltip="198 PhD-level science questions in biology, physics, and chemistry designed to challenge expert-level models.">GPQA Diamond</td>
         <td class="best mythos">94.6%</td>
         <td>94.2%</td>
         <td>91.3%</td>
@@ -518,7 +569,7 @@
         <td>87.5%</td>
       </tr>
       <tr>
-        <td title="3,000 expert-crafted questions across 100+ fields, designed to stump current frontier AI models.">Humanity's Last Exam</td>
+        <td data-tooltip="3,000 expert-crafted questions across 100+ fields, designed to stump current frontier AI models.">Humanity's Last Exam</td>
         <td class="best mythos">56.8%</td>
         <td class="runner-up opus">46.9%</td>
         <td>40.0%</td>
@@ -535,7 +586,7 @@
         <td>25.0%</td>
       </tr>
       <tr>
-        <td title="Short factual questions with single correct answers; tests factual accuracy and hallucination rate.">SimpleQA-Verified</td>
+        <td data-tooltip="Short factual questions with single correct answers; tests factual accuracy and hallucination rate.">SimpleQA-Verified</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>46.2%</td>
@@ -552,7 +603,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="Chinese-language factual question benchmark testing factual accuracy and hallucination in Chinese.">Chinese-SimpleQA</td>
+        <td data-tooltip="Chinese-language factual question benchmark testing factual accuracy and hallucination in Chinese.">Chinese-SimpleQA</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>76.2%</td>
@@ -569,7 +620,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="American Invitational Mathematics Examination; 15 challenging high-school math problems (no tools).">AIME 2025</td>
+        <td data-tooltip="American Invitational Mathematics Examination; 15 challenging high-school math problems (no tools).">AIME 2025</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="best opus">99.8%</td>
@@ -586,7 +637,7 @@
         <td>91.7%</td>
       </tr>
       <tr>
-        <td title="USA Mathematical Olympiad; 6 proof problems over 2 days — full proofs required, not just answers (hardest high-school math contest).">USAMO 2026</td>
+        <td data-tooltip="USA Mathematical Olympiad; 6 proof problems over 2 days — full proofs required, not just answers (hardest high-school math contest).">USAMO 2026</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>47.0%</td>
@@ -603,7 +654,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="Harvard-MIT Math Tournament; advanced high-school and early-undergraduate level mathematics competition.">HMMT 2026 Feb</td>
+        <td data-tooltip="Harvard-MIT Math Tournament; advanced high-school and early-undergraduate level mathematics competition.">HMMT 2026 Feb</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>96.2%</td>
@@ -620,7 +671,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="Benchmark testing numerical answers to International Math Olympiad competition problems.">IMOAnswerBench</td>
+        <td data-tooltip="Benchmark testing numerical answers to International Math Olympiad competition problems.">IMOAnswerBench</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>75.3%</td>
@@ -637,7 +688,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="Research-level mathematics problems created by expert mathematicians; tests frontier math reasoning.">Apex</td>
+        <td data-tooltip="Research-level mathematics problems created by expert mathematicians; tests frontier math reasoning.">Apex</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>34.5%</td>
@@ -654,7 +705,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="Curated shortlist of the hardest Apex research-level math problems for frontier model comparison.">Apex Shortlist</td>
+        <td data-tooltip="Curated shortlist of the hardest Apex research-level math problems for frontier model comparison.">Apex Shortlist</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>85.9%</td>
@@ -671,7 +722,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="Abstract visual puzzles testing novel pattern induction; the original 2019 ARC benchmark.">ARC-AGI-1</td>
+        <td data-tooltip="Abstract visual puzzles testing novel pattern induction; the original 2019 ARC benchmark.">ARC-AGI-1</td>
         <td class="na">&mdash;</td>
         <td>92.0%</td>
         <td>94.0%</td>
@@ -688,7 +739,7 @@
         <td>66.6%</td>
       </tr>
       <tr>
-        <td title="Harder second-generation ARC puzzles requiring deeper multi-step reasoning and generalization.">ARC-AGI-2</td>
+        <td data-tooltip="Harder second-generation ARC puzzles requiring deeper multi-step reasoning and generalization.">ARC-AGI-2</td>
         <td class="na">&mdash;</td>
         <td>75.8%</td>
         <td>68.8%</td>
@@ -705,7 +756,7 @@
         <td>15.9%</td>
       </tr>
       <tr>
-        <td title="Latest ARC version featuring interactive game-like environments with dynamic feedback.">ARC-AGI-3</td>
+        <td data-tooltip="Latest ARC version featuring interactive game-like environments with dynamic feedback.">ARC-AGI-3</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="best opus">0.5%</td>
@@ -722,7 +773,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="Multilingual MMLU measuring knowledge and reasoning across different languages worldwide.">MMMLU (Multilingual)</td>
+        <td data-tooltip="Multilingual MMLU measuring knowledge and reasoning across different languages worldwide.">MMMLU (Multilingual)</td>
         <td class="na">&mdash;</td>
         <td>91.5%</td>
         <td>91.1%</td>
@@ -739,7 +790,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="Multi-discipline multimodal understanding benchmark combining text, images, and charts.">MMMU-Pro (Multimodal)</td>
+        <td data-tooltip="Multi-discipline multimodal understanding benchmark combining text, images, and charts.">MMMU-Pro (Multimodal)</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>73.9%</td>
@@ -756,7 +807,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="Scientific problem-solving benchmark where models must write real scientific code to reach answers.">SciCode</td>
+        <td data-tooltip="Scientific problem-solving benchmark where models must write real scientific code to reach answers.">SciCode</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>52.0%</td>
@@ -773,7 +824,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="Chart understanding and reasoning benchmark; model answers chart questions without tool access.">CharXiv Reasoning (no tools)</td>
+        <td data-tooltip="Chart understanding and reasoning benchmark; model answers chart questions without tool access.">CharXiv Reasoning (no tools)</td>
         <td class="best mythos">86.1%</td>
         <td class="runner-up opus">82.1%</td>
         <td>69.1%</td>
@@ -790,7 +841,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="Chart understanding and reasoning benchmark; model answers chart questions using code interpreter tools.">CharXiv Reasoning (with tools)</td>
+        <td data-tooltip="Chart understanding and reasoning benchmark; model answers chart questions using code interpreter tools.">CharXiv Reasoning (with tools)</td>
         <td class="best mythos">93.2%</td>
         <td class="runner-up opus">91.0%</td>
         <td>84.7%</td>
@@ -809,7 +860,7 @@
 
       <tr class="section-row context"><td colspan="15">LONG CONTEXT (1M Tokens)</td></tr>
       <tr>
-        <td title="Multi-round conversation retrieval test extended to 1 million token context windows.">MRCR 1M</td>
+        <td data-tooltip="Multi-round conversation retrieval test extended to 1 million token context windows.">MRCR 1M</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="best opus">92.9%</td>
@@ -826,7 +877,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="Retrieval and comprehension from a large document corpus at 1 million token context length.">CorpusQA 1M</td>
+        <td data-tooltip="Retrieval and comprehension from a large document corpus at 1 million token context length.">CorpusQA 1M</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="best opus">71.7%</td>
@@ -845,7 +896,7 @@
 
       <tr class="section-row computer"><td colspan="15">AGENTIC / COMPUTER USE</td></tr>
       <tr>
-        <td title="Complex autonomous web browsing and information synthesis tasks requiring multi-step reasoning.">BrowseComp</td>
+        <td data-tooltip="Complex autonomous web browsing and information synthesis tasks requiring multi-step reasoning.">BrowseComp</td>
         <td class="best mythos">86.9%</td>
         <td>79.3%</td>
         <td>83.7%</td>
@@ -862,7 +913,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="Realistic computer-use tasks in a simulated desktop OS environment with GUI interaction.">OSWorld-Verified</td>
+        <td data-tooltip="Realistic computer-use tasks in a simulated desktop OS environment with GUI interaction.">OSWorld-Verified</td>
         <td class="best mythos">79.6%</td>
         <td>78.0%</td>
         <td>72.7%</td>
@@ -879,7 +930,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="Humanity's Last Exam with Python code interpreter tool access; tests tool-augmented reasoning.">HLE (with tools)</td>
+        <td data-tooltip="Humanity's Last Exam with Python code interpreter tool access; tests tool-augmented reasoning.">HLE (with tools)</td>
         <td class="best mythos">64.7%</td>
         <td>54.7%</td>
         <td>53.3%</td>
@@ -896,7 +947,7 @@
         <td>44.4%</td>
       </tr>
       <tr>
-        <td title="Agentic model evaluation measuring multi-step planning and API use; scored as Elo rating.">GDPval-AA (Elo)</td>
+        <td data-tooltip="Agentic model evaluation measuring multi-step planning and API use; scored as Elo rating.">GDPval-AA (Elo)</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>1619</td>
@@ -913,7 +964,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="Multi-task benchmark for evaluating LLM agents across diverse MCP tool-use environments.">MCP-Atlas</td>
+        <td data-tooltip="Multi-task benchmark for evaluating LLM agents across diverse MCP tool-use environments.">MCP-Atlas</td>
         <td class="na">&mdash;</td>
         <td class="best opus">77.3%</td>
         <td>75.8%</td>
@@ -930,7 +981,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="Multi-tool workflow benchmark testing agentic coordination across diverse tool-use tasks.">Toolathlon</td>
+        <td data-tooltip="Multi-tool workflow benchmark testing agentic coordination across diverse tool-use tasks.">Toolathlon</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>47.2%</td>
@@ -947,7 +998,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="Financial sector agentic tasks requiring analysis, reporting, and decision-making with financial data.">Finance Agent v1.1</td>
+        <td data-tooltip="Financial sector agentic tasks requiring analysis, reporting, and decision-making with financial data.">Finance Agent v1.1</td>
         <td class="na">&mdash;</td>
         <td class="best opus">64.4%</td>
         <td>60.1%</td>
@@ -964,7 +1015,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="Customer-service agent tasks in a retail setting with tools and APIs; tests realistic agentic behavior.">τ2-bench (Retail)</td>
+        <td data-tooltip="Customer-service agent tasks in a retail setting with tools and APIs; tests realistic agentic behavior.">τ2-bench (Retail)</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="best opus">91.9%</td>
@@ -981,7 +1032,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="Agent tasks in a telecommunications customer-service setting with complex multi-turn interactions.">τ2-bench (Telecom)</td>
+        <td data-tooltip="Agent tasks in a telecommunications customer-service setting with complex multi-turn interactions.">τ2-bench (Telecom)</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="best opus">99.3%</td>
@@ -998,7 +1049,7 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td title="Agentic model performance scored by earnings in realistic business scenarios; dollar-weighted.">Vending-Bench 2 ($)</td>
+        <td data-tooltip="Agentic model performance scored by earnings in realistic business scenarios; dollar-weighted.">Vending-Bench 2 ($)</td>
         <td class="na">&mdash;</td>
         <td class="best opus">$10.937</td>
         <td>$8.018</td>
@@ -1017,7 +1068,7 @@
 
       <tr class="section-row cyber"><td colspan="15">CYBERSECURITY</td></tr>
       <tr>
-        <td title="Capture-The-Flag cybersecurity challenges sourced from real CTF competitions testing offensive security skills.">CyberGym</td>
+        <td data-tooltip="Capture-The-Flag cybersecurity challenges sourced from real CTF competitions testing offensive security skills.">CyberGym</td>
         <td class="best mythos">83.1%</td>
         <td>73.1%</td>
         <td>73.8%</td>
