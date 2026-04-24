@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Frontier LLM Karşılaştırma · Nisan 2026</title>
+<title>Öncü LLM Karşılaştırma · Nisan 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -81,7 +81,7 @@
     text-overflow: ellipsis;
   }
   /* Tek satirda benchmark adlari icin label kolonu genis, digerleri esit pay */
-  thead th:not(:first-child) { width: calc((100% - 280px) / 11); }
+  thead th:not(:first-child) { width: calc((100% - 280px) / 12); }
 
   thead th .date {
     display: block;
@@ -116,6 +116,7 @@
   thead th.col-gemini31 { color: #60a5fa; }
   thead th.col-gemini3  { color: #3b82c7; }
   thead th.col-deepseek32 { color: #c82626; }
+  thead th.col-deepseek3  { color: #7f1d1d; }
   thead th.col-deepseek { color: #ef4444; }
 
   .section-row td {
@@ -288,7 +289,7 @@
 <body>
 <div class="card">
   <div class="header">
-    <div class="badge">FRONTIER LLM KARŞILAŞTIRMA &middot; 24 NİSAN 2026</div>
+    <div class="badge">ÖNCÜ LLM KARŞILAŞTIRMA &middot; 24 NİSAN 2026</div>
     <h1>Modeller Arası Başarım: Claude · GPT · Gemini · Mythos</h1>
     <div class="subtitle">Her satırın en yüksek puanı öne çıkarıldı. Boş hücreler veri yayınlanmadığını gösterir.</div>
   </div>
@@ -300,7 +301,7 @@
         <th colspan="5" class="company-anthropic">ANTHROPIC</th>
         <th colspan="2" class="company-openai">OPENAI</th>
         <th colspan="2" class="company-google">GOOGLE</th>
-        <th colspan="2" class="company-deepseek">DEEPSEEK</th>
+        <th colspan="3" class="company-deepseek">DEEPSEEK</th>
       </tr>
       <tr>
         <th></th>
@@ -315,10 +316,11 @@
         <th class="col-gemini3">Gemini<br>3 Pro<span class="date">(18 Kas 25)</span></th>
         <th class="col-deepseek">DeepSeek<br>V4-Pro<span class="date">(24 Nis 26)</span></th>
         <th class="col-deepseek32">DeepSeek<br>V3.2<span class="date">(1 Ara 25)</span></th>
+        <th class="col-deepseek3">DeepSeek<br>V3<span class="date">(26 Ara 24)</span></th>
       </tr>
     </thead>
     <tbody>
-      <tr class="section-row sw"><td colspan="12">YAZILIM GELİŞTİRME / KODLAMA</td></tr>
+      <tr class="section-row sw"><td colspan="13">YAZILIM GELİŞTİRME / KODLAMA</td></tr>
       <tr>
         <td>SWE-bench Verified</td>
         <td class="best mythos">93.9%</td>
@@ -332,6 +334,7 @@
         <td>76.2%</td>
         <td>80.6%</td>
         <td>~74%</td>
+        <td>42.0%</td>
       </tr>
       <tr>
         <td>SWE-bench Pro</td>
@@ -345,6 +348,7 @@
         <td>54.2%</td>
         <td>43.3%</td>
         <td>55.4%</td>
+        <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
       <tr>
@@ -360,12 +364,14 @@
         <td class="na">&mdash;</td>
         <td>76.2%</td>
         <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
       </tr>
       <tr>
         <td>SWE-bench Multimodal</td>
         <td class="best mythos">59.0%</td>
         <td class="na">&mdash;</td>
         <td class="runner-up opus">27.1%</td>
+        <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -388,6 +394,7 @@
         <td>56.9%</td>
         <td>67.9%</td>
         <td>46.4%</td>
+        <td class="na">&mdash;</td>
       </tr>
       <tr>
         <td>LiveCodeBench</td>
@@ -401,6 +408,7 @@
         <td>91.7%</td>
         <td class="na">&mdash;</td>
         <td class="best deepseek">93.5%</td>
+        <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
       <tr>
@@ -416,9 +424,10 @@
         <td class="na">&mdash;</td>
         <td class="best deepseek">3206</td>
         <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
       </tr>
 
-      <tr class="section-row knowledge"><td colspan="12">GENEL BİLGİ & AKIL YÜRÜTME</td></tr>
+      <tr class="section-row knowledge"><td colspan="13">GENEL BİLGİ & AKIL YÜRÜTME</td></tr>
       <tr>
         <td>MMLU-Pro</td>
         <td class="na">&mdash;</td>
@@ -432,6 +441,7 @@
         <td class="na">&mdash;</td>
         <td>87.5%</td>
         <td class="na">&mdash;</td>
+        <td>75.9%</td>
       </tr>
       <tr>
         <td>GPQA Diamond</td>
@@ -446,6 +456,7 @@
         <td>91.9%</td>
         <td>90.1%</td>
         <td>82.4%</td>
+        <td>59.1%</td>
       </tr>
       <tr>
         <td>Humanity's Last Exam</td>
@@ -459,6 +470,7 @@
         <td>44.4%</td>
         <td>37.5%</td>
         <td>37.7%</td>
+        <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
       <tr>
@@ -474,6 +486,7 @@
         <td class="na">&mdash;</td>
         <td>57.9%</td>
         <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
       </tr>
       <tr>
         <td>Chinese-SimpleQA</td>
@@ -487,6 +500,7 @@
         <td class="best gemini">85.9%</td>
         <td class="na">&mdash;</td>
         <td>84.4%</td>
+        <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
       <tr>
@@ -502,6 +516,7 @@
         <td class="na">&mdash;</td>
         <td>95.2%</td>
         <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
       </tr>
       <tr>
         <td>IMOAnswerBench</td>
@@ -515,6 +530,7 @@
         <td>81.0%</td>
         <td class="na">&mdash;</td>
         <td>89.8%</td>
+        <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
       <tr>
@@ -530,6 +546,7 @@
         <td>18.4%</td>
         <td>38.3%</td>
         <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
       </tr>
       <tr>
         <td>Apex Shortlist</td>
@@ -544,6 +561,7 @@
         <td class="na">&mdash;</td>
         <td class="best deepseek">90.2%</td>
         <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
       </tr>
       <tr>
         <td>ARC-AGI-1</td>
@@ -555,6 +573,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="best gemini">98.0%</td>
+        <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -572,6 +591,7 @@
         <td>31.1%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
       </tr>
       <tr>
         <td>ARC-AGI-3</td>
@@ -583,6 +603,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="best gemini">0.37%</td>
+        <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -600,6 +621,7 @@
         <td>91.8%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
       </tr>
       <tr>
         <td>MMMU-Pro (Çok Modal)</td>
@@ -612,6 +634,7 @@
         <td class="na">&mdash;</td>
         <td>80.5%</td>
         <td class="best gemini">81.0%</td>
+        <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
@@ -628,12 +651,14 @@
         <td>56.0%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
       </tr>
       <tr>
         <td>CharXiv Reasoning (araçsız)</td>
         <td class="best mythos">86.1%</td>
         <td class="runner-up opus">82.1%</td>
         <td>69.1%</td>
+        <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -656,9 +681,10 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
       </tr>
 
-      <tr class="section-row context"><td colspan="12">UZUN BAĞLAM (1M Token)</td></tr>
+      <tr class="section-row context"><td colspan="13">UZUN BAĞLAM (1M Token)</td></tr>
       <tr>
         <td>MRCR 1M</td>
         <td class="na">&mdash;</td>
@@ -671,6 +697,7 @@
         <td>76.3%</td>
         <td class="na">&mdash;</td>
         <td>83.5%</td>
+        <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
       <tr>
@@ -686,9 +713,10 @@
         <td class="na">&mdash;</td>
         <td>62.0%</td>
         <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
       </tr>
 
-      <tr class="section-row computer"><td colspan="12">EYLEMCİ / BİLGİSAYAR KULLANIMI</td></tr>
+      <tr class="section-row computer"><td colspan="13">EYLEMCİ / BİLGİSAYAR KULLANIMI</td></tr>
       <tr>
         <td>BrowseComp</td>
         <td class="best mythos">86.9%</td>
@@ -702,6 +730,7 @@
         <td>59.2%</td>
         <td>83.4%</td>
         <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
       </tr>
       <tr>
         <td>OSWorld-Verified</td>
@@ -712,6 +741,7 @@
         <td>72.5%</td>
         <td class="runner-up gpt">78.7%</td>
         <td>75.0%</td>
+        <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -730,6 +760,7 @@
         <td class="na">&mdash;</td>
         <td>48.2%</td>
         <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
       </tr>
       <tr>
         <td>GDPval-AA (Elo)</td>
@@ -743,6 +774,7 @@
         <td>1317</td>
         <td>1195</td>
         <td>1554</td>
+        <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
       <tr>
@@ -758,6 +790,7 @@
         <td>54.1%</td>
         <td>73.6%</td>
         <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
       </tr>
       <tr>
         <td>Toolathlon</td>
@@ -772,6 +805,7 @@
         <td class="na">&mdash;</td>
         <td>51.8%</td>
         <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
       </tr>
       <tr>
         <td>Finance Agent v1.1</td>
@@ -783,6 +817,7 @@
         <td>60.0%</td>
         <td>61.5%</td>
         <td>59.7%</td>
+        <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -800,6 +835,7 @@
         <td>85.3%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
       </tr>
       <tr>
         <td>τ2-bench (Telecom)</td>
@@ -812,6 +848,7 @@
         <td class="na">&mdash;</td>
         <td>99.3%</td>
         <td>98.0%</td>
+        <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
@@ -828,9 +865,10 @@
         <td>$5.478</td>
         <td class="na">&mdash;</td>
         <td>$1.034</td>
+        <td class="na">&mdash;</td>
       </tr>
 
-      <tr class="section-row cyber"><td colspan="12">SİBER GÜVENLİK</td></tr>
+      <tr class="section-row cyber"><td colspan="13">SİBER GÜVENLİK</td></tr>
       <tr>
         <td>CyberGym</td>
         <td class="best mythos">83.1%</td>
@@ -840,6 +878,7 @@
         <td class="na">&mdash;</td>
         <td class="runner-up gpt">81.8%</td>
         <td>66.3%</td>
+        <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>

@@ -307,8 +307,8 @@
       hide_all: "Hepsini Gizle",
       desc_llm: "<strong>120+ büyük dil modeli</strong>, çıkış tarihine göre sıralı. 15 şirket (açık ve kapalı kaynak), Kasım 2022'den günümüze.",
       desc_image: "<strong>16 görsel üretme aracı, 74 sürüm.</strong> DALL-E, Midjourney, Imagen, FLUX, Stable Diffusion ve daha fazlası — 2021'den günümüze.",
-      desc_compare: "<strong>Frontier LLM karşılaştırma tablosu.</strong> 11 model × 33 benchmark. Her satırın en yüksek skoru çerçeveli. Anthropic, OpenAI, Google, DeepSeek modelleri yan yana.",
-      desc_vending: "<strong>Vending-Bench 2</strong> — 35 yapay zeka modeli, 1 yıl boyunca simüle vending işletmesi yönetti ve yalnızca son banka bakiyesine göre değerlendirildi. $500 ile başlayan modellerin 4'ü zarar etti; lider Claude Opus 4.7 ile $10.937 kazandı.",
+      desc_compare: "<strong>Öncü LLM karşılaştırma tablosu.</strong> 12 model × 33 benchmark. Her satırın en yüksek skoru çerçeveli. Anthropic, OpenAI, Google, DeepSeek modelleri yan yana.",
+      desc_vending: "<strong>Vending-Bench 2</strong> — 35 yapay zeka modeli, 1 yıl boyunca simüle otomat işletmesi yönetti ve yalnızca son banka bakiyesine göre değerlendirildi. $500 ile başlayan modellerin 4'ü zarar etti; lider Claude Opus 4.7 ile $10.937 kazandı.",
       alt_llm: "Yapay Zeka Modelleri Zaman Çizelgesi",
       alt_image: "Yapay Zeka Görsel Üretme Araçları Zaman Çizelgesi",
       alt_vending: "Vending-Bench 2 Grafiği",
@@ -337,7 +337,7 @@
       hide_all: "Hide All",
       desc_llm: "<strong>120+ large language models</strong>, sorted by release date. 15 companies (open and closed source), from November 2022 to today.",
       desc_image: "<strong>16 image generation tools, 74 versions.</strong> DALL-E, Midjourney, Imagen, FLUX, Stable Diffusion and more — from 2021 to today.",
-      desc_compare: "<strong>Frontier LLM comparison table.</strong> 11 models × 33 benchmarks. Top score per row is framed. Anthropic, OpenAI, Google, DeepSeek models side by side.",
+      desc_compare: "<strong>Frontier LLM comparison table.</strong> 12 models × 33 benchmarks. Top score per row is framed. Anthropic, OpenAI, Google, DeepSeek models side by side.",
       desc_vending: "<strong>Vending-Bench 2</strong> — 35 AI models managed a simulated vending business for 1 year, judged solely on final bank balance. Starting with $500, four models lost money; leader Claude Opus 4.7 earned $10,937.",
       alt_llm: "AI Models Release Timeline",
       alt_image: "AI Image Generation Tools Timeline",
@@ -563,6 +563,18 @@
                   font: {weight: "bold", size: 11}
                 }
               },
+              humanLine: {
+                type: "line", yMin: 11800, yMax: 11800,
+                borderColor: "#22c55e", borderWidth: 2, borderDash: [10, 6],
+                label: {
+                  display: true,
+                  content: isTR ? "İyi insan stratejisi: ~$63.000 (grafik dışı, 5× daha yüksek) ↑" : "Good human strategy: ~$63,000 (off-chart, 5× higher) ↑",
+                  position: "center", color: "#22c55e",
+                  backgroundColor: "rgba(13,17,23,0.9)",
+                  padding: 5, yAdjust: -10,
+                  font: {weight: "bold", size: 11}
+                }
+              },
               lossZone: {
                 type: "box", yMin: -500, yMax: 0,
                 backgroundColor: "rgba(239,68,68,0.08)", borderWidth: 0
@@ -572,7 +584,7 @@
           title: {
             display: true,
             text: isTR
-              ? "Vending-Bench 2 · 35 YZ modelinin 1 yıllık vending işletme sonucu"
+              ? "Vending-Bench 2 · 35 YZ modelinin 1 yıllık otomat işletme sonucu"
               : "Vending-Bench 2 · 35 AI models after 1 year of simulated vending business",
             color: "#ffffff",
             font: { size: 16, weight: "bold" },
