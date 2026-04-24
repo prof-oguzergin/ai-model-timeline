@@ -459,12 +459,12 @@ company_order = ["OpenAI", "Google", "Anthropic", "xAI", "Meta Muse", "Amazon", 
                  "Meta", "Microsoft", "Google Gemma", "Mistral",
                  "Qwen", "DeepSeek", "Z.ai", "Kimi", "MiniMax"]
 
-# Vertical spacing: each company gets 2.75 units
-y_positions = {c: (len(company_order) - 1 - i) * 2.75 for i, c in enumerate(company_order)}
+# Vertical spacing: each company gets 3.0 units
+y_positions = {c: (len(company_order) - 1 - i) * 3.0 for i, c in enumerate(company_order)}
 
 # Dark theme
 plt.style.use("dark_background")
-fig, ax = plt.subplots(figsize=(60, 53.75))
+fig, ax = plt.subplots(figsize=(60, 58.5))
 fig.patch.set_facecolor("#0d1117")
 ax.set_facecolor("#0d1117")
 
