@@ -80,7 +80,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  thead th:not(:first-child) { width: calc((100% - 280px) / 12); }
+  thead th:not(:first-child) { width: calc((100% - 280px) / 14); }
 
   thead th .date {
     display: block;
@@ -104,6 +104,7 @@
   thead th.company-openai    { color: #10a37f; font-size: 13px; font-weight: 800; letter-spacing: 1.2px; padding: 10px 6px 2px; border-bottom: none; }
   thead th.company-google    { color: #4285F4; font-size: 13px; font-weight: 800; letter-spacing: 1.2px; padding: 10px 6px 2px; border-bottom: none; }
   thead th.company-deepseek  { color: #ef4444; font-size: 13px; font-weight: 800; letter-spacing: 1.2px; padding: 10px 6px 2px; border-bottom: none; }
+  thead th.company-xai       { color: #1da1f2; font-size: 13px; font-weight: 800; letter-spacing: 1.2px; padding: 10px 6px 2px; border-bottom: none; }
 
   thead th.col-mythos   { color: #c878ff; }
   thead th.col-opus47   { color: #f5b98c; }
@@ -117,6 +118,8 @@
   thead th.col-deepseek32 { color: #c82626; }
   thead th.col-deepseek3  { color: #7f1d1d; }
   thead th.col-deepseek { color: #ef4444; }
+  thead th.col-grok4   { color: #1da1f2; }
+  thead th.col-grok420 { color: #0c85d0; }
 
   .section-row td {
     font-size: 12px;
@@ -211,6 +214,7 @@
   .best.gpt      { color: #6ee7a0; text-shadow: 0 0 16px rgba(74, 222, 128, 0.4); }
   .best.gemini   { color: #7db8ff; text-shadow: 0 0 16px rgba(96, 165, 250, 0.4); }
   .best.deepseek { color: #ff7777; text-shadow: 0 0 16px rgba(239, 68, 68, 0.5); }
+  .best.grok { color: #5cb8ff; text-shadow: 0 0 16px rgba(29, 161, 242, 0.4); }
 
   /* 2. sıra (Mythos'un birinci olduğu satırlarda diğer modellerin en iyisi) */
   .runner-up {
@@ -224,6 +228,7 @@
   .runner-up.gpt      { color: #6ee7a0; }
   .runner-up.gemini   { color: #7db8ff; }
   .runner-up.deepseek { color: #ff7777; }
+  .runner-up.grok { color: #5cb8ff; }
 
   .na {
     color: #444;
@@ -289,602 +294,9 @@
 <div class="card">
   <div class="header">
     <div class="badge">FRONTIER LLM COMPARISON &middot; 24 APRIL 2026</div>
-    <h1>Cross-Model Performance: Claude · GPT · Gemini · Mythos</h1>
+    <h1>Cross-Model Performance: Claude · GPT · Gemini · DeepSeek · Grok · Mythos</h1>
     <div class="subtitle">Highest score per row is highlighted. Empty cells indicate unpublished data.</div>
   </div>
-
-  <table>
-    <thead>
-      <tr>
-        <th></th>
-        <th colspan="5" class="company-anthropic">ANTHROPIC</th>
-        <th colspan="2" class="company-openai">OPENAI</th>
-        <th colspan="2" class="company-google">GOOGLE</th>
-        <th colspan="3" class="company-deepseek">DEEPSEEK</th>
-      </tr>
-      <tr>
-        <th></th>
-        <th class="col-mythos">Mythos<br>Preview<span class="date">(Apr 26 preview)</span></th>
-        <th class="col-opus47">Opus<br>4.7<span class="date">(16 Apr 26)</span></th>
-        <th class="col-opus46">Opus<br>4.6<span class="date">(5 Feb 26)</span></th>
-        <th class="col-opus45">Opus<br>4.5<span class="date">(24 Nov 25)</span></th>
-        <th class="col-sonnet46">Sonnet<br>4.6<span class="date">(17 Feb 26)</span></th>
-        <th class="col-gpt55">GPT<br>5.5<span class="date">(23 Apr 26)</span></th>
-        <th class="col-gpt54">GPT<br>5.4<span class="date">(5 Mar 26)</span></th>
-        <th class="col-gemini31">Gemini<br>3.1 Pro<span class="date">(19 Feb 26)</span></th>
-        <th class="col-gemini3">Gemini<br>3 Pro<span class="date">(18 Nov 25)</span></th>
-        <th class="col-deepseek">DeepSeek<br>V4-Pro<span class="date">(24 Apr 26)</span></th>
-        <th class="col-deepseek32">DeepSeek<br>V3.2<span class="date">(1 Dec 25)</span></th>
-        <th class="col-deepseek3">DeepSeek<br>V3<span class="date">(26 Dec 24)</span></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="section-row sw"><td colspan="13">SOFTWARE ENGINEERING / CODING</td></tr>
-      <tr>
-        <td>SWE-bench Verified</td>
-        <td class="best mythos">93.9%</td>
-        <td class="runner-up opus">87.6%</td>
-        <td>80.8%</td>
-        <td>80.9%</td>
-        <td>79.6%</td>
-        <td class="na">&mdash;</td>
-        <td>77.2%</td>
-        <td>80.6%</td>
-        <td>76.2%</td>
-        <td>80.6%</td>
-        <td>~74%</td>
-        <td>42.0%</td>
-      </tr>
-      <tr>
-        <td>SWE-bench Pro</td>
-        <td class="best mythos">77.8%</td>
-        <td class="runner-up opus">64.3%</td>
-        <td>53.4%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td>58.6%</td>
-        <td>57.7%</td>
-        <td>54.2%</td>
-        <td>43.3%</td>
-        <td>55.4%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-      </tr>
-      <tr>
-        <td>SWE-bench Multilingual</td>
-        <td class="best mythos">87.3%</td>
-        <td class="na">&mdash;</td>
-        <td class="runner-up opus">77.5%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td>76.2%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-      </tr>
-      <tr>
-        <td>SWE-bench Multimodal</td>
-        <td class="best mythos">59.0%</td>
-        <td class="na">&mdash;</td>
-        <td class="runner-up opus">27.1%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-      </tr>
-      <tr>
-        <td>Terminal-Bench 2.0</td>
-        <td>82.0%</td>
-        <td>69.4%</td>
-        <td>65.4%</td>
-        <td>59.3%</td>
-        <td>59.1%</td>
-        <td class="best gpt">82.7%</td>
-        <td>75.1%</td>
-        <td>68.5%</td>
-        <td>56.9%</td>
-        <td>67.9%</td>
-        <td>46.4%</td>
-        <td class="na">&mdash;</td>
-      </tr>
-      <tr>
-        <td>LiveCodeBench</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td>88.8%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td>91.7%</td>
-        <td class="na">&mdash;</td>
-        <td class="best deepseek">93.5%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-      </tr>
-      <tr>
-        <td>Codeforces (Elo)</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td>3168</td>
-        <td>3052</td>
-        <td class="na">&mdash;</td>
-        <td class="best deepseek">3206</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-      </tr>
-
-      <tr class="section-row knowledge"><td colspan="13">KNOWLEDGE & REASONING</td></tr>
-      <tr>
-        <td>MMLU-Pro</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td>89.1%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td>87.5%</td>
-        <td class="best gemini">91.0%</td>
-        <td class="na">&mdash;</td>
-        <td>87.5%</td>
-        <td class="na">&mdash;</td>
-        <td>75.9%</td>
-      </tr>
-      <tr>
-        <td>GPQA Diamond</td>
-        <td class="best mythos">94.6%</td>
-        <td>94.2%</td>
-        <td>91.3%</td>
-        <td>87.0%</td>
-        <td>89.9%</td>
-        <td>93.6%</td>
-        <td class="runner-up gpt">94.4%</td>
-        <td>94.3%</td>
-        <td>91.9%</td>
-        <td>90.1%</td>
-        <td>82.4%</td>
-        <td>59.1%</td>
-      </tr>
-      <tr>
-        <td>Humanity's Last Exam</td>
-        <td class="best mythos">56.8%</td>
-        <td class="runner-up opus">46.9%</td>
-        <td>40.0%</td>
-        <td class="na">&mdash;</td>
-        <td>33.2%</td>
-        <td>41.4%</td>
-        <td>42.7%</td>
-        <td>44.4%</td>
-        <td>37.5%</td>
-        <td>37.7%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-      </tr>
-      <tr>
-        <td>SimpleQA-Verified</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td>46.2%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td>45.3%</td>
-        <td class="best gemini">75.6%</td>
-        <td class="na">&mdash;</td>
-        <td>57.9%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-      </tr>
-      <tr>
-        <td>Chinese-SimpleQA</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td>76.2%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td>76.8%</td>
-        <td class="best gemini">85.9%</td>
-        <td class="na">&mdash;</td>
-        <td>84.4%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-      </tr>
-      <tr>
-        <td>HMMT 2026 Feb</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td>96.2%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="best gpt">97.7%</td>
-        <td>94.7%</td>
-        <td class="na">&mdash;</td>
-        <td>95.2%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-      </tr>
-      <tr>
-        <td>IMOAnswerBench</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td>75.3%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="best gpt">91.4%</td>
-        <td>81.0%</td>
-        <td class="na">&mdash;</td>
-        <td>89.8%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-      </tr>
-      <tr>
-        <td>Apex</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td>34.5%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td>54.1%</td>
-        <td class="best gemini">60.9%</td>
-        <td>18.4%</td>
-        <td>38.3%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-      </tr>
-      <tr>
-        <td>Apex Shortlist</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td>85.9%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td>78.1%</td>
-        <td>89.1%</td>
-        <td class="na">&mdash;</td>
-        <td class="best deepseek">90.2%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-      </tr>
-      <tr>
-        <td>ARC-AGI-1</td>
-        <td class="na">&mdash;</td>
-        <td>92.0%</td>
-        <td>94.0%</td>
-        <td>80.0%</td>
-        <td>86.5%</td>
-        <td>95.0%</td>
-        <td>93.7%</td>
-        <td class="best gemini">98.0%</td>
-        <td>75.0%</td>
-        <td class="na">&mdash;</td>
-        <td>57.0%</td>
-        <td class="na">&mdash;</td>
-      </tr>
-      <tr>
-        <td>ARC-AGI-2</td>
-        <td class="na">&mdash;</td>
-        <td>75.8%</td>
-        <td>68.8%</td>
-        <td>37.6%</td>
-        <td>58.3%</td>
-        <td class="best gpt">85.0%</td>
-        <td>74.0%</td>
-        <td class="runner-up gemini">77.1%</td>
-        <td>31.1%</td>
-        <td class="na">&mdash;</td>
-        <td>4.0%</td>
-        <td class="na">&mdash;</td>
-      </tr>
-      <tr>
-        <td>ARC-AGI-3</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td>0.5%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td>0.2%</td>
-        <td class="best gemini">0.4%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-      </tr>
-      <tr>
-        <td>MMMLU (Multilingual)</td>
-        <td class="na">&mdash;</td>
-        <td>91.5%</td>
-        <td>91.1%</td>
-        <td>90.8%</td>
-        <td>89.3%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="best gemini">92.6%</td>
-        <td>91.8%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-      </tr>
-      <tr>
-        <td>MMMU-Pro (Multimodal)</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td>73.9%</td>
-        <td class="na">&mdash;</td>
-        <td>74.5%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td>80.5%</td>
-        <td class="best gemini">81.0%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-      </tr>
-      <tr>
-        <td>SciCode</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td>52.0%</td>
-        <td class="na">&mdash;</td>
-        <td>47.0%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="best gemini">59.0%</td>
-        <td>56.0%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-      </tr>
-      <tr>
-        <td>CharXiv Reasoning (no tools)</td>
-        <td class="best mythos">86.1%</td>
-        <td class="runner-up opus">82.1%</td>
-        <td>69.1%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-      </tr>
-      <tr>
-        <td>CharXiv Reasoning (with tools)</td>
-        <td class="best mythos">93.2%</td>
-        <td class="runner-up opus">91.0%</td>
-        <td>84.7%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-      </tr>
-
-      <tr class="section-row context"><td colspan="13">LONG CONTEXT (1M Tokens)</td></tr>
-      <tr>
-        <td>MRCR 1M</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="best opus">92.9%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td>76.3%</td>
-        <td class="na">&mdash;</td>
-        <td>83.5%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-      </tr>
-      <tr>
-        <td>CorpusQA 1M</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="best opus">71.7%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td>53.8%</td>
-        <td class="na">&mdash;</td>
-        <td>62.0%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-      </tr>
-
-      <tr class="section-row computer"><td colspan="13">AGENTIC / COMPUTER USE</td></tr>
-      <tr>
-        <td>BrowseComp</td>
-        <td class="best mythos">86.9%</td>
-        <td>79.3%</td>
-        <td>83.7%</td>
-        <td class="na">&mdash;</td>
-        <td>74.7%</td>
-        <td>84.4%</td>
-        <td>82.7%</td>
-        <td class="runner-up gemini">85.9%</td>
-        <td>59.2%</td>
-        <td>83.4%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-      </tr>
-      <tr>
-        <td>OSWorld-Verified</td>
-        <td class="best mythos">79.6%</td>
-        <td>78.0%</td>
-        <td>72.7%</td>
-        <td>66.3%</td>
-        <td>72.5%</td>
-        <td class="runner-up gpt">78.7%</td>
-        <td>75.0%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-      </tr>
-      <tr>
-        <td>HLE (with tools)</td>
-        <td class="best mythos">64.7%</td>
-        <td>54.7%</td>
-        <td>53.3%</td>
-        <td class="na">&mdash;</td>
-        <td>49.0%</td>
-        <td>52.2%</td>
-        <td class="runner-up gpt">58.7%</td>
-        <td>51.4%</td>
-        <td class="na">&mdash;</td>
-        <td>48.2%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-      </tr>
-      <tr>
-        <td>GDPval-AA (Elo)</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td>1619</td>
-        <td class="na">&mdash;</td>
-        <td>1633</td>
-        <td class="na">&mdash;</td>
-        <td class="best gpt">1674</td>
-        <td>1317</td>
-        <td>1195</td>
-        <td>1554</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-      </tr>
-      <tr>
-        <td>MCP-Atlas</td>
-        <td class="na">&mdash;</td>
-        <td class="best opus">77.3%</td>
-        <td>75.8%</td>
-        <td>62.3%</td>
-        <td>61.3%</td>
-        <td>75.3%</td>
-        <td>68.1%</td>
-        <td>69.2%</td>
-        <td>54.1%</td>
-        <td>73.6%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-      </tr>
-      <tr>
-        <td>Toolathlon</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td>47.2%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="best gpt">55.6%</td>
-        <td class="na">&mdash;</td>
-        <td>48.8%</td>
-        <td class="na">&mdash;</td>
-        <td>51.8%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-      </tr>
-      <tr>
-        <td>Finance Agent v1.1</td>
-        <td class="na">&mdash;</td>
-        <td class="best opus">64.4%</td>
-        <td>60.1%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td>60.0%</td>
-        <td>61.5%</td>
-        <td>59.7%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-      </tr>
-      <tr>
-        <td>τ2-bench (Retail)</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="best opus">91.9%</td>
-        <td>88.9%</td>
-        <td>91.7%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td>90.8%</td>
-        <td>85.3%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-      </tr>
-      <tr>
-        <td>τ2-bench (Telecom)</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="best opus">99.3%</td>
-        <td>98.2%</td>
-        <td>97.9%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td>99.3%</td>
-        <td>98.0%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-      </tr>
-      <tr>
-        <td>Vending-Bench 2 ($)</td>
-        <td class="na">&mdash;</td>
-        <td class="best opus">$10.937</td>
-        <td>$8.018</td>
-        <td>$4.967</td>
-        <td>$7.204</td>
-        <td>$7.524</td>
-        <td>$6.144</td>
-        <td>$911</td>
-        <td>$5.478</td>
-        <td class="na">&mdash;</td>
-        <td>$1.034</td>
-        <td class="na">&mdash;</td>
-      </tr>
-
-      <tr class="section-row cyber"><td colspan="13">CYBERSECURITY</td></tr>
-      <tr>
-        <td>CyberGym</td>
-        <td class="best mythos">83.1%</td>
-        <td>73.1%</td>
-        <td>73.8%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="runner-up gpt">81.8%</td>
-        <td>66.3%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-      </tr>
-    </tbody>
-  </table>
 
   <div style="text-align:center; font-size:11px; color:#888; margin: 18px 0 6px; letter-spacing:0.5px;">
     WIN COUNT — Mythos excluded (not released, fairer comparison)
@@ -919,6 +331,676 @@
       <div class="label">Gemini 3 Pro</div>
     </div>
   </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th colspan="5" class="company-anthropic">ANTHROPIC</th>
+        <th colspan="2" class="company-openai">OPENAI</th>
+        <th colspan="2" class="company-google">GOOGLE</th>
+        <th colspan="3" class="company-deepseek">DEEPSEEK</th>
+        <th colspan="2" class="company-xai">xAI</th>
+      </tr>
+      <tr>
+        <th></th>
+        <th class="col-mythos">Mythos<br>Preview<span class="date">(Apr 26 preview)</span></th>
+        <th class="col-opus47">Opus<br>4.7<span class="date">(16 Apr 26)</span></th>
+        <th class="col-opus46">Opus<br>4.6<span class="date">(5 Feb 26)</span></th>
+        <th class="col-opus45">Opus<br>4.5<span class="date">(24 Nov 25)</span></th>
+        <th class="col-sonnet46">Sonnet<br>4.6<span class="date">(17 Feb 26)</span></th>
+        <th class="col-gpt55">GPT<br>5.5<span class="date">(23 Apr 26)</span></th>
+        <th class="col-gpt54">GPT<br>5.4<span class="date">(5 Mar 26)</span></th>
+        <th class="col-gemini31">Gemini<br>3.1 Pro<span class="date">(19 Feb 26)</span></th>
+        <th class="col-gemini3">Gemini<br>3 Pro<span class="date">(18 Nov 25)</span></th>
+        <th class="col-deepseek">DeepSeek<br>V4-Pro<span class="date">(24 Apr 26)</span></th>
+        <th class="col-deepseek32">DeepSeek<br>V3.2<span class="date">(1 Dec 25)</span></th>
+        <th class="col-deepseek3">DeepSeek<br>V3<span class="date">(26 Dec 24)</span></th>
+        <th class="col-grok4">Grok<br>4<span class="date">(Jul 25)</span></th>
+        <th class="col-grok420">Grok<br>4.20<span class="date">(20 Apr 26)</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="section-row sw"><td colspan="15">SOFTWARE ENGINEERING / CODING</td></tr>
+      <tr>
+        <td title="Real GitHub issues from open source projects; model must write code patches that pass tests.">SWE-bench Verified</td>
+        <td class="best mythos">93.9%</td>
+        <td class="runner-up opus">87.6%</td>
+        <td>80.8%</td>
+        <td>80.9%</td>
+        <td>79.6%</td>
+        <td class="na">&mdash;</td>
+        <td>77.2%</td>
+        <td>80.6%</td>
+        <td>76.2%</td>
+        <td>80.6%</td>
+        <td>~74%</td>
+        <td>42.0%</td>
+        <td>72.0%</td>
+        <td class="na">&mdash;</td>
+      </tr>
+      <tr>
+        <td title="Harder professional version of SWE-bench with more complex real software engineering tasks.">SWE-bench Pro</td>
+        <td class="best mythos">77.8%</td>
+        <td class="runner-up opus">64.3%</td>
+        <td>53.4%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td>58.6%</td>
+        <td>57.7%</td>
+        <td>54.2%</td>
+        <td>43.3%</td>
+        <td>55.4%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+      </tr>
+      <tr>
+        <td title="Multi-language code editing across Python, Rust, C++, Go, JS and other languages.">SWE-bench Multilingual</td>
+        <td class="best mythos">87.3%</td>
+        <td class="na">&mdash;</td>
+        <td class="runner-up opus">77.5%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td>76.2%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+      </tr>
+      <tr>
+        <td title="Software engineering tasks combining visual and code understanding across multiple modalities.">SWE-bench Multimodal</td>
+        <td class="best mythos">59.0%</td>
+        <td class="na">&mdash;</td>
+        <td class="runner-up opus">27.1%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+      </tr>
+      <tr>
+        <td title="Complex terminal tasks requiring shell commands and file operations in a real environment.">Terminal-Bench 2.0</td>
+        <td>82.0%</td>
+        <td>69.4%</td>
+        <td>65.4%</td>
+        <td>59.3%</td>
+        <td>59.1%</td>
+        <td class="best gpt">82.7%</td>
+        <td>75.1%</td>
+        <td>68.5%</td>
+        <td>56.9%</td>
+        <td>67.9%</td>
+        <td>46.4%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+      </tr>
+      <tr>
+        <td title="Competitive programming problems collected after model training cutoff to prevent data contamination.">LiveCodeBench</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td>88.8%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td>91.7%</td>
+        <td class="na">&mdash;</td>
+        <td class="best deepseek">93.5%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+      </tr>
+      <tr>
+        <td title="Elo rating earned solving Codeforces competitive programming problems of varying difficulty.">Codeforces (Elo)</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td>3168</td>
+        <td>3052</td>
+        <td class="na">&mdash;</td>
+        <td class="best deepseek">3206</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+      </tr>
+
+      <tr class="section-row knowledge"><td colspan="15">KNOWLEDGE & REASONING</td></tr>
+      <tr>
+        <td title="12,000 multiple-choice questions across 14 disciplines, significantly harder than the original MMLU.">MMLU-Pro</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td>89.1%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td>87.5%</td>
+        <td class="best gemini">91.0%</td>
+        <td class="na">&mdash;</td>
+        <td>87.5%</td>
+        <td class="na">&mdash;</td>
+        <td>75.9%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+      </tr>
+      <tr>
+        <td title="198 PhD-level science questions in biology, physics, and chemistry designed to challenge expert-level models.">GPQA Diamond</td>
+        <td class="best mythos">94.6%</td>
+        <td>94.2%</td>
+        <td>91.3%</td>
+        <td>87.0%</td>
+        <td>89.9%</td>
+        <td>93.6%</td>
+        <td class="runner-up gpt">94.4%</td>
+        <td>94.3%</td>
+        <td>91.9%</td>
+        <td>90.1%</td>
+        <td>82.4%</td>
+        <td>59.1%</td>
+        <td>87.5%</td>
+        <td class="na">&mdash;</td>
+      </tr>
+      <tr>
+        <td title="3,000 expert-crafted questions across 100+ fields, designed to stump current frontier AI models.">Humanity's Last Exam</td>
+        <td class="best mythos">56.8%</td>
+        <td class="runner-up opus">46.9%</td>
+        <td>40.0%</td>
+        <td class="na">&mdash;</td>
+        <td>33.2%</td>
+        <td>41.4%</td>
+        <td>42.7%</td>
+        <td>44.4%</td>
+        <td>37.5%</td>
+        <td>37.7%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td>25.0%</td>
+        <td class="na">&mdash;</td>
+      </tr>
+      <tr>
+        <td title="Short factual questions with single correct answers; tests factual accuracy and hallucination rate.">SimpleQA-Verified</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td>46.2%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td>45.3%</td>
+        <td class="best gemini">75.6%</td>
+        <td class="na">&mdash;</td>
+        <td>57.9%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+      </tr>
+      <tr>
+        <td title="Chinese-language factual question benchmark testing factual accuracy and hallucination in Chinese.">Chinese-SimpleQA</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td>76.2%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td>76.8%</td>
+        <td class="best gemini">85.9%</td>
+        <td class="na">&mdash;</td>
+        <td>84.4%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+      </tr>
+      <tr>
+        <td title="Harvard-MIT Math Tournament; advanced high-school and early-undergraduate level mathematics competition.">HMMT 2026 Feb</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td>96.2%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="best gpt">97.7%</td>
+        <td>94.7%</td>
+        <td class="na">&mdash;</td>
+        <td>95.2%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+      </tr>
+      <tr>
+        <td title="Benchmark testing numerical answers to International Math Olympiad competition problems.">IMOAnswerBench</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td>75.3%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="best gpt">91.4%</td>
+        <td>81.0%</td>
+        <td class="na">&mdash;</td>
+        <td>89.8%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+      </tr>
+      <tr>
+        <td title="Research-level mathematics problems created by expert mathematicians; tests frontier math reasoning.">Apex</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td>34.5%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td>54.1%</td>
+        <td class="best gemini">60.9%</td>
+        <td>18.4%</td>
+        <td>38.3%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+      </tr>
+      <tr>
+        <td title="Curated shortlist of the hardest Apex research-level math problems for frontier model comparison.">Apex Shortlist</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td>85.9%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td>78.1%</td>
+        <td>89.1%</td>
+        <td class="na">&mdash;</td>
+        <td class="best deepseek">90.2%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+      </tr>
+      <tr>
+        <td title="Abstract visual puzzles testing novel pattern induction; the original 2019 ARC benchmark.">ARC-AGI-1</td>
+        <td class="na">&mdash;</td>
+        <td>92.0%</td>
+        <td>94.0%</td>
+        <td>80.0%</td>
+        <td>86.5%</td>
+        <td>95.0%</td>
+        <td>93.7%</td>
+        <td class="best gemini">98.0%</td>
+        <td>75.0%</td>
+        <td class="na">&mdash;</td>
+        <td>57.0%</td>
+        <td class="na">&mdash;</td>
+        <td>66.6%</td>
+        <td class="na">&mdash;</td>
+      </tr>
+      <tr>
+        <td title="Harder second-generation ARC puzzles requiring deeper multi-step reasoning and generalization.">ARC-AGI-2</td>
+        <td class="na">&mdash;</td>
+        <td>75.8%</td>
+        <td>68.8%</td>
+        <td>37.6%</td>
+        <td>58.3%</td>
+        <td class="best gpt">85.0%</td>
+        <td>74.0%</td>
+        <td class="runner-up gemini">77.1%</td>
+        <td>31.1%</td>
+        <td class="na">&mdash;</td>
+        <td>4.0%</td>
+        <td class="na">&mdash;</td>
+        <td>15.9%</td>
+        <td class="na">&mdash;</td>
+      </tr>
+      <tr>
+        <td title="Latest ARC version featuring interactive game-like environments with dynamic feedback.">ARC-AGI-3</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td>0.5%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td>0.2%</td>
+        <td class="best gemini">0.4%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+      </tr>
+      <tr>
+        <td title="Multilingual MMLU measuring knowledge and reasoning across different languages worldwide.">MMMLU (Multilingual)</td>
+        <td class="na">&mdash;</td>
+        <td>91.5%</td>
+        <td>91.1%</td>
+        <td>90.8%</td>
+        <td>89.3%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="best gemini">92.6%</td>
+        <td>91.8%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+      </tr>
+      <tr>
+        <td title="Multi-discipline multimodal understanding benchmark combining text, images, and charts.">MMMU-Pro (Multimodal)</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td>73.9%</td>
+        <td class="na">&mdash;</td>
+        <td>74.5%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td>80.5%</td>
+        <td class="best gemini">81.0%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+      </tr>
+      <tr>
+        <td title="Scientific problem-solving benchmark where models must write real scientific code to reach answers.">SciCode</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td>52.0%</td>
+        <td class="na">&mdash;</td>
+        <td>47.0%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="best gemini">59.0%</td>
+        <td>56.0%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+      </tr>
+      <tr>
+        <td title="Chart understanding and reasoning benchmark; model answers chart questions without tool access.">CharXiv Reasoning (no tools)</td>
+        <td class="best mythos">86.1%</td>
+        <td class="runner-up opus">82.1%</td>
+        <td>69.1%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+      </tr>
+      <tr>
+        <td title="Chart understanding and reasoning benchmark; model answers chart questions using code interpreter tools.">CharXiv Reasoning (with tools)</td>
+        <td class="best mythos">93.2%</td>
+        <td class="runner-up opus">91.0%</td>
+        <td>84.7%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+      </tr>
+
+      <tr class="section-row context"><td colspan="15">LONG CONTEXT (1M Tokens)</td></tr>
+      <tr>
+        <td title="Multi-round conversation retrieval test extended to 1 million token context windows.">MRCR 1M</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="best opus">92.9%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td>76.3%</td>
+        <td class="na">&mdash;</td>
+        <td>83.5%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+      </tr>
+      <tr>
+        <td title="Retrieval and comprehension from a large document corpus at 1 million token context length.">CorpusQA 1M</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="best opus">71.7%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td>53.8%</td>
+        <td class="na">&mdash;</td>
+        <td>62.0%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+      </tr>
+
+      <tr class="section-row computer"><td colspan="15">AGENTIC / COMPUTER USE</td></tr>
+      <tr>
+        <td title="Complex autonomous web browsing and information synthesis tasks requiring multi-step reasoning.">BrowseComp</td>
+        <td class="best mythos">86.9%</td>
+        <td>79.3%</td>
+        <td>83.7%</td>
+        <td class="na">&mdash;</td>
+        <td>74.7%</td>
+        <td>84.4%</td>
+        <td>82.7%</td>
+        <td class="runner-up gemini">85.9%</td>
+        <td>59.2%</td>
+        <td>83.4%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+      </tr>
+      <tr>
+        <td title="Realistic computer-use tasks in a simulated desktop OS environment with GUI interaction.">OSWorld-Verified</td>
+        <td class="best mythos">79.6%</td>
+        <td>78.0%</td>
+        <td>72.7%</td>
+        <td>66.3%</td>
+        <td>72.5%</td>
+        <td class="runner-up gpt">78.7%</td>
+        <td>75.0%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+      </tr>
+      <tr>
+        <td title="Humanity's Last Exam with Python code interpreter tool access; tests tool-augmented reasoning.">HLE (with tools)</td>
+        <td class="best mythos">64.7%</td>
+        <td>54.7%</td>
+        <td>53.3%</td>
+        <td class="na">&mdash;</td>
+        <td>49.0%</td>
+        <td>52.2%</td>
+        <td class="runner-up gpt">58.7%</td>
+        <td>51.4%</td>
+        <td class="na">&mdash;</td>
+        <td>48.2%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td>44.4%</td>
+        <td class="na">&mdash;</td>
+      </tr>
+      <tr>
+        <td title="Agentic model evaluation measuring multi-step planning and API use; scored as Elo rating.">GDPval-AA (Elo)</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td>1619</td>
+        <td class="na">&mdash;</td>
+        <td>1633</td>
+        <td class="na">&mdash;</td>
+        <td class="best gpt">1674</td>
+        <td>1317</td>
+        <td>1195</td>
+        <td>1554</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+      </tr>
+      <tr>
+        <td title="Multi-task benchmark for evaluating LLM agents across diverse MCP tool-use environments.">MCP-Atlas</td>
+        <td class="na">&mdash;</td>
+        <td class="best opus">77.3%</td>
+        <td>75.8%</td>
+        <td>62.3%</td>
+        <td>61.3%</td>
+        <td>75.3%</td>
+        <td>68.1%</td>
+        <td>69.2%</td>
+        <td>54.1%</td>
+        <td>73.6%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+      </tr>
+      <tr>
+        <td title="Multi-tool workflow benchmark testing agentic coordination across diverse tool-use tasks.">Toolathlon</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td>47.2%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="best gpt">55.6%</td>
+        <td class="na">&mdash;</td>
+        <td>48.8%</td>
+        <td class="na">&mdash;</td>
+        <td>51.8%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+      </tr>
+      <tr>
+        <td title="Financial sector agentic tasks requiring analysis, reporting, and decision-making with financial data.">Finance Agent v1.1</td>
+        <td class="na">&mdash;</td>
+        <td class="best opus">64.4%</td>
+        <td>60.1%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td>60.0%</td>
+        <td>61.5%</td>
+        <td>59.7%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+      </tr>
+      <tr>
+        <td title="Customer-service agent tasks in a retail setting with tools and APIs; tests realistic agentic behavior.">τ2-bench (Retail)</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="best opus">91.9%</td>
+        <td>88.9%</td>
+        <td>91.7%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td>90.8%</td>
+        <td>85.3%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+      </tr>
+      <tr>
+        <td title="Agent tasks in a telecommunications customer-service setting with complex multi-turn interactions.">τ2-bench (Telecom)</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="best opus">99.3%</td>
+        <td>98.2%</td>
+        <td>97.9%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td>99.3%</td>
+        <td>98.0%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+      </tr>
+      <tr>
+        <td title="Agentic model performance scored by earnings in realistic business scenarios; dollar-weighted.">Vending-Bench 2 ($)</td>
+        <td class="na">&mdash;</td>
+        <td class="best opus">$10.937</td>
+        <td>$8.018</td>
+        <td>$4.967</td>
+        <td>$7.204</td>
+        <td>$7.524</td>
+        <td>$6.144</td>
+        <td>$911</td>
+        <td>$5.478</td>
+        <td class="na">&mdash;</td>
+        <td>$1.034</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+      </tr>
+
+      <tr class="section-row cyber"><td colspan="15">CYBERSECURITY</td></tr>
+      <tr>
+        <td title="Capture-The-Flag cybersecurity challenges sourced from real CTF competitions testing offensive security skills.">CyberGym</td>
+        <td class="best mythos">83.1%</td>
+        <td>73.1%</td>
+        <td>73.8%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="runner-up gpt">81.8%</td>
+        <td>66.3%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+      </tr>
+    </tbody>
+  </table>
 
   <div class="footer">
     <div class="source">Kaynaklar: anthropic.com &middot; openai.com &middot; deepmind.google &middot; vellum.ai &middot; llm-stats.com</div>
