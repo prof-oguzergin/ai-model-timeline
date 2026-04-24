@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Yapay Zeka Çizelgeleri | AI Timelines — Prof. Dr. Oğuz Ergin</title>
-<meta name="description" content="Yapay zeka modelleri ve araçları için zaman çizelgeleri: LLM'ler, görsel üretme araçları, ve daha fazlası. Prof. Dr. Oğuz Ergin tarafından derlenmektedir.">
+<meta name="description" content="Yapay zeka modelleri ve araçları için zaman çizelgeleri, karşılaştırma tabloları ve benchmark grafikleri. Prof. Dr. Oğuz Ergin tarafından derlenmektedir.">
 <meta property="og:title" content="Yapay Zeka Zaman Çizelgeleri">
-<meta property="og:description" content="LLM'ler, görsel üretme araçları ve daha fazlasının sürüm tarihleri.">
+<meta property="og:description" content="LLM'ler, görsel üretme, karşılaştırma tabloları ve benchmark grafikleri.">
 <meta property="og:image" content="ai_timeline_final_tr.png">
 <meta property="og:type" content="website">
 <!-- Google Analytics 4 -->
@@ -49,14 +49,10 @@
   header p {
     font-size: clamp(0.9rem, 2vw, 1.05rem);
     opacity: 0.85;
-    max-width: 700px;
+    max-width: 820px;
     margin: 0 auto;
   }
-  header .author {
-    margin-top: 16px;
-    font-size: 0.9rem;
-    opacity: 0.75;
-  }
+  header .author { margin-top: 16px; font-size: 0.9rem; opacity: 0.75; }
   header .author a { color: #ffd6dc; text-decoration: none; }
   header .author a:hover { text-decoration: underline; }
   .updated {
@@ -68,134 +64,91 @@
     margin-top: 12px;
   }
   .lang-flags {
-    position: absolute;
-    top: 16px;
-    right: 20px;
-    display: flex;
-    gap: 6px;
+    position: absolute; top: 16px; right: 20px;
+    display: flex; gap: 6px;
   }
   .lang-flags button {
     background: rgba(255,255,255,0.1);
     border: 1px solid rgba(255,255,255,0.3);
-    color: white;
-    padding: 6px 12px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    cursor: pointer;
-    border-radius: 18px;
-    transition: all 0.2s;
-    display: flex;
-    align-items: center;
-    gap: 6px;
+    color: white; padding: 6px 12px; font-size: 0.9rem;
+    font-weight: 600; cursor: pointer; border-radius: 18px;
+    transition: all 0.2s; display: flex; align-items: center; gap: 6px;
   }
   .lang-flags button.active {
-    background: rgba(255,255,255,0.9);
-    color: var(--dark);
-    border-color: white;
+    background: rgba(255,255,255,0.9); color: var(--dark); border-color: white;
   }
-  .lang-flags button:hover:not(.active) {
-    background: rgba(255,255,255,0.2);
-  }
+  .lang-flags button:hover:not(.active) { background: rgba(255,255,255,0.2); }
   .lang-flags .flag {
-    width: 22px;
-    height: 16px;
-    border-radius: 2px;
-    object-fit: cover;
-    display: block;
+    width: 22px; height: 16px; border-radius: 2px;
+    object-fit: cover; display: block;
   }
   .category-tabs {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 6px;
-    background: white;
-    padding: 14px 16px;
+    display: flex; justify-content: center; flex-wrap: wrap; gap: 6px;
+    background: white; padding: 14px 16px;
     border-bottom: 1px solid var(--border);
-    position: sticky;
-    top: 0;
-    z-index: 10;
+    position: sticky; top: 0; z-index: 10;
     box-shadow: 0 1px 3px rgba(0,0,0,0.04);
   }
   .category-tabs button {
-    background: transparent;
-    border: 1px solid var(--border);
-    padding: 10px 22px;
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--muted);
-    cursor: pointer;
-    border-radius: 22px;
+    background: transparent; border: 1px solid var(--border);
+    padding: 10px 22px; font-size: 1rem; font-weight: 600;
+    color: var(--muted); cursor: pointer; border-radius: 22px;
     transition: all 0.2s;
   }
   .category-tabs button.active {
-    background: var(--primary);
-    color: white;
-    border-color: var(--primary);
+    background: var(--primary); color: white; border-color: var(--primary);
   }
-  .category-tabs button:hover:not(.active) {
-    background: #f0f0f0;
-    color: var(--text);
-  }
+  .category-tabs button:hover:not(.active) { background: #f0f0f0; color: var(--text); }
   main {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 24px 16px 32px;
+    max-width: 1600px; margin: 0 auto; padding: 24px 16px 32px;
   }
   .timeline-container {
-    background: var(--card);
-    border-radius: 12px;
-    padding: 16px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    background: var(--card); border-radius: 12px;
+    padding: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.06);
     overflow: hidden;
   }
   .timeline-container img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 6px;
+    width: 100%; height: auto; display: block; border-radius: 6px;
   }
   .pane { display: none; }
   .pane.active { display: block; }
+  .iframe-wrap {
+    width: 100%; border-radius: 6px; overflow: hidden;
+    background: #0a0a0f;
+  }
+  .iframe-wrap iframe {
+    width: 100%; min-height: 1700px; border: none; display: block;
+    background: #0a0a0f;
+  }
   .note {
-    margin-top: 12px;
-    padding: 8px 14px;
-    background: #fff8e1;
-    border: 1px solid #ffe082;
-    border-radius: 8px;
-    font-size: 0.85rem;
-    color: #5d4037;
+    margin-top: 12px; padding: 10px 14px;
+    background: #fff8e1; border: 1px solid #ffe082;
+    border-radius: 8px; font-size: 0.88rem; color: #5d4037;
     text-align: center;
   }
+  .desc {
+    margin-bottom: 16px; padding: 14px 18px;
+    background: #f0f4ff; border-left: 4px solid var(--dark);
+    border-radius: 6px; font-size: 0.92rem; color: var(--text);
+    line-height: 1.55;
+  }
+  .desc strong { color: var(--dark); }
   .download-bar {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    justify-content: center;
-    margin-top: 20px;
+    display: flex; flex-wrap: wrap; gap: 8px;
+    justify-content: center; margin-top: 20px;
   }
   .download-bar a {
-    background: white;
-    color: var(--text);
-    text-decoration: none;
-    padding: 8px 16px;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    font-size: 0.9rem;
-    transition: all 0.2s;
+    background: white; color: var(--text); text-decoration: none;
+    padding: 8px 16px; border: 1px solid var(--border);
+    border-radius: 8px; font-size: 0.9rem; transition: all 0.2s;
   }
   .download-bar a:hover {
-    background: var(--primary);
-    color: white;
-    border-color: var(--primary);
+    background: var(--primary); color: white; border-color: var(--primary);
   }
   footer {
-    text-align: center;
-    padding: 32px 16px;
-    color: var(--muted);
-    font-size: 0.85rem;
-    border-top: 1px solid var(--border);
-    margin-top: 40px;
-    background: white;
+    text-align: center; padding: 32px 16px;
+    color: var(--muted); font-size: 0.85rem;
+    border-top: 1px solid var(--border); margin-top: 40px; background: white;
   }
   footer a { color: var(--primary); text-decoration: none; }
   footer a:hover { text-decoration: underline; }
@@ -205,7 +158,8 @@
     .lang-flags button { padding: 4px 8px; font-size: 0.8rem; }
     .timeline-container { padding: 8px; }
     main { padding: 20px 8px; }
-    .category-tabs button { padding: 8px 14px; font-size: 0.9rem; }
+    .category-tabs button { padding: 8px 12px; font-size: 0.85rem; }
+    .iframe-wrap iframe { min-height: 1200px; }
   }
 </style>
 </head>
@@ -221,7 +175,7 @@
     </button>
   </div>
   <h1 id="title">Yapay Zeka Zaman Çizelgeleri</h1>
-  <p id="subtitle">LLM modelleri, görsel üretme araçları ve daha fazlasının sürüm tarihleri</p>
+  <p id="subtitle">LLM modelleri, görsel üretme, karşılaştırma tabloları ve benchmark grafikleri</p>
   <div class="author">
     <span id="author-label">Derleyen:</span> <a href="https://www.oguzergin.net" target="_blank">Prof. Dr. Oğuz Ergin</a>
   </div>
@@ -231,11 +185,14 @@
 <div class="category-tabs">
   <button id="cat-llm" class="active" onclick="setCategory('llm')">LLM Modelleri</button>
   <button id="cat-image" onclick="setCategory('image')">Görsel Üretme</button>
+  <button id="cat-compare" onclick="setCategory('compare')">Karşılaştırma Tablosu</button>
+  <button id="cat-vending" onclick="setCategory('vending')">Vending-Bench</button>
 </div>
 
 <main>
-  <!-- LLM Section -->
+  <!-- LLM -->
   <div id="pane-llm" class="pane active">
+    <p id="desc-llm" class="desc"></p>
     <div class="timeline-container">
       <img id="img-llm" src="ai_timeline_final_tr.png" alt="" loading="eager">
       <div class="download-bar">
@@ -245,13 +202,38 @@
     </div>
   </div>
 
-  <!-- Image Generation Section -->
+  <!-- Image Generation -->
   <div id="pane-image" class="pane">
+    <p id="desc-image" class="desc"></p>
     <div class="timeline-container">
       <img id="img-image" src="ai_image_gen_timeline_tr.png" alt="" loading="lazy">
-      <div id="image-en-note" class="note" style="display:none;"></div>
       <div class="download-bar">
         <a id="dl-image-main" href="ai_image_gen_timeline_tr.png" download>Yüksek Çözünürlük (PNG)</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Comparison Table -->
+  <div id="pane-compare" class="pane">
+    <p id="desc-compare" class="desc"></p>
+    <div class="timeline-container">
+      <div class="iframe-wrap">
+        <iframe id="iframe-compare" src="model_comparison_tr.html" loading="lazy"></iframe>
+      </div>
+      <div class="download-bar">
+        <a id="dl-compare" href="model_comparison_tr.html" target="_blank">Tam Sayfa Aç</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vending-Bench -->
+  <div id="pane-vending" class="pane">
+    <p id="desc-vending" class="desc"></p>
+    <div class="timeline-container">
+      <img id="img-vending" src="vending_bench_2_tr.png" alt="" loading="lazy">
+      <div class="download-bar">
+        <a id="dl-vending" href="vending_bench_2_tr.png" download>Yüksek Çözünürlük (PNG)</a>
+        <a href="https://andonlabs.com/evals/vending-bench-2" target="_blank">Kaynak: Andon Labs</a>
       </div>
     </div>
   </div>
@@ -267,38 +249,58 @@
     tr: {
       htmlLang: "tr",
       title: "Yapay Zeka Zaman Çizelgeleri",
-      subtitle: "LLM modelleri, görsel üretme araçları ve daha fazlasının sürüm tarihleri",
+      subtitle: "LLM modelleri, görsel üretme, karşılaştırma tabloları ve benchmark grafikleri",
       author: "Derleyen:",
       updated: "Son güncelleme: 24 Nisan 2026",
       footer: 'Bu çizelgeler düzenli olarak güncellenmektedir. Eksik veya hatalı bir model gördüyseniz lütfen <a href="mailto:bilgi@oguzergin.net">bilgi@oguzergin.net</a> adresine bildirin.',
       cat_llm: "LLM Modelleri",
       cat_image: "Görsel Üretme",
+      cat_compare: "Karşılaştırma Tablosu",
+      cat_vending: "Vending-Bench",
       dl_main: "Yüksek Çözünürlük (PNG)",
       dl_linkedin: "LinkedIn Biçimi",
-      image_note: "",
+      dl_fullpage: "Tam Sayfa Aç",
+      dl_source: "Kaynak: Andon Labs",
+      desc_llm: "<strong>120+ büyük dil modeli</strong>, çıkış tarihine göre sıralı. 15 şirket (açık ve kapalı kaynak), Kasım 2022'den günümüze.",
+      desc_image: "<strong>16 görsel üretme aracı, 74 sürüm.</strong> DALL-E, Midjourney, Imagen, FLUX, Stable Diffusion ve daha fazlası — 2021'den günümüze.",
+      desc_compare: "<strong>Frontier LLM karşılaştırma tablosu.</strong> 11 model × 33 benchmark. Her satırın en yüksek skoru çerçeveli. Anthropic, OpenAI, Google, DeepSeek modelleri yan yana.",
+      desc_vending: "<strong>Vending-Bench 2</strong> — 35 yapay zeka modeli, 1 yıl boyunca simüle vending işletmesi yönetti ve yalnızca son banka bakiyesine göre değerlendirildi. $500 ile başlayan modellerin 4'ü zarar etti; lider Claude Opus 4.7 ile $10.937 kazandı.",
       alt_llm: "Yapay Zeka Modelleri Zaman Çizelgesi",
       alt_image: "Yapay Zeka Görsel Üretme Araçları Zaman Çizelgesi",
+      alt_vending: "Vending-Bench 2 Grafiği",
       img_llm: "ai_timeline_final_tr.png",
       img_llm_linkedin: "ai_timeline_final_tr_linkedin.png",
-      img_image: "ai_image_gen_timeline_tr.png"
+      img_image: "ai_image_gen_timeline_tr.png",
+      img_vending: "vending_bench_2_tr.png",
+      iframe_compare: "model_comparison_tr.html"
     },
     en: {
       htmlLang: "en",
       title: "AI Timelines",
-      subtitle: "Release dates of LLMs, image generation tools, and more",
+      subtitle: "LLM models, image generation tools, comparison tables and benchmark charts",
       author: "Compiled by:",
       updated: "Last updated: April 24, 2026",
       footer: 'These timelines are updated regularly. If you spot a missing or incorrect model, please report to <a href="mailto:bilgi@oguzergin.net">bilgi@oguzergin.net</a>.',
       cat_llm: "LLM Models",
       cat_image: "Image Generation",
+      cat_compare: "Comparison Table",
+      cat_vending: "Vending-Bench",
       dl_main: "High Resolution (PNG)",
       dl_linkedin: "LinkedIn Format",
-      image_note: "English version coming soon — showing Turkish chart below.",
-      alt_llm: "AI Models Timeline",
+      dl_fullpage: "Open Full Page",
+      dl_source: "Source: Andon Labs",
+      desc_llm: "<strong>120+ large language models</strong>, sorted by release date. 15 companies (open and closed source), from November 2022 to today.",
+      desc_image: "<strong>16 image generation tools, 74 versions.</strong> DALL-E, Midjourney, Imagen, FLUX, Stable Diffusion and more — from 2021 to today.",
+      desc_compare: "<strong>Frontier LLM comparison table.</strong> 11 models × 33 benchmarks. Top score per row is framed. Anthropic, OpenAI, Google, DeepSeek models side by side.",
+      desc_vending: "<strong>Vending-Bench 2</strong> — 35 AI models managed a simulated vending business for 1 year, judged solely on final bank balance. Starting with $500, four models lost money; leader Claude Opus 4.7 earned $10,937.",
+      alt_llm: "AI Models Release Timeline",
       alt_image: "AI Image Generation Tools Timeline",
+      alt_vending: "Vending-Bench 2 Chart",
       img_llm: "ai_timeline_final.png",
       img_llm_linkedin: "ai_timeline_final_linkedin.png",
-      img_image: "ai_image_gen_timeline_tr.png"  // EN yoktu, TR gosteriyoruz
+      img_image: "ai_image_gen_timeline.png",
+      img_vending: "vending_bench_2.png",
+      iframe_compare: "model_comparison_en.html"
     }
   };
 
@@ -312,8 +314,18 @@
     document.getElementById("author-label").textContent = L.author;
     document.getElementById("updated").textContent = L.updated;
     document.getElementById("footer-note").innerHTML = L.footer;
+
+    // Category tabs
     document.getElementById("cat-llm").textContent = L.cat_llm;
     document.getElementById("cat-image").textContent = L.cat_image;
+    document.getElementById("cat-compare").textContent = L.cat_compare;
+    document.getElementById("cat-vending").textContent = L.cat_vending;
+
+    // Descriptions
+    document.getElementById("desc-llm").innerHTML = L.desc_llm;
+    document.getElementById("desc-image").innerHTML = L.desc_image;
+    document.getElementById("desc-compare").innerHTML = L.desc_compare;
+    document.getElementById("desc-vending").innerHTML = L.desc_vending;
 
     // LLM images
     document.getElementById("img-llm").src = L.img_llm;
@@ -329,14 +341,16 @@
     document.getElementById("dl-image-main").href = L.img_image;
     document.getElementById("dl-image-main").textContent = L.dl_main;
 
-    // English note for image gen (no EN version yet)
-    const note = document.getElementById("image-en-note");
-    if (L.image_note) {
-      note.textContent = L.image_note;
-      note.style.display = "block";
-    } else {
-      note.style.display = "none";
-    }
+    // Comparison
+    document.getElementById("iframe-compare").src = L.iframe_compare;
+    document.getElementById("dl-compare").href = L.iframe_compare;
+    document.getElementById("dl-compare").textContent = L.dl_fullpage;
+
+    // Vending
+    document.getElementById("img-vending").src = L.img_vending;
+    document.getElementById("img-vending").alt = L.alt_vending;
+    document.getElementById("dl-vending").href = L.img_vending;
+    document.getElementById("dl-vending").textContent = L.dl_main;
 
     // Flag button active states
     document.getElementById("btn-lang-tr").classList.toggle("active", state.lang === "tr");
@@ -352,9 +366,12 @@
     state.category = cat;
     document.querySelectorAll(".pane").forEach(p => p.classList.remove("active"));
     document.getElementById("pane-" + cat).classList.add("active");
-    document.getElementById("cat-llm").classList.toggle("active", cat === "llm");
-    document.getElementById("cat-image").classList.toggle("active", cat === "image");
+    document.querySelectorAll(".category-tabs button").forEach(b => b.classList.remove("active"));
+    document.getElementById("cat-" + cat).classList.add("active");
   }
+
+  // Initial render
+  applyLang();
 </script>
 
 </body>
