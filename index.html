@@ -27,6 +27,7 @@
     line-height: 1.6;
   }
   header {
+    position: relative;
     background: linear-gradient(135deg, var(--dark) 0%, #2d2d4a 100%);
     color: white;
     padding: 40px 24px 32px;
@@ -57,6 +58,39 @@
     border-radius: 12px;
     font-size: 0.8rem;
     margin-top: 12px;
+  }
+  .lang-flags {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    display: flex;
+    gap: 6px;
+  }
+  .lang-flags button {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 18px;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .lang-flags button.active {
+    background: rgba(255,255,255,0.9);
+    color: var(--dark);
+    border-color: white;
+  }
+  .lang-flags button:hover:not(.active) {
+    background: rgba(255,255,255,0.2);
+  }
+  .lang-flags .flag {
+    font-size: 1.1rem;
+    line-height: 1;
   }
   .category-tabs {
     display: flex;
@@ -91,41 +125,10 @@
     background: #f0f0f0;
     color: var(--text);
   }
-  .lang-tabs {
-    display: flex;
-    justify-content: center;
-    gap: 4px;
-    padding: 12px 16px 4px;
-    margin-bottom: 8px;
-  }
-  .lang-tabs button {
-    background: transparent;
-    border: 1px solid var(--border);
-    padding: 6px 18px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--muted);
-    cursor: pointer;
-    border-radius: 18px;
-    transition: all 0.2s;
-  }
-  .lang-tabs button.active {
-    background: var(--dark);
-    color: white;
-    border-color: var(--dark);
-  }
-  .lang-tabs button:hover:not(.active) {
-    background: #f0f0f0;
-    color: var(--text);
-  }
-  .lang-tabs button:disabled {
-    opacity: 0.4;
-    cursor: not-allowed;
-  }
   main {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 16px 16px 32px;
+    padding: 24px 16px 32px;
   }
   .timeline-container {
     background: var(--card);
@@ -142,6 +145,16 @@
   }
   .pane { display: none; }
   .pane.active { display: block; }
+  .note {
+    margin-top: 12px;
+    padding: 8px 14px;
+    background: #fff8e1;
+    border: 1px solid #ffe082;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    color: #5d4037;
+    text-align: center;
+  }
   .download-bar {
     display: flex;
     flex-wrap: wrap;
@@ -176,9 +189,11 @@
   footer a { color: var(--primary); text-decoration: none; }
   footer a:hover { text-decoration: underline; }
   @media (max-width: 600px) {
-    header { padding: 28px 16px 24px; }
+    header { padding: 56px 16px 24px; }
+    .lang-flags { top: 12px; right: 12px; }
+    .lang-flags button { padding: 4px 8px; font-size: 0.8rem; }
     .timeline-container { padding: 8px; }
-    main { padding: 12px 8px 20px; }
+    main { padding: 20px 8px; }
     .category-tabs button { padding: 8px 14px; font-size: 0.9rem; }
   }
 </style>
@@ -186,10 +201,18 @@
 <body>
 
 <header>
+  <div class="lang-flags">
+    <button id="btn-lang-tr" class="active" onclick="setLang('tr')">
+      <span class="flag">🇹🇷</span><span>TR</span>
+    </button>
+    <button id="btn-lang-en" onclick="setLang('en')">
+      <span class="flag">🇬🇧</span><span>EN</span>
+    </button>
+  </div>
   <h1 id="title">Yapay Zeka Zaman Çizelgeleri</h1>
   <p id="subtitle">LLM modelleri, görsel üretme araçları ve daha fazlasının sürüm tarihleri</p>
   <div class="author">
-    Derleyen: <a href="https://www.oguzergin.net" target="_blank">Prof. Dr. Oğuz Ergin</a>
+    <span id="author-label">Derleyen:</span> <a href="https://www.oguzergin.net" target="_blank">Prof. Dr. Oğuz Ergin</a>
   </div>
   <div class="updated" id="updated">Son güncelleme: 24 Nisan 2026</div>
 </header>
@@ -202,72 +225,116 @@
 <main>
   <!-- LLM Section -->
   <div id="pane-llm" class="pane active">
-    <div class="lang-tabs">
-      <button id="btn-llm-tr" class="active" onclick="setLang('llm', 'tr')">Türkçe</button>
-      <button id="btn-llm-en" onclick="setLang('llm', 'en')">English</button>
-    </div>
-    <div id="container-llm-tr" class="timeline-container">
-      <img src="ai_timeline_final_tr.png" alt="Yapay Zeka Modelleri Zaman Çizelgesi" loading="eager">
+    <div class="timeline-container">
+      <img id="img-llm" src="ai_timeline_final_tr.png" alt="" loading="eager">
       <div class="download-bar">
-        <a href="ai_timeline_final_tr.png" download>Yüksek Çözünürlük (PNG)</a>
-        <a href="ai_timeline_final_tr_linkedin.png" download>LinkedIn Biçimi</a>
-      </div>
-    </div>
-    <div id="container-llm-en" class="timeline-container" style="display:none;">
-      <img src="ai_timeline_final.png" alt="AI Models Timeline" loading="lazy">
-      <div class="download-bar">
-        <a href="ai_timeline_final.png" download>High Resolution (PNG)</a>
-        <a href="ai_timeline_final_linkedin.png" download>LinkedIn Format</a>
+        <a id="dl-llm-main" href="ai_timeline_final_tr.png" download>Yüksek Çözünürlük (PNG)</a>
+        <a id="dl-llm-linkedin" href="ai_timeline_final_tr_linkedin.png" download>LinkedIn Biçimi</a>
       </div>
     </div>
   </div>
 
   <!-- Image Generation Section -->
   <div id="pane-image" class="pane">
-    <div class="lang-tabs">
-      <button id="btn-image-tr" class="active" onclick="setLang('image', 'tr')">Türkçe</button>
-      <button id="btn-image-en" disabled title="İngilizce sürüm hazırlanıyor">English (yakında)</button>
-    </div>
-    <div id="container-image-tr" class="timeline-container">
-      <img src="ai_image_gen_timeline_tr.png" alt="Yapay Zeka Görsel Üretme Araçları Zaman Çizelgesi" loading="lazy">
+    <div class="timeline-container">
+      <img id="img-image" src="ai_image_gen_timeline_tr.png" alt="" loading="lazy">
+      <div id="image-en-note" class="note" style="display:none;"></div>
       <div class="download-bar">
-        <a href="ai_image_gen_timeline_tr.png" download>Yüksek Çözünürlük (PNG)</a>
+        <a id="dl-image-main" href="ai_image_gen_timeline_tr.png" download>Yüksek Çözünürlük (PNG)</a>
       </div>
     </div>
   </div>
 </main>
 
 <footer>
-  <p id="footer-note">Bu çizelgeler düzenli olarak güncellenmektedir. Eksik veya hatalı bir model gördüyseniz lütfen <a href="mailto:bilgi@oguzergin.net">bilgi@oguzergin.net</a> adresine bildirin.</p>
+  <p id="footer-note"></p>
   <p style="margin-top:8px;">&copy; 2026 Prof. Dr. Oğuz Ergin · <a href="https://www.oguzergin.net">oguzergin.net</a></p>
 </footer>
 
 <script>
   const labels = {
     tr: {
+      htmlLang: "tr",
       title: "Yapay Zeka Zaman Çizelgeleri",
       subtitle: "LLM modelleri, görsel üretme araçları ve daha fazlasının sürüm tarihleri",
+      author: "Derleyen:",
       updated: "Son güncelleme: 24 Nisan 2026",
       footer: 'Bu çizelgeler düzenli olarak güncellenmektedir. Eksik veya hatalı bir model gördüyseniz lütfen <a href="mailto:bilgi@oguzergin.net">bilgi@oguzergin.net</a> adresine bildirin.',
-      htmlLang: "tr"
+      cat_llm: "LLM Modelleri",
+      cat_image: "Görsel Üretme",
+      dl_main: "Yüksek Çözünürlük (PNG)",
+      dl_linkedin: "LinkedIn Biçimi",
+      image_note: "",
+      alt_llm: "Yapay Zeka Modelleri Zaman Çizelgesi",
+      alt_image: "Yapay Zeka Görsel Üretme Araçları Zaman Çizelgesi",
+      img_llm: "ai_timeline_final_tr.png",
+      img_llm_linkedin: "ai_timeline_final_tr_linkedin.png",
+      img_image: "ai_image_gen_timeline_tr.png"
     },
     en: {
+      htmlLang: "en",
       title: "AI Timelines",
       subtitle: "Release dates of LLMs, image generation tools, and more",
+      author: "Compiled by:",
       updated: "Last updated: April 24, 2026",
       footer: 'These timelines are updated regularly. If you spot a missing or incorrect model, please report to <a href="mailto:bilgi@oguzergin.net">bilgi@oguzergin.net</a>.',
-      htmlLang: "en"
+      cat_llm: "LLM Models",
+      cat_image: "Image Generation",
+      dl_main: "High Resolution (PNG)",
+      dl_linkedin: "LinkedIn Format",
+      image_note: "English version coming soon — showing Turkish chart below.",
+      alt_llm: "AI Models Timeline",
+      alt_image: "AI Image Generation Tools Timeline",
+      img_llm: "ai_timeline_final.png",
+      img_llm_linkedin: "ai_timeline_final_linkedin.png",
+      img_image: "ai_image_gen_timeline_tr.png"  // EN yoktu, TR gosteriyoruz
     }
   };
-  const state = { category: "llm", lang: { llm: "tr", image: "tr" } };
 
-  function applyHeaderLang() {
-    const lang = state.lang[state.category];
-    document.getElementById("title").textContent = labels[lang].title;
-    document.getElementById("subtitle").textContent = labels[lang].subtitle;
-    document.getElementById("updated").textContent = labels[lang].updated;
-    document.getElementById("footer-note").innerHTML = labels[lang].footer;
-    document.documentElement.lang = labels[lang].htmlLang;
+  const state = { lang: "tr", category: "llm" };
+
+  function applyLang() {
+    const L = labels[state.lang];
+    document.documentElement.lang = L.htmlLang;
+    document.getElementById("title").textContent = L.title;
+    document.getElementById("subtitle").textContent = L.subtitle;
+    document.getElementById("author-label").textContent = L.author;
+    document.getElementById("updated").textContent = L.updated;
+    document.getElementById("footer-note").innerHTML = L.footer;
+    document.getElementById("cat-llm").textContent = L.cat_llm;
+    document.getElementById("cat-image").textContent = L.cat_image;
+
+    // LLM images
+    document.getElementById("img-llm").src = L.img_llm;
+    document.getElementById("img-llm").alt = L.alt_llm;
+    document.getElementById("dl-llm-main").href = L.img_llm;
+    document.getElementById("dl-llm-main").textContent = L.dl_main;
+    document.getElementById("dl-llm-linkedin").href = L.img_llm_linkedin;
+    document.getElementById("dl-llm-linkedin").textContent = L.dl_linkedin;
+
+    // Image Gen
+    document.getElementById("img-image").src = L.img_image;
+    document.getElementById("img-image").alt = L.alt_image;
+    document.getElementById("dl-image-main").href = L.img_image;
+    document.getElementById("dl-image-main").textContent = L.dl_main;
+
+    // English note for image gen (no EN version yet)
+    const note = document.getElementById("image-en-note");
+    if (L.image_note) {
+      note.textContent = L.image_note;
+      note.style.display = "block";
+    } else {
+      note.style.display = "none";
+    }
+
+    // Flag button active states
+    document.getElementById("btn-lang-tr").classList.toggle("active", state.lang === "tr");
+    document.getElementById("btn-lang-en").classList.toggle("active", state.lang === "en");
+  }
+
+  function setLang(lang) {
+    state.lang = lang;
+    applyLang();
   }
 
   function setCategory(cat) {
@@ -276,19 +343,6 @@
     document.getElementById("pane-" + cat).classList.add("active");
     document.getElementById("cat-llm").classList.toggle("active", cat === "llm");
     document.getElementById("cat-image").classList.toggle("active", cat === "image");
-    applyHeaderLang();
-  }
-
-  function setLang(cat, lang) {
-    state.lang[cat] = lang;
-    document.getElementById("btn-" + cat + "-tr").classList.toggle("active", lang === "tr");
-    document.getElementById("btn-" + cat + "-en").classList.toggle("active", lang === "en");
-    if (cat === "llm") {
-      document.getElementById("container-llm-tr").style.display = lang === "tr" ? "" : "none";
-      document.getElementById("container-llm-en").style.display = lang === "en" ? "" : "none";
-    }
-    // Image section only has TR for now
-    applyHeaderLang();
   }
 </script>
 
