@@ -428,28 +428,28 @@ company_name = {
 }
 
 country_text = {
-    "OpenAI":    "United States",
-    "Google":    "United States",
-    "Anthropic": "United States",
-    "xAI":       "United States",
-    "Meta":      "United States",
-    "Meta Muse": "United States",
-    "Microsoft": "United States",
+    "OpenAI":    "USA",
+    "Google":    "USA",
+    "Anthropic": "USA",
+    "xAI":       "USA",
+    "Meta":      "USA",
+    "Meta Muse": "USA",
+    "Microsoft": "USA",
     "Mistral":   "France",
     "Qwen":      "China",
     "DeepSeek":  "China",
     "Z.ai":      "China",
     "Kimi":      "China",
     "MiniMax":   "China",
-    "Google Gemma": "United States",
+    "Google Gemma": "USA",
     "ByteDance":    "China",
-    "Amazon":       "United States",
+    "Amazon":       "USA",
     "Cohere":       "Canada",
 }
 
 # Flag image files
 flag_images = {
-    "United States": "C:/Users/Z GAMES/flags/us.png",
+    "USA": "C:/Users/Z GAMES/flags/us.png",
     "France":        "C:/Users/Z GAMES/flags/fr.png",
     "China":         "C:/Users/Z GAMES/flags/cn.png",
     "Canada":        "C:/Users/Z GAMES/flags/ca.png",
