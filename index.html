@@ -89,8 +89,11 @@
     background: rgba(255,255,255,0.2);
   }
   .lang-flags .flag {
-    font-size: 1.1rem;
-    line-height: 1;
+    width: 22px;
+    height: 16px;
+    border-radius: 2px;
+    object-fit: cover;
+    display: block;
   }
   .category-tabs {
     display: flex;
@@ -203,10 +206,10 @@
 <header>
   <div class="lang-flags">
     <button id="btn-lang-tr" class="active" onclick="setLang('tr')">
-      <span class="flag">🇹🇷</span><span>TR</span>
+      <img class="flag" src="https://flagcdn.com/w40/tr.png" alt="TR" width="22" height="16"><span>TR</span>
     </button>
     <button id="btn-lang-en" onclick="setLang('en')">
-      <span class="flag">🇬🇧</span><span>EN</span>
+      <img class="flag" src="https://flagcdn.com/w40/gb.png" alt="EN" width="22" height="16"><span>EN</span>
     </button>
   </div>
   <h1 id="title">Yapay Zeka Zaman Çizelgeleri</h1>
