@@ -33,6 +33,7 @@ data = [
     ("GPT-5.4", "OpenAI", "2026-03-05", True),
     ("GPT-5.4 mini", "OpenAI", "2026-03-17", False),
     ("GPT-5.5", "OpenAI", "2026-04-23", True),
+    ("GPT-5.5-Cyber", "OpenAI", "2026-04-30", False),
 
     # Google
     ("Gemini 1.0 Pro", "Google", "2023-12-06", True),
@@ -214,6 +215,7 @@ short_labels = {
     "GPT-5.4":          "5.4",
     "GPT-5.4 mini":     "5.4 mini",
     "GPT-5.5":          "5.5",
+    "GPT-5.5-Cyber":    "5.5-Cyber",
 
     # Google Gemini
     "Gemini 1.0 Pro":       "1.0 Pro",
@@ -579,7 +581,8 @@ company_overrides = {
     ("DeepSeek", "V3"):     (0, 55),
     ("DeepSeek", "R1"):     (0, -55),
     ("OpenAI", "5.4"):      (0, 55),
-    ("OpenAI", "5.5"):      (0, 55),
+    ("OpenAI", "5.5"):      (-30, 55),
+    ("OpenAI", "5.5-Cyber"):(30, -55),
     ("Anthropic", "2"):     (0, 55),
     ("xAI", "2"):           (0, 55),
     ("Microsoft", "2"):     (0, 55),
