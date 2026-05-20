@@ -46,7 +46,6 @@ data = [
     ("Gemini 3 Flash", "Google", "2025-12-17", False),
     ("Gemini 3 Deep Think", "Google", "2026-02-12", True),
     ("Gemini 3.1 Pro", "Google", "2026-02-19", True),
-    ("Gemini 3.1 Flash-Lite", "Google", "2026-03-03", False),
     ("Gemini 3.5 Flash", "Google", "2026-05-19", False),
 
     # Anthropic
@@ -227,7 +226,6 @@ short_labels = {
     "Gemini 3 Flash":       "3 Flash",
     "Gemini 3 Deep Think":  "3 Deep Think",
     "Gemini 3.1 Pro":       "3.1 Pro",
-    "Gemini 3.1 Flash-Lite": "3.1 FL",
     "Gemini 3.5 Flash":     "3.5 Flash",
 
     # Anthropic Claude
@@ -598,7 +596,7 @@ company_overrides = {
     ("xAI", "4.3"):         (0, -55),
     # Google - Gemini 3.1 Pro tam dot üstüne otursun, gap adjustment nudge atlansın
     ("Google", "3.1 Pro"):  (0, 55),
-    ("Google", "3 Deep Think"): (-60, -55),
+    ("Google", "3 Deep Think"): (0, -55),
     ("Google", "3.5 Flash"):    (0, 55),
     # Z.ai - GLM-4 uses "4" which clashes with other companies
     ("Z.ai", "4"):          (0, 55),
