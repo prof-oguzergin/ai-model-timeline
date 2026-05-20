@@ -109,6 +109,7 @@ data = [
     ("Magistral", "Mistral", "2025-06-10", True),
     ("Mistral Large 3", "Mistral", "2025-12-02", True),
     ("Mistral Small 4", "Mistral", "2026-03-16", False),
+    ("Mistral Medium 3.5", "Mistral", "2026-04-29", False),
 
     # Qwen (Alibaba)
     ("Qwen 1", "Qwen", "2023-09-28", True),
@@ -284,6 +285,7 @@ short_labels = {
     "Mistral Small 3":  "Small 3",
     "Mistral Small 3.1":"Small 3.1",
     "Mistral Medium 3": "Medium 3",
+    "Mistral Medium 3.5": "Medium 3.5",
     "Magistral":        "Magistral",
     "Mistral Large 3":  "Large 3",
     "Mistral Small 4":  "Small 4",
