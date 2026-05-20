@@ -48,6 +48,7 @@ data = [
     ("Gemini 3 Deep Think", "Google", "2026-02-12", True),
     ("Gemini 3.1 Pro", "Google", "2026-02-19", True),
     ("Gemini 3.1 Flash-Lite", "Google", "2026-03-03", False),
+    ("Gemini 3.5 Flash", "Google", "2026-05-19", False),
 
     # Anthropic
     ("Claude 1", "Anthropic", "2023-03-14", True),
@@ -229,6 +230,7 @@ short_labels = {
     "Gemini 3 Deep Think":  "3 D. Think",
     "Gemini 3.1 Pro":       "3.1 Pro",
     "Gemini 3.1 Flash-Lite": "3.1 FL",
+    "Gemini 3.5 Flash":     "3.5 Flash",
 
     # Anthropic Claude
     "Claude 1":             "1",
