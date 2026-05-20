@@ -122,6 +122,7 @@ data = [
     ("Qwen3-Coder", "Qwen", "2026-02-02", False),
     ("Qwen 3.5", "Qwen", "2026-02-16", True),
     ("Qwen 3.6", "Qwen", "2026-03-31", False),
+    ("Qwen3.7-Max", "Qwen", "2026-05-20", True),
 
     # DeepSeek
     ("DeepSeek Coder", "DeepSeek", "2023-11-02", True),
@@ -301,6 +302,7 @@ short_labels = {
     "Qwen3-Coder":      "3-Coder",
     "Qwen 3.5":         "3.5",
     "Qwen 3.6":         "3.6",
+    "Qwen3.7-Max":      "3.7-Max",
 
     # DeepSeek
     "DeepSeek Coder":   "Coder",
