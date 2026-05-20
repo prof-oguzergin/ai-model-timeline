@@ -225,7 +225,7 @@ short_labels = {
     "Gemini 2.5 Flash":     "2.5 Flash",
     "Gemini 3 Pro":         "3 Pro",
     "Gemini 3 Flash":       "3 Flash",
-    "Gemini 3 Deep Think":  "3 D. Think",
+    "Gemini 3 Deep Think":  "3 Deep Think",
     "Gemini 3.1 Pro":       "3.1 Pro",
     "Gemini 3.1 Flash-Lite": "3.1 FL",
     "Gemini 3.5 Flash":     "3.5 Flash",
@@ -526,7 +526,6 @@ manual_overrides = {
     "1.0 Pro":          (0, -55),
     "3 Pro":            (-80, 55),
     "3 Flash":          (0, 55),
-    "3 D. Think":       (0, -55),
     "3.1 Pro":          (0, 55),
     "3.1 FL":           (120, -55),
 
@@ -598,6 +597,8 @@ company_overrides = {
     ("xAI", "4.3"):         (0, -55),
     # Google - Gemini 3.1 Pro aligned
     ("Google", "3.1 Pro"):  (0, 55),
+    ("Google", "3 Deep Think"): (-60, -55),
+    ("Google", "3.5 Flash"):    (0, 55),
     # Z.ai - GLM-4 uses "4" which clashes with other companies
     ("Z.ai", "4"):          (0, 55),
     # Anthropic - Opus 4 and Sonnet 4 same day, aligned with dots
