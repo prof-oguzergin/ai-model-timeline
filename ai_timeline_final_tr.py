@@ -537,8 +537,6 @@ manual_overrides = {
     "Mixtral 8x7B":     (0, -55),
     "Pixtral 12B":      (0, 55),
     "Small 3.1":        (-50, 55),
-    "Medium 3":         (0, 55),
-    "Magistral":        (0, -55),
 
     # xAI - Grok-3 and Grok-3 Mini same day
     "3":                (0, 55),
@@ -607,8 +605,11 @@ company_overrides = {
     ("Anthropic", "Sonnet 4"):  (0, -55),
     ("Anthropic", "Sonnet 4.6"): (0, -55),
     ("Anthropic", "Opus 4.7"):   (0, 55),
-    # Mistral - Medium 3 aligned with dot
-    ("Mistral", "Medium 3"): (0, 55),
+    # Mistral - all labels equal distance from line (no multi-level stacking)
+    ("Mistral", "Medium 3"):    (0, -55),
+    ("Mistral", "Magistral"):   (0, 55),
+    ("Mistral", "Small 4"):     (0, -55),
+    ("Mistral", "Medium 3.5"):  (0, 55),
     # Cohere - R and R+ aligned with dots
     ("Cohere", "R"):        (0, 55),
     ("Cohere", "R+"):       (0, -55),
