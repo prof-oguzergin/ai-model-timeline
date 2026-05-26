@@ -257,7 +257,11 @@ ymax = max(values) + 800
 ax.set_ylim(ymin, ymax)
 
 ax.xaxis.set_major_locator(mdates.MonthLocator(bymonth=[1, 4, 7, 10]))
-ax.xaxis.set_major_formatter(mdates.DateFormatter("%Y-%m"))
+_TR_AY_KISA = {1:'Oca', 2:'Şub', 3:'Mar', 4:'Nis', 5:'May', 6:'Haz',
+               7:'Tem', 8:'Ağu', 9:'Eyl', 10:'Eki', 11:'Kas', 12:'Ara'}
+ax.xaxis.set_major_formatter(plt.FuncFormatter(
+    lambda x, pos: f"{_TR_AY_KISA[mdates.num2date(x).month]} {mdates.num2date(x).year}"
+))
 plt.setp(ax.xaxis.get_majorticklabels(), rotation=35, ha="right",
          fontsize=8, color="#b0b8c8")
 

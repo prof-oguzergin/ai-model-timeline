@@ -812,7 +812,11 @@ for y_pos, company in labels_y:
 
 # X axis
 ax.xaxis.set_major_locator(mdates.MonthLocator(interval=2))
-ax.xaxis.set_major_formatter(mdates.DateFormatter("%b %Y"))
+_TR_AY_KISA = {1:'Oca', 2:'Şub', 3:'Mar', 4:'Nis', 5:'May', 6:'Haz',
+               7:'Tem', 8:'Ağu', 9:'Eyl', 10:'Eki', 11:'Kas', 12:'Ara'}
+ax.xaxis.set_major_formatter(plt.FuncFormatter(
+    lambda x, pos: f"{_TR_AY_KISA[mdates.num2date(x).month]} {mdates.num2date(x).year}"
+))
 ax.set_xlim(mdates.date2num(pd.Timestamp("2022-11-01")), mdates.date2num(pd.Timestamp("2026-07-01")))
 plt.xticks(rotation=45, fontsize=22, color="#8b949e")
 
