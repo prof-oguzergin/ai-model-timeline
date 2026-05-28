@@ -10,13 +10,15 @@ import os
 # ============================================================
 # Vending-Bench 2 leaderboard data
 # Source: andonlabs.com
-# 39 models, 1-year vending machine operation simulation
+# 41 models, 1-year vending machine operation simulation
 # Value: final balance including $500 starting capital
 # ============================================================
 
 # (Model name, company, release date, final balance $)
 leaderboard = [
     ("Claude Opus 4.7",              "Anthropic", "2026-04-16", 10936.76),
+    ("Claude Opus 4.8 High",         "Anthropic", "2026-05-28",  5787.43),
+    ("Claude Opus 4.8 Max",          "Anthropic", "2026-05-28",  2992.34),
     ("Claude Opus 4.6",              "Anthropic", "2026-02-05",  8017.59),
     ("GPT-5.5",                      "OpenAI",    "2026-04-23",  7523.84),
     ("Claude Sonnet 4.6",            "Anthropic", "2026-02-17",  7204.14),
@@ -60,6 +62,8 @@ leaderboard = [
 # Date mapping sources (for verification)
 date_sources = {
     "Claude Opus 4.7":             "ai_timeline_final_tr.py (exact)",
+    "Claude Opus 4.8 High":        "Andon Labs leaderboard verified 2026-05-29",
+    "Claude Opus 4.8 Max":         "Andon Labs leaderboard verified 2026-05-29",
     "Claude Opus 4.6":             "ai_timeline_final_tr.py (exact)",
     "GPT-5.5":                     "ai_timeline_final_tr.py (exact)",
     "Claude Sonnet 4.6":           "ai_timeline_final_tr.py (exact)",
@@ -157,6 +161,8 @@ for i, (d, v, c, n) in enumerate(zip(dates, values, companies, names)):
 # ============================================================
 manual_offsets = {
     "Claude Opus 4.7":            ( 4,  6),
+    "Claude Opus 4.8 High":       ( 4,  8),
+    "Claude Opus 4.8 Max":        ( 4, -10),
     "Claude Opus 4.6":            ( 4,  5),
     "GPT-5.5":                    (-80,  8),
     "Claude Sonnet 4.6":          ( 4, -10),
@@ -277,7 +283,7 @@ fig.text(
 )
 fig.text(
     0.5, 0.895,
-    "39 Models  -  Source: andonlabs.com  -  Starting: $500 (1-year sim balance from $-31 to $10,936)",
+    "41 Models  -  Source: andonlabs.com  -  Starting: $500 (1-year sim balance from $-31 to $10,936)",
     ha="center", va="center", fontsize=7.5, color="#8090a8"
 )
 
