@@ -81,7 +81,7 @@
     text-overflow: ellipsis;
   }
   /* Tek satirda benchmark adlari icin label kolonu genis, digerleri esit pay */
-  thead th:not(:first-child) { width: calc((100% - 280px) / 17); }
+  thead th:not(:first-child) { width: calc((100% - 280px) / 19); }
 
   thead th .date {
     display: block;
@@ -111,12 +111,14 @@
   thead th.company-qwen      { color: #7C3AED; font-size: 13px; font-weight: 800; letter-spacing: 1.2px; padding: 10px 6px 2px; border-bottom: none; }
 
   thead th.col-mythos   { color: #c878ff; }
+  thead th.col-opus48   { color: #ffd0b0; }
   thead th.col-opus47   { color: #f5b98c; }
   thead th.col-opus46   { color: #d97757; }
   thead th.col-opus45   { color: #a04a2e; }
   thead th.col-sonnet46 { color: #b8553b; }
   thead th.col-gpt55    { color: #6ee7a0; }
   thead th.col-gpt54    { color: #4ade80; }
+  thead th.col-gemini35flash { color: #60a5fa; }
   thead th.col-gemini31 { color: #60a5fa; }
   thead th.col-gemini3  { color: #3b82c7; }
   thead th.col-deepseek32 { color: #c82626; }
@@ -406,9 +408,9 @@
     <thead>
       <tr>
         <th></th>
-        <th colspan="5" class="company-anthropic">ANTHROPIC</th>
+        <th colspan="6" class="company-anthropic">ANTHROPIC</th>
         <th colspan="2" class="company-openai">OPENAI</th>
-        <th colspan="2" class="company-google">GOOGLE</th>
+        <th colspan="3" class="company-google">GOOGLE</th>
         <th class="company-kimi">MOONSHOT</th>
         <th class="company-glm">Z.AI</th>
         <th class="company-qwen">ALIBABA</th>
@@ -418,12 +420,14 @@
       <tr>
         <th></th>
         <th class="col-mythos">Mythos<br>Preview<span class="date">(Nis 26 önizleme)</span></th>
+        <th class="col-opus48">Opus<br>4.8<span class="date">(28 May 26)</span></th>
         <th class="col-opus47">Opus<br>4.7<span class="date">(16 Nis 26)</span></th>
         <th class="col-opus46">Opus<br>4.6<span class="date">(5 Şub 26)</span></th>
         <th class="col-opus45">Opus<br>4.5<span class="date">(24 Kas 25)</span></th>
         <th class="col-sonnet46">Sonnet<br>4.6<span class="date">(17 Şub 26)</span></th>
         <th class="col-gpt55">GPT<br>5.5<span class="date">(23 Nis 26)</span></th>
         <th class="col-gpt54">GPT<br>5.4<span class="date">(5 Mar 26)</span></th>
+        <th class="col-gemini35flash">Gemini<br>3.5 Flash<span class="date">(19 May 26)</span></th>
         <th class="col-gemini31">Gemini<br>3.1 Pro<span class="date">(19 Şub 26)</span></th>
         <th class="col-gemini3">Gemini<br>3 Pro<span class="date">(18 Kas 25)</span></th>
         <th class="col-kimi26">Kimi<br>K2.6<span class="date">(13 Nis 26)</span></th>
@@ -437,16 +441,18 @@
       </tr>
     </thead>
     <tbody>
-      <tr class="section-row sw"><td colspan="18">YAZILIM GELİŞTİRME / KODLAMA</td></tr>
+      <tr class="section-row sw"><td colspan="20">YAZILIM GELİŞTİRME / KODLAMA</td></tr>
       <tr>
         <td data-tooltip="Gerçek GitHub issueları; model kodu düzeltip testlerden geçirmeli.">SWE-bench Verified</td>
         <td class="best mythos">93.9%</td>
-        <td class="runner-up opus">87.6%</td>
+        <td class="runner-up opus">88.6%</td>
+        <td>87.6%</td>
         <td>80.8%</td>
         <td>80.9%</td>
         <td>79.6%</td>
         <td class="na">&mdash;</td>
         <td>77.2%</td>
+        <td class="na">&mdash;</td>
         <td>80.6%</td>
         <td>76.2%</td>
         <td class="na">&mdash;</td>
@@ -461,12 +467,14 @@
       <tr>
         <td data-tooltip="SWE-bench'in daha zor pro sürümü; gerçek yazılım mühendisliği görevleri.">SWE-bench Pro</td>
         <td class="best mythos">77.8%</td>
-        <td class="runner-up opus">64.3%</td>
+        <td class="runner-up opus">69.2%</td>
+        <td>64.3%</td>
         <td>53.4%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>58.6%</td>
         <td>57.7%</td>
+        <td>55.1%</td>
         <td>54.2%</td>
         <td>43.3%</td>
         <td class="na">&mdash;</td>
@@ -481,8 +489,10 @@
       <tr>
         <td data-tooltip="Çok dilli kod düzenleme sınavı: Python, Rust, C++, Go, JS.">SWE-bench Multilingual</td>
         <td class="best mythos">87.3%</td>
+        <td class="runner-up opus">84.4%</td>
         <td class="na">&mdash;</td>
-        <td class="runner-up opus">77.5%</td>
+        <td>77.5%</td>
+        <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -501,8 +511,10 @@
       <tr>
         <td data-tooltip="Görsel ve kod içeren çok kipli yazılım mühendisliği görevleri.">SWE-bench Multimodal</td>
         <td class="best mythos">59.0%</td>
+        <td class="runner-up opus">38.4%</td>
         <td class="na">&mdash;</td>
-        <td class="runner-up opus">27.1%</td>
+        <td>27.1%</td>
+        <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -521,12 +533,14 @@
       <tr>
         <td data-tooltip="Karmaşık terminal görevleri; kabuk komutları ve dosya işlemleri gerektirir.">Terminal-Bench 2.0</td>
         <td>82.0%</td>
+        <td class="na">&mdash;</td>
         <td>69.4%</td>
         <td>65.4%</td>
         <td>59.3%</td>
         <td>59.1%</td>
         <td class="best gpt">82.7%</td>
         <td>75.1%</td>
+        <td class="na">&mdash;</td>
         <td>68.5%</td>
         <td>56.9%</td>
         <td class="na">&mdash;</td>
@@ -542,7 +556,9 @@
         <td data-tooltip="Model eğitim kesiminden sonra toplanan yarışmacı programlama problemleri.">LiveCodeBench</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
         <td>88.8%</td>
+        <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -566,7 +582,9 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
         <td>3168</td>
+        <td class="na">&mdash;</td>
         <td>3052</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -579,9 +597,10 @@
         <td class="na">&mdash;</td>
       </tr>
 
-      <tr class="section-row knowledge"><td colspan="18">GENEL BİLGİ & AKIL YÜRÜTME</td></tr>
+      <tr class="section-row knowledge"><td colspan="20">GENEL BİLGİ & AKIL YÜRÜTME</td></tr>
       <tr>
         <td data-tooltip="14 disiplinde 12 bin çok seçmeli soru, MMLU'dan zor.">MMLU-Pro</td>
+        <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>89.1%</td>
@@ -589,6 +608,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>87.5%</td>
+        <td class="na">&mdash;</td>
         <td class="best gemini">91.0%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -603,12 +623,14 @@
       <tr>
         <td data-tooltip="198 doktora seviyesi bilim sorusu (biyoloji, fizik, kimya).">GPQA Diamond</td>
         <td class="best mythos">94.6%</td>
+        <td>93.6%</td>
         <td>94.2%</td>
         <td>91.3%</td>
         <td>87.0%</td>
         <td>89.9%</td>
         <td>93.6%</td>
         <td class="runner-up gpt">94.4%</td>
+        <td class="na">&mdash;</td>
         <td>94.3%</td>
         <td>91.9%</td>
         <td class="na">&mdash;</td>
@@ -623,12 +645,14 @@
       <tr>
         <td data-tooltip="100'den fazla alanda uzmanlar tarafından yazılmış 3000 soru; mevcut yapay zekâları yenmek için tasarlandı.">Humanity's Last Exam</td>
         <td class="best mythos">56.8%</td>
-        <td class="runner-up opus">46.9%</td>
+        <td class="runner-up opus">49.8%</td>
+        <td>46.9%</td>
         <td>40.0%</td>
         <td class="na">&mdash;</td>
         <td>33.2%</td>
         <td>41.4%</td>
         <td>42.7%</td>
+        <td>40.2%</td>
         <td>44.4%</td>
         <td>37.5%</td>
         <td class="na">&mdash;</td>
@@ -644,11 +668,13 @@
         <td data-tooltip="Tek doğru yanıtı olan kısa bilgi soruları; halüsinasyon testi.">SimpleQA-Verified</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
         <td>46.2%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>45.3%</td>
+        <td class="na">&mdash;</td>
         <td class="best gemini">75.6%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -664,11 +690,13 @@
         <td data-tooltip="Çince bilgi soruları için halüsinasyon testi.">Chinese-SimpleQA</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
         <td>76.2%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>76.8%</td>
+        <td class="na">&mdash;</td>
         <td class="best gemini">85.9%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -683,12 +711,14 @@
       <tr>
         <td data-tooltip="Yeni desen çıkarımını test eden soyut görsel bulmacalar (2019 orijinal).">ARC-AGI-1</td>
         <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
         <td>92.0%</td>
         <td>94.0%</td>
         <td>80.0%</td>
         <td>86.5%</td>
         <td>95.0%</td>
         <td>93.7%</td>
+        <td class="na">&mdash;</td>
         <td class="best gemini">98.0%</td>
         <td>75.0%</td>
         <td class="na">&mdash;</td>
@@ -703,12 +733,14 @@
       <tr>
         <td data-tooltip="Daha derin muhakeme gerektiren ikinci nesil ARC bulmacaları.">ARC-AGI-2</td>
         <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
         <td>75.8%</td>
         <td>68.8%</td>
         <td>37.6%</td>
         <td>58.3%</td>
         <td class="best gpt">85.0%</td>
         <td>74.0%</td>
+        <td>72.1%</td>
         <td>77.1%</td>
         <td>31.1%</td>
         <td class="na">&mdash;</td>
@@ -724,11 +756,13 @@
         <td data-tooltip="Etkileşimli oyun benzeri ortamlar içeren en yeni ARC sürümü.">ARC-AGI-3</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
         <td class="best opus">0.5%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>0.2%</td>
+        <td class="na">&mdash;</td>
         <td>0.4%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -743,10 +777,12 @@
       <tr>
         <td data-tooltip="Çok dilli MMLU; modelin farklı dillerdeki bilgi ve muhakeme kapasitesini ölçer.">MMMLU (Çok Dilli)</td>
         <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
         <td>91.5%</td>
         <td>91.1%</td>
         <td>90.8%</td>
         <td>89.3%</td>
+        <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="best gemini">92.6%</td>
@@ -764,13 +800,15 @@
         <td data-tooltip="Çok disiplinli çok kipli anlama (metin, görsel, çizelge).">MMMU-Pro (Çok Modal)</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
         <td>73.9%</td>
         <td class="na">&mdash;</td>
         <td>74.5%</td>
         <td>81.2%</td>
         <td>81.2%</td>
+        <td class="best gemini">83.6%</td>
         <td>80.5%</td>
-        <td class="best gemini">81.0%</td>
+        <td>81.0%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -784,9 +822,11 @@
         <td data-tooltip="Bilimsel problem çözme; model gerçek bilimsel kod yazabilmeli.">SciCode</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
         <td>52.0%</td>
         <td class="na">&mdash;</td>
         <td>47.0%</td>
+        <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="best gemini">59.0%</td>
@@ -803,12 +843,14 @@
       <tr>
         <td data-tooltip="Grafik anlama ve muhakeme; araç kullanmadan grafik sorularını çözme.">CharXiv Reasoning (araçsız)</td>
         <td class="best mythos">86.1%</td>
-        <td class="runner-up opus">82.1%</td>
+        <td class="na">&mdash;</td>
+        <td>82.1%</td>
         <td>69.1%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
+        <td class="runner-up gemini">84.2%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -823,8 +865,10 @@
       <tr>
         <td data-tooltip="Grafik anlama ve muhakeme; kod araçlarıyla grafik sorularını çözme.">CharXiv Reasoning (araçlı)</td>
         <td class="best mythos">93.2%</td>
+        <td class="na">&mdash;</td>
         <td class="runner-up opus">91.0%</td>
         <td>84.7%</td>
+        <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -842,12 +886,14 @@
       </tr>
 
       
-      <tr class="section-row math"><td colspan="18">MATEMATİK</td></tr>
+      <tr class="section-row math"><td colspan="20">MATEMATİK</td></tr>
       <tr>
         <td data-tooltip="Amerikan Davetli Matematik Sınavı; 15 zorlu lise matematik problemi (araç yok).">AIME 2025</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
         <td class="best opus">99.8%</td>
+        <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -866,12 +912,14 @@
       <tr>
         <td data-tooltip="Amerikan Davetli Matematik Sınavı 2026; 15 zorlu lise matematik problemi (araç yok).">AIME 2026</td>
         <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
         <td>95.8%</td>
         <td>96.7%</td>
         <td>95.1%</td>
         <td class="na">&mdash;</td>
         <td>97.5%</td>
         <td class="best gpt">99.2%</td>
+        <td class="na">&mdash;</td>
         <td>98.3%</td>
         <td>91.7%</td>
         <td>95.8%</td>
@@ -887,11 +935,13 @@
         <td data-tooltip="ABD Matematik Olimpiyatı; 6 ispat sorusu, 2 gün, cevap değil tam ispat yazılmalı (en zor lise matematik sınavı).">USAMO 2026</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
         <td>47.0%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="best gpt">95.2%</td>
+        <td class="na">&mdash;</td>
         <td>74.4%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -907,11 +957,13 @@
         <td data-tooltip="Harvard-MIT Matematik Turnuvası; ileri lise ve erken lisans matematiği.">HMMT 2026 Feb</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
         <td>96.2%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="best gpt">97.7%</td>
+        <td class="na">&mdash;</td>
         <td>94.7%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -927,11 +979,13 @@
         <td data-tooltip="IMO sorularının sayısal cevaplarını test eden matematik ölçümü.">IMOAnswerBench</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
         <td>75.3%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="best gpt">91.4%</td>
+        <td class="na">&mdash;</td>
         <td>81.0%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -947,11 +1001,13 @@
         <td data-tooltip="Uzman matematikçiler tarafından hazırlanan araştırma seviyesi matematik problemleri.">Apex</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
         <td>34.5%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>54.1%</td>
+        <td class="na">&mdash;</td>
         <td class="best gemini">60.9%</td>
         <td>18.4%</td>
         <td class="na">&mdash;</td>
@@ -967,11 +1023,13 @@
         <td data-tooltip="Uzman matematikçiler tarafından hazırlanan araştırma seviyesi matematik problemleri (kısaltılmış liste).">Apex Shortlist</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
         <td>85.9%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>78.1%</td>
+        <td class="na">&mdash;</td>
         <td>89.1%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -984,9 +1042,10 @@
         <td class="na">&mdash;</td>
       </tr>
 
-      <tr class="section-row context"><td colspan="18">UZUN BAĞLAM (1M Token)</td></tr>
+      <tr class="section-row context"><td colspan="20">UZUN BAĞLAM (1M Token)</td></tr>
       <tr>
         <td data-tooltip="128k token bağlamda çok turlu sohbet ve geri çağırma testi (1M sürümü).">MRCR 1M</td>
+        <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="best opus">92.9%</td>
@@ -994,6 +1053,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
+        <td>26.6%</td>
         <td>76.3%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -1009,7 +1069,9 @@
         <td data-tooltip="1 milyon token bağlamda geniş belge korpus sorgu ve geri çağırma testi.">CorpusQA 1M</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
         <td class="best opus">71.7%</td>
+        <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -1026,16 +1088,18 @@
         <td class="na">&mdash;</td>
       </tr>
 
-      <tr class="section-row computer"><td colspan="18">EYLEMCİ / BİLGİSAYAR KULLANIMI</td></tr>
+      <tr class="section-row computer"><td colspan="20">EYLEMCİ / BİLGİSAYAR KULLANIMI</td></tr>
       <tr>
         <td data-tooltip="Karmaşık bağımsız web tarama ve bilgi sentezi görevleri.">BrowseComp</td>
         <td class="best mythos">86.9%</td>
+        <td>84.3%</td>
         <td>79.3%</td>
         <td>83.7%</td>
         <td class="na">&mdash;</td>
         <td>74.7%</td>
         <td>84.4%</td>
         <td>82.7%</td>
+        <td class="na">&mdash;</td>
         <td class="runner-up gemini">85.9%</td>
         <td>59.2%</td>
         <td class="na">&mdash;</td>
@@ -1049,13 +1113,15 @@
       </tr>
       <tr>
         <td data-tooltip="Simüle masaüstü işletim sisteminde gerçekçi bilgisayar kullanım görevleri.">OSWorld-Verified</td>
-        <td class="best mythos">79.6%</td>
+        <td class="runner-up mythos">79.6%</td>
+        <td class="best opus">83.4%</td>
         <td>78.0%</td>
         <td>72.7%</td>
         <td>66.3%</td>
         <td>72.5%</td>
-        <td class="runner-up gpt">78.7%</td>
+        <td>78.7%</td>
         <td>75.0%</td>
+        <td>78.4%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -1070,12 +1136,14 @@
       <tr>
         <td data-tooltip="Python kod yorumlayıcı aracına erişimle Humanity's Last Exam.">HLE (araçlı)</td>
         <td class="best mythos">64.7%</td>
+        <td>57.9%</td>
         <td>54.7%</td>
         <td>53.3%</td>
         <td class="na">&mdash;</td>
         <td>49.0%</td>
         <td>52.2%</td>
         <td class="runner-up gpt">58.7%</td>
+        <td class="na">&mdash;</td>
         <td>51.4%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -1090,12 +1158,14 @@
       <tr>
         <td data-tooltip="Eylemci model değerlendirmesi; çok adımlı görev planlama ve API kullanımı.">GDPval-AA (Elo)</td>
         <td class="na">&mdash;</td>
+        <td class="best opus">1890</td>
         <td class="na">&mdash;</td>
         <td>1619</td>
         <td class="na">&mdash;</td>
         <td>1633</td>
         <td class="na">&mdash;</td>
-        <td class="best gpt">1674</td>
+        <td class="runner-up gpt">1674</td>
+        <td>1656</td>
         <td>1317</td>
         <td>1195</td>
         <td class="na">&mdash;</td>
@@ -1110,12 +1180,14 @@
       <tr>
         <td data-tooltip="8 ortamda LLM eylemcileri değerlendirmek için çok görevli sınav.">MCP-Atlas</td>
         <td class="na">&mdash;</td>
-        <td class="best opus">77.3%</td>
+        <td class="runner-up opus">82.2%</td>
+        <td>77.3%</td>
         <td>75.8%</td>
         <td>62.3%</td>
         <td>61.3%</td>
         <td>75.3%</td>
         <td>68.1%</td>
+        <td class="best gemini">83.6%</td>
         <td>69.2%</td>
         <td>54.1%</td>
         <td class="na">&mdash;</td>
@@ -1131,11 +1203,13 @@
         <td data-tooltip="Çok araçlı iş akışları ve API entegrasyonunu test eden eylemci sınavı.">Toolathlon</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
         <td>47.2%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="best gpt">55.6%</td>
+        <td class="runner-up gpt">55.6%</td>
         <td>54.6%</td>
+        <td class="best gemini">56.5%</td>
         <td>48.8%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -1150,12 +1224,14 @@
       <tr>
         <td data-tooltip="Finans sektörü eylemci görevleri; analiz, rapor ve karar alma.">Finance Agent v1.1</td>
         <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
         <td class="best opus">64.4%</td>
         <td>60.1%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>60.0%</td>
         <td>61.5%</td>
+        <td class="na">&mdash;</td>
         <td>59.7%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -1171,9 +1247,11 @@
         <td data-tooltip="Araçlar ve API'lerle perakende ortamında müşteri hizmetleri eylemci görevleri.">τ2-bench (Retail)</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
         <td class="best opus">91.9%</td>
         <td>88.9%</td>
         <td>91.7%</td>
+        <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>90.8%</td>
@@ -1191,11 +1269,13 @@
         <td data-tooltip="Telekom sektörü müşteri hizmetleri ortamında eylemci görevleri.">τ2-bench (Telecom)</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
         <td class="best opus">99.3%</td>
         <td>98.2%</td>
         <td>97.9%</td>
         <td>98.0%</td>
         <td>98.9%</td>
+        <td class="na">&mdash;</td>
         <td>99.3%</td>
         <td>98.0%</td>
         <td class="na">&mdash;</td>
@@ -1210,12 +1290,14 @@
       <tr>
         <td data-tooltip="Gerçek iş senaryolarında eylemci model performansını para kazanımıyla ölçer.">Vending-Bench 2 ($)</td>
         <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
         <td class="best opus">$10.937</td>
         <td>$8.018</td>
         <td>$4.967</td>
         <td>$7.204</td>
         <td>$7.524</td>
         <td>$6.144</td>
+        <td class="na">&mdash;</td>
         <td>$911</td>
         <td>$5.478</td>
         <td>$6.205</td>
@@ -1228,16 +1310,18 @@
         <td class="na">&mdash;</td>
       </tr>
 
-      <tr class="section-row cyber"><td colspan="18">SİBER GÜVENLİK</td></tr>
+      <tr class="section-row cyber"><td colspan="20">SİBER GÜVENLİK</td></tr>
       <tr>
         <td data-tooltip="Gerçek CTF yarışmalarından Bayrak-Yakala siber güvenlik meydan okumaları.">CyberGym</td>
         <td class="best mythos">83.1%</td>
+        <td class="na">&mdash;</td>
         <td>73.1%</td>
         <td>73.8%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="runner-up gpt">81.8%</td>
         <td>66.3%</td>
+        <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
