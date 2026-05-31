@@ -814,12 +814,13 @@ for y_pos, company in labels_y:
 
 # X axis
 ax.xaxis.set_major_locator(mdates.MonthLocator(interval=2))
+ax.xaxis.set_minor_locator(mdates.MonthLocator())
 ax.xaxis.set_major_formatter(mdates.DateFormatter("%b %Y"))
 ax.set_xlim(mdates.date2num(pd.Timestamp("2022-11-01")), mdates.date2num(pd.Timestamp("2026-07-01")))
 plt.xticks(rotation=45, fontsize=22, color="#8b949e")
 
 # Grid
-ax.grid(True, axis="x", linestyle="--", alpha=0.06, color="white")
+ax.grid(True, axis="x", which="major", linestyle="--", alpha=0.11, color="white", linewidth=0.7)
 
 # Count models per year
 models_per_year = df.groupby(df["Date"].dt.year).size().to_dict()
@@ -838,6 +839,12 @@ for year in [2023, 2024, 2025, 2026]:
                 ha="left", va="top")
 
 # Separator line
+# Quarter markers - Nis/Tem/Eki of each year (medium emphasis)
+for _qy in [2023, 2024, 2025, 2026]:
+    for _qm in [4, 7, 10]:
+        _qd = mdates.date2num(pd.Timestamp(f"{_qy}-{_qm:02d}-01"))
+        ax.axvline(x=_qd, color="#58a6ff", linewidth=0.7, linestyle=":", alpha=0.17, zorder=1)
+
 ax.axhline(y=separator_y, color="#30363d", linewidth=2.5, linestyle="-", alpha=0.6)
 
 # Spines
@@ -847,6 +854,7 @@ for spine in ax.spines.values():
 
 ax.tick_params(axis="y", colors="white", length=0, pad=20)
 ax.tick_params(axis="x", colors="#8b949e", length=6, pad=15)
+ax.tick_params(axis="x", which="minor", length=4, color="#8b949e", width=0.8)
 
 # Title
 plt.title("AI Model Release Timeline",
