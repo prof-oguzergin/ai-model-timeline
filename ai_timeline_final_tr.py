@@ -159,6 +159,7 @@ data = [
     ("MiniMax-M2.1", "MiniMax", "2025-12-25", False),
     ("MiniMax-M2.5", "MiniMax", "2026-02-12", False),
     ("MiniMax-M2.7", "MiniMax", "2026-03-18", False),
+    ("MiniMax-M3", "MiniMax", "2026-06-01", True),
 
     # Google Gemma (Open Source / Open Weight)
     ("Gemma 1", "Google Gemma", "2024-02-21", True),
@@ -342,6 +343,7 @@ short_labels = {
     "MiniMax-M2.1":     "M2.1",
     "MiniMax-M2.5":     "M2.5",
     "MiniMax-M2.7":     "M2.7",
+    "MiniMax-M3":       "M3",
 
     # Google Gemma
     "Gemma 1":          "1",
