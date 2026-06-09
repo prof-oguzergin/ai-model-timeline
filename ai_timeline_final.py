@@ -186,6 +186,7 @@ data = [
     ("Command A Vision", "Cohere", "2025-07-31", False),
     ("Command A Reasoning", "Cohere", "2025-08-21", False),
     ("Command A Translate", "Cohere", "2025-08-28", False),
+    ("Command A+", "Cohere", "2026-05-20", True),
 ]
 
 df = pd.DataFrame(data, columns=["Model", "Company", "Date", "Milestone"])
@@ -374,6 +375,7 @@ short_labels = {
     "Command A Vision":     "A Vision",
     "Command A Reasoning":  "A Reasoning",
     "Command A Translate":  "A Translate",
+    "Command A+":           "A+",
 }
 
 # Series name shown on Y-axis next to company name
