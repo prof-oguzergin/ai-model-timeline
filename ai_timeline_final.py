@@ -487,7 +487,7 @@ y_max = y_positions[company_order[0]] + 2.8
 
 # Shading starts at the first model date, extends to match x-axis limit (Jun 2026)
 shade_left = mdates.date2num(df["Date"].min() - pd.Timedelta(days=15))
-shade_right = mdates.date2num(pd.Timestamp("2026-06-01"))
+shade_right = mdates.date2num(pd.Timestamp("2026-07-01"))
 shade_width = shade_right - shade_left
 
 # Closed source: warm red/purple tint
@@ -613,7 +613,7 @@ company_overrides = {
     ("Anthropic", "Sonnet 4.6"): (0, -55),
     ("Anthropic", "Opus 4.7"):   (0, 55),
     ("Anthropic", "Opus 4.8"):   (0, -55),
-    ("Anthropic", "Fable 5"):    (0, 55),
+    ("Anthropic", "Fable 5"):    (0, 121),
     # Mistral - all labels equal distance from line (no multi-level stacking)
     ("Mistral", "Medium 3"):    (0, -55),
     ("Mistral", "Magistral"):   (0, 55),
