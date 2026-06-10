@@ -299,7 +299,7 @@
   <div id="pane-llm" class="pane active">
     <p id="desc-llm" class="desc"></p>
     <div class="timeline-container">
-      <img id="img-llm" src="ai_timeline_final_tr.png" alt="" loading="eager">
+      <img id="img-llm" src="ai_timeline_final_tr.png?v=20260610" alt="" loading="eager">
       <div class="download-bar">
         <a id="dl-llm-main" href="ai_timeline_final_tr.png" download>Yüksek Çözünürlük (PNG)</a>
         <a id="dl-llm-linkedin" href="ai_timeline_final_tr_linkedin.png" download>LinkedIn Biçimi</a>
@@ -311,7 +311,7 @@
   <div id="pane-image" class="pane">
     <p id="desc-image" class="desc"></p>
     <div class="timeline-container">
-      <img id="img-image" src="ai_image_gen_timeline_tr.png" alt="" loading="lazy">
+      <img id="img-image" src="ai_image_gen_timeline_tr.png?v=20260610" alt="" loading="lazy">
       <div class="download-bar">
         <a id="dl-image-main" href="ai_image_gen_timeline_tr.png" download>Yüksek Çözünürlük (PNG)</a>
       </div>
@@ -322,7 +322,7 @@
   <div id="pane-video" class="pane">
     <p id="desc-video" class="desc"></p>
     <div class="timeline-container">
-      <img id="img-video" src="ai_video_gen_timeline_tr.png" alt="" loading="lazy">
+      <img id="img-video" src="ai_video_gen_timeline_tr.png?v=20260610" alt="" loading="lazy">
       <div class="download-bar">
         <a id="dl-video-main" href="ai_video_gen_timeline_tr.png" download>Yüksek Çözünürlük (PNG)</a>
       </div>
@@ -334,7 +334,7 @@
     <p id="desc-compare" class="desc"></p>
     <div class="timeline-container">
       <div class="iframe-wrap">
-        <iframe id="iframe-compare" src="model_comparison_tr.html" loading="lazy"></iframe>
+        <iframe id="iframe-compare" src="model_comparison_tr.html?v=20260610" loading="lazy"></iframe>
       </div>
       <div class="download-bar">
         <a id="dl-compare" href="model_comparison_tr.html" target="_blank">Tam Sayfa Aç</a>
@@ -380,6 +380,7 @@
 </footer>
 
 <script>
+  const ASSET_V = "20260610";
   const labels = {
     tr: {
       htmlLang: "tr",
@@ -489,34 +490,34 @@
     document.getElementById("desc-vending").innerHTML = L.desc_vending;
 
     // LLM images
-    document.getElementById("img-llm").src = L.img_llm;
+    document.getElementById("img-llm").src = L.img_llm + "?v=" + ASSET_V;
     document.getElementById("img-llm").alt = L.alt_llm;
-    document.getElementById("dl-llm-main").href = L.img_llm;
+    document.getElementById("dl-llm-main").href = L.img_llm + "?v=" + ASSET_V;
     document.getElementById("dl-llm-main").textContent = L.dl_main;
-    document.getElementById("dl-llm-linkedin").href = L.img_llm_linkedin;
+    document.getElementById("dl-llm-linkedin").href = L.img_llm_linkedin + "?v=" + ASSET_V;
     document.getElementById("dl-llm-linkedin").textContent = L.dl_linkedin;
 
     // Image Gen
-    document.getElementById("img-image").src = L.img_image;
+    document.getElementById("img-image").src = L.img_image + "?v=" + ASSET_V;
     document.getElementById("img-image").alt = L.alt_image;
-    document.getElementById("dl-image-main").href = L.img_image;
+    document.getElementById("dl-image-main").href = L.img_image + "?v=" + ASSET_V;
     document.getElementById("dl-image-main").textContent = L.dl_main;
 
     // Video Gen
-    document.getElementById("img-video").src = L.img_video;
+    document.getElementById("img-video").src = L.img_video + "?v=" + ASSET_V;
     document.getElementById("img-video").alt = L.alt_video;
-    document.getElementById("dl-video-main").href = L.img_video;
+    document.getElementById("dl-video-main").href = L.img_video + "?v=" + ASSET_V;
     document.getElementById("dl-video-main").textContent = L.dl_main;
 
     // Comparison
-    document.getElementById("iframe-compare").src = L.iframe_compare;
-    document.getElementById("dl-compare").href = L.iframe_compare;
+    document.getElementById("iframe-compare").src = L.iframe_compare + "?v=" + ASSET_V;
+    document.getElementById("dl-compare").href = L.iframe_compare + "?v=" + ASSET_V;
     document.getElementById("dl-compare").textContent = L.dl_fullpage;
 
     // Vending — canvas tabanli, PNG linki fallback
     const dlVending = document.getElementById("dl-vending");
     if (dlVending) {
-      dlVending.href = L.img_vending;
+      dlVending.href = L.img_vending + "?v=" + ASSET_V;
     }
 
     // Flag button active states
