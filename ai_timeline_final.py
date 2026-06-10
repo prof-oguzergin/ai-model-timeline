@@ -90,6 +90,9 @@ data = [
     # Meta Muse (Closed Source)
     ("Muse Spark", "Meta Muse", "2026-04-08", True),
 
+    # Microsoft MAI (Closed Source)
+    ("MAI-Thinking-1", "Microsoft MAI", "2026-06-02", True),
+
     # Microsoft Phi (Open Source)
     ("Phi-1", "Microsoft", "2023-06-20", True),
     ("Phi-2", "Microsoft", "2023-12-12", True),
@@ -362,6 +365,7 @@ short_labels = {
 
     # Meta Muse
     "Muse Spark":           "Spark",
+    "MAI-Thinking-1":       "Thinking-1",
 
     # Amazon Nova
     "Amazon Nova Pro":      "Pro",
@@ -386,6 +390,7 @@ series_name = {
     "xAI":          "Grok",
     "Meta":         "Llama",
     "Meta Muse":    "Muse",
+    "Microsoft MAI": "MAI",
     "Microsoft":    "Phi",
     "Mistral":      "Mistral",
     "Qwen":         "Qwen",
@@ -406,6 +411,7 @@ colors = {
     "xAI":       "#1DA1F2",
     "Meta":      "#0668E1",
     "Meta Muse": "#0668E1",
+    "Microsoft MAI": "#00A4EF",
     "Microsoft": "#F25022",
     "Mistral":   "#FF7000",
     "Qwen":      "#6C3CE1",
@@ -426,6 +432,7 @@ company_name = {
     "xAI":       "xAI",
     "Meta":      "Meta",
     "Meta Muse": "Meta",
+    "Microsoft MAI": "Microsoft",
     "Microsoft": "Microsoft",
     "Mistral":   "Mistral AI",
     "Qwen":      "Qwen / Alibaba",
@@ -446,6 +453,7 @@ country_text = {
     "xAI":       "USA",
     "Meta":      "USA",
     "Meta Muse": "USA",
+    "Microsoft MAI": "USA",
     "Microsoft": "USA",
     "Mistral":   "France",
     "Qwen":      "China",
@@ -467,7 +475,7 @@ flag_images = {
     "Canada":        "C:/Users/Z GAMES/flags/ca.png",
 }
 
-company_order = ["OpenAI", "Google", "Anthropic", "xAI", "Meta Muse", "Amazon", "ByteDance", "Cohere",
+company_order = ["OpenAI", "Google", "Anthropic", "xAI", "Microsoft MAI", "Meta Muse", "Amazon", "ByteDance", "Cohere",
                  "Meta", "Microsoft", "Google Gemma", "Mistral",
                  "Qwen", "DeepSeek", "Z.ai", "Kimi", "MiniMax"]
 
