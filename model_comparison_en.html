@@ -181,6 +181,18 @@
     text-align: left;
   }
 
+  .subsection-row td {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 5px 12px 5px 30px;
+    border: none;
+    color: #9aa6b4;
+    background: rgba(255,255,255,0.022);
+    border-left: 2px solid rgba(255,255,255,0.12);
+  }
+  .subsection-row td:first-child { text-align: left; }
+
   tbody tr:not(.section-row) {
     background: rgba(255,255,255,0.015);
     border-radius: 8px;
@@ -666,32 +678,8 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
-
       <tr class="section-row knowledge"><td colspan="22">KNOWLEDGE & REASONING</td></tr>
-      <tr>
-        <td data-tooltip="12,000 multiple-choice questions across 14 disciplines, significantly harder than the original MMLU.">MMLU-Pro</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td>89.1%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td>87.5%</td>
-        <td class="na">&mdash;</td>
-        <td class="best gemini">91.0%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td>88.5%</td>
-        <td>87.5%</td>
-        <td>81.2%</td>
-        <td>75.9%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-      </tr>
+      <tr class="subsection-row"><td colspan="22">▸ Science & Reasoning</td></tr>
       <tr>
         <td data-tooltip="198 PhD-level science questions in biology, physics, and chemistry. Source: artificialanalysis.ai independent measurement (single consistent source).">GPQA Diamond</td>
         <td>92.6%</td>
@@ -741,6 +729,30 @@
         <td>2.0%</td>
       </tr>
       <tr>
+        <td data-tooltip="Scientific problem-solving benchmark where models must write real scientific code to reach answers. Source: artificialanalysis.ai independent measurement (single consistent source).">SciCode</td>
+        <td class="best mythos">60.2%</td>
+        <td class="na">&mdash;</td>
+        <td>53.5%</td>
+        <td>54.5%</td>
+        <td>51.9%</td>
+        <td>49.5%</td>
+        <td>46.8%</td>
+        <td>56.1%</td>
+        <td>56.6%</td>
+        <td>53.1%</td>
+        <td>58.9%</td>
+        <td>56.1%</td>
+        <td>53.5%</td>
+        <td>43.8%</td>
+        <td>40.7%</td>
+        <td>50.0%</td>
+        <td>38.9%</td>
+        <td>35.4%</td>
+        <td>45.4%</td>
+        <td>45.6%</td>
+        <td>45.7%</td>
+      </tr>
+      <tr>
         <td data-tooltip="3,000 expert-crafted questions across 100+ fields, designed to stump current frontier AI models. Source: artificialanalysis.ai independent measurement (single consistent source, no tools).">Humanity's Last Exam</td>
         <td class="best mythos">53.3%</td>
         <td class="na">&mdash;</td>
@@ -764,6 +776,31 @@
         <td>32.2%</td>
         <td>23.9%</td>
       </tr>
+      <tr>
+        <td data-tooltip="Agentic spatial reasoning; understanding technical drawings and blueprints.">Blueprint-Bench 2</td>
+        <td class="best mythos">38.6%</td>
+        <td class="na">&mdash;</td>
+        <td>14.5%</td>
+        <td>24.5%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td>6.7%</td>
+        <td>36.2%</td>
+        <td class="na">&mdash;</td>
+        <td>33.6%</td>
+        <td>26.5%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+      </tr>
+      <tr class="subsection-row"><td colspan="22">▸ Health & Biomedical</td></tr>
       <tr>
         <td data-tooltip="Health question answering and clinical scenarios.">HealthBench</td>
         <td class="best mythos">62.7%</td>
@@ -860,6 +897,55 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
+      <tr class="subsection-row"><td colspan="22">▸ Knowledge & Factuality</td></tr>
+      <tr>
+        <td data-tooltip="12,000 multiple-choice questions across 14 disciplines, significantly harder than the original MMLU.">MMLU-Pro</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td>89.1%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td>87.5%</td>
+        <td class="na">&mdash;</td>
+        <td class="best gemini">91.0%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td>88.5%</td>
+        <td>87.5%</td>
+        <td>81.2%</td>
+        <td>75.9%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+      </tr>
+      <tr>
+        <td data-tooltip="Multilingual MMLU measuring knowledge and reasoning across different languages worldwide.">MMMLU (Multilingual)</td>
+        <td class="na">&mdash;</td>
+        <td>92.7%</td>
+        <td class="na">&mdash;</td>
+        <td>91.5%</td>
+        <td>91.1%</td>
+        <td>90.8%</td>
+        <td>89.3%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="best gemini">92.6%</td>
+        <td>91.8%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td>89.5%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+      </tr>
       <tr>
         <td data-tooltip="Short factual questions with single correct answers; tests factual accuracy and hallucination rate.">SimpleQA-Verified</td>
         <td class="na">&mdash;</td>
@@ -908,6 +994,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
+      <tr class="subsection-row"><td colspan="22">▸ Abstract Reasoning (ARC-AGI)</td></tr>
       <tr>
         <td data-tooltip="Abstract visual puzzles testing novel pattern induction; the original 2019 ARC benchmark.">ARC-AGI-1</td>
         <td class="na">&mdash;</td>
@@ -980,30 +1067,7 @@
         <td>0.1%</td>
         <td class="na">&mdash;</td>
       </tr>
-      <tr>
-        <td data-tooltip="Multilingual MMLU measuring knowledge and reasoning across different languages worldwide.">MMMLU (Multilingual)</td>
-        <td class="na">&mdash;</td>
-        <td>92.7%</td>
-        <td class="na">&mdash;</td>
-        <td>91.5%</td>
-        <td>91.1%</td>
-        <td>90.8%</td>
-        <td>89.3%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="best gemini">92.6%</td>
-        <td>91.8%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td>89.5%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-      </tr>
+      <tr class="subsection-row"><td colspan="22">▸ Multimodal & Visual</td></tr>
       <tr>
         <td data-tooltip="Multi-discipline multimodal understanding benchmark combining text, images, and charts.">MMMU-Pro (Multimodal)</td>
         <td class="na">&mdash;</td>
@@ -1027,54 +1091,6 @@
         <td>78.1%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-      </tr>
-      <tr>
-        <td data-tooltip="Agentic spatial reasoning; understanding technical drawings and blueprints.">Blueprint-Bench 2</td>
-        <td class="best mythos">38.6%</td>
-        <td class="na">&mdash;</td>
-        <td>14.5%</td>
-        <td>24.5%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td>6.7%</td>
-        <td>36.2%</td>
-        <td class="na">&mdash;</td>
-        <td>33.6%</td>
-        <td>26.5%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-      </tr>
-      <tr>
-        <td data-tooltip="Scientific problem-solving benchmark where models must write real scientific code to reach answers. Source: artificialanalysis.ai independent measurement (single consistent source).">SciCode</td>
-        <td class="best mythos">60.2%</td>
-        <td class="na">&mdash;</td>
-        <td>53.5%</td>
-        <td>54.5%</td>
-        <td>51.9%</td>
-        <td>49.5%</td>
-        <td>46.8%</td>
-        <td>56.1%</td>
-        <td>56.6%</td>
-        <td>53.1%</td>
-        <td>58.9%</td>
-        <td>56.1%</td>
-        <td>53.5%</td>
-        <td>43.8%</td>
-        <td>40.7%</td>
-        <td>50.0%</td>
-        <td>38.9%</td>
-        <td>35.4%</td>
-        <td>45.4%</td>
-        <td>45.6%</td>
-        <td>45.7%</td>
       </tr>
       <tr>
         <td data-tooltip="Chart understanding and reasoning benchmark; model answers chart questions without tool access.">CharXiv Reasoning (no tools)</td>
@@ -1172,8 +1188,6 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
-
-
       <tr class="section-row math"><td colspan="22">MATHEMATICS</td></tr>
       <tr>
         <td data-tooltip="American Invitational Mathematics Examination; 15 challenging high-school math problems (no tools).">AIME 2025</td>
@@ -1391,7 +1405,6 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
-
       <tr class="section-row context"><td colspan="22">LONG CONTEXT (1M Tokens)</td></tr>
       <tr>
         <td data-tooltip="Multi-round conversation retrieval test extended to 1 million token context windows.">MRCR 1M</td>
@@ -1489,8 +1502,8 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
-
       <tr class="section-row computer"><td colspan="22">AGENTIC / COMPUTER USE</td></tr>
+      <tr class="subsection-row"><td colspan="22">▸ Browser & Computer Use</td></tr>
       <tr>
         <td data-tooltip="Complex autonomous web browsing and information synthesis tasks requiring multi-step reasoning.">BrowseComp</td>
         <td class="best mythos">88.0%</td>
@@ -1540,66 +1553,18 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td data-tooltip="Humanity's Last Exam with Python code interpreter tool access; tests tool-augmented reasoning.">HLE (with tools)</td>
-        <td class="best mythos">64.5%</td>
-        <td>64.7%</td>
-        <td>57.9%</td>
-        <td>54.7%</td>
-        <td>53.3%</td>
-        <td class="na">&mdash;</td>
-        <td>49.0%</td>
-        <td>52.2%</td>
-        <td>58.7%</td>
-        <td class="na">&mdash;</td>
-        <td>51.4%</td>
+        <td data-tooltip="Screen GUI element localization benchmark; no tool access.">ScreenSpot-Pro (no tools)</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td>50.6%</td>
-        <td>48.2%</td>
+        <td class="best opus">82.3%</td>
+        <td>79.5%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td>44.4%</td>
-      </tr>
-      <tr>
-        <td data-tooltip="GDPval (economically valuable real-world tasks) AA Elo edition. Source: artificialanalysis.ai independent measurement (single consistent source).">GDPval-AA (Elo)</td>
-        <td class="best mythos">1932</td>
-        <td class="na">&mdash;</td>
-        <td>1890</td>
-        <td>1753</td>
-        <td>1619</td>
-        <td>1450</td>
-        <td>1676</td>
-        <td>1769</td>
-        <td>1674</td>
-        <td>1656</td>
-        <td>1314</td>
-        <td>1184</td>
-        <td>1481</td>
-        <td>1535</td>
-        <td>1352</td>
-        <td>1554</td>
-        <td>1197</td>
-        <td>409</td>
-        <td>1670</td>
-        <td>1168</td>
-        <td>990</td>
-      </tr>
-      <tr>
-        <td data-tooltip="PDF/vision version of GDPval tasks; document understanding without tools.">GDP.pdf (vision)</td>
-        <td class="best mythos">29.8%</td>
-        <td class="na">&mdash;</td>
-        <td>22.5%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td>24.9%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td>16.7%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -1612,18 +1577,18 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td data-tooltip="Professional tasks over real office documents.">OfficeQA Pro</td>
-        <td class="best mythos">57.9%</td>
-        <td class="na">&mdash;</td>
-        <td>48.1%</td>
+        <td data-tooltip="Screen GUI element localization benchmark; with tool access.">ScreenSpot-Pro (with tools)</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
+        <td class="best opus">87.9%</td>
+        <td>87.6%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td>52.6%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td>18.1%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -1635,6 +1600,31 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
+      <tr>
+        <td data-tooltip="End-to-end automation workflow tasks.">Automation Bench</td>
+        <td class="best mythos">17.4%</td>
+        <td class="na">&mdash;</td>
+        <td>15.5%</td>
+        <td>9.9%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td>12.9%</td>
+        <td class="na">&mdash;</td>
+        <td>14.5%</td>
+        <td>9.6%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+      </tr>
+      <tr class="subsection-row"><td colspan="22">▸ Tool & Protocol Use</td></tr>
       <tr>
         <td data-tooltip="Multi-task benchmark for evaluating LLM agents across diverse MCP tool-use environments.">MCP-Atlas</td>
         <td class="na">&mdash;</td>
@@ -1683,6 +1673,55 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
+      <tr>
+        <td data-tooltip="Customer-service agent tasks in a retail setting with tools and APIs; tests realistic agentic behavior.">τ2-bench (Retail)</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="best opus">91.9%</td>
+        <td>88.9%</td>
+        <td>91.7%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td>90.8%</td>
+        <td>85.3%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+      </tr>
+      <tr>
+        <td data-tooltip="Agent tasks in a telecommunications customer-service setting with complex multi-turn interactions.">τ2-bench (Telecom)</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td>99.3%</td>
+        <td>98.2%</td>
+        <td>97.9%</td>
+        <td>98.0%</td>
+        <td>98.9%</td>
+        <td class="na">&mdash;</td>
+        <td class="best gemini">99.3%</td>
+        <td>98.0%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+      </tr>
+      <tr class="subsection-row"><td colspan="22">▸ Domain Agents (Finance/Legal/Office)</td></tr>
       <tr>
         <td data-tooltip="Financial sector agentic tasks requiring analysis, reporting, and decision-making with financial data.">Finance Agent v1.1</td>
         <td class="na">&mdash;</td>
@@ -1780,43 +1819,19 @@
         <td class="na">&mdash;</td>
       </tr>
       <tr>
-        <td data-tooltip="Customer-service agent tasks in a retail setting with tools and APIs; tests realistic agentic behavior.">τ2-bench (Retail)</td>
+        <td data-tooltip="Professional tasks over real office documents.">OfficeQA Pro</td>
+        <td class="best mythos">57.9%</td>
+        <td class="na">&mdash;</td>
+        <td>48.1%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="best opus">91.9%</td>
-        <td>88.9%</td>
-        <td>91.7%</td>
+        <td>52.6%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
+        <td>18.1%</td>
         <td class="na">&mdash;</td>
-        <td>90.8%</td>
-        <td>85.3%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-      </tr>
-      <tr>
-        <td data-tooltip="Agent tasks in a telecommunications customer-service setting with complex multi-turn interactions.">τ2-bench (Telecom)</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td>99.3%</td>
-        <td>98.2%</td>
-        <td>97.9%</td>
-        <td>98.0%</td>
-        <td>98.9%</td>
-        <td class="na">&mdash;</td>
-        <td class="best gemini">99.3%</td>
-        <td>98.0%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -1851,19 +1866,68 @@
         <td>$4.663</td>
         <td class="na">&mdash;</td>
       </tr>
+      <tr class="subsection-row"><td colspan="22">▸ Document & Economic Tasks</td></tr>
       <tr>
-        <td data-tooltip="Screen GUI element localization benchmark; no tool access.">ScreenSpot-Pro (no tools)</td>
+        <td data-tooltip="Humanity's Last Exam with Python code interpreter tool access; tests tool-augmented reasoning.">HLE (with tools)</td>
+        <td class="best mythos">64.5%</td>
+        <td>64.7%</td>
+        <td>57.9%</td>
+        <td>54.7%</td>
+        <td>53.3%</td>
+        <td class="na">&mdash;</td>
+        <td>49.0%</td>
+        <td>52.2%</td>
+        <td>58.7%</td>
+        <td class="na">&mdash;</td>
+        <td>51.4%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="best opus">82.3%</td>
-        <td>79.5%</td>
+        <td class="na">&mdash;</td>
+        <td>50.6%</td>
+        <td>48.2%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
+        <td>44.4%</td>
+      </tr>
+      <tr>
+        <td data-tooltip="GDPval (economically valuable real-world tasks) AA Elo edition. Source: artificialanalysis.ai independent measurement (single consistent source).">GDPval-AA (Elo)</td>
+        <td class="best mythos">1932</td>
+        <td class="na">&mdash;</td>
+        <td>1890</td>
+        <td>1753</td>
+        <td>1619</td>
+        <td>1450</td>
+        <td>1676</td>
+        <td>1769</td>
+        <td>1674</td>
+        <td>1656</td>
+        <td>1314</td>
+        <td>1184</td>
+        <td>1481</td>
+        <td>1535</td>
+        <td>1352</td>
+        <td>1554</td>
+        <td>1197</td>
+        <td>409</td>
+        <td>1670</td>
+        <td>1168</td>
+        <td>990</td>
+      </tr>
+      <tr>
+        <td data-tooltip="PDF/vision version of GDPval tasks; document understanding without tools.">GDP.pdf (vision)</td>
+        <td class="best mythos">29.8%</td>
+        <td class="na">&mdash;</td>
+        <td>22.5%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td>24.9%</td>
+        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td>
+        <td>16.7%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -1875,55 +1939,6 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
-      <tr>
-        <td data-tooltip="Screen GUI element localization benchmark; with tool access.">ScreenSpot-Pro (with tools)</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="best opus">87.9%</td>
-        <td>87.6%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-      </tr>
-      <tr>
-        <td data-tooltip="End-to-end automation workflow tasks.">Automation Bench</td>
-        <td class="best mythos">17.4%</td>
-        <td class="na">&mdash;</td>
-        <td>15.5%</td>
-        <td>9.9%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td>12.9%</td>
-        <td class="na">&mdash;</td>
-        <td>14.5%</td>
-        <td>9.6%</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
-      </tr>
-
       <tr class="section-row cyber"><td colspan="22">CYBERSECURITY</td></tr>
       <tr>
         <td data-tooltip="Capture-The-Flag cybersecurity challenges sourced from real CTF competitions testing offensive security skills.">CyberGym</td>
