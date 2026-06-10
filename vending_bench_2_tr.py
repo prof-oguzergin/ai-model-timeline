@@ -10,7 +10,7 @@ import os
 # ============================================================
 # Vending-Bench 2 leaderboard verileri
 # Kaynak: andonlabs.com
-# 41 model, 1 yillik vending makinesi isleme simülasyonu
+# 43 model, 1 yillik vending makinesi isleme simülasyonu
 # Deger: $500 baslangic dahil son bakiye
 # ============================================================
 
@@ -19,6 +19,8 @@ leaderboard = [
     ("Claude Opus 4.7",              "Anthropic", "2026-04-16", 10936.76),
     ("Claude Opus 4.8 High",         "Anthropic", "2026-05-28",  5787.43),
     ("Claude Opus 4.8 Max",          "Anthropic", "2026-05-28",  2992.34),
+    ("Claude Fable 5 High",          "Anthropic", "2026-06-09",  5680.26),
+    ("Claude Fable 5 Max",           "Anthropic", "2026-06-09",  4966.64),
     ("Claude Opus 4.6",              "Anthropic", "2026-02-05",  8017.59),
     ("GPT-5.5",                      "OpenAI",    "2026-04-23",  7523.84),
     ("Claude Sonnet 4.6",            "Anthropic", "2026-02-17",  7204.14),
@@ -64,6 +66,8 @@ tarih_kaynak = {
     "Claude Opus 4.7":             "ai_timeline_final_tr.py",
     "Claude Opus 4.8 High":        "Andon Labs leaderboard 2026-05-29 dogrulandi",
     "Claude Opus 4.8 Max":         "Andon Labs leaderboard 2026-05-29 dogrulandi",
+    "Claude Fable 5 High":         "Andon Labs leaderboard 2026-06-09",
+    "Claude Fable 5 Max":          "Andon Labs leaderboard 2026-06-09",
     "Claude Opus 4.6":             "ai_timeline_final_tr.py",
     "GPT-5.5":                     "ai_timeline_final_tr.py",
     "Claude Sonnet 4.6":           "ai_timeline_final_tr.py",
@@ -181,6 +185,8 @@ manual_offsets = {
     "Claude Opus 4.7":            ( 4,  6),
     "Claude Opus 4.8 High":       ( 4,  8),
     "Claude Opus 4.8 Max":        ( 4, -10),
+    "Claude Fable 5 High":        ( 10,  16),
+    "Claude Fable 5 Max":         ( 10, -14),
     "Claude Opus 4.6":            ( 4,  5),
     "GPT-5.5":                    (-80,  8),
     "Claude Sonnet 4.6":          ( 4, -10),
@@ -309,7 +315,7 @@ fig.text(
 )
 fig.text(
     0.5, 0.895,
-    "41 Model  ·  Kaynak: andonlabs.com  ·  Başlangıç: $500 (1 yıllık simülasyon sonucu bakiye $-31'den $10.936'ya)",
+    "43 Model  ·  Kaynak: andonlabs.com  ·  Başlangıç: $500 (1 yıllık simülasyon sonucu bakiye $-31'den $10.936'ya)",
     ha="center", va="center", fontsize=7.5, color="#8090a8"
 )
 
