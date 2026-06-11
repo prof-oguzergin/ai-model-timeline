@@ -190,6 +190,14 @@ data = [
     ("Command A Reasoning", "Cohere", "2025-08-21", False),
     ("Command A Translate", "Cohere", "2025-08-28", False),
     ("Command A+", "Cohere", "2026-05-20", True),
+
+    # Ai2 (Allen Institute) - Tam Acik (agirlik + veri + kod)
+    ("OLMo", "Ai2", "2024-02-01", True),
+    ("Molmo", "Ai2", "2024-09-25", True),
+    ("OLMo 2", "Ai2", "2024-11-26", True),
+    ("OLMo 2 32B", "Ai2", "2025-03-13", False),
+    ("OLMo 3", "Ai2", "2025-11-20", True),
+    ("Molmo 2", "Ai2", "2025-12-11", True),
 ]
 
 df = pd.DataFrame(data, columns=["Model", "Company", "Date", "Milestone"])
@@ -402,6 +410,7 @@ series_name = {
     "ByteDance":    "Doubao",
     "Amazon":       "Nova",
     "Cohere":       "Command",
+    "Ai2":          "OLMo / Molmo",
 }
 
 colors = {
@@ -423,6 +432,7 @@ colors = {
     "ByteDance":    "#00F0FF",
     "Amazon":       "#FF9900",
     "Cohere":       "#D18EE2",
+    "Ai2":          "#F0529C",
 }
 
 company_name = {
@@ -444,6 +454,7 @@ company_name = {
     "ByteDance":    "ByteDance",
     "Amazon":       "Amazon / AWS",
     "Cohere":       "Cohere",
+    "Ai2":          "Ai2",
 }
 
 country_text = {
@@ -465,6 +476,7 @@ country_text = {
     "ByteDance":    "Çin",
     "Amazon":       "ABD",
     "Cohere":       "Kanada",
+    "Ai2":          "ABD",
 }
 
 # Flag image files
@@ -476,7 +488,7 @@ flag_images = {
 }
 
 company_order = ["OpenAI", "Google", "Anthropic", "xAI", "Microsoft MAI", "Meta Muse", "Amazon", "ByteDance", "Cohere",
-                 "Meta", "Microsoft", "Google Gemma", "Mistral",
+                 "Meta", "Microsoft", "Google Gemma", "Ai2", "Mistral",
                  "Qwen", "DeepSeek", "Z.ai", "Kimi", "MiniMax"]
 
 # Vertical spacing: each company gets 3.0 units
