@@ -656,6 +656,8 @@ company_overrides = {
     ("MiniMax", "M2.7"):        (0, 55),
     ("ByteDance", "Seed 2.0"):  (0, -55),
     ("Z.ai", "5.1"):            (0, 55),
+    ("Ai2", "OLMo 3"):          (0, 55),
+    ("Ai2", "Molmo 2"):         (0, -55),
 }
 
 
