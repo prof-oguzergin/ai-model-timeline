@@ -147,6 +147,7 @@ data = [
     ("GLM-4.7", "Z.ai", "2025-12-22", False),
     ("GLM-5", "Z.ai", "2026-02-11", True),
     ("GLM-5.1", "Z.ai", "2026-03-27", False),
+    ("GLM-5.2", "Z.ai", "2026-06-13", False),
 
     # Kimi (Moonshot AI)
     ("Kimi Chat", "Kimi", "2023-10-09", True),
@@ -342,6 +343,7 @@ short_labels = {
     "GLM-4.7":          "4.7",
     "GLM-5":            "5",
     "GLM-5.1":          "5.1",
+    "GLM-5.2":          "5.2",
 
     # Kimi
     "Kimi Chat":        "Chat",
@@ -930,7 +932,7 @@ for i, dot_x in enumerate([-0.008, 0.000, 0.008]):
     ax.add_patch(d)
 
 ax.text(0.5, 1.008,
-        f"15 Şirket  |  {len(df)} Model  |  Kas 2022 – Nis 2026  |  ● Büyük = Dönüm Noktası  |  ● Küçük = Güncelleme",
+        f"15 Şirket  |  {len(df)} Model  |  Kas 2022 – Haz 2026  |  ● Büyük = Dönüm Noktası  |  ● Küçük = Güncelleme",
         transform=ax.transAxes, ha="center", fontsize=28,
         color="#8b949e", fontstyle="italic")
 
