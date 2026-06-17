@@ -62,28 +62,28 @@
 
   table {
     width: 100%;
+    min-width: 1420px;
     border-collapse: separate;
     border-spacing: 0 2px;
     table-layout: fixed;
   }
 
   thead th {
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 700;
     letter-spacing: 0.5px;
-    padding: 8px 2px;
+    padding: 8px 1px;
     text-align: center;
     border-bottom: 1px solid rgba(255,255,255,0.08);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    white-space: normal;
+    overflow: visible;
   }
   /* Tek satirda benchmark adlari icin label kolonu genis, digerleri esit pay */
   thead th:not(:first-child) { width: calc((100% - 280px) / 22); }
-  thead tr:last-child th { vertical-align: bottom; top: 28px; box-shadow: 0 5px 7px -3px rgba(0,0,0,0.55); }
+  thead tr:last-child th { vertical-align: bottom; top: 25px; box-shadow: 0 5px 7px -3px rgba(0,0,0,0.55); }
   thead th { position: sticky; z-index: 20; background: #0d0d15; }
-  thead tr:first-child th { top: 0; }
-  .tbl-scroll { overflow-y: auto; overflow-x: hidden; max-height: 80vh; border-radius: 6px; }
+  thead tr:first-child th { top: 0; font-size: 9px; letter-spacing: 0.1px; white-space: nowrap; overflow: visible; padding-left: 1px; padding-right: 1px; }
+  .tbl-scroll { overflow: auto; max-height: 80vh; border-radius: 6px; }
 
   thead th .date {
     display: block;
@@ -100,6 +100,10 @@
     width: 280px;
     white-space: nowrap;
     padding-right: 12px;
+    position: sticky;
+    left: 0;
+    z-index: 30;
+    background: #11121c;
   }
 
   /* Sirket baslik satiri */
@@ -117,7 +121,7 @@
   thead th.col-opus48   { color: #ffd0b0; }
   thead th.col-opus47   { color: #f5b98c; }
   thead th.col-opus46   { color: #d97757; }
-  thead th.col-opus45   { color: #a04a2e; }
+  thead th.col-opus45   { color: #c5805f; }
   thead th.col-sonnet46 { color: #b8553b; }
   thead th.col-gpt55    { color: #6ee7a0; }
   thead th.col-gpt54    { color: #4ade80; }
@@ -125,7 +129,7 @@
   thead th.col-gemini31 { color: #60a5fa; }
   thead th.col-gemini3  { color: #3b82c7; }
   thead th.col-deepseek32 { color: #c82626; }
-  thead th.col-deepseek3  { color: #7f1d1d; }
+  thead th.col-deepseek3  { color: #d97070; }
   thead th.col-deepseek { color: #ef4444; }
   thead th.col-grok4   { color: #1da1f2; }
   thead th.col-minimax-m3 { color: #C77DFF; }
@@ -226,6 +230,10 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    position: sticky;
+    left: 0;
+    z-index: 10;
+    background: #11121c;
   }
 
   tbody td:last-child {
