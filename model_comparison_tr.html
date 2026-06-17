@@ -384,7 +384,8 @@
   <div class="header">
     <div class="badge">ÖNCÜ LLM KARŞILAŞTIRMA &middot; 9 HAZİRAN 2026</div>
     <h1>Modeller Arası Başarım: Claude · GPT · Gemini · Kimi · GLM · Qwen · DeepSeek · MiniMax · Grok · Fable</h1>
-    <div class="subtitle">Her satırın en yüksek puanı öne çıkarıldı. Boş hücreler veri yayınlanmadığını gösterir.</div>
+    <div class="subtitle">Her satır kendi içinde renklendirildi: <span style="color:#3fb950">yeşil = yüksek</span>, <span style="color:#e8504a">kırmızı = düşük</span>. Birinci ayrıca çerçeveli. Boş hücreler veri yayınlanmadığını gösterir.</div>
+    <div style="text-align:center;margin:10px 0 2px;font-size:11px;color:#8b949e;">düşük <span style="vertical-align:middle;margin:0 6px;white-space:nowrap;"><span style="display:inline-block;width:18px;height:10px;background:rgba(232,75,73,.5);border-radius:2px 0 0 2px;"></span><span style="display:inline-block;width:18px;height:10px;background:rgba(221,112,64,.5);"></span><span style="display:inline-block;width:18px;height:10px;background:rgba(210,150,55,.5);"></span><span style="display:inline-block;width:18px;height:10px;background:rgba(136,167,67,.5);"></span><span style="display:inline-block;width:18px;height:10px;background:rgba(63,185,80,.5);border-radius:0 2px 2px 0;"></span></span> yüksek &middot; birinci çerçeveli</div>
   </div>
 
   <div style="text-align:center; font-size:11px; color:#888; margin: 18px 0 6px; letter-spacing:0.5px;">
@@ -2000,5 +2001,25 @@
     <div class="author">@oguzergin</div>
   </div>
 </div>
+<script>
+(function(){
+  function pv(t){t=(t||'').trim();if(!t||t==='—'||t==='–'||t==='-')return null;var m=t.indexOf('$')>=0;var s=t.replace(/[%$\s]/g,'');s=m?s.replace(/[.,]/g,''):s.replace(/,/g,'');var n=parseFloat(s);return isNaN(n)?null:n;}
+  function lp(a,b,t){return Math.round(a+(b-a)*t);}
+  function heat(t){var r,g,b,u;if(t<0.5){u=t/0.5;r=lp(232,210,u);g=lp(75,150,u);b=lp(73,55,u);}else{u=(t-0.5)/0.5;r=lp(210,63,u);g=lp(150,185,u);b=lp(55,80,u);}return 'rgba('+r+','+g+','+b+',0.5)';}
+  document.querySelectorAll('tbody tr').forEach(function(tr){
+    if(tr.querySelector('td[colspan]'))return;
+    var tds=tr.querySelectorAll('td');if(tds.length<3)return;
+    var cells=[],vals=[];
+    for(var i=1;i<tds.length;i++){var v=pv(tds[i].textContent);if(v!==null){cells.push({td:tds[i],v:v});vals.push(v);}}
+    if(vals.length<2)return;
+    var mn=Math.min.apply(null,vals),mx=Math.max.apply(null,vals);
+    cells.forEach(function(c){
+      if(c.td.classList.contains('best'))return;
+      var t=mx===mn?1:(c.v-mn)/(mx-mn);
+      c.td.style.background=heat(t);
+    });
+  });
+})();
+</script>
 </body>
 </html>
