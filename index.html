@@ -380,11 +380,14 @@
 </footer>
 
 <script>
-  const ASSET_V = "20260616q";
+  const ASSET_V = "20260616r";
   window.addEventListener("message", function(e){
     if(e && e.data && e.data.t === "cmpH" && e.data.h > 200){
       var f = document.getElementById("iframe-compare");
-      if(f) f.style.height = (e.data.h + 4) + "px";
+      if(!f) return;
+      var target = e.data.h + 2;
+      var cur = parseInt(f.style.height) || 0;
+      if(Math.abs(cur - target) > 4) f.style.height = target + "px";
     }
   });
   const labels = {
