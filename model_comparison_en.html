@@ -12,9 +12,6 @@
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     background: #0a0a0f;
     color: #e0e0e0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     min-height: 100vh;
     padding: 16px 20px;
   }
@@ -26,6 +23,7 @@
     padding: 28px 32px;
     max-width: 1500px;
     width: 100%;
+    margin: 0 auto;
     box-shadow: 0 0 80px rgba(200, 120, 255, 0.04), 0 0 200px rgba(80, 60, 200, 0.03);
   }
 
@@ -80,8 +78,11 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  thead th:not(:first-child) { width: calc((100% - 280px) / 21); }
-  thead tr:last-child th { vertical-align: bottom; }
+  thead th:not(:first-child) { width: calc((100% - 280px) / 22); }
+  thead tr:last-child th { vertical-align: bottom; top: 28px; box-shadow: 0 5px 7px -3px rgba(0,0,0,0.55); }
+  thead th { position: sticky; z-index: 20; background: #0d0d15; }
+  thead tr:first-child th { top: 0; }
+  .tbl-scroll { overflow-y: auto; overflow-x: hidden; max-height: 80vh; border-radius: 6px; }
 
   thead th .date {
     display: block;
@@ -424,7 +425,7 @@
     </div>
   </div>
 
-  <table>
+  <div class="tbl-scroll"><table>
     <thead>
       <tr>
         <th></th>
@@ -1993,7 +1994,7 @@
         <td class="na">&mdash;</td>
       </tr>
     </tbody>
-  </table>
+  </table></div>
 
   <div class="footer">
     <div class="source">Kaynaklar: anthropic.com &middot; openai.com &middot; deepmind.google &middot; vellum.ai &middot; llm-stats.com</div>
