@@ -116,12 +116,14 @@
   }
   .pane { display: none; }
   .pane.active { display: block; }
+  body.compare-mode header { display: none; }
+  body.compare-mode footer { display: none; }
   .iframe-wrap {
     width: 100%; border-radius: 6px; overflow: hidden;
     background: #0a0a0f;
   }
   .iframe-wrap iframe {
-    width: 100%; min-height: 1700px; border: none; display: block;
+    width: 100%; min-height: 380px; border: none; display: block;
     background: #0a0a0f;
   }
   #vendingChart {
@@ -262,7 +264,7 @@
     .timeline-container { padding: 8px; }
     main { padding: 20px 8px; }
     .category-tabs button { padding: 8px 12px; font-size: 0.85rem; }
-    .iframe-wrap iframe { min-height: 1200px; }
+    .iframe-wrap iframe { min-height: 380px; }
     #pane-vending > .timeline-container > div:first-of-type { height: 520px !important; }
   }
 </style>
@@ -380,16 +382,16 @@
 </footer>
 
 <script>
-  const ASSET_V = "20260616r";
-  window.addEventListener("message", function(e){
-    if(e && e.data && e.data.t === "cmpH" && e.data.h > 200){
-      var f = document.getElementById("iframe-compare");
-      if(!f) return;
-      var target = e.data.h + 2;
-      var cur = parseInt(f.style.height) || 0;
-      if(Math.abs(cur - target) > 4) f.style.height = target + "px";
-    }
-  });
+  const ASSET_V = "20260616s";
+  function fitCmp(){
+    var f = document.getElementById("iframe-compare");
+    if(!f) return;
+    f.style.height = "380px";
+    var top = f.getBoundingClientRect().top + window.scrollY;
+    var below = document.body.scrollHeight - top - f.offsetHeight;
+    f.style.height = Math.max(360, window.innerHeight - top - below - 8) + "px";
+  }
+  window.addEventListener("resize", function(){ if(state && state.category === "compare") fitCmp(); });
   const labels = {
     tr: {
       htmlLang: "tr",
@@ -545,6 +547,7 @@
     document.getElementById("pane-" + cat).classList.add("active");
     document.querySelectorAll(".category-tabs button").forEach(b => b.classList.remove("active"));
     document.getElementById("cat-" + cat).classList.add("active");
+    document.body.classList.toggle("compare-mode", cat === "compare");
   }
 
   // Initial render
@@ -764,6 +767,11 @@
         renderVendingChart();
         if (vendingChart) vendingChart.resize();
       }));
+    }
+    if (cat === "compare") {
+      window.scrollTo(0, 0);
+      requestAnimationFrame(() => requestAnimationFrame(fitCmp));
+      setTimeout(fitCmp, 250);
     }
   };
   const origSetLang = setLang;
