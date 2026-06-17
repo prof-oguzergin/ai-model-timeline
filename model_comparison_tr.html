@@ -132,6 +132,7 @@
   thead th.col-grok420 { color: #0c85d0; }
   thead th.col-kimi26  { color: #2DD4BF; }
   thead th.col-glm52   { color: #EC4899; }
+  thead th.col-glm51   { color: #EC4899; }
   thead th.col-qwen36  { color: #A78BFA; }
 
   .section-row td {
@@ -431,7 +432,7 @@
         <th colspan="2" class="company-openai">OPENAI</th>
         <th colspan="3" class="company-google">GOOGLE</th>
         <th class="company-kimi">MOONSHOT</th>
-        <th class="company-glm">Z.AI</th>
+        <th colspan="2" class="company-glm">Z.AI</th>
         <th class="company-qwen">ALIBABA</th>
         <th colspan="3" class="company-deepseek">DEEPSEEK</th>
         <th class="company-minimax">MINIMAX</th>
@@ -453,6 +454,7 @@
         <th class="col-gemini3">Gemini<br>3 Pro<span class="date">(18 Kas 25)</span></th>
         <th class="col-kimi26">Kimi<br>K2.6<span class="date">(13 Nis 26)</span></th>
         <th class="col-glm52">GLM<br>5.2<span class="date">(16 Haz 26)</span></th>
+        <th class="col-glm51">GLM<br>5.1<span class="date">(27 Mar 26)</span></th>
         <th class="col-qwen36">Qwen 3.6<br>Plus<span class="date">(2 Nis 26)</span></th>
         <th class="col-deepseek">V4-Pro<span class="date">(24 Nis 26)</span></th>
         <th class="col-deepseek32">V3.2<span class="date">(1 Ara 25)</span></th>
@@ -463,7 +465,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr class="section-row sw"><td colspan="22">YAZILIM GELİŞTİRME / KODLAMA</td></tr>
+      <tr class="section-row sw"><td colspan="23">YAZILIM GELİŞTİRME / KODLAMA</td></tr>
       <tr>
         <td data-tooltip="Gerçek GitHub issueları; model kodu düzeltip testlerden geçirmeli.">SWE-bench Verified</td>
         <td class="best mythos">95.5%</td>
@@ -479,7 +481,7 @@
         <td>80.6%</td>
         <td>76.2%</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td>78.8%</td>
         <td>80.6%</td>
         <td class="na">&mdash;</td>
@@ -503,7 +505,7 @@
         <td>54.2%</td>
         <td>43.3%</td>
         <td class="na">&mdash;</td>
-        <td>62.1%</td>
+        <td>62.1%</td><td class="na">&mdash;</td>
         <td>56.6%</td>
         <td>55.4%</td>
         <td class="na">&mdash;</td>
@@ -527,7 +529,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td>73.8%</td>
         <td>76.2%</td>
         <td class="na">&mdash;</td>
@@ -551,7 +553,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -575,7 +577,7 @@
         <td>68.5%</td>
         <td>56.9%</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td>61.6%</td>
         <td>67.9%</td>
         <td>46.4%</td>
@@ -599,7 +601,7 @@
         <td>70.7%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -623,7 +625,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -647,7 +649,7 @@
         <td>91.7%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td>87.1%</td>
         <td class="best deepseek">93.5%</td>
         <td>49.2%</td>
@@ -671,7 +673,7 @@
         <td>3052</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="best deepseek">3206</td>
         <td class="na">&mdash;</td>
@@ -680,8 +682,8 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
-      <tr class="section-row knowledge"><td colspan="22">GENEL BİLGİ & AKIL YÜRÜTME</td></tr>
-      <tr class="subsection-row"><td colspan="22">▸ Fen & Bilim</td></tr>
+      <tr class="section-row knowledge"><td colspan="23">GENEL BİLGİ & AKIL YÜRÜTME</td></tr>
+      <tr class="subsection-row"><td colspan="23">▸ Fen & Bilim</td></tr>
       <tr>
         <td data-tooltip="198 doktora seviyesi bilim sorusu (biyoloji, fizik, kimya). Kaynak: artificialanalysis.ai bağımsız ölçümü (tek tip kaynak).">GPQA Diamond</td>
         <td>92.6%</td>
@@ -697,7 +699,7 @@
         <td class="best gemini">94.1%</td>
         <td>90.8%</td>
         <td>91.1%</td>
-        <td>89.5%</td>
+        <td>89.5%</td><td>86.8%</td>
         <td>88.2%</td>
         <td>88.8%</td>
         <td>84.0%</td>
@@ -721,7 +723,7 @@
         <td>17.7%</td>
         <td>9.1%</td>
         <td>8.0%</td>
-        <td>20.9%</td>
+        <td>20.9%</td><td>4.6%</td>
         <td>2.9%</td>
         <td>12.9%</td>
         <td>2.9%</td>
@@ -745,7 +747,7 @@
         <td>58.9%</td>
         <td>56.1%</td>
         <td>53.5%</td>
-        <td>50.5%</td>
+        <td>50.5%</td><td>43.8%</td>
         <td>40.7%</td>
         <td>50.0%</td>
         <td>38.9%</td>
@@ -769,7 +771,7 @@
         <td>44.7%</td>
         <td>37.2%</td>
         <td>35.9%</td>
-        <td>40.1%</td>
+        <td>40.1%</td><td>28.0%</td>
         <td>25.7%</td>
         <td>35.9%</td>
         <td>22.2%</td>
@@ -793,7 +795,7 @@
         <td>26.5%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -802,7 +804,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
-      <tr class="subsection-row"><td colspan="22">▸ Sağlık & Biyomedikal</td></tr>
+      <tr class="subsection-row"><td colspan="23">▸ Sağlık & Biyomedikal</td></tr>
       <tr>
         <td data-tooltip="Sağlık alanında soru yanıtlama ve klinik senaryolar.">HealthBench</td>
         <td class="best mythos">62.7%</td>
@@ -818,7 +820,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -842,7 +844,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -866,7 +868,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -890,7 +892,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -899,7 +901,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
-      <tr class="subsection-row"><td colspan="22">▸ Bilgi & Gerçeklik</td></tr>
+      <tr class="subsection-row"><td colspan="23">▸ Bilgi & Gerçeklik</td></tr>
       <tr>
         <td data-tooltip="14 disiplinde 12 bin çok seçmeli soru, MMLU'dan zor.">MMLU-Pro</td>
         <td class="na">&mdash;</td>
@@ -915,7 +917,7 @@
         <td class="best gemini">91.0%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td>88.5%</td>
         <td>87.5%</td>
         <td>81.2%</td>
@@ -939,7 +941,7 @@
         <td class="best gemini">92.6%</td>
         <td>91.8%</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td>89.5%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -963,7 +965,7 @@
         <td class="best gemini">75.6%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>57.9%</td>
         <td class="na">&mdash;</td>
@@ -987,7 +989,7 @@
         <td class="best gemini">85.9%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>84.4%</td>
         <td class="na">&mdash;</td>
@@ -996,7 +998,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
-      <tr class="subsection-row"><td colspan="22">▸ Soyut Akıl Yürütme (ARC-AGI)</td></tr>
+      <tr class="subsection-row"><td colspan="23">▸ Soyut Akıl Yürütme (ARC-AGI)</td></tr>
       <tr>
         <td data-tooltip="Yeni desen çıkarımını test eden soyut görsel bulmacalar (2019 orijinal).">ARC-AGI-1</td>
         <td class="na">&mdash;</td>
@@ -1012,7 +1014,7 @@
         <td class="best gemini">98.0%</td>
         <td>75.0%</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>57.0%</td>
@@ -1036,7 +1038,7 @@
         <td>77.1%</td>
         <td>31.1%</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>4.0%</td>
@@ -1060,7 +1062,7 @@
         <td>0.4%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -1069,7 +1071,7 @@
         <td>0.1%</td>
         <td class="na">&mdash;</td>
       </tr>
-      <tr class="subsection-row"><td colspan="22">▸ Çok Biçimli & Görsel</td></tr>
+      <tr class="subsection-row"><td colspan="23">▸ Çok Biçimli & Görsel</td></tr>
       <tr>
         <td data-tooltip="Çok disiplinli çok kipli anlama (metin, görsel, çizelge).">MMMU-Pro (Çok Modal)</td>
         <td class="na">&mdash;</td>
@@ -1085,7 +1087,7 @@
         <td>80.5%</td>
         <td>81.0%</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -1109,7 +1111,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -1133,7 +1135,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -1157,7 +1159,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -1181,7 +1183,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -1190,7 +1192,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
-      <tr class="section-row math"><td colspan="22">MATEMATİK</td></tr>
+      <tr class="section-row math"><td colspan="23">MATEMATİK</td></tr>
       <tr>
         <td data-tooltip="Amerikan Davetli Matematik Sınavı; 15 zorlu lise matematik problemi (araç yok).">AIME 2025</td>
         <td class="na">&mdash;</td>
@@ -1206,7 +1208,7 @@
         <td>98.1%</td>
         <td>95.0%</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>96.0%</td>
@@ -1230,7 +1232,7 @@
         <td>98.3%</td>
         <td>91.7%</td>
         <td>95.8%</td>
-        <td>99.2%</td>
+        <td>99.2%</td><td>95.8%</td>
         <td>95.3%</td>
         <td>95.8%</td>
         <td>94.2%</td>
@@ -1254,7 +1256,7 @@
         <td>74.4%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -1278,7 +1280,7 @@
         <td>94.7%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td>92.5%</td>
+        <td>92.5%</td><td class="na">&mdash;</td>
         <td>87.8%</td>
         <td>95.2%</td>
         <td class="na">&mdash;</td>
@@ -1302,7 +1304,7 @@
         <td>81.0%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td>91.0%</td>
+        <td>91.0%</td><td class="na">&mdash;</td>
         <td>83.8%</td>
         <td>89.8%</td>
         <td class="na">&mdash;</td>
@@ -1326,7 +1328,7 @@
         <td class="best gemini">60.9%</td>
         <td>18.4%</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>38.3%</td>
         <td class="na">&mdash;</td>
@@ -1350,7 +1352,7 @@
         <td>89.1%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="best deepseek">90.2%</td>
         <td class="na">&mdash;</td>
@@ -1374,7 +1376,7 @@
         <td>64.8%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -1398,7 +1400,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -1407,7 +1409,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
-      <tr class="section-row context"><td colspan="22">UZUN BAĞLAM (1M Token)</td></tr>
+      <tr class="section-row context"><td colspan="23">UZUN BAĞLAM (1M Token)</td></tr>
       <tr>
         <td data-tooltip="128k token bağlamda çok turlu sohbet ve geri çağırma testi (1M sürümü).">MRCR 1M</td>
         <td class="na">&mdash;</td>
@@ -1423,7 +1425,7 @@
         <td>76.3%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>83.5%</td>
         <td class="na">&mdash;</td>
@@ -1447,7 +1449,7 @@
         <td>53.8%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>62.0%</td>
         <td class="na">&mdash;</td>
@@ -1471,7 +1473,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -1495,7 +1497,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -1504,8 +1506,8 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
-      <tr class="section-row computer"><td colspan="22">EYLEMCİ / BİLGİSAYAR KULLANIMI</td></tr>
-      <tr class="subsection-row"><td colspan="22">▸ Tarayıcı & Bilgisayar Kullanımı</td></tr>
+      <tr class="section-row computer"><td colspan="23">EYLEMCİ / BİLGİSAYAR KULLANIMI</td></tr>
+      <tr class="subsection-row"><td colspan="23">▸ Tarayıcı & Bilgisayar Kullanımı</td></tr>
       <tr>
         <td data-tooltip="Karmaşık bağımsız web tarama ve bilgi sentezi görevleri.">BrowseComp</td>
         <td class="best mythos">88.0%</td>
@@ -1521,7 +1523,7 @@
         <td>85.9%</td>
         <td>59.2%</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>83.4%</td>
         <td class="na">&mdash;</td>
@@ -1545,7 +1547,7 @@
         <td>76.2%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -1569,7 +1571,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -1593,7 +1595,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -1617,7 +1619,7 @@
         <td>9.6%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -1626,7 +1628,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
-      <tr class="subsection-row"><td colspan="22">▸ Araç & Protokol Kullanımı</td></tr>
+      <tr class="subsection-row"><td colspan="23">▸ Araç & Protokol Kullanımı</td></tr>
       <tr>
         <td data-tooltip="8 ortamda LLM eylemcileri değerlendirmek için çok görevli sınav.">MCP-Atlas</td>
         <td class="na">&mdash;</td>
@@ -1642,7 +1644,7 @@
         <td>78.2%</td>
         <td>54.1%</td>
         <td class="na">&mdash;</td>
-        <td>76.8%</td>
+        <td>76.8%</td><td class="na">&mdash;</td>
         <td>74.1%</td>
         <td>73.6%</td>
         <td class="na">&mdash;</td>
@@ -1666,7 +1668,7 @@
         <td>48.8%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>51.8%</td>
         <td class="na">&mdash;</td>
@@ -1690,7 +1692,7 @@
         <td>90.8%</td>
         <td>85.3%</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -1714,7 +1716,7 @@
         <td class="best gemini">99.3%</td>
         <td>98.0%</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -1723,7 +1725,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
-      <tr class="subsection-row"><td colspan="22">▸ Alan Eylemcileri (Finans/Hukuk/Ofis)</td></tr>
+      <tr class="subsection-row"><td colspan="23">▸ Alan Eylemcileri (Finans/Hukuk/Ofis)</td></tr>
       <tr>
         <td data-tooltip="Finans sektörü eylemci görevleri; analiz, rapor ve karar alma.">Finance Agent v1.1</td>
         <td class="na">&mdash;</td>
@@ -1739,7 +1741,7 @@
         <td>59.7%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -1763,7 +1765,7 @@
         <td>43.0%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -1787,7 +1789,7 @@
         <td>0.0%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -1811,7 +1813,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -1835,7 +1837,7 @@
         <td>18.1%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -1859,7 +1861,7 @@
         <td>$911</td>
         <td>$5.478</td>
         <td>$6.205</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td>$5.634</td>
         <td>$5.115</td>
         <td>$3.285</td>
         <td>$1.034</td>
@@ -1868,7 +1870,7 @@
         <td>$4.663</td>
         <td class="na">&mdash;</td>
       </tr>
-      <tr class="subsection-row"><td colspan="22">▸ Belge & İktisadi Görevler</td></tr>
+      <tr class="subsection-row"><td colspan="23">▸ Belge & İktisadi Görevler</td></tr>
       <tr>
         <td data-tooltip="Python kod yorumlayıcı aracına erişimle Humanity's Last Exam.">HLE (araçlı)</td>
         <td class="best mythos">64.5%</td>
@@ -1884,7 +1886,7 @@
         <td>51.4%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td>50.6%</td>
         <td>48.2%</td>
         <td class="na">&mdash;</td>
@@ -1908,7 +1910,7 @@
         <td>1314</td>
         <td>1184</td>
         <td>1481</td>
-        <td>1524</td>
+        <td>1524</td><td>1535</td>
         <td>1352</td>
         <td>1554</td>
         <td>1197</td>
@@ -1932,7 +1934,7 @@
         <td>16.7%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -1941,7 +1943,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
-      <tr class="section-row cyber"><td colspan="22">SİBER GÜVENLİK</td></tr>
+      <tr class="section-row cyber"><td colspan="23">SİBER GÜVENLİK</td></tr>
       <tr>
         <td data-tooltip="Gerçek CTF yarışmalarından Bayrak-Yakala siber güvenlik meydan okumaları.">CyberGym</td>
         <td class="na">&mdash;</td>
@@ -1957,7 +1959,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
@@ -1981,7 +1983,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
