@@ -380,7 +380,13 @@
 </footer>
 
 <script>
-  const ASSET_V = "20260616p";
+  const ASSET_V = "20260616q";
+  window.addEventListener("message", function(e){
+    if(e && e.data && e.data.t === "cmpH" && e.data.h > 200){
+      var f = document.getElementById("iframe-compare");
+      if(f) f.style.height = (e.data.h + 4) + "px";
+    }
+  });
   const labels = {
     tr: {
       htmlLang: "tr",

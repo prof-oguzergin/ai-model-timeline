@@ -2205,5 +2205,13 @@
   });
 })();
 </script>
+<script>
+(function(){
+  function ph(){try{parent.postMessage({t:'cmpH',h:document.documentElement.scrollHeight},'*');}catch(e){}}
+  window.addEventListener('load',ph);
+  window.addEventListener('resize',ph);
+  setTimeout(ph,200);setTimeout(ph,900);setTimeout(ph,2500);
+})();
+</script>
 </body>
 </html>
