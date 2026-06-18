@@ -299,6 +299,7 @@
   <button id="cat-llm" class="active" onclick="setCategory('llm')">LLM Modelleri</button>
   <button id="cat-image" onclick="setCategory('image')">Görsel Üretme</button>
   <button id="cat-video" onclick="setCategory('video')">Video Üretme</button>
+  <button id="cat-hardware" onclick="setCategory('hardware')">Donanım</button>
   <button id="cat-compare" onclick="setCategory('compare')">Karşılaştırma Tablosu</button>
   <button id="cat-vending" onclick="setCategory('vending')">Vending-Bench</button>
 </div>
@@ -341,9 +342,21 @@
     </div>
   </div>
 
+  <!-- AI Hardware -->
+  <div id="pane-hardware" class="pane">
+    <h2 class="section-title"><span class="num">4</span><span id="sectitle-hardware"></span></h2>
+    <p id="desc-hardware" class="desc"></p>
+    <div class="timeline-container">
+      <img id="img-hardware" src="ai_hardware_timeline_tr.png?v=20260618f" alt="" loading="lazy">
+      <div class="download-bar">
+        <a id="dl-hardware-main" href="ai_hardware_timeline_tr.png" download>Yüksek Çözünürlük (PNG)</a>
+      </div>
+    </div>
+  </div>
+
   <!-- Comparison Table -->
   <div id="pane-compare" class="pane">
-    <h2 class="section-title"><span class="num">4</span><span id="sectitle-compare"></span></h2>
+    <h2 class="section-title"><span class="num">5</span><span id="sectitle-compare"></span></h2>
     <p id="desc-compare" class="desc"></p>
     <div class="timeline-container">
       <div id="cmp-host" class="cmp-host"></div>
@@ -355,7 +368,7 @@
 
   <!-- Vending-Bench -->
   <div id="pane-vending" class="pane">
-    <h2 class="section-title"><span class="num">5</span><span id="sectitle-vending"></span></h2>
+    <h2 class="section-title"><span class="num">6</span><span id="sectitle-vending"></span></h2>
     <p id="desc-vending" class="desc"></p>
     <div class="timeline-container">
       <div class="vending-controls">
@@ -392,7 +405,7 @@
 </footer>
 
 <script>
-  const ASSET_V = "20260618e";
+  const ASSET_V = "20260618f";
   // Karsilastirma tablosu artik sayfaya gomulu (shadow DOM); iframe/fitCmp yok.
   const labels = {
     tr: {
@@ -426,6 +439,10 @@
       img_llm_linkedin: "ai_timeline_final_tr_linkedin.png",
       img_image: "ai_image_gen_timeline_tr.png",
       img_video: "ai_video_gen_timeline_tr.png",
+      cat_hardware: "Donanım",
+      desc_hardware: "<strong>Yapay zeka donanımı.</strong> 16 üretici · 51 hızlandırıcı · 2016-2026. NVIDIA, AMD, Google TPU, AWS, Cerebras, Huawei ve daha fazlası; ticari GPU, hyperscaler özel, uzman girişim ve Çin yongaları yan yana.",
+      alt_hardware: "Yapay Zeka Donanımı Hızlandırıcı Zaman Çizelgesi",
+      img_hardware: "ai_hardware_timeline_tr.png",
       img_vending: "vending_bench_2_tr.png",
       iframe_compare: "model_comparison_tr.html",
       top10_caption: "Vending-Bench 2 · En İyi 10 Model",
@@ -466,6 +483,10 @@
       img_llm_linkedin: "ai_timeline_final_linkedin.png",
       img_image: "ai_image_gen_timeline.png",
       img_video: "ai_video_gen_timeline.png",
+      cat_hardware: "Hardware",
+      desc_hardware: "<strong>AI hardware.</strong> 16 vendors · 51 accelerators · 2016-2026. NVIDIA, AMD, Google TPU, AWS, Cerebras, Huawei and more; merchant GPU, hyperscaler custom, specialist startup and Chinese chips side by side.",
+      alt_hardware: "AI Hardware Accelerator Timeline",
+      img_hardware: "ai_hardware_timeline.png",
       img_vending: "vending_bench_2.png",
       iframe_compare: "model_comparison_en.html",
       top10_caption: "Vending-Bench 2 · Top 10 Models",
@@ -493,6 +514,7 @@
     document.getElementById("cat-llm").textContent = L.cat_llm;
     document.getElementById("cat-image").textContent = L.cat_image;
     document.getElementById("cat-video").textContent = L.cat_video;
+    document.getElementById("cat-hardware").textContent = L.cat_hardware;
     document.getElementById("cat-compare").textContent = L.cat_compare;
     document.getElementById("cat-vending").textContent = L.cat_vending;
 
@@ -500,6 +522,7 @@
     document.getElementById("sectitle-llm").textContent = L.cat_llm;
     document.getElementById("sectitle-image").textContent = L.cat_image;
     document.getElementById("sectitle-video").textContent = L.cat_video;
+    document.getElementById("sectitle-hardware").textContent = L.cat_hardware;
     document.getElementById("sectitle-compare").textContent = L.cat_compare;
     document.getElementById("sectitle-vending").textContent = L.cat_vending;
 
@@ -507,6 +530,7 @@
     document.getElementById("desc-llm").innerHTML = L.desc_llm;
     document.getElementById("desc-image").innerHTML = L.desc_image;
     document.getElementById("desc-video").innerHTML = L.desc_video;
+    document.getElementById("desc-hardware").innerHTML = L.desc_hardware;
     document.getElementById("desc-compare").innerHTML = L.desc_compare;
     document.getElementById("desc-vending").innerHTML = L.desc_vending;
 
@@ -529,6 +553,12 @@
     document.getElementById("img-video").alt = L.alt_video;
     document.getElementById("dl-video-main").href = L.img_video + "?v=" + ASSET_V;
     document.getElementById("dl-video-main").textContent = L.dl_main;
+
+    // AI Hardware
+    document.getElementById("img-hardware").src = L.img_hardware + "?v=" + ASSET_V;
+    document.getElementById("img-hardware").alt = L.alt_hardware;
+    document.getElementById("dl-hardware-main").href = L.img_hardware + "?v=" + ASSET_V;
+    document.getElementById("dl-hardware-main").textContent = L.dl_main;
 
     // Comparison (sayfaya gomulu shadow DOM tablo)
     if (loadedCompare) loadCompare(state.lang);
@@ -909,7 +939,7 @@
   var _spyRAF=false;
   function updateSpy(){
     _spyRAF=false;
-    var cats=["llm","image","video","compare","vending"];
+    var cats=["llm","image","video","hardware","compare","vending"];
     var navH=document.querySelector(".category-tabs").offsetHeight + 24;
     var cur=cats[0];
     for(var i=0;i<cats.length;i++){
@@ -922,7 +952,7 @@
 
   function gotoHash(){
     var h=(location.hash||"").replace("#","");
-    var cats=["llm","image","video","compare","vending"];
+    var cats=["llm","image","video","hardware","compare","vending"];
     if(cats.indexOf(h)<0) return;
     var go=function(){ var el=document.getElementById("pane-"+h); if(el) el.scrollIntoView(); setActiveTab(h); };
     if(h==="compare"){ ensureCompare().then(function(){ setTimeout(go,80); }); }
