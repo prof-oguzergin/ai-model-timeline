@@ -78,8 +78,8 @@
   }
   /* Tek satirda benchmark adlari icin label kolonu genis, digerleri esit pay */
   thead th:not(:first-child) { width: calc((100% - 280px) / 24); }
-  thead tr:last-child th { vertical-align: bottom; top: 25px; box-shadow: 0 5px 7px -3px rgba(0,0,0,0.55); }
-  thead th { position: sticky; z-index: 20; background: #0d0d15; }
+  thead tr:last-child th { vertical-align: bottom; top: 28px; box-shadow: 0 5px 7px -3px rgba(0,0,0,0.55); }
+  thead th { position: sticky; z-index: 20; background: #0d0d15; box-sizing: border-box; }
   thead tr:first-child th { top: 0; font-size: 9px; letter-spacing: 0.1px; white-space: nowrap; overflow: visible; padding-left: 1px; padding-right: 1px; border-bottom: 3px solid #0d0d15; }
   .tbl-scroll { overflow: visible; }
 
@@ -111,6 +111,44 @@
   thead th.company-glm       { color: #BE185D; font-size: 13px; font-weight: 800; letter-spacing: 1.2px; padding: 10px 6px 2px; border-bottom: none; }
   thead th.company-qwen      { color: #7C3AED; font-size: 13px; font-weight: 800; letter-spacing: 1.2px; padding: 10px 6px 2px; border-bottom: none; }
 
+  /* === Sirket renkli cerceve (gruplama kutusu) === */
+  .company-anthropic,.m-anthropic{--cc:#d97757}
+  .company-openai,.m-openai{--cc:#10a37f}
+  .company-google,.m-google{--cc:#4285F4}
+  .company-kimi,.m-kimi{--cc:#14B8A6}
+  .company-glm,.m-glm{--cc:#BE185D}
+  .company-qwen,.m-qwen{--cc:#7C3AED}
+  .company-deepseek,.m-deepseek{--cc:#ef4444}
+  .company-minimax,.m-minimax{--cc:#C77DFF}
+  .company-xai,.m-xai{--cc:#1da1f2}
+  thead tr:first-child th[class*="company-"]{
+    border:2px solid var(--cc);
+    border-bottom:3px solid var(--cc);
+    border-radius:8px 8px 0 0;
+  }
+  thead tr:last-child th[class*="m-"]{ border-bottom:2px solid var(--cc); }
+  thead tr:last-child th.col-mythos,
+  thead tr:last-child th.col-gpt55,
+  thead tr:last-child th.col-gemini35flash,
+  thead tr:last-child th.col-kimi26,
+  thead tr:last-child th.col-glm52,
+  thead tr:last-child th.col-qwen37,
+  thead tr:last-child th.col-deepseek,
+  thead tr:last-child th.col-minimax-m3,
+  thead tr:last-child th.col-grok43{
+    border-left:2px solid var(--cc); border-bottom-left-radius:8px;
+  }
+  thead tr:last-child th.col-sonnet46,
+  thead tr:last-child th.col-gpt54,
+  thead tr:last-child th.col-gemini3,
+  thead tr:last-child th.col-kimi26,
+  thead tr:last-child th.col-glm51,
+  thead tr:last-child th.col-qwen36,
+  thead tr:last-child th.col-deepseek3,
+  thead tr:last-child th.col-minimax-m3,
+  thead tr:last-child th.col-grok4{
+    border-right:2px solid var(--cc); border-bottom-right-radius:8px;
+  }
   thead th.col-mythos   { color: #c878ff; }
   thead th.col-opus48   { color: #ffd0b0; }
   thead th.col-opus47   { color: #f5b98c; }
@@ -442,30 +480,30 @@
       </tr>
       <tr>
         <th></th>
-        <th class="col-mythos">Fable<br>5<span class="date">(Haz 26)</span></th>
-        <th class="col-mythospre">Mythos<br>Preview<span class="date">(Nis 26)</span></th>
-        <th class="col-opus48">Opus<br>4.8<span class="date">(May 26)</span></th>
-        <th class="col-opus47">Opus<br>4.7<span class="date">(Nis 26)</span></th>
-        <th class="col-opus46">Opus<br>4.6<span class="date">(Şub 26)</span></th>
-        <th class="col-opus45">Opus<br>4.5<span class="date">(Kas 25)</span></th>
-        <th class="col-sonnet46">Sonnet<br>4.6<span class="date">(Şub 26)</span></th>
-        <th class="col-gpt55">GPT<br>5.5<span class="date">(Nis 26)</span></th>
-        <th class="col-gpt54">GPT<br>5.4<span class="date">(Mar 26)</span></th>
-        <th class="col-gemini35flash">Gemini<br>3.5&nbsp;Flash<span class="date">(May 26)</span></th>
-        <th class="col-gemini31">Gemini<br>3.1 Pro<span class="date">(Şub 26)</span></th>
-        <th class="col-gemini3">Gemini<br>3 Pro<span class="date">(Kas 25)</span></th>
-        <th class="col-kimi26">Kimi<br>K2.6<span class="date">(Nis 26)</span></th>
-        <th class="col-glm52">GLM<br>5.2<span class="date">(Haz 26)</span></th>
-        <th class="col-glm51">GLM<br>5.1<span class="date">(Mar 26)</span></th>
-        <th class="col-qwen37">Qwen<br>3.7&nbsp;Max<span class="date">(May 26)</span></th>
-        <th class="col-qwen36">Qwen<br>3.6&nbsp;Plus<span class="date">(Nis 26)</span></th>
-        <th class="col-deepseek">V4-Pro<span class="date">(Nis 26)</span></th>
-        <th class="col-deepseek32">V3.2<span class="date">(Ara 25)</span></th>
-        <th class="col-deepseek3">V3<span class="date">(Ara 24)</span></th>
-        <th class="col-minimax-m3">M3<span class="date">(Haz 26)</span></th>
-        <th class="col-grok43">Grok<br>4.3<span class="date">(Nis 26)</span></th>
-        <th class="col-grok420">Grok<br>4.20<span class="date">(Şub 26)</span></th>
-        <th class="col-grok4">Grok<br>4<span class="date">(Tem 25)</span></th>
+        <th class="col-mythos m-anthropic">Fable<br>5<span class="date">(Haz 26)</span></th>
+        <th class="col-mythospre m-anthropic">Mythos<br>Preview<span class="date">(Nis 26)</span></th>
+        <th class="col-opus48 m-anthropic">Opus<br>4.8<span class="date">(May 26)</span></th>
+        <th class="col-opus47 m-anthropic">Opus<br>4.7<span class="date">(Nis 26)</span></th>
+        <th class="col-opus46 m-anthropic">Opus<br>4.6<span class="date">(Şub 26)</span></th>
+        <th class="col-opus45 m-anthropic">Opus<br>4.5<span class="date">(Kas 25)</span></th>
+        <th class="col-sonnet46 m-anthropic">Sonnet<br>4.6<span class="date">(Şub 26)</span></th>
+        <th class="col-gpt55 m-openai">GPT<br>5.5<span class="date">(Nis 26)</span></th>
+        <th class="col-gpt54 m-openai">GPT<br>5.4<span class="date">(Mar 26)</span></th>
+        <th class="col-gemini35flash m-google">Gemini<br>3.5&nbsp;Flash<span class="date">(May 26)</span></th>
+        <th class="col-gemini31 m-google">Gemini<br>3.1 Pro<span class="date">(Şub 26)</span></th>
+        <th class="col-gemini3 m-google">Gemini<br>3 Pro<span class="date">(Kas 25)</span></th>
+        <th class="col-kimi26 m-kimi">Kimi<br>K2.6<span class="date">(Nis 26)</span></th>
+        <th class="col-glm52 m-glm">GLM<br>5.2<span class="date">(Haz 26)</span></th>
+        <th class="col-glm51 m-glm">GLM<br>5.1<span class="date">(Mar 26)</span></th>
+        <th class="col-qwen37 m-qwen">Qwen<br>3.7&nbsp;Max<span class="date">(May 26)</span></th>
+        <th class="col-qwen36 m-qwen">Qwen<br>3.6&nbsp;Plus<span class="date">(Nis 26)</span></th>
+        <th class="col-deepseek m-deepseek">V4-Pro<span class="date">(Nis 26)</span></th>
+        <th class="col-deepseek32 m-deepseek">V3.2<span class="date">(Ara 25)</span></th>
+        <th class="col-deepseek3 m-deepseek">V3<span class="date">(Ara 24)</span></th>
+        <th class="col-minimax-m3 m-minimax">M3<span class="date">(Haz 26)</span></th>
+        <th class="col-grok43 m-xai">Grok<br>4.3<span class="date">(Nis 26)</span></th>
+        <th class="col-grok420 m-xai">Grok<br>4.20<span class="date">(Şub 26)</span></th>
+        <th class="col-grok4 m-xai">Grok<br>4<span class="date">(Tem 25)</span></th>
       </tr>
     </thead>
     <tbody>
