@@ -70,7 +70,8 @@
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 0.5px;
-    padding: 8px 1px;
+    padding: 4px 1px;
+    line-height: 1.2;
     text-align: center;
     border-bottom: 1px solid rgba(255,255,255,0.08);
     white-space: normal;
@@ -78,7 +79,7 @@
   }
   /* Tek satirda benchmark adlari icin label kolonu genis, digerleri esit pay */
   thead th:not(:first-child) { width: calc((100% - 280px) / 24); }
-  thead tr:last-child th { vertical-align: bottom; top: 28px; box-shadow: 0 5px 7px -3px rgba(0,0,0,0.55); }
+  thead tr:last-child th { vertical-align: bottom; top: 22px; box-shadow: 0 5px 7px -3px rgba(0,0,0,0.55); }
   thead th { position: sticky; z-index: 20; background: #0d0d15; box-sizing: border-box; }
   thead tr:first-child th { top: 0; font-size: 9px; letter-spacing: 0.1px; white-space: nowrap; overflow: visible; padding-left: 1px; padding-right: 1px; border-bottom: 3px solid #0d0d15; }
   .tbl-scroll { overflow: visible; }
@@ -88,7 +89,7 @@
     font-size: 9px;
     font-weight: 500;
     color: #777;
-    margin-top: 3px;
+    margin-top: 1px;
     letter-spacing: 0.2px;
   }
 
@@ -101,15 +102,15 @@
   }
 
   /* Sirket baslik satiri */
-  thead th.company-anthropic { color: #d97757; font-size: 13px; font-weight: 800; letter-spacing: 1.2px; padding: 10px 6px 2px; border-bottom: none; }
-  thead th.company-openai    { color: #10a37f; font-size: 13px; font-weight: 800; letter-spacing: 1.2px; padding: 10px 6px 2px; border-bottom: none; }
-  thead th.company-google    { color: #4285F4; font-size: 13px; font-weight: 800; letter-spacing: 1.2px; padding: 10px 6px 2px; border-bottom: none; }
-  thead th.company-deepseek  { color: #ef4444; font-size: 13px; font-weight: 800; letter-spacing: 1.2px; padding: 10px 6px 2px; border-bottom: none; }
-  thead th.company-minimax  { color: #C77DFF; font-size: 13px; font-weight: 800; letter-spacing: 1.2px; padding: 10px 6px 2px; border-bottom: none; }
-  .company-xai       { color: #1da1f2; font-size: 13px; font-weight: 800; letter-spacing: 1.2px; padding: 10px 6px 2px; border-bottom: none; }
-  thead th.company-kimi      { color: #14B8A6; font-size: 13px; font-weight: 800; letter-spacing: 1.2px; padding: 10px 6px 2px; border-bottom: none; }
-  thead th.company-glm       { color: #BE185D; font-size: 13px; font-weight: 800; letter-spacing: 1.2px; padding: 10px 6px 2px; border-bottom: none; }
-  thead th.company-qwen      { color: #7C3AED; font-size: 13px; font-weight: 800; letter-spacing: 1.2px; padding: 10px 6px 2px; border-bottom: none; }
+  thead th.company-anthropic { color: #d97757; font-size: 13px; font-weight: 800; letter-spacing: 1.2px; padding: 4px 6px 2px; border-bottom: none; }
+  thead th.company-openai    { color: #10a37f; font-size: 13px; font-weight: 800; letter-spacing: 1.2px; padding: 4px 6px 2px; border-bottom: none; }
+  thead th.company-google    { color: #4285F4; font-size: 13px; font-weight: 800; letter-spacing: 1.2px; padding: 4px 6px 2px; border-bottom: none; }
+  thead th.company-deepseek  { color: #ef4444; font-size: 13px; font-weight: 800; letter-spacing: 1.2px; padding: 4px 6px 2px; border-bottom: none; }
+  thead th.company-minimax  { color: #C77DFF; font-size: 13px; font-weight: 800; letter-spacing: 1.2px; padding: 4px 6px 2px; border-bottom: none; }
+  .company-xai       { color: #1da1f2; font-size: 13px; font-weight: 800; letter-spacing: 1.2px; padding: 4px 6px 2px; border-bottom: none; }
+  thead th.company-kimi      { color: #14B8A6; font-size: 13px; font-weight: 800; letter-spacing: 1.2px; padding: 4px 6px 2px; border-bottom: none; }
+  thead th.company-glm       { color: #BE185D; font-size: 13px; font-weight: 800; letter-spacing: 1.2px; padding: 4px 6px 2px; border-bottom: none; }
+  thead th.company-qwen      { color: #7C3AED; font-size: 13px; font-weight: 800; letter-spacing: 1.2px; padding: 4px 6px 2px; border-bottom: none; }
 
   /* === Sirket renkli cerceve (gruplama kutusu) === */
   .company-anthropic,.m-anthropic{--cc:#d97757}

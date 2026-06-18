@@ -392,7 +392,7 @@
 </footer>
 
 <script>
-  const ASSET_V = "20260618c";
+  const ASSET_V = "20260618d";
   // Karsilastirma tablosu artik sayfaya gomulu (shadow DOM); iframe/fitCmp yok.
   const labels = {
     tr: {
@@ -883,7 +883,7 @@
       if(style) sh.appendChild(style.cloneNode(true));
       sh.appendChild(card.cloneNode(true));
       var ov=document.createElement("style");
-      ov.textContent="thead tr:first-child th{top:var(--navh,69px)} thead tr:last-child th{top:calc(var(--navh,69px) + 28px)}";
+      ov.textContent="thead tr:first-child th{top:var(--navh,69px)} thead tr:last-child th{top:calc(var(--navh,69px) + 22px)}";
       sh.appendChild(ov);
       applyCmpHeatmap(sh);
       setNavH();
