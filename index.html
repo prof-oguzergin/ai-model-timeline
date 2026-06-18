@@ -114,17 +114,24 @@
   .timeline-container img {
     width: 100%; height: auto; display: block; border-radius: 6px;
   }
-  .pane { display: none; }
-  .pane.active { display: block; }
-  body.compare-mode header { display: none; }
-  body.compare-mode footer { display: none; }
-  .iframe-wrap {
-    width: 100%; border-radius: 6px; overflow: hidden;
-    background: #0a0a0f;
+  .pane { display: block; scroll-margin-top: 78px; margin-bottom: 56px; }
+  .section-title {
+    display: flex; align-items: center; gap: 10px;
+    font-size: clamp(1.15rem, 2.4vw, 1.5rem); font-weight: 700;
+    color: var(--dark); margin: 0 0 14px; padding-bottom: 8px;
+    border-bottom: 2px solid var(--border);
   }
-  .iframe-wrap iframe {
-    width: 100%; min-height: 380px; border: none; display: block;
-    background: #0a0a0f;
+  .section-title .num {
+    flex: none; background: var(--primary); color: #fff;
+    width: 30px; height: 30px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 0.95rem; font-weight: 800;
+  }
+  #pane-compare .timeline-container { overflow: visible; }
+  .cmp-host {
+    display: block; width: 100%; background: #0a0a0f; color: #e0e0e0;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    border-radius: 6px; overflow: visible; padding: 6px 0 10px;
   }
   #vendingChart {
     width: 100% !important;
@@ -298,7 +305,8 @@
 
 <main>
   <!-- LLM -->
-  <div id="pane-llm" class="pane active">
+  <div id="pane-llm" class="pane">
+    <h2 class="section-title"><span class="num">1</span><span id="sectitle-llm"></span></h2>
     <p id="desc-llm" class="desc"></p>
     <div class="timeline-container">
       <img id="img-llm" src="ai_timeline_final_tr.png?v=20260615a" alt="" loading="eager">
@@ -311,6 +319,7 @@
 
   <!-- Image Generation -->
   <div id="pane-image" class="pane">
+    <h2 class="section-title"><span class="num">2</span><span id="sectitle-image"></span></h2>
     <p id="desc-image" class="desc"></p>
     <div class="timeline-container">
       <img id="img-image" src="ai_image_gen_timeline_tr.png?v=20260610" alt="" loading="lazy">
@@ -322,6 +331,7 @@
 
   <!-- Video Generation -->
   <div id="pane-video" class="pane">
+    <h2 class="section-title"><span class="num">3</span><span id="sectitle-video"></span></h2>
     <p id="desc-video" class="desc"></p>
     <div class="timeline-container">
       <img id="img-video" src="ai_video_gen_timeline_tr.png?v=20260610" alt="" loading="lazy">
@@ -333,11 +343,10 @@
 
   <!-- Comparison Table -->
   <div id="pane-compare" class="pane">
+    <h2 class="section-title"><span class="num">4</span><span id="sectitle-compare"></span></h2>
     <p id="desc-compare" class="desc"></p>
     <div class="timeline-container">
-      <div class="iframe-wrap">
-        <iframe id="iframe-compare" src="model_comparison_tr.html?v=20260610" loading="lazy"></iframe>
-      </div>
+      <div id="cmp-host" class="cmp-host"></div>
       <div class="download-bar">
         <a id="dl-compare" href="model_comparison_tr.html" target="_blank">Tam Sayfa Aç</a>
       </div>
@@ -346,6 +355,7 @@
 
   <!-- Vending-Bench -->
   <div id="pane-vending" class="pane">
+    <h2 class="section-title"><span class="num">5</span><span id="sectitle-vending"></span></h2>
     <p id="desc-vending" class="desc"></p>
     <div class="timeline-container">
       <div class="vending-controls">
@@ -382,16 +392,8 @@
 </footer>
 
 <script>
-  const ASSET_V = "20260616t";
-  function fitCmp(){
-    var f = document.getElementById("iframe-compare");
-    if(!f) return;
-    f.style.height = "380px";
-    var top = f.getBoundingClientRect().top + window.scrollY;
-    var below = document.body.scrollHeight - top - f.offsetHeight;
-    f.style.height = Math.max(360, window.innerHeight - top - below - 8) + "px";
-  }
-  window.addEventListener("resize", function(){ if(state && state.category === "compare") fitCmp(); });
+  const ASSET_V = "20260618a";
+  // Karsilastirma tablosu artik sayfaya gomulu (shadow DOM); iframe/fitCmp yok.
   const labels = {
     tr: {
       htmlLang: "tr",
@@ -476,6 +478,7 @@
   };
 
   const state = { lang: "tr", category: "llm" };
+  var loadedCompare = false, loadedVending = false;
 
   function applyLang() {
     const L = labels[state.lang];
@@ -492,6 +495,13 @@
     document.getElementById("cat-video").textContent = L.cat_video;
     document.getElementById("cat-compare").textContent = L.cat_compare;
     document.getElementById("cat-vending").textContent = L.cat_vending;
+
+    // Section titles
+    document.getElementById("sectitle-llm").textContent = L.cat_llm;
+    document.getElementById("sectitle-image").textContent = L.cat_image;
+    document.getElementById("sectitle-video").textContent = L.cat_video;
+    document.getElementById("sectitle-compare").textContent = L.cat_compare;
+    document.getElementById("sectitle-vending").textContent = L.cat_vending;
 
     // Descriptions
     document.getElementById("desc-llm").innerHTML = L.desc_llm;
@@ -520,8 +530,8 @@
     document.getElementById("dl-video-main").href = L.img_video + "?v=" + ASSET_V;
     document.getElementById("dl-video-main").textContent = L.dl_main;
 
-    // Comparison
-    document.getElementById("iframe-compare").src = L.iframe_compare + "?v=" + ASSET_V;
+    // Comparison (sayfaya gomulu shadow DOM tablo)
+    if (loadedCompare) loadCompare(state.lang);
     document.getElementById("dl-compare").href = L.iframe_compare + "?v=" + ASSET_V;
     document.getElementById("dl-compare").textContent = L.dl_fullpage;
 
@@ -541,13 +551,19 @@
     applyLang();
   }
 
+  function setActiveTab(cat) {
+    document.querySelectorAll(".category-tabs button").forEach(b => b.classList.remove("active"));
+    var b = document.getElementById("cat-" + cat);
+    if (b) b.classList.add("active");
+  }
   function setCategory(cat) {
     state.category = cat;
-    document.querySelectorAll(".pane").forEach(p => p.classList.remove("active"));
-    document.getElementById("pane-" + cat).classList.add("active");
-    document.querySelectorAll(".category-tabs button").forEach(b => b.classList.remove("active"));
-    document.getElementById("cat-" + cat).classList.add("active");
-    document.body.classList.toggle("compare-mode", cat === "compare");
+    if (cat === "compare") ensureCompare();
+    if (cat === "vending") ensureVending();
+    var el = document.getElementById("pane-" + cat);
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    setActiveTab(cat);
+    if (history.replaceState) history.replaceState(null, "", "#" + cat);
   }
 
   // Initial render
@@ -757,27 +773,11 @@
     });
   }
 
-  // Re-render vending chart when tab or lang changes
-  const origSetCategory = setCategory;
-  setCategory = function(cat) {
-    origSetCategory(cat);
-    if (cat === "vending") {
-      // Birden fazla frame bekle - DOM layout tamamlansın diye
-      requestAnimationFrame(() => requestAnimationFrame(() => {
-        renderVendingChart();
-        if (vendingChart) vendingChart.resize();
-      }));
-    }
-    if (cat === "compare") {
-      window.scrollTo(0, 0);
-      requestAnimationFrame(() => requestAnimationFrame(fitCmp));
-      setTimeout(fitCmp, 250);
-    }
-  };
+  // Dil degisince yuklenmis vending grafigini yeniden ciz
   const origSetLang = setLang;
   setLang = function(lang) {
     origSetLang(lang);
-    if (state.category === "vending") {
+    if (loadedVending) {
       requestAnimationFrame(() => requestAnimationFrame(renderVendingChart));
     }
   };
@@ -848,6 +848,88 @@
   };
   applyVendingButtonLang();
   renderTop10Vending();
+
+  // ===== Tek-sayfa: gomulu karsilastirma tablosu (shadow DOM) =====
+  function applyCmpHeatmap(root){
+    function pv(t){t=(t||'').trim();if(!t||t==='—'||t==='–'||t==='-')return null;var m=t.indexOf('$')>=0;var s=t.replace(/[%$\s]/g,'');s=m?s.replace(/[.,]/g,''):s.replace(/,/g,'');var n=parseFloat(s);return isNaN(n)?null:n;}
+    function lp(a,b,t){return Math.round(a+(b-a)*t);}
+    var ST=[[216,40,40],[244,140,55],[245,205,40],[140,200,60],[40,160,70]];
+    function heat(t){var x=t*(ST.length-1),i=Math.min(ST.length-2,Math.floor(x)),u=x-i,a=ST[i],b=ST[i+1];return 'rgba('+lp(a[0],b[0],u)+','+lp(a[1],b[1],u)+','+lp(a[2],b[2],u)+',0.55)';}
+    root.querySelectorAll('tbody tr').forEach(function(tr){
+      if(tr.querySelector('td[colspan]'))return;
+      var tds=tr.querySelectorAll('td');if(tds.length<3)return;
+      var cells=[],vals=[];
+      for(var i=1;i<tds.length;i++){var v=pv(tds[i].textContent);if(v!==null){cells.push({td:tds[i],v:v});vals.push(v);}}
+      if(vals.length<2)return;
+      var mn=Math.min.apply(null,vals),mx=Math.max.apply(null,vals);
+      cells.forEach(function(c){
+        var t=mx===mn?1:(c.v-mn)/(mx-mn);
+        c.td.style.background=heat(t);
+        if(c.td.classList.contains('best')){c.td.style.boxShadow='inset 0 0 0 2px #fff';c.td.style.color='#fff';}
+      });
+    });
+  }
+  function loadCompare(lang){
+    var host=document.getElementById("cmp-host");
+    if(!host) return Promise.resolve();
+    var file=(lang==="en"?"model_comparison_en.html":"model_comparison_tr.html")+"?v="+ASSET_V;
+    return fetch(file).then(function(r){return r.text();}).then(function(html){
+      var doc=new DOMParser().parseFromString(html,"text/html");
+      var style=doc.querySelector("style");
+      var card=doc.querySelector(".card");
+      if(!card){host.innerHTML='<p style="color:#888;padding:24px;text-align:center">Tablo yuklenemedi.</p>';return;}
+      var sh=host.shadowRoot||host.attachShadow({mode:"open"});
+      sh.innerHTML="";
+      if(style) sh.appendChild(style.cloneNode(true));
+      sh.appendChild(card.cloneNode(true));
+      var ov=document.createElement("style");
+      ov.textContent="thead tr:first-child th{top:var(--navh,69px)} thead tr:last-child th{top:calc(var(--navh,69px) + 28px)}";
+      sh.appendChild(ov);
+      applyCmpHeatmap(sh);
+      setNavH();
+    }).catch(function(){host.innerHTML='<p style="color:#888;padding:24px;text-align:center">Tablo yuklenemedi.</p>';});
+  }
+  function ensureCompare(){ if(loadedCompare) return Promise.resolve(); loadedCompare=true; return loadCompare(state.lang); }
+  function ensureVending(){ if(loadedVending) return; loadedVending=true; requestAnimationFrame(function(){requestAnimationFrame(function(){renderVendingChart(); if(typeof vendingChart!=='undefined' && vendingChart) vendingChart.resize();});}); }
+  function setNavH(){ var host=document.getElementById("cmp-host"); var nav=document.querySelector(".category-tabs"); if(host&&nav) host.style.setProperty("--navh", nav.offsetHeight+"px"); }
+  window.addEventListener("resize", setNavH);
+
+  if("IntersectionObserver" in window){
+    var _io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(!e.isIntersecting) return;
+        if(e.target.id==="pane-compare") ensureCompare();
+        if(e.target.id==="pane-vending") ensureVending();
+      });
+    },{rootMargin:"400px"});
+    _io.observe(document.getElementById("pane-compare"));
+    _io.observe(document.getElementById("pane-vending"));
+  } else { ensureCompare(); ensureVending(); }
+
+  var _spyRAF=false;
+  function updateSpy(){
+    _spyRAF=false;
+    var cats=["llm","image","video","compare","vending"];
+    var navH=document.querySelector(".category-tabs").offsetHeight + 24;
+    var cur=cats[0];
+    for(var i=0;i<cats.length;i++){
+      var el=document.getElementById("pane-"+cats[i]);
+      if(el && el.getBoundingClientRect().top <= navH) cur=cats[i];
+    }
+    state.category=cur; setActiveTab(cur);
+  }
+  window.addEventListener("scroll", function(){ if(!_spyRAF){_spyRAF=true; requestAnimationFrame(updateSpy);} }, {passive:true});
+
+  function gotoHash(){
+    var h=(location.hash||"").replace("#","");
+    var cats=["llm","image","video","compare","vending"];
+    if(cats.indexOf(h)<0) return;
+    var go=function(){ var el=document.getElementById("pane-"+h); if(el) el.scrollIntoView(); setActiveTab(h); };
+    if(h==="compare"){ ensureCompare().then(function(){ setTimeout(go,80); }); }
+    else { if(h==="vending") ensureVending(); setTimeout(go,80); }
+  }
+  window.addEventListener("load", gotoHash);
+  updateSpy();
 </script>
 
 </body>
