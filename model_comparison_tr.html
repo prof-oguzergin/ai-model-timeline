@@ -2238,7 +2238,7 @@
     var mn=Math.min.apply(null,vals),mx=Math.max.apply(null,vals);
     cells.forEach(function(c){
       var t=mx===mn?1:(c.v-mn)/(mx-mn);
-      c.td.style.background=heat(t);
+      c.td.style.background=heat(t);if(c.td.parentNode.textContent.indexOf('$')>=0){c.td.style.fontSize='10px';c.td.style.letterSpacing='-.2px';c.td.style.paddingLeft='1px';c.td.style.paddingRight='1px';}
       if(c.td.classList.contains('best')){c.td.style.boxShadow='inset 0 0 0 2px #fff';c.td.style.color='#fff';}
     });
   });
