@@ -405,7 +405,7 @@
 </footer>
 
 <script>
-  const ASSET_V = "20260621b";
+  const ASSET_V = "20260621c";
   // Karsilastirma tablosu artik sayfaya gomulu (shadow DOM); iframe/fitCmp yok.
   const labels = {
     tr: {
@@ -430,7 +430,7 @@
       desc_image: "<strong>18 görsel üretme aracı, 86 sürüm.</strong> DALL-E, Midjourney, Imagen, FLUX, Stable Diffusion ve daha fazlası — 2021'den günümüze.",
       desc_video: "<strong>Yapay Zeka Video Üretme Araçları Zaman Çizelgesi.</strong> 18 araç · 71 sürüm · Aralık 2022 – Haziran 2026",
       desc_compare: "<strong>Öncü LLM karşılaştırma tablosu.</strong> 24 model × 65 benchmark. Her satır renk skalalı (yeşil = en iyi, kırmızı = en kötü), en yüksek skor çerçeveli. Anthropic, OpenAI, Google, Moonshot, Z.AI, Alibaba, DeepSeek, xAI modelleri yan yana.",
-      desc_vending: "<strong>Vending-Bench 2</strong> — 44 yapay zeka modeli, 1 yıl boyunca simüle otomat işletmesi yönetti ve yalnızca son banka bakiyesine göre değerlendirildi. $500 ile başlayan modellerin 4'ü zarar etti; lider Claude Opus 4.7 ile $10.937 kazandı.",
+      desc_vending: "<strong>Vending-Bench 2</strong> — 46 yapay zeka modeli, 1 yıl boyunca simüle otomat işletmesi yönetti ve yalnızca son banka bakiyesine göre değerlendirildi. $500 ile başlayan modellerin 4'ü zarar etti; lider Claude Opus 4.7 ile $10.937 kazandı.",
       alt_llm: "Yapay Zeka Modelleri Zaman Çizelgesi",
       alt_image: "Yapay Zeka Görsel Üretme Araçları Zaman Çizelgesi",
       alt_video: "Yapay Zeka Video Üretme Araçları Zaman Çizelgesi",
@@ -474,7 +474,7 @@
       desc_image: "<strong>18 image generation tools, 86 versions.</strong> DALL-E, Midjourney, Imagen, FLUX, Stable Diffusion and more — from 2021 to today.",
       desc_video: "<strong>AI Video Generation Tools Timeline.</strong> 18 tools · 71 versions · Dec 2022 – Jun 2026",
       desc_compare: "<strong>Frontier LLM comparison table.</strong> 24 models × 65 benchmarks. Each row color-scaled (green = best, red = worst), top score framed. Anthropic, OpenAI, Google, Moonshot, Z.AI, Alibaba, DeepSeek, xAI models side by side.",
-      desc_vending: "<strong>Vending-Bench 2</strong> — 44 AI models managed a simulated vending business for 1 year, judged solely on final bank balance. Starting with $500, four models lost money; leader Claude Opus 4.7 earned $10,937.",
+      desc_vending: "<strong>Vending-Bench 2</strong> — 46 AI models managed a simulated vending business for 1 year, judged solely on final bank balance. Starting with $500, four models lost money; leader Claude Opus 4.7 earned $10,937.",
       alt_llm: "AI Models Release Timeline",
       alt_image: "AI Image Generation Tools Timeline",
       alt_video: "AI Video Generation Tools Timeline",
@@ -642,11 +642,13 @@
     ["2025-07-20",   -11.34, "Qwen3 235B Thinking", "Qwen"],
     ["2025-10-23",   160.60, "MiniMax-M2",       "MiniMax"],
     ["2026-02-12",   -23.16, "MiniMax-M2.5",     "MiniMax"],
+    ["2026-06-01",  2157.77, "MiniMax-M3",       "MiniMax"],
     ["2026-04-24",  3284.52, "DeepSeek-V4-Pro",  "DeepSeek"],
     ["2025-12-01",  1034.00, "DeepSeek-V3.2",    "DeepSeek"],
     ["2026-02-17",  4662.85, "Grok 4.20",        "xAI"],
     ["2026-04-17",    35.26, "Grok 4.3",         "xAI"],
     ["2025-11-17",  1106.63, "Grok 4.1 Fast",    "xAI"],
+    ["2026-06-12",  5082.94, "Kimi K2.7 Code",   "Kimi"],
     ["2026-04-13",  6204.57, "Kimi K2.6",        "Kimi"],
     ["2026-01-27",  1198.46, "Kimi K2.5",        "Kimi"]
   ];
@@ -773,8 +775,8 @@
           title: {
             display: true,
             text: isTR
-              ? "Vending-Bench 2 · 44 YZ modelinin 1 yıllık otomat işletme sonucu"
-              : "Vending-Bench 2 · 44 AI models after 1 year of simulated vending business",
+              ? "Vending-Bench 2 · 46 YZ modelinin 1 yıllık otomat işletme sonucu"
+              : "Vending-Bench 2 · 46 AI models after 1 year of simulated vending business",
             color: "#ffffff",
             font: { size: 16, weight: "bold" },
             padding: { top: 6, bottom: 18 }

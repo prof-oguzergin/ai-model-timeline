@@ -25,6 +25,7 @@ leaderboard = [
     ("GPT-5.5",                      "OpenAI",    "2026-04-23",  7523.84),
     ("Claude Sonnet 4.6",            "Anthropic", "2026-02-17",  7204.14),
     ("Kimi K2.6",                    "Kimi",      "2026-04-13",  6204.57),
+    ("Kimi K2.7 Code",               "Kimi",      "2026-06-12",  5082.94),
     ("GPT-5.4",                      "OpenAI",    "2026-03-05",  6144.18),
     ("GPT-5.3-Codex",                "OpenAI",    "2026-02-05",  5940.12),
     ("GLM-5.2",                      "Z.ai",      "2026-06-13",  8313.78),
@@ -59,6 +60,7 @@ leaderboard = [
     ("Qwen3 235B A22B Thinking",     "Qwen",      "2025-04-28",   -11.34),
     ("GPT-OSS-120b",                 "OpenAI",    "2025-08-05",   -21.53),
     ("MiniMax-M2.5",                 "MiniMax",   "2026-02-12",   -23.16),
+    ("MiniMax-M3",                   "MiniMax",   "2026-06-01",  2157.77),
     ("GPT-5 mini",                   "OpenAI",    "2025-08-07",   -31.18),
 ]
 
@@ -184,6 +186,8 @@ def get_offset(i, v):
 
 # Ozel offsetler (gosel cakisma onleme)
 manual_offsets = {
+    "Kimi K2.7 Code":             (-70,  6),
+    "MiniMax-M3":                 (  4,  6),
     "Claude Opus 4.7":            ( 4,  6),
     "Claude Opus 4.8 High":       ( 4,  8),
     "Claude Opus 4.8 Max":        ( 4, -10),
