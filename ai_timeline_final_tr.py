@@ -979,3 +979,8 @@ plt.tight_layout(rect=[0.11, 0.03, 0.98, 0.98])
 plt.savefig("G:/My Drive/Claude Code/YZ Model Zaman Cizelgesi/ai_timeline_final_tr.png", dpi=150, bbox_inches="tight",
             pad_inches=1.0, facecolor="#0d1117", edgecolor="none")
 print("Türkçe grafik kaydedildi!")
+
+# LinkedIn sürümü (aynı figür, düşük dpi)
+plt.savefig("G:/My Drive/Claude Code/YZ Model Zaman Cizelgesi/ai_timeline_final_tr_linkedin.png", dpi=100, bbox_inches="tight",
+            pad_inches=0.5, facecolor="#0d1117", edgecolor="none")
+print("LinkedIn PNG kaydedildi!")
