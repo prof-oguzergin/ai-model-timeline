@@ -33,6 +33,7 @@ data = [
     ("GPT-5.4", "OpenAI", "2026-03-05", True),
     ("GPT-5.4 mini", "OpenAI", "2026-03-17", False),
     ("GPT-5.5", "OpenAI", "2026-04-23", True),
+    ("GPT-5.6 Sol", "OpenAI", "2026-06-26", True),
 
     # Google
     ("Gemini 1.0 Pro", "Google", "2023-12-06", True),
@@ -233,6 +234,7 @@ short_labels = {
     "GPT-5.4":          "5.4",
     "GPT-5.4 mini":     "5.4 mini",
     "GPT-5.5":          "5.5",
+    "GPT-5.6 Sol":      "5.6 Sol",
 
     # Google Gemini
     "Gemini 1.0 Pro":       "1.0 Pro",
@@ -929,7 +931,7 @@ for i, dot_x in enumerate([-0.008, 0.000, 0.008]):
     ax.add_patch(d)
 
 ax.text(0.5, 1.008,
-        f"17 Companies  |  {len(df)} Models  |  Nov 2022 – Apr 2026  |  ● Large = Milestone  |  ● Small = Update",
+        f"17 Companies  |  {len(df)} Models  |  Nov 2022 – Jun 2026  |  ● Large = Milestone  |  ● Small = Update",
         transform=ax.transAxes, ha="center", fontsize=28,
         color="#8b949e", fontstyle="italic")
 

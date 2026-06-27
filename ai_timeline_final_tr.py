@@ -33,6 +33,7 @@ data = [
     ("GPT-5.4", "OpenAI", "2026-03-05", True),
     ("GPT-5.4 mini", "OpenAI", "2026-03-17", False),
     ("GPT-5.5", "OpenAI", "2026-04-23", True),
+    ("GPT-5.6 Sol", "OpenAI", "2026-06-26", True),
 
     # Google
     ("Gemini 1.0 Pro", "Google", "2023-12-06", True),
@@ -234,6 +235,7 @@ short_labels = {
     "GPT-5.4":          "5.4",
     "GPT-5.4 mini":     "5.4 mini",
     "GPT-5.5":          "5.5",
+    "GPT-5.6 Sol":      "5.6 Sol",
 
     # Google Gemini
     "Gemini 1.0 Pro":       "1.0 Pro",
