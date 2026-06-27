@@ -789,7 +789,7 @@ for company in company_order:
     for idx, (_, row) in enumerate(group.iterrows()):
         is_ms = row["Milestone"]
         fsize = 28 if is_ms else 22
-        pad = 0.7 if is_ms else 0.5
+        pad = 0.4 if is_ms else 0.3
         alpha = 0.95 if is_ms else 0.72
         ec = "white" if is_ms else "none"
         ew = 2.5 if is_ms else 0
