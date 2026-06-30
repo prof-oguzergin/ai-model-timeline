@@ -66,6 +66,7 @@ data = [
     ("Claude Opus 4.7", "Anthropic", "2026-04-16", True),
     ("Claude Opus 4.8", "Anthropic", "2026-05-28", True),
     ("Claude Fable 5", "Anthropic", "2026-06-09", True),
+    ("Claude Sonnet 5", "Anthropic", "2026-06-30", True),
 
     # xAI
     ("Grok-1", "xAI", "2023-11-04", True),
@@ -267,6 +268,7 @@ short_labels = {
     "Claude Opus 4.7":      "Opus 4.7",
     "Claude Opus 4.8":      "Opus 4.8",
     "Claude Fable 5":       "Fable 5",
+    "Claude Sonnet 5":      "Sonnet 5",
 
     # xAI Grok
     "Grok-1":           "1",
@@ -642,6 +644,7 @@ company_overrides = {
     ("Anthropic", "Opus 4.7"):   (0, 55),
     ("Anthropic", "Opus 4.8"):   (0, -55),
     ("Anthropic", "Fable 5"):    (0, 121),
+    ("Anthropic", "Sonnet 5"):   (0, 55),
     # Mistral - all labels equal distance from line (no multi-level stacking)
     ("Mistral", "Medium 3"):    (-55, -55),
     ("Mistral", "Devstral"):    (55, -55),
