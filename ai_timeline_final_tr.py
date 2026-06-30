@@ -519,7 +519,7 @@ y_max = y_positions[company_order[0]] + 2.8
 
 # Shading starts at the first model date, extends to match x-axis limit (Jun 2026)
 shade_left = mdates.date2num(df["Date"].min() - pd.Timedelta(days=15))
-shade_right = mdates.date2num(pd.Timestamp("2026-07-01"))
+shade_right = mdates.date2num(df["Date"].max() + pd.Timedelta(days=15))
 shade_width = shade_right - shade_left
 
 # Closed source: warm red/purple tint
@@ -864,7 +864,7 @@ _TR_AY_KISA = {1:'Oca', 2:'Şub', 3:'Mar', 4:'Nis', 5:'May', 6:'Haz',
 ax.xaxis.set_major_formatter(plt.FuncFormatter(
     lambda x, pos: f"{_TR_AY_KISA[mdates.num2date(x).month]} {mdates.num2date(x).year}"
 ))
-ax.set_xlim(mdates.date2num(pd.Timestamp("2022-11-01")), mdates.date2num(pd.Timestamp("2026-07-01")))
+ax.set_xlim(mdates.date2num(pd.Timestamp("2022-11-01")), mdates.date2num(df["Date"].max() + pd.Timedelta(days=15)))
 plt.xticks(rotation=45, fontsize=22, color="#8b949e")
 
 # Grid
