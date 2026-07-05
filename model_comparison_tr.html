@@ -427,7 +427,7 @@
     <div class="badge">ÖNCÜ LLM KARŞILAŞTIRMA &middot; 9 HAZİRAN 2026</div>
     <h1>Modeller Arası Başarım: Claude · GPT · Gemini · Kimi · GLM · Qwen · DeepSeek · MiniMax · Grok · Fable</h1>
     <div class="subtitle">Her satır kendi içinde renklendirildi: <span style="color:#3fb950">yeşil = yüksek</span>, <span style="color:#e3b341">sarı = orta</span>, <span style="color:#e5484d">kırmızı = düşük</span>. Birinci en yeşil + beyaz çerçeveli. Boş hücreler veri yayınlanmadığını gösterir.</div>
-    <div style="text-align:center;margin:10px 0 2px;font-size:11px;color:#8b949e;">düşük <span style="vertical-align:middle;margin:0 6px;white-space:nowrap;"><span style="display:inline-block;width:20px;height:11px;border-radius:2px 0 0 2px; background:rgba(216,40,40,.7)"></span><span style="display:inline-block;width:20px;height:11px; background:rgba(244,140,55,.7)"></span><span style="display:inline-block;width:20px;height:11px; background:rgba(245,205,40,.7)"></span><span style="display:inline-block;width:20px;height:11px; background:rgba(140,200,60,.7)"></span><span style="display:inline-block;width:20px;height:11px;border-radius:0 2px 2px 0; background:rgba(40,160,70,.7)"></span></span> yüksek &middot; birinci beyaz çerçeveli</div>
+    <div style="text-align:center;margin:10px 0 2px;font-size:11px;color:#8b949e;">düşük <span style="vertical-align:middle;margin:0 6px;white-space:nowrap;"><span style="display:inline-block;width:20px;height:11px;border-radius:2px 0 0 2px; background:rgba(216,40,40,.7)"></span><span style="display:inline-block;width:20px;height:11px; background:rgba(244,140,55,.7)"></span><span style="display:inline-block;width:20px;height:11px; background:rgba(245,205,40,.7)"></span><span style="display:inline-block;width:20px;height:11px; background:rgba(140,200,60,.7)"></span><span style="display:inline-block;width:20px;height:11px;border-radius:0 2px 2px 0; background:rgba(40,160,70,.7)"></span></span> yüksek &middot; birinci beyaz çerçeveli &middot; gri kesikli çerçeve = Mythos Preview (yayınlanmamış referans, birinciliğe dahil değil)</div>
   </div>
 
   <div style="text-align:center; font-size:11px; color:#888; margin: 18px 0 6px; letter-spacing:0.5px;">
@@ -2245,6 +2245,8 @@
       c.td.style.background=heat(t);if(c.td.parentNode.textContent.indexOf('$')>=0){c.td.style.fontSize='10px';c.td.style.letterSpacing='-.2px';c.td.style.paddingLeft='1px';c.td.style.paddingRight='1px';}
       if(c.td.classList.contains('best')){c.td.style.boxShadow='inset 0 0 0 2px #fff';c.td.style.color='#fff';}
     });
+    var mp=tds[2],mpv=pv(mp.textContent);
+    if(mpv!==null&&mpv===mx&&!mp.classList.contains('best')){mp.style.outline='2px dashed #9aa4ae';mp.style.outlineOffset='-3px';}
   });
 })();
 </script>

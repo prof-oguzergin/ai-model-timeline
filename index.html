@@ -405,7 +405,7 @@
 </footer>
 
 <script>
-  const ASSET_V = "20260630g";
+  const ASSET_V = "20260630h";
   // Karsilastirma tablosu artik sayfaya gomulu (shadow DOM); iframe/fitCmp yok.
   const labels = {
     tr: {
@@ -901,6 +901,8 @@
         c.td.style.background=heat(t);if(c.td.parentNode.textContent.indexOf('$')>=0){c.td.style.fontSize='10px';c.td.style.letterSpacing='-.2px';c.td.style.paddingLeft='1px';c.td.style.paddingRight='1px';}
         if(c.td.classList.contains('best')){c.td.style.boxShadow='inset 0 0 0 2px #fff';c.td.style.color='#fff';}
       });
+      var mp=tds[2],mpv=pv(mp.textContent);
+      if(mpv!==null&&mpv===mx&&!mp.classList.contains('best')){mp.style.outline='2px dashed #9aa4ae';mp.style.outlineOffset='-3px';}
     });
   }
   function loadCompare(lang){
