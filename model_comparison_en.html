@@ -77,7 +77,7 @@
     white-space: normal;
     overflow: visible;
   }
-  thead th:not(:first-child) { width: calc((100% - 280px) / 26); }
+  thead th:not(:first-child) { width: calc((100% - 280px) / 27); }
   thead tr:last-child th { vertical-align: bottom; top: 22px; box-shadow: 0 5px 7px -3px rgba(0,0,0,0.55); }
   thead th { position: sticky; z-index: 20; background: #0d0d15; box-sizing: border-box; }
   thead tr:first-child th { top: 0; font-size: 9px; letter-spacing: 0.1px; white-space: nowrap; overflow: visible; padding-left: 1px; padding-right: 1px; border-bottom: 3px solid #0d0d15; }
@@ -135,7 +135,7 @@
   thead tr:last-child th.col-qwen37,
   thead tr:last-child th.col-deepseek,
   thead tr:last-child th.col-minimax-m3,
-  thead tr:last-child th.col-grok43{
+  thead tr:last-child th.col-grok45{
     border-left:2px solid var(--cc); border-bottom-left-radius:8px;
   }
   thead tr:last-child th.col-sonnet46,
@@ -170,6 +170,7 @@
   thead th.col-mythospre { color: #9d84c4; }
   thead th.col-grok420 { color: #0c85d0; }
   thead th.col-grok43 { color: #38b0ff; }
+  thead th.col-grok45 { color: #6ec6ff; }
   thead th.col-kimi26  { color: #2DD4BF; }
   thead th.col-glm52   { color: #EC4899; }
   thead th.col-glm51   { color: #EC4899; }
@@ -478,7 +479,7 @@
         <th colspan="2" class="company-qwen">ALIBABA</th>
         <th colspan="3" class="company-deepseek">DEEPSEEK</th>
         <th class="company-minimax">MINIMAX</th>
-        <th colspan="3" class="company-xai">xAI</th>
+        <th colspan="4" class="company-xai">xAI</th>
       </tr>
       <tr>
         <th></th>
@@ -505,13 +506,14 @@
         <th class="col-deepseek32 m-deepseek">V3.2<span class="date">(Dec 25)</span></th>
         <th class="col-deepseek3 m-deepseek">V3<span class="date">(Dec 24)</span></th>
         <th class="col-minimax-m3 m-minimax">M3<span class="date">(Jun 26)</span></th>
+        <th class="col-grok45 m-xai">Grok<br>4.5<span class="date">(Jul 26)</span></th>
         <th class="col-grok43 m-xai">Grok<br>4.3<span class="date">(Apr 26)</span></th>
         <th class="col-grok420 m-xai">Grok<br>4.20<span class="date">(Feb 26)</span></th>
         <th class="col-grok4 m-xai">Grok<br>4<span class="date">(Jul 25)</span></th>
       </tr>
     </thead>
     <tbody>
-      <tr class="section-row sw"><td colspan="27">SOFTWARE ENGINEERING / CODING</td></tr>
+      <tr class="section-row sw"><td colspan="28">SOFTWARE ENGINEERING / CODING</td></tr>
       <tr>
         <td data-tooltip="Real GitHub issues from open source projects; model must write code patches that pass tests.">SWE-bench Verified</td>
         <td class="best mythos">95.5%</td>
@@ -534,7 +536,7 @@
         <td class="na">&mdash;</td>
         <td>42.0%</td>
         <td>80.5%</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>72.0%</td>
       </tr>
@@ -560,7 +562,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>59.0%</td>
-        <td class="na">&mdash;</td>
+        <td>64.7%</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
@@ -586,7 +588,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
@@ -612,7 +614,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
@@ -638,7 +640,7 @@
         <td>46.4%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
@@ -664,7 +666,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>66.0%</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
@@ -691,7 +693,7 @@
         <td>35.6%</td>
         <td>6.8%</td>
         <td>42.4%</td>
-        <td>37.9%</td>
+        <td class="na">&mdash;</td><td>37.9%</td>
         <td>37.9%</td>
         <td>37.9%</td>
       </tr>
@@ -717,7 +719,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
@@ -743,7 +745,7 @@
         <td>49.2%</td>
         <td>40.5%</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>79.0%</td>
       </tr>
@@ -769,12 +771,12 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
-      <tr class="section-row knowledge"><td colspan="27">KNOWLEDGE & REASONING</td></tr>
-      <tr class="subsection-row"><td colspan="27">▸ Science & Reasoning</td></tr>
+      <tr class="section-row knowledge"><td colspan="28">KNOWLEDGE & REASONING</td></tr>
+      <tr class="subsection-row"><td colspan="28">▸ Science & Reasoning</td></tr>
       <tr>
         <td data-tooltip="198 PhD-level science questions in biology, physics, and chemistry. Source: artificialanalysis.ai independent measurement (single consistent source).">GPQA Diamond</td>
         <td>92.6%</td>
@@ -797,7 +799,7 @@
         <td>84.0%</td>
         <td>55.7%</td>
         <td>92.9%</td>
-        <td>90.1%</td>
+        <td>93.1%</td><td>90.1%</td>
         <td>91.1%</td>
         <td>87.7%</td>
       </tr>
@@ -823,7 +825,7 @@
         <td>2.9%</td>
         <td>0.0%</td>
         <td>3.7%</td>
-        <td>8.0%</td>
+        <td>15.4%</td><td>8.0%</td>
         <td>6.6%</td>
         <td>2.0%</td>
       </tr>
@@ -849,7 +851,7 @@
         <td>38.9%</td>
         <td>35.4%</td>
         <td>45.4%</td>
-        <td>47.3%</td>
+        <td>54.1%</td><td>47.3%</td>
         <td>45.6%</td>
         <td>45.7%</td>
       </tr>
@@ -875,7 +877,7 @@
         <td>22.2%</td>
         <td>3.6%</td>
         <td>37.1%</td>
-        <td>35.0%</td>
+        <td>40.3%</td><td>35.0%</td>
         <td>32.2%</td>
         <td>23.9%</td>
       </tr>
@@ -901,11 +903,11 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
-      <tr class="subsection-row"><td colspan="27">▸ Health & Biomedical</td></tr>
+      <tr class="subsection-row"><td colspan="28">▸ Health & Biomedical</td></tr>
       <tr>
         <td data-tooltip="Health question answering and clinical scenarios.">HealthBench</td>
         <td class="best mythos">62.7%</td>
@@ -928,7 +930,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
@@ -954,7 +956,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
@@ -980,7 +982,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
@@ -1006,11 +1008,11 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
-      <tr class="subsection-row"><td colspan="27">▸ Knowledge & Factuality</td></tr>
+      <tr class="subsection-row"><td colspan="28">▸ Knowledge & Factuality</td></tr>
       <tr>
         <td data-tooltip="12,000 multiple-choice questions across 14 disciplines, significantly harder than the original MMLU.">MMLU-Pro</td>
         <td class="na">&mdash;</td>
@@ -1033,7 +1035,7 @@
         <td>81.2%</td>
         <td>75.9%</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
@@ -1059,7 +1061,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
@@ -1085,7 +1087,7 @@
         <td class="na">&mdash;</td>
         <td>24.9%</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
@@ -1111,7 +1113,7 @@
         <td class="na">&mdash;</td>
         <td>64.8%</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
@@ -1138,11 +1140,11 @@
         <td>60.7%</td>
         <td>34.8%</td>
         <td class="best minimax">82.9%</td>
-        <td>81.3%</td>
+        <td class="na">&mdash;</td><td>81.3%</td>
         <td>81.2%</td>
         <td>53.7%</td>
       </tr>
-      <tr class="subsection-row"><td colspan="27">▸ Abstract Reasoning (ARC-AGI)</td></tr>
+      <tr class="subsection-row"><td colspan="28">▸ Abstract Reasoning (ARC-AGI)</td></tr>
       <tr>
         <td data-tooltip="Abstract visual puzzles testing novel pattern induction; the original 2019 ARC benchmark.">ARC-AGI-1</td>
         <td class="na">&mdash;</td>
@@ -1165,7 +1167,7 @@
         <td>57.0%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td>89.5%</td>
         <td>66.6%</td>
       </tr>
@@ -1191,7 +1193,7 @@
         <td>4.0%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td>65.1%</td>
         <td>15.9%</td>
       </tr>
@@ -1217,11 +1219,11 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td>0.1%</td>
         <td class="na">&mdash;</td>
       </tr>
-      <tr class="subsection-row"><td colspan="27">▸ Multimodal & Visual</td></tr>
+      <tr class="subsection-row"><td colspan="28">▸ Multimodal & Visual</td></tr>
       <tr>
         <td data-tooltip="Multi-discipline multimodal understanding benchmark combining text, images, and charts.">MMMU-Pro (Multimodal)</td>
         <td class="na">&mdash;</td>
@@ -1244,7 +1246,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>78.1%</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
@@ -1270,7 +1272,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
@@ -1296,7 +1298,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
@@ -1322,7 +1324,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
@@ -1348,11 +1350,11 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
-      <tr class="section-row math"><td colspan="27">MATHEMATICS</td></tr>
+      <tr class="section-row math"><td colspan="28">MATHEMATICS</td></tr>
       <tr>
         <td data-tooltip="American Invitational Mathematics Examination; 15 challenging high-school math problems (no tools).">AIME 2025</td>
         <td class="na">&mdash;</td>
@@ -1375,7 +1377,7 @@
         <td>96.0%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>91.7%</td>
       </tr>
@@ -1401,7 +1403,7 @@
         <td>94.2%</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
@@ -1427,7 +1429,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
@@ -1453,7 +1455,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
@@ -1479,7 +1481,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
@@ -1505,7 +1507,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
@@ -1531,7 +1533,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
@@ -1557,7 +1559,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
@@ -1583,11 +1585,11 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
-      <tr class="section-row context"><td colspan="27">LONG CONTEXT (1M Tokens)</td></tr>
+      <tr class="section-row context"><td colspan="28">LONG CONTEXT (1M Tokens)</td></tr>
       <tr>
         <td data-tooltip="Multi-round conversation retrieval test extended to 1 million token context windows.">MRCR 1M</td>
         <td class="na">&mdash;</td>
@@ -1610,7 +1612,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
@@ -1636,7 +1638,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
@@ -1662,7 +1664,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
@@ -1688,12 +1690,12 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
-      <tr class="section-row computer"><td colspan="27">AGENTIC / COMPUTER USE</td></tr>
-      <tr class="subsection-row"><td colspan="27">▸ Browser & Computer Use</td></tr>
+      <tr class="section-row computer"><td colspan="28">AGENTIC / COMPUTER USE</td></tr>
+      <tr class="subsection-row"><td colspan="28">▸ Browser & Computer Use</td></tr>
       <tr>
         <td data-tooltip="Complex autonomous web browsing and information synthesis tasks requiring multi-step reasoning.">BrowseComp</td>
         <td class="best mythos">88.0%</td>
@@ -1716,7 +1718,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>83.5%</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
@@ -1742,7 +1744,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>70.1%</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
@@ -1768,7 +1770,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
@@ -1794,7 +1796,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
@@ -1820,11 +1822,11 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
-      <tr class="subsection-row"><td colspan="27">▸ Tool & Protocol Use</td></tr>
+      <tr class="subsection-row"><td colspan="28">▸ Tool & Protocol Use</td></tr>
       <tr>
         <td data-tooltip="Multi-task benchmark for evaluating LLM agents across diverse MCP tool-use environments.">MCP-Atlas</td>
         <td class="na">&mdash;</td>
@@ -1847,7 +1849,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>74.2%</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
@@ -1873,7 +1875,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
@@ -1899,7 +1901,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
@@ -1925,11 +1927,11 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
-      <tr class="subsection-row"><td colspan="27">▸ Domain Agents (Finance/Legal/Office)</td></tr>
+      <tr class="subsection-row"><td colspan="28">▸ Domain Agents (Finance/Legal/Office)</td></tr>
       <tr>
         <td data-tooltip="Financial sector agentic tasks requiring analysis, reporting, and decision-making with financial data.">Finance Agent v1.1</td>
         <td class="na">&mdash;</td>
@@ -1952,7 +1954,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
@@ -1978,7 +1980,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
@@ -2004,7 +2006,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
@@ -2030,7 +2032,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
@@ -2056,7 +2058,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
@@ -2082,11 +2084,11 @@
         <td>$1.034</td>
         <td class="na">&mdash;</td>
         <td>$2.158</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td>$4.663</td>
         <td class="na">&mdash;</td>
       </tr>
-      <tr class="subsection-row"><td colspan="27">▸ Document & Economic Tasks</td></tr>
+      <tr class="subsection-row"><td colspan="28">▸ Document & Economic Tasks</td></tr>
       <tr>
         <td data-tooltip="Humanity's Last Exam with Python code interpreter tool access; tests tool-augmented reasoning.">HLE (with tools)</td>
         <td class="best mythos">64.5%</td>
@@ -2109,7 +2111,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td>44.4%</td>
       </tr>
@@ -2135,7 +2137,7 @@
         <td>1197</td>
         <td>409</td>
         <td>1670</td>
-        <td>1098</td>
+        <td class="na">&mdash;</td><td>1098</td>
         <td>1168</td>
         <td>990</td>
       </tr>
@@ -2161,11 +2163,11 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
-      <tr class="section-row cyber"><td colspan="27">CYBERSECURITY</td></tr>
+      <tr class="section-row cyber"><td colspan="28">CYBERSECURITY</td></tr>
       <tr>
         <td data-tooltip="Capture-The-Flag cybersecurity challenges sourced from real CTF competitions testing offensive security skills.">CyberGym</td>
         <td class="na">&mdash;</td>
@@ -2188,7 +2190,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>
@@ -2214,7 +2216,7 @@
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
-        <td class="na">&mdash;</td>
+        <td class="na">&mdash;</td><td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
         <td class="na">&mdash;</td>
       </tr>

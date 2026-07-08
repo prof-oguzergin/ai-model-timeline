@@ -79,6 +79,7 @@ data = [
     ("Grok-4.1", "xAI", "2025-11-17", False),
     ("Grok 4.20", "xAI", "2026-02-17", True),
     ("Grok-4.3", "xAI", "2026-04-17", False),
+    ("Grok-4.5", "xAI", "2026-07-08", True),
 
     # Meta
     ("Llama 1", "Meta", "2023-02-24", True),
@@ -282,6 +283,7 @@ short_labels = {
     "Grok-4.1":         "4.1",
     "Grok 4.20":        "4.20",
     "Grok-4.3":         "4.3",
+    "Grok-4.5":         "4.5",
 
     # Meta Llama
     "Llama 1":          "1",
