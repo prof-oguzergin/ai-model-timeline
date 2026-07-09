@@ -92,6 +92,7 @@ data = [
 
     # Meta Muse (Closed Source)
     ("Muse Spark", "Meta Muse", "2026-04-08", True),
+    ("Muse Spark 1.1", "Meta Muse", "2026-07-09", False),
 
     # Microsoft MAI (Closed Source)
     ("MAI-Thinking-1", "Microsoft MAI", "2026-06-02", True),
@@ -383,6 +384,7 @@ short_labels = {
 
     # Meta Muse
     "Muse Spark":           "Spark",
+    "Muse Spark 1.1":       "Spark 1.1",
     "MAI-Thinking-1":       "Thinking-1",
 
     # Amazon Nova
