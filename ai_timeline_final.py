@@ -383,7 +383,7 @@ short_labels = {
     "Doubao-Seed-2.0":      "Seed 2.0",
 
     # Meta Muse
-    "Muse Spark":           "Spark",
+    "Muse Spark":           "Spark 1.0",
     "Muse Spark 1.1":       "Spark 1.1",
     "MAI-Thinking-1":       "Thinking-1",
 
