@@ -162,6 +162,7 @@ data = [
     ("Kimi K2.5", "Kimi", "2026-01-27", False),
     ("Kimi K2.6", "Kimi", "2026-04-13", True),
     ("Kimi K2.7 Code", "Kimi", "2026-06-12", True),
+    ("Kimi K3", "Kimi", "2026-07-16", True),
 
     # MiniMax
     ("MiniMax-Text-01", "MiniMax", "2025-01-15", True),
@@ -360,6 +361,7 @@ short_labels = {
     "Kimi K2.5":        "K2.5",
     "Kimi K2.6":        "K2.6",
     "Kimi K2.7 Code":   "K2.7 Code",
+    "Kimi K3":          "K3",
 
     # MiniMax
     "MiniMax-Text-01":  "Text-01",
