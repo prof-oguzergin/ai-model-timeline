@@ -30,9 +30,9 @@ data = [
     ("GPT-5.1", "OpenAI", "2025-11-12", False),
     ("GPT-5.2", "OpenAI", "2025-12-11", False),
     ("GPT-5.3-Codex", "OpenAI", "2026-02-05", False),
-    ("GPT-5.4", "OpenAI", "2026-03-05", True),
+    ("GPT-5.4", "OpenAI", "2026-03-05", False),
     ("GPT-5.4 mini", "OpenAI", "2026-03-17", False),
-    ("GPT-5.5", "OpenAI", "2026-04-23", True),
+    ("GPT-5.5", "OpenAI", "2026-04-23", False),
     ("GPT-5.6 Sol", "OpenAI", "2026-06-26", True),
 
     # Google
@@ -46,7 +46,7 @@ data = [
     ("Gemini 3 Pro", "Google", "2025-11-18", True),
     ("Gemini 3 Flash", "Google", "2025-12-17", False),
     ("Gemini 3 Deep Think", "Google", "2026-02-12", True),
-    ("Gemini 3.1 Pro", "Google", "2026-02-19", True),
+    ("Gemini 3.1 Pro", "Google", "2026-02-19", False),
     ("Gemini 3.5 Flash", "Google", "2026-05-19", False),
 
     # Anthropic
@@ -61,10 +61,10 @@ data = [
     ("Claude Opus 4.1", "Anthropic", "2025-08-05", False),
     ("Claude Sonnet 4.5", "Anthropic", "2025-09-29", False),
     ("Claude Opus 4.5", "Anthropic", "2025-11-24", False),
-    ("Claude Opus 4.6", "Anthropic", "2026-02-05", True),
+    ("Claude Opus 4.6", "Anthropic", "2026-02-05", False),
     ("Claude Sonnet 4.6", "Anthropic", "2026-02-17", False),
-    ("Claude Opus 4.7", "Anthropic", "2026-04-16", True),
-    ("Claude Opus 4.8", "Anthropic", "2026-05-28", True),
+    ("Claude Opus 4.7", "Anthropic", "2026-04-16", False),
+    ("Claude Opus 4.8", "Anthropic", "2026-05-28", False),
     ("Claude Fable 5", "Anthropic", "2026-06-09", True),
     ("Claude Sonnet 5", "Anthropic", "2026-06-30", True),
     ("Claude Opus 5", "Anthropic", "2026-07-24", True),
@@ -78,7 +78,7 @@ data = [
     ("Grok-4", "xAI", "2025-07-09", True),
     ("Grok Code Fast", "xAI", "2025-08-28", False),
     ("Grok-4.1", "xAI", "2025-11-17", False),
-    ("Grok 4.20", "xAI", "2026-02-17", True),
+    ("Grok 4.20", "xAI", "2026-02-17", False),
     ("Grok-4.3", "xAI", "2026-04-17", False),
     ("Grok-4.5", "xAI", "2026-07-08", True),
 
@@ -132,7 +132,7 @@ data = [
     ("Qwen 3", "Qwen", "2025-04-28", True),
     ("Qwen3-Max", "Qwen", "2025-09-05", False),
     ("Qwen3-Coder", "Qwen", "2026-02-02", False),
-    ("Qwen 3.5", "Qwen", "2026-02-16", True),
+    ("Qwen 3.5", "Qwen", "2026-02-16", False),
     ("Qwen 3.6", "Qwen", "2026-03-31", False),
     ("Qwen3.7-Max", "Qwen", "2026-05-20", True),
 
@@ -161,8 +161,8 @@ data = [
     ("Kimi K2", "Kimi", "2025-07-11", True),
     ("Kimi K2 Thinking", "Kimi", "2025-11-06", False),
     ("Kimi K2.5", "Kimi", "2026-01-27", False),
-    ("Kimi K2.6", "Kimi", "2026-04-13", True),
-    ("Kimi K2.7 Code", "Kimi", "2026-06-12", True),
+    ("Kimi K2.6", "Kimi", "2026-04-13", False),
+    ("Kimi K2.7 Code", "Kimi", "2026-06-12", False),
     ("Kimi K3", "Kimi", "2026-07-16", True),
 
     # MiniMax
@@ -679,6 +679,7 @@ company_overrides = {
     ("Ai2", "OLMo 3"):          (0, 55),
     ("Ai2", "Molmo 2"):         (0, -55),
     ("Kimi", "K2.6"):           (0, -55),
+    ("Kimi", "K2.7 Code"):     (0, 55),
     ("Kimi", "K3"):             (0, -55),
 }
 
