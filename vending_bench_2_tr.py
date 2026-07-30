@@ -16,6 +16,7 @@ import os
 
 # (Model adi, sirket, yayın tarihi, son bakiye $)
 leaderboard = [
+    ("Claude Opus 5",                "Anthropic", "2026-07-24", 11181.87),
     ("Claude Opus 4.7",              "Anthropic", "2026-04-16", 10936.76),
     ("Claude Opus 4.8 High",         "Anthropic", "2026-05-28",  5787.43),
     ("Claude Opus 4.8 Max",          "Anthropic", "2026-05-28",  2992.34),
@@ -23,6 +24,7 @@ leaderboard = [
     ("Claude Fable 5 Max",           "Anthropic", "2026-06-09",  4966.64),
     ("Claude Sonnet 5",              "Anthropic", "2026-06-30",  6377.70),
     ("Claude Opus 4.6",              "Anthropic", "2026-02-05",  8017.59),
+    ("GPT-5.6 Sol",                  "OpenAI",    "2026-06-26",  9619.37),
     ("GPT-5.5",                      "OpenAI",    "2026-04-23",  7523.84),
     ("Claude Sonnet 4.6",            "Anthropic", "2026-02-17",  7204.14),
     ("Kimi K2.6",                    "Kimi",      "2026-04-13",  6204.57),
@@ -67,6 +69,8 @@ leaderboard = [
 
 # Tarih eslestirme kaynaklari (rapor icin yazdirma)
 tarih_kaynak = {
+    "Claude Opus 5":               "Andon Labs leaderboard 2026-07-25 dogrulandi",
+    "GPT-5.6 Sol":                 "Andon Labs leaderboard 2026-07-25 dogrulandi",
     "Claude Opus 4.7":             "ai_timeline_final_tr.py",
     "Claude Opus 4.8 High":        "Andon Labs leaderboard 2026-05-29 dogrulandi",
     "Claude Opus 4.8 Max":         "Andon Labs leaderboard 2026-05-29 dogrulandi",
@@ -188,9 +192,11 @@ def get_offset(i, v):
 
 # Ozel offsetler (gosel cakisma onleme)
 manual_offsets = {
+    "Claude Opus 5":              (-10, 13),
+    "GPT-5.6 Sol":               (-72,  6),
     "Kimi K2.7 Code":             (-70,  6),
     "MiniMax-M3":                 (  4,  6),
-    "Claude Opus 4.7":            ( 4,  6),
+    "Claude Opus 4.7":            ( -6, -14),
     "Claude Opus 4.8 High":       ( 4,  8),
     "Claude Opus 4.8 Max":        ( 4, -10),
     "Claude Fable 5 High":        ( 10,  16),
@@ -325,7 +331,7 @@ fig.text(
 )
 fig.text(
     0.5, 0.895,
-    "43 Model  ·  Kaynak: andonlabs.com  ·  Başlangıç: $500 (1 yıllık simülasyon sonucu bakiye $-31'den $10.936'ya)",
+    "49 Model  ·  Kaynak: andonlabs.com  ·  Başlangıç: $500 (1 yıllık simülasyon sonucu bakiye $-31'den $11.182'ye)",
     ha="center", va="center", fontsize=7.5, color="#8090a8"
 )
 
