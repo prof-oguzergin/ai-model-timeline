@@ -27,6 +27,7 @@ leaderboard = [
     ("GPT-5.6 Sol",                  "OpenAI",    "2026-06-26",  9619.37),
     ("GPT-5.5",                      "OpenAI",    "2026-04-23",  7523.84),
     ("Claude Sonnet 4.6",            "Anthropic", "2026-02-17",  7204.14),
+    ("Kimi K3",                      "Kimi",      "2026-07-16",  5165.04),
     ("Kimi K2.6",                    "Kimi",      "2026-04-13",  6204.57),
     ("Kimi K2.7 Code",               "Kimi",      "2026-06-12",  5082.94),
     ("GPT-5.4",                      "OpenAI",    "2026-03-05",  6144.18),
@@ -37,6 +38,7 @@ leaderboard = [
     ("Gemini 3.5 Flash",             "Google",    "2026-05-19",  5396.42),
     ("Qwen 3.6 Plus",                "Qwen",      "2026-03-31",  5114.87),
     ("Claude Opus 4.5",              "Anthropic", "2025-11-24",  4967.06),
+    ("Grok 4.5",                     "xAI",       "2026-07-08",  3887.43),
     ("Grok 4.20",                    "xAI",       "2026-02-17",  4662.85),
     ("GLM-5",                        "Z.ai",      "2026-02-11",  4432.12),
     ("Qwen 3.6 Max",                 "Qwen",      "2026-03-31",  4254.19),
@@ -69,6 +71,8 @@ leaderboard = [
 
 # Date mapping sources (for verification)
 date_sources = {
+    "Kimi K3":                     "Andon Labs vb2 runs 2026-07-25 (Moonshot saglayici)",
+    "Grok 4.5":                    "Andon Labs vb2 runs 2026-07-25",
     "Claude Opus 5":               "Andon Labs leaderboard 2026-07-25 dogrulandi",
     "GPT-5.6 Sol":                 "Andon Labs leaderboard 2026-07-25 dogrulandi",
     "Claude Opus 4.7":             "ai_timeline_final_tr.py (exact)",
@@ -305,7 +309,7 @@ fig.text(
 )
 fig.text(
     0.5, 0.895,
-    "49 Models  -  Source: andonlabs.com  -  Starting: $500 (1-year sim balance from $-31 to $11,182)",
+    "51 Models  -  Source: andonlabs.com  -  Starting: $500 (1-year sim balance from $-31 to $11,182)",
     ha="center", va="center", fontsize=7.5, color="#8090a8"
 )
 
