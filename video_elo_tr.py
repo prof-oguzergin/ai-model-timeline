@@ -29,12 +29,6 @@ DATA = [
 "Runway"
 ],
 [
-"2024-08-15",
-997.0,
-"Runway Gen 3 Alpha Turbo",
-"Runway"
-],
-[
 "2024-08-27",
 802.9,
 "CogVideoX-5B",
@@ -131,12 +125,6 @@ DATA = [
 "StepFun"
 ],
 [
-"2025-02-22",
-1040.2,
-"I2V-01-Director",
-"MiniMax"
-],
-[
 "2025-02-25",
 1013.3,
 "Wan 2.1 14B",
@@ -149,12 +137,6 @@ DATA = [
 "Pika Art"
 ],
 [
-"2025-03-31",
-1083.7,
-"Runway Gen 4",
-"Runway"
-],
-[
 "2025-04-15",
 1081.3,
 "Kling 2.0",
@@ -165,12 +147,6 @@ DATA = [
 1005.3,
 "Vidu Q1",
 "Vidu"
-],
-[
-"2025-05-07",
-1035.6,
-"LTX Video v0.9.7 13B",
-"Lightricks"
 ],
 [
 "2025-05-16",
@@ -188,18 +164,6 @@ DATA = [
 "2025-05-29",
 1130.8,
 "Kling 2.1 Master",
-"Kling"
-],
-[
-"2025-05-29",
-1169.0,
-"Kling 2.1 Standard",
-"Kling"
-],
-[
-"2025-05-29",
-1181.7,
-"Kling 2.1 Pro",
 "Kling"
 ],
 [
@@ -233,40 +197,10 @@ DATA = [
 "MiniMax"
 ],
 [
-"2025-06-18",
-1194.6,
-"Hailuo 02 Fast",
-"MiniMax"
-],
-[
-"2025-06-18",
-1269.9,
-"Hailuo 02 0616",
-"MiniMax"
-],
-[
-"2025-06-19",
-1158.0,
-"Midjourney V1",
-"Midjourney"
-],
-[
-"2025-06-20",
-1158.0,
-"Vivago 2.0",
-"HiDream"
-],
-[
 "2025-07-08",
 1050.8,
 "Marey",
 "Moonvalley"
-],
-[
-"2025-07-14",
-1233.8,
-"Avenger 0.5",
-"Video Rebirth"
 ],
 [
 "2025-07-28",
@@ -317,18 +251,6 @@ DATA = [
 "Alibaba"
 ],
 [
-"2025-09-29",
-1225.7,
-"Vidu Q2 Pro",
-"Vidu"
-],
-[
-"2025-09-29",
-1228.8,
-"Vidu Q2 Turbo",
-"Vidu"
-],
-[
 "2025-09-30",
 1162.0,
 "Sora 2 (October)",
@@ -359,18 +281,6 @@ DATA = [
 "Google"
 ],
 [
-"2025-10-16",
-1260.5,
-"Avenger 0.5 Pro",
-"Video Rebirth"
-],
-[
-"2025-10-17",
-1261.1,
-"GenFlare",
-"Baidu"
-],
-[
 "2025-10-20",
 966.1,
 "Krea Realtime",
@@ -392,12 +302,6 @@ DATA = [
 "2025-10-28",
 1171.8,
 "Hailuo 2.3",
-"MiniMax"
-],
-[
-"2025-10-28",
-1239.0,
-"Hailuo 2.3 Fast",
 "MiniMax"
 ],
 [
@@ -429,12 +333,6 @@ DATA = [
 1214.3,
 "Runway Gen-4.5",
 "Runway"
-],
-[
-"2025-12-01",
-1308.1,
-"GenFlare 2.0",
-"Baidu"
 ],
 [
 "2025-12-03",
@@ -623,24 +521,6 @@ DATA = [
 "Sapiens AI"
 ],
 [
-"2026-05-21",
-1038.8,
-"Aleph 2.0",
-"Runway"
-],
-[
-"2026-05-30",
-1329.2,
-"grok-imagine-video-1.5",
-"xAI"
-],
-[
-"2026-05-31",
-1248.3,
-"Cosmos3-Super-Image2Video",
-"NVIDIA"
-],
-[
 "2026-06-12",
 1241.5,
 "Wan2.7-260612",
@@ -657,12 +537,6 @@ DATA = [
 1305.2,
 "MiniMax H3",
 "MiniMax"
-],
-[
-"2026-07-31",
-1266.5,
-"Cosmos3-Super-Image2Video-4Step",
-"NVIDIA"
 ]
 ]
 

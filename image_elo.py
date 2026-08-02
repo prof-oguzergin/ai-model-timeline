@@ -323,18 +323,6 @@ DATA = [
 "OpenAI"
 ],
 [
-"2025-04-25",
-847.3,
-"Step1X-Edit",
-"StepFun"
-],
-[
-"2025-04-28",
-822.0,
-"HiDream-E1-Full",
-"HiDream"
-],
-[
 "2025-05-20",
 900.1,
 "Bagel",
@@ -351,12 +339,6 @@ DATA = [
 1124.2,
 "FLUX.1 Kontext [max]",
 "FLUX"
-],
-[
-"2025-06-06",
-1078.2,
-"SeedEdit 3.0",
-"ByteDance"
 ],
 [
 "2025-06-10",
@@ -378,12 +360,6 @@ DATA = [
 ],
 [
 "2025-06-26",
-1013.4,
-"FLUX.1 Kontext [dev]",
-"FLUX"
-],
-[
-"2025-06-26",
 1076.5,
 "Imagen 4 Fast",
 "Google"
@@ -399,12 +375,6 @@ DATA = [
 1172.2,
 "Imagen 4 Ultra",
 "Google"
-],
-[
-"2025-07-16",
-985.2,
-"HiDream-E1.1",
-"HiDream"
 ],
 [
 "2025-07-22",
@@ -449,22 +419,10 @@ DATA = [
 "Leonardo.Ai"
 ],
 [
-"2025-08-18",
-1086.9,
-"Qwen Image Edit",
-"Alibaba"
-],
-[
 "2025-08-26",
 1152.4,
 "Nano Banana (Gemini 2.5 Flash Image)",
 "Google"
-],
-[
-"2025-09-08",
-959.9,
-"step1x-edit-v1p2-preview",
-"StepFun"
 ],
 [
 "2025-09-08",
@@ -491,12 +449,6 @@ DATA = [
 "Alibaba"
 ],
 [
-"2025-09-25",
-1140.5,
-"Qwen Image Edit Plus 2509",
-"Alibaba"
-],
-[
 "2025-09-28",
 1125.4,
 "HunyuanImage 3.0 (Fal)",
@@ -507,12 +459,6 @@ DATA = [
 1092.7,
 "GPT Image 1 Mini",
 "OpenAI"
-],
-[
-"2025-10-15",
-1183.2,
-"Riverflow 1",
-"Sourceful"
 ],
 [
 "2025-10-20",
@@ -531,12 +477,6 @@ DATA = [
 1043.2,
 "MAI Image 1",
 "Microsoft AI"
-],
-[
-"2025-11-15",
-1164.1,
-"Qwen Image Edit Plus 2511",
-"Alibaba"
 ],
 [
 "2025-11-20",
@@ -569,28 +509,10 @@ DATA = [
 "FLUX"
 ],
 [
-"2025-11-26",
-1089.5,
-"Step1X-Edit-v1p2",
-"StepFun"
-],
-[
 "2025-11-28",
 1102.0,
 "Vidu Q2",
 "Vidu"
-],
-[
-"2025-11-28",
-1161.0,
-"P-Image-Edit",
-"Pruna AI"
-],
-[
-"2025-12-01",
-1201.2,
-"Kling Image O1",
-"Kling"
 ],
 [
 "2025-12-02",
@@ -633,12 +555,6 @@ DATA = [
 1136.3,
 "Wan 2.6 Image",
 "Alibaba"
-],
-[
-"2025-12-17",
-1176.7,
-"Reve V1 (December)",
-"Reve"
 ],
 [
 "2025-12-21",
@@ -695,22 +611,10 @@ DATA = [
 "Alibaba"
 ],
 [
-"2026-01-16",
-1161.0,
-"Qwen Image Edit Max 2601",
-"Alibaba"
-],
-[
 "2026-01-19",
 1138.6,
 "Wan2.6 Text to Image",
 "Alibaba"
-],
-[
-"2026-01-20",
-1085.2,
-"FIBO Edit",
-"Bria"
 ],
 [
 "2026-01-25",
@@ -746,12 +650,6 @@ DATA = [
 "2026-02-04",
 1097.3,
 "Kling Image 3.0 Omni",
-"Kling"
-],
-[
-"2026-02-06",
-1202.7,
-"Kling Image 3.0",
 "Kling"
 ],
 [
@@ -879,12 +777,6 @@ DATA = [
 984.1,
 "Step Image Edit 2",
 "StepFun"
-],
-[
-"2026-05-13",
-1185.1,
-"Agnes Image 2.0 Flash",
-"Sapiens AI"
 ],
 [
 "2026-05-14",
