@@ -311,7 +311,7 @@
     <h2 class="section-title"><span class="num">1</span><span id="sectitle-llm"></span></h2>
     <p id="desc-llm" class="desc"></p>
     <div class="timeline-container">
-      <img id="img-llm" src="ai_timeline_final_tr.png?v=20260725j" alt="" loading="eager">
+      <img id="img-llm" src="ai_timeline_final_tr.png?v=20260725k" alt="" loading="eager">
       <div class="download-bar">
         <a id="dl-llm-main" href="ai_timeline_final_tr.png" download>Yüksek Çözünürlük (PNG)</a>
         <a id="dl-llm-linkedin" href="ai_timeline_final_tr_linkedin.png" download>LinkedIn Biçimi</a>
@@ -421,7 +421,7 @@
 </footer>
 
 <script>
-  const ASSET_V = "20260725j";
+  const ASSET_V = "20260725k";
   // Karsilastirma tablosu artik sayfaya gomulu (shadow DOM); iframe/fitCmp yok.
   const labels = {
     tr: {
@@ -463,6 +463,7 @@
       alt_hardware: "Yapay Zeka Donanımı Hızlandırıcı Zaman Çizelgesi",
       img_hardware: "ai_hardware_timeline_tr.png",
       img_vending: "vending_bench_2_tr.png",
+      img_intel: "intelligence_index_tr.png",
       iframe_compare: "model_comparison_tr.html",
       top10_caption: "Vending-Bench 2 · En İyi 10 Model",
       top10_rank: "#",
@@ -510,6 +511,7 @@
       alt_hardware: "AI Hardware Accelerator Timeline",
       img_hardware: "ai_hardware_timeline.png",
       img_vending: "vending_bench_2.png",
+      img_intel: "intelligence_index.png",
       iframe_compare: "model_comparison_en.html",
       top10_caption: "Vending-Bench 2 · Top 10 Models",
       top10_rank: "#",
@@ -549,7 +551,6 @@
     document.getElementById("sectitle-compare").textContent = L.cat_compare;
     document.getElementById("sectitle-intel").textContent = L.cat_intel;
     document.getElementById("desc-intel").innerHTML = L.desc_intel;
-    var dlI = document.getElementById("dl-intel"); if (dlI) dlI.href = (lang === "en" ? "intelligence_index.png" : "intelligence_index_tr.png") + "?v=" + ASSET_V;
     document.getElementById("sectitle-vending").textContent = L.cat_vending;
 
     // Descriptions
@@ -595,6 +596,11 @@
     const dlVending = document.getElementById("dl-vending");
     if (dlVending) {
       dlVending.href = L.img_vending + "?v=" + ASSET_V;
+    }
+
+    const dlIntel = document.getElementById("dl-intel");
+    if (dlIntel) {
+      dlIntel.href = L.img_intel + "?v=" + ASSET_V;
     }
 
     // Flag button active states
