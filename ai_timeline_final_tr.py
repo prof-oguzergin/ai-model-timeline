@@ -48,6 +48,7 @@ data = [
     ("Gemini 3 Deep Think", "Google", "2026-02-12", True),
     ("Gemini 3.1 Pro", "Google", "2026-02-19", False),
     ("Gemini 3.5 Flash", "Google", "2026-05-19", False),
+    ("Gemini 3.6 Flash", "Google", "2026-07-21", False),
 
     # Anthropic
     ("Claude 1", "Anthropic", "2023-03-14", True),
@@ -94,6 +95,7 @@ data = [
     # Meta Muse (Closed Source)
     ("Muse Spark", "Meta Muse", "2026-04-08", True),
     ("Muse Spark 1.1", "Meta Muse", "2026-07-09", False),
+    ("Muse Spark 1.2", "Meta Muse", "2026-08-05", False),
 
     # Microsoft MAI (Closed Source)
     ("MAI-Thinking-1", "Microsoft MAI", "2026-06-02", True),
@@ -135,6 +137,7 @@ data = [
     ("Qwen 3.5", "Qwen", "2026-02-16", False),
     ("Qwen 3.6", "Qwen", "2026-03-31", False),
     ("Qwen3.7-Max", "Qwen", "2026-05-20", True),
+    ("Qwen3.8-Max", "Qwen", "2026-08-03", True),
 
     # DeepSeek
     ("DeepSeek Coder", "DeepSeek", "2023-11-02", True),
@@ -145,6 +148,7 @@ data = [
     ("DeepSeek-V3.1", "DeepSeek", "2025-08-21", False),
     ("DeepSeek-V3.2", "DeepSeek", "2025-12-01", False),
     ("DeepSeek-V4", "DeepSeek", "2026-04-24", True),
+    ("DeepSeek-V4 Flash", "DeepSeek", "2026-07-31", False),
 
     # Z.ai (Zhipu AI)
     ("ChatGLM", "Z.ai", "2023-03-14", True),
@@ -255,6 +259,7 @@ short_labels = {
     "Gemini 3 Deep Think":  "3 Deep Think",
     "Gemini 3.1 Pro":       "3.1 Pro",
     "Gemini 3.5 Flash":     "3.5 Flash",
+    "Gemini 3.6 Flash":     "3.6 Flash",
 
     # Anthropic Claude
     "Claude 1":             "1",
@@ -334,6 +339,7 @@ short_labels = {
     "Qwen 3.5":         "3.5",
     "Qwen 3.6":         "3.6",
     "Qwen3.7-Max":      "3.7-Max",
+    "Qwen3.8-Max":      "3.8-Max",
 
     # DeepSeek
     "DeepSeek Coder":   "Coder",
@@ -346,6 +352,7 @@ short_labels = {
     "DeepSeek-V3.1":    "V3.1",
     "DeepSeek-V3.2":    "V3.2",
     "DeepSeek-V4":      "V4",
+    "DeepSeek-V4 Flash": "V4 Flash",
 
     # Z.ai GLM
     "ChatGLM":          "ChatGLM",
@@ -391,6 +398,7 @@ short_labels = {
     # Meta Muse
     "Muse Spark":           "Spark 1.0",
     "Muse Spark 1.1":       "Spark 1.1",
+    "Muse Spark 1.2":       "Spark 1.2",
     "MAI-Thinking-1":       "Thinking-1",
 
     # Amazon Nova
