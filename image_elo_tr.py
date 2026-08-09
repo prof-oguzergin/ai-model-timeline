@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # Yapay zeka basarimi tek sayiyla: Artificial Analysis Zeka Endeksi (Intelligence Index)
-# Veri kaynagi: artificialanalysis.ai  (435 model, 2022-11-30 - 2026-07-24)
+# Veri kaynagi: artificialanalysis.ai  (443 model, 2022-11-30 - 2026-08-06)
 # Bu dosya scratchpad/make_ii_scripts.py ile uretildi; veri asagida GOMULU.
 import matplotlib
 matplotlib.use('Agg')
@@ -12,121 +12,121 @@ import pandas as pd
 DATA = [
 [
 "2022-09-28",
-743.9,
+745.1,
 "DALLE 2",
 "OpenAI"
 ],
 [
 "2022-10-01",
-659.9,
+663.2,
 "Stable Diffusion 1.5",
 "Stability"
 ],
 [
 "2022-12-07",
-752.0,
+753.1,
 "Stable Diffusion 2.1",
 "Stability"
 ],
 [
 "2023-07-23",
-876.1,
+886.5,
 "Stable Diffusion XL 1.0",
 "Stability"
 ],
 [
 "2023-09-20",
-950.2,
+966.1,
 "DALLE 3",
 "OpenAI"
 ],
 [
 "2023-09-26",
-959.2,
+967.5,
 "DALLE 3 HD",
 "OpenAI"
 ],
 [
 "2023-11-10",
-903.5,
+912.9,
 "Stable Diffusion 1.6",
 "Stability"
 ],
 [
 "2023-11-29",
-900.4,
+914.1,
 "Amazon Titan G1 (Standard)",
 "Amazon"
 ],
 [
 "2023-12-20",
-1067.7,
+1077.7,
 "Midjourney v6",
 "Midjourney"
 ],
 [
 "2024-02-21",
-906.1,
+910.3,
 "SDXL Lightning",
 "Bytedance"
 ],
 [
 "2024-02-22",
-1026.8,
+1042.7,
 "Stable Diffusion 3 Large",
 "Stability"
 ],
 [
 "2024-02-24",
-908.1,
+916.1,
 "Stable Diffusion 3 Large Turbo",
 "Stability"
 ],
 [
 "2024-02-27",
-967.2,
+972.8,
 "Playground v2.5",
 "Playground AI"
 ],
 [
 "2024-02-28",
-1034.1,
+1046.0,
 "Ideogram v1",
 "Ideogram"
 ],
 [
 "2024-03-13",
-976.3,
+985.4,
 "Recraft 20B",
 "Recraft"
 ],
 [
 "2024-06-12",
-912.9,
+923.0,
 "Stable Diffusion 3 Medium",
 "Stability"
 ],
 [
 "2024-06-13",
-1009.0,
+1025.0,
 "Phoenix 0.9 Ultra",
 "Leonardo.Ai"
 ],
 [
 "2024-07-30",
-1053.6,
+1056.1,
 "Midjourney v6.1",
 "Midjourney"
 ],
 [
 "2024-08-01",
-1027.8,
+1040.2,
 "FLUX.1 [dev]",
 "FLUX"
 ],
 [
 "2024-08-01",
-1068.1,
+1081.8,
 "FLUX.1 [pro]",
 "FLUX"
 ],
@@ -138,775 +138,763 @@ DATA = [
 ],
 [
 "2024-08-06",
-912.0,
+922.6,
 "Amazon Titan G1 v2 (Standard)",
 "Amazon"
 ],
 [
 "2024-08-21",
-1058.4,
+1073.7,
 "Ideogram v2 Turbo",
 "Ideogram"
 ],
 [
 "2024-08-21",
-1072.9,
+1084.2,
 "Ideogram v2",
 "Ideogram"
 ],
 [
 "2024-09-16",
-1009.8,
+1016.0,
 "Playground v3 (beta)",
 "Playground AI"
 ],
 [
 "2024-10-02",
-1088.2,
+1095.3,
 "FLUX1.1 [pro]",
 "FLUX"
 ],
 [
 "2024-10-22",
-1021.7,
+1032.7,
 "Stable Diffusion 3.5 Large",
 "Stability"
 ],
 [
 "2024-10-22",
-1024.5,
+1033.4,
 "Stable Diffusion 3.5 Large Turbo",
 "Stability"
 ],
 [
 "2024-10-29",
-947.4,
+962.4,
 "Stable Diffusion 3.5 Medium",
 "Stability"
 ],
 [
 "2024-10-30",
-1068.1,
+1073.2,
 "Recraft V3",
 "Recraft"
 ],
 [
 "2024-11-06",
-1096.9,
+1103.3,
 "FLUX1.1 [pro] Ultra",
 "FLUX"
 ],
 [
 "2024-11-25",
-977.4,
+990.6,
 "Runway Gen-4 Image",
 "Runway"
 ],
 [
 "2024-12-02",
-986.6,
+999.8,
 "Luma Photon Flash",
 "Luma"
 ],
 [
 "2024-12-02",
-1064.4,
+1071.1,
 "Luma Photon",
 "Luma"
 ],
 [
-"2024-12-12",
-923.5,
-"Grok 2",
-"xAI"
-],
-[
 "2024-12-16",
-1107.6,
+1124.2,
 "Imagen 3",
 "Google"
 ],
 [
 "2024-12-18",
-995.2,
+1005.7,
 "Phoenix 1.0 Fast",
 "Leonardo.Ai"
 ],
 [
 "2024-12-18",
-1032.4,
+1040.5,
 "Phoenix 1.0 Ultra",
 "Leonardo.Ai"
 ],
 [
 "2025-01-25",
-968.8,
+978.5,
 "Lumina Image v2",
 "OpenGVLab"
 ],
 [
 "2025-01-27",
-712.1,
+719.1,
 "Janus Pro",
 "DeepSeek"
 ],
 [
 "2025-02-18",
-1045.5,
+1055.2,
 "Infinity 8B",
 "Bytedance"
 ],
 [
 "2025-02-27",
-1015.1,
-"Ideogram v2a Turbo",
-"Ideogram"
-],
-[
-"2025-02-27",
-1015.6,
+1026.8,
 "Ideogram v2a",
 "Ideogram"
 ],
 [
+"2025-02-27",
+1027.4,
+"Ideogram v2a Turbo",
+"Ideogram"
+],
+[
 "2025-02-28",
-1055.3,
+1067.9,
 "Image-01",
 "MiniMax"
 ],
 [
 "2025-03-22",
-933.1,
+938.5,
 "Sana Sprint 1.6B",
 "NVIDIA"
 ],
 [
 "2025-03-24",
-1098.9,
+1116.0,
 "Reve Image (Halfmoon)",
 "Reve"
 ],
 [
 "2025-03-26",
-1079.1,
+1097.6,
 "Ideogram 3.0",
 "Ideogram"
 ],
 [
 "2025-04-03",
-1070.6,
+1089.9,
 "Midjourney v7 Alpha",
 "Midjourney"
 ],
 [
 "2025-04-07",
-1058.1,
+1060.7,
 "HiDream-I1-Fast",
 "HiDream"
 ],
 [
 "2025-04-07",
-1062.2,
+1070.9,
 "HiDream-I1-Dev",
 "HiDream"
 ],
 [
 "2025-04-15",
-1144.7,
+1158.7,
 "Seedream 3.0",
 "ByteDance"
 ],
 [
 "2025-04-23",
-1137.0,
+1206.4,
 "GPT Image 1",
 "OpenAI"
 ],
 [
 "2025-05-20",
-900.1,
+911.0,
 "Bagel",
 "Bytedance"
 ],
 [
 "2025-05-20",
-1091.1,
+1109.0,
 "FLUX.1 Kontext [pro]",
 "FLUX"
 ],
 [
 "2025-05-29",
-1124.2,
+1140.0,
 "FLUX.1 Kontext [max]",
 "FLUX"
 ],
 [
 "2025-06-10",
-1106.7,
+1122.2,
 "Vivago 2.0",
 "HiDream"
 ],
 [
 "2025-06-16",
-904.8,
+911.9,
 "OmniGen V2",
 "VectorSpaceLab"
 ],
 [
 "2025-06-17",
-1005.2,
+1011.8,
 "Krea 1",
 "Krea"
 ],
 [
 "2025-06-26",
-1076.5,
+1094.1,
 "Imagen 4 Fast",
 "Google"
 ],
 [
 "2025-06-26",
-1101.5,
+1118.5,
 "Imagen 4 Standard",
 "Google"
 ],
 [
 "2025-06-26",
-1172.2,
+1187.6,
 "Imagen 4 Ultra",
 "Google"
 ],
 [
 "2025-07-22",
-901.3,
+905.8,
 "Bria 3.2",
 "Bria"
 ],
 [
 "2025-07-28",
-1129.0,
+1141.2,
 "Kolors 2.1",
 "Kling"
 ],
 [
 "2025-07-31",
-1028.8,
+1034.5,
 "FLUX.1 Krea [dev]",
 "FLUX"
 ],
 [
 "2025-08-01",
-1091.0,
+1109.3,
 "Dreamina 3.1",
 "Bytedance"
 ],
 [
 "2025-08-04",
-1062.3,
+1076.5,
 "Qwen Image",
 "Alibaba"
 ],
 [
 "2025-08-05",
-1109.0,
+1110.9,
 "Lucid Origin Fast",
 "Leonardo.Ai"
 ],
 [
 "2025-08-05",
-1120.5,
+1123.2,
 "Lucid Origin Ultra",
 "Leonardo.Ai"
 ],
 [
 "2025-08-26",
-1152.4,
+1186.5,
 "Nano Banana (Gemini 2.5 Flash Image)",
 "Google"
 ],
 [
 "2025-09-08",
-1064.0,
+1077.0,
 "HunyuanImage 2.1",
 "Tencent"
 ],
 [
 "2025-09-08",
-1192.4,
+1219.8,
 "Seedream 4.0",
 "ByteDance"
 ],
 [
 "2025-09-11",
-1079.5,
+1084.1,
 "SRPO",
 "Tencent"
 ],
 [
 "2025-09-23",
-1146.6,
+1149.0,
 "Wan 2.5 Preview",
 "Alibaba"
 ],
 [
 "2025-09-28",
-1125.4,
+1129.1,
 "HunyuanImage 3.0 (Fal)",
 "Tencent"
 ],
 [
 "2025-10-06",
-1092.7,
+1107.3,
 "GPT Image 1 Mini",
 "OpenAI"
 ],
 [
 "2025-10-20",
-1135.4,
+1151.3,
 "Vivago 2.1",
 "HiDream"
 ],
 [
 "2025-10-30",
-1068.8,
+1076.0,
 "FIBO",
 "Bria"
 ],
 [
 "2025-11-04",
-1043.2,
+1062.5,
 "MAI Image 1",
 "Microsoft AI"
 ],
 [
 "2025-11-20",
-1148.9,
+1165.6,
 "ImagineArt 1.5 Preview",
 "ImagineArt"
 ],
 [
 "2025-11-20",
-1225.5,
+1296.0,
 "Nano Banana Pro (Gemini 3 Pro Image)",
 "Google"
 ],
 [
 "2025-11-25",
-1153.7,
+1195.7,
 "FLUX.2 [dev]",
 "FLUX"
 ],
 [
 "2025-11-25",
-1180.2,
-"FLUX.2 [flex]",
-"FLUX"
-],
-[
-"2025-11-25",
-1186.9,
+1210.2,
 "FLUX.2 [pro]",
 "FLUX"
 ],
 [
+"2025-11-25",
+1218.0,
+"FLUX.2 [flex]",
+"FLUX"
+],
+[
 "2025-11-28",
-1102.0,
+1114.4,
 "Vidu Q2",
 "Vidu"
 ],
 [
 "2025-12-02",
-1071.9,
+1087.6,
 "P-Image",
 "Pruna AI"
 ],
 [
 "2025-12-02",
-1102.1,
+1119.6,
 "Z-Image Turbo",
 "Alibaba"
 ],
 [
 "2025-12-05",
-1031.2,
+1051.0,
 "LongCat Image",
 "Meituan"
 ],
 [
 "2025-12-05",
-1169.2,
+1204.9,
 "Seedream 4.5",
 "ByteDance"
 ],
 [
 "2025-12-16",
-1196.0,
+1224.9,
 "FLUX.2 [max]",
 "FLUX"
 ],
 [
 "2025-12-16",
-1262.7,
+1312.1,
 "GPT Image 1.5",
 "OpenAI"
 ],
 [
 "2025-12-17",
-1136.3,
+1206.3,
 "Wan 2.6 Image",
 "Alibaba"
 ],
 [
 "2025-12-21",
-1136.5,
+1175.5,
 "FLUX.2 [dev] Flash",
 "Fal"
 ],
 [
 "2025-12-21",
-1153.6,
+1192.8,
 "FLUX.2 [dev] Turbo",
 "Fal"
 ],
 [
 "2025-12-30",
-1157.5,
+1171.9,
 "Qwen Image Max 2512",
 "Alibaba"
 ],
 [
 "2026-01-13",
-1050.0,
+1069.2,
 "GLM-Image",
 "Z.ai"
 ],
 [
 "2026-01-15",
-968.8,
+972.8,
 "FLUX.2 [klein] Base 4B",
 "FLUX"
 ],
 [
 "2026-01-15",
-1057.5,
+1061.4,
 "FLUX.2 [klein] 4B",
 "FLUX"
 ],
 [
 "2026-01-15",
-1087.2,
+1098.6,
 "FLUX.2 [klein] Base 9B",
 "FLUX"
 ],
 [
 "2026-01-15",
-1120.5,
+1146.7,
 "FLUX.2 [klein] 9B",
 "FLUX"
 ],
 [
 "2026-01-16",
-1078.9,
+1101.3,
 "Qwen Image Plus 2601",
 "Alibaba"
 ],
 [
 "2026-01-19",
-1138.6,
+1205.9,
 "Wan2.6 Text to Image",
 "Alibaba"
 ],
 [
 "2026-01-25",
-1119.2,
+1145.2,
 "HunyuanImage 3.0 Instruct (Fal)",
 "Tencent"
 ],
 [
 "2026-01-27",
-1037.6,
+1058.6,
 "Z-Image Base",
 "Alibaba"
 ],
 [
 "2026-01-28",
-1110.0,
+1121.7,
 "Eigen Image",
 "Eigen AI"
 ],
 [
 "2026-01-28",
-1180.9,
+1218.7,
 "grok-imagine-image",
 "xAI"
 ],
 [
 "2026-02-02",
-1254.1,
+1272.7,
 "Riverflow 2.0",
 "Sourceful"
 ],
 [
 "2026-02-04",
-1097.3,
+1114.3,
 "Kling Image 3.0 Omni",
 "Kling"
 ],
 [
 "2026-02-13",
-1118.7,
+1190.5,
 "Seedream 5.0 Lite",
 "Bytedance"
 ],
 [
 "2026-02-17",
-1136.5,
+1177.7,
 "Recraft V4",
 "Recraft"
 ],
 [
 "2026-02-17",
-1139.7,
+1186.5,
 "Recraft V4 Pro",
 "Recraft"
 ],
 [
 "2026-02-26",
-1262.4,
+1317.1,
 "Nano Banana 2 (Gemini 3.1 Flash Image Preview)",
 "Google"
 ],
 [
 "2026-03-03",
-1104.6,
+1129.8,
 "Qwen Image 2.0 (2026-03-03)",
 "Alibaba"
 ],
 [
 "2026-03-19",
-1189.2,
+1206.8,
 "MAI-Image-2",
 "Microsoft AI"
 ],
 [
 "2026-04-03",
-1109.1,
+1169.7,
 "Wan 2.7",
 "Alibaba"
 ],
 [
 "2026-04-03",
-1119.8,
+1178.7,
 "Wan 2.7 Pro",
 "Alibaba"
 ],
 [
 "2026-04-03",
-1204.4,
+1229.3,
 "grok-imagine-image-quality",
 "xAI"
 ],
 [
 "2026-04-08",
-1125.0,
+1140.6,
 "image-1",
 "Api Airforce"
 ],
 [
 "2026-04-14",
-1159.2,
+1179.6,
 "MAI-Image-2-Efficient",
 "Microsoft AI"
 ],
 [
 "2026-04-15",
-1162.8,
+1178.0,
 "ERNIE Image Turbo",
 "Baidu"
 ],
 [
 "2026-04-15",
-1166.4,
+1195.4,
 "ERNIE Image",
 "Baidu"
 ],
 [
 "2026-04-16",
-1168.5,
+1166.5,
 "ImagineArt 2.0",
 "ImagineArt"
 ],
 [
 "2026-04-21",
-1339.4,
+1368.5,
 "GPT Image 2",
 "OpenAI"
 ],
 [
 "2026-04-22",
-1173.5,
+1227.3,
 "Qwen Image 2.0 Pro (2026-04-22)",
 "Alibaba"
 ],
 [
 "2026-05-05",
-1150.2,
+1198.1,
 "Luma UNI 1",
 "Luma"
 ],
 [
 "2026-05-05",
-1174.7,
+1219.3,
 "Luma UNI 1 Max",
 "Luma"
 ],
 [
 "2026-05-08",
-1078.8,
+1075.6,
 "HiDream-O1-Image-Dev",
 "HiDream"
 ],
 [
 "2026-05-08",
-1115.5,
+1176.1,
 "HiDream-O1-Image",
 "HiDream"
 ],
 [
 "2026-05-12",
-984.1,
+1004.0,
 "Step Image Edit 2",
 "StepFun"
 ],
 [
 "2026-05-14",
-1153.5,
-"Recraft V4.1",
-"Recraft"
-],
-[
-"2026-05-14",
-1157.4,
+1179.8,
 "Recraft V4.1 Pro",
 "Recraft"
 ],
 [
 "2026-05-14",
-1188.4,
+1189.9,
+"Recraft V4.1",
+"Recraft"
+],
+[
+"2026-05-14",
+1198.4,
 "HiDream-O1-Image-Dev-2604",
 "HiDream"
 ],
 [
 "2026-05-14",
-1200.8,
+1213.9,
 "Recraft V4.1 Utility Pro",
 "Recraft"
 ],
 [
 "2026-05-14",
-1204.9,
+1215.5,
 "Recraft V4.1 Utility",
 "Recraft"
 ],
 [
 "2026-05-26",
-1190.3,
-"Krea 2 Large",
-"Krea"
-],
-[
-"2026-05-26",
-1190.6,
+1207.9,
 "Krea 2 Medium",
 "Krea"
 ],
 [
-"2026-05-31",
-1219.4,
-"Cosmos3-Super-Text2Image (agentic)",
-"NVIDIA"
+"2026-05-26",
+1221.1,
+"Krea 2 Large",
+"Krea"
 ],
 [
 "2026-06-02",
-1208.1,
+1230.6,
 "MAI-Image-2.5-Flash",
 "Microsoft AI"
 ],
 [
 "2026-06-02",
-1269.7,
+1307.4,
 "MAI-Image-2.5",
 "Microsoft AI"
 ],
 [
 "2026-06-03",
-1153.7,
+1210.9,
 "Ideogram 4.0",
 "Ideogram"
 ],
 [
 "2026-06-03",
-1174.1,
+1211.2,
 "Ideogram 4.0 (Quality)",
 "Ideogram"
 ],
 [
 "2026-06-03",
-1187.7,
+1220.7,
 "Krea 2 Medium Turbo",
 "Krea"
 ],
 [
 "2026-06-03",
-1238.4,
+1254.8,
 "Reve 2.0",
 "Reve"
 ],
 [
 "2026-06-04",
-1244.9,
+1226.0,
 "HiDream-O1-Image-1.5",
 "HiDream"
 ],
 [
 "2026-06-30",
-1262.7,
+1284.8,
 "Nano Banana 2 Lite (Gemini 3.1 Flash Lite Image)",
 "Google"
 ],
 [
 "2026-07-08",
-1239.5,
+1274.7,
 "Seedream 5.0 Pro",
 "Bytedance"
 ],
 [
 "2026-07-09",
-1299.0,
+1324.5,
 "Reve 2.1",
 "Reve"
 ],
 [
 "2026-07-13",
-1143.3,
+1170.5,
 "Ideogram 4.0 Fast",
 "Fal"
 ],
 [
 "2026-07-13",
-1148.8,
+1183.0,
 "Ideogram 4.0 Instant",
 "Fal"
 ],
 [
 "2026-07-13",
-1159.0,
+1192.2,
 "Ideogram 4.0 Fast (Quality)",
 "Fal"
 ],
 [
 "2026-07-31",
-1176.0,
+1092.3,
 "Cosmos3-Super-Text2Image-4Step",
 "NVIDIA"
 ]
