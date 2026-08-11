@@ -26,9 +26,12 @@ leaderboard = [
     ("Claude Opus 4.6",              "Anthropic", "2026-02-05",  8017.59),
     ("GPT-5.6 Sol",                  "OpenAI",    "2026-06-26",  9619.37),
     ("GPT-5.5",                      "OpenAI",    "2026-04-23",  7523.84),
+    ("GPT-5.6 Terra",                "OpenAI",    "2026-07-09",  7343.21),
     ("Claude Sonnet 4.6",            "Anthropic", "2026-02-17",  7204.14),
+    ("Muse Spark 1.1",               "Meta",      "2026-07-09",  6520.47),
     ("Kimi K3",                      "Kimi",      "2026-07-16",  5165.04),
     ("Kimi K2.6",                    "Kimi",      "2026-04-13",  6204.57),
+    ("Claude Opus 4.8",              "Anthropic", "2026-05-28",  6195.64),
     ("Kimi K2.7 Code",               "Kimi",      "2026-06-12",  5082.94),
     ("GPT-5.4",                      "OpenAI",    "2026-03-05",  6144.18),
     ("GPT-5.3-Codex",                "OpenAI",    "2026-02-05",  5940.12),
@@ -40,6 +43,7 @@ leaderboard = [
     ("Claude Opus 4.5",              "Anthropic", "2025-11-24",  4967.06),
     ("Grok 4.5",                     "xAI",       "2026-07-08",  3887.43),
     ("Grok 4.20",                    "xAI",       "2026-02-17",  4662.85),
+    ("GPT-5.6 Luna",                 "OpenAI",    "2026-07-09",  4094.71),
     ("GLM-5",                        "Z.ai",      "2026-02-11",  4432.12),
     ("Qwen 3.6 Max",                 "Qwen",      "2026-03-31",  4254.19),
     ("Claude Sonnet 4.5",            "Anthropic", "2025-09-29",  3838.74),
@@ -71,7 +75,7 @@ leaderboard = [
 
 # Tarih eslestirme kaynaklari (rapor icin yazdirma)
 tarih_kaynak = {
-    "Kimi K3":                     "Andon Labs vb2 runs 2026-07-25 (Moonshot saglayici)",
+    "Kimi K3":                     "Andon Labs vb2 2026-08-11: birinci-el Moonshot ucu (Fireworks 4907, 3. uc 3194)",
     "Grok 4.5":                    "Andon Labs vb2 runs 2026-07-25",
     "Claude Opus 5":               "Andon Labs leaderboard 2026-07-25 dogrulandi",
     "GPT-5.6 Sol":                 "Andon Labs leaderboard 2026-07-25 dogrulandi",
@@ -119,6 +123,10 @@ tarih_kaynak = {
     "Qwen3 235B A22B Thinking":    "Qwen3 ana tarihi kullanildi",
     "GPT-OSS-120b":                "varsayim: 2025-08-05",
     "MiniMax-M2.5":                "ai_timeline_final_tr.py",
+    "GPT-5.6 Terra":               "Andon Labs vb2 2026-08-11; tarih AA (2026-07-09)",
+    "GPT-5.6 Luna":                "Andon Labs vb2 2026-08-11; tarih AA (2026-07-09)",
+    "Muse Spark 1.1":              "Andon Labs vb2 2026-08-11; tarih ai_timeline_final_tr.py",
+    "Claude Opus 4.8":             "Andon Labs vb2 2026-08-11 (temel surum; High/Max ayri satir)",
     "GPT-5 mini":                  "GPT-5 tarihi kullanildi",
 }
 
@@ -142,6 +150,7 @@ colors = {
     "Z.ai":      "#00C853",
     "Kimi":      "#FF4D6D",
     "MiniMax":   "#C77DFF",
+    "Meta":      "#0668E1",
 }
 
 # Sirket goruntu isimleri (legend icin)
@@ -155,6 +164,7 @@ sirket_gorunum = {
     "Z.ai":      "Z.ai (GLM)",
     "Kimi":      "Kimi / Moonshot",
     "MiniMax":   "MiniMax",
+    "Meta":      "Meta",
 }
 
 # ============================================================
@@ -196,6 +206,10 @@ def get_offset(i, v):
 
 # Ozel offsetler (gosel cakisma onleme)
 manual_offsets = {
+    "GPT-5.6 Terra":              (-78,   6),
+    "Muse Spark 1.1":             (  6,   7),
+    "Claude Opus 4.8":            (-84,   5),
+    "GPT-5.6 Luna":               (  5,   6),
     "Claude Opus 5":              (-10, 13),
     "GPT-5.6 Sol":               (-72,  6),
     "Kimi K2.7 Code":             (-70,  6),
@@ -335,7 +349,7 @@ fig.text(
 )
 fig.text(
     0.5, 0.895,
-    "51 Model  ·  Kaynak: andonlabs.com  ·  Başlangıç: $500 (1 yıllık simülasyon sonucu bakiye $-31'den $11.182'ye)",
+    "55 Model  ·  Kaynak: andonlabs.com  ·  Başlangıç: $500 (1 yıllık simülasyon sonucu bakiye $-31'den $11.182'ye)",
     ha="center", va="center", fontsize=7.5, color="#8090a8"
 )
 
@@ -377,6 +391,78 @@ legend = ax.legend(
     title_fontsize=7,
 )
 legend.get_title().set_color("#c8d0e0")
+
+# ============================================================
+# ETIKET YERLESIMI - olcume dayali cakisma cozumu
+# manual_offsets bir ONERIDIR; cakisirsa aday konumlar denenir.
+# ============================================================
+fig.canvas.draw()
+_rend = fig.canvas.get_renderer()
+
+# engeller: nokta isaretcileri
+_engel_nokta = []
+for _d, _v in zip(dates, values):
+    _px, _py = ax.transData.transform((mdates.date2num(_d), _v))
+    _engel_nokta.append((_px, _py))
+_R = 7.0
+
+# engel: lejant kutusu
+_lej = legend.get_window_extent(_rend)
+
+# aday konumlar: noktaya yakindan uzaga taranir
+# Aday konumlar. Cizelgenin dili YATAY: etiket noktanin sagina/soluna yazilir.
+# Dikey kacis kafa karistirir (etiket baska noktaya ait sanilir), o yuzden
+# dy araligi dar tutulur ve siralamada agir cezalandirilir.
+_ADAYLAR = sorted([(dx, dy) for dx in (4, -4, 12, -12, 22, -22, 34, -34, 48, -48, 64, -64, 84, -84, 104, -104)
+                            for dy in (4, -9, 10, -15, 16, -20, 22, -26)],
+                  key=lambda p: abs(p[0]) * 0.5 + abs(p[1]) * 4.0)
+
+_metin = {t.get_text(): t for t in ax.texts if t.get_text() in set(n for n, *_ in leaderboard)}
+_yerlesik = [_lej]
+
+def _ceza(bb, xy):
+    """Kutu ne kadar kotu? 0 = temiz."""
+    c = 0.0
+    for o in _yerlesik:
+        ox = min(bb.x1, o.x1) - max(bb.x0, o.x0)
+        oy = min(bb.y1, o.y1) - max(bb.y0, o.y0)
+        if ox > 1 and oy > 1:
+            c += ox * oy
+    for _px, _py in _engel_nokta:
+        if (bb.x0 - _R < _px < bb.x1 + _R) and (bb.y0 - _R < _py < bb.y1 + _R):
+            c += 240.0
+    # eksen disina tasma
+    ab = ax.get_window_extent(_rend)
+    if bb.x1 > ab.x1: c += (bb.x1 - ab.x1) * 12
+    if bb.x0 < ab.x0: c += (ab.x0 - bb.x0) * 12
+    if bb.y1 > ab.y1: c += (bb.y1 - ab.y1) * 12
+    if bb.y0 < ab.y0: c += (ab.y0 - bb.y0) * 12
+    return c
+
+# onemli (yuksek bakiyeli) modeller once yerlessin
+_sira = sorted(zip(names, values), key=lambda x: -x[1])
+for _n, _v in _sira:
+    _t = _metin.get(_n)
+    if _t is None: continue
+    _adaylar = [manual_offsets.get(_n, (4, 4))] + _ADAYLAR
+    _en, _enc = None, None
+    for _ox, _oy in _adaylar:
+        _t.set_position((_ox, _oy))
+        _t.set_ha("left" if _ox >= 0 else "right")
+        _bb = _t.get_window_extent(_rend)
+        _c = _ceza(_bb, None)
+        if _c == 0:
+            _en, _enc = (_ox, _oy), _bb
+            break
+        if _enc is None or _c < _enc[1]:
+            _en, _enc = (_ox, _oy), (_bb, _c)
+    if isinstance(_enc, tuple):
+        _ox, _oy = _en
+        _t.set_position((_ox, _oy)); _t.set_ha("left" if _ox >= 0 else "right")
+        _enc = _t.get_window_extent(_rend)
+    _yerlesik.append(_enc)
+
+
 
 # ============================================================
 # KAYDET
