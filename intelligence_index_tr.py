@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # Yapay zeka basarimi tek sayiyla: Artificial Analysis Zeka Endeksi (Intelligence Index)
-# Veri kaynagi: artificialanalysis.ai  (443 model, 2022-11-30 - 2026-08-06)
+# Veri kaynagi: artificialanalysis.ai  (444 model, 2022-11-30 - 2026-08-10)
 # Bu dosya scratchpad/make_ii_scripts.py ile uretildi; veri asagida GOMULU.
 import matplotlib
 matplotlib.use('Agg')
@@ -150,7 +150,7 @@ DATA = [
 ],
 [
 "2024-02-26",
-6.2,
+5.7,
 "Phi-4 Mini Instruct",
 "Microsoft"
 ],
@@ -294,7 +294,7 @@ DATA = [
 ],
 [
 "2024-07-23",
-7.8,
+7.4,
 "Llama 3.1 Instruct 8B",
 "Meta"
 ],
@@ -456,7 +456,7 @@ DATA = [
 ],
 [
 "2024-10-22",
-12.4,
+12.2,
 "Claude 3.5 Haiku",
 "Anthropic"
 ],
@@ -1416,7 +1416,7 @@ DATA = [
 ],
 [
 "2025-09-22",
-30.6,
+31.1,
 "DeepSeek V3.1 Terminus",
 "DeepSeek"
 ],
@@ -1602,7 +1602,7 @@ DATA = [
 ],
 [
 "2025-10-29",
-19.2,
+20.8,
 "Nova 2.0 Lite",
 "Amazon"
 ],
@@ -1716,7 +1716,7 @@ DATA = [
 ],
 [
 "2025-11-27",
-22.0,
+22.1,
 "Nova 2.0 Pro Preview",
 "Amazon"
 ],
@@ -1728,7 +1728,7 @@ DATA = [
 ],
 [
 "2025-12-01",
-32.6,
+32.8,
 "DeepSeek V3.2",
 "DeepSeek"
 ],
@@ -1824,7 +1824,7 @@ DATA = [
 ],
 [
 "2025-12-15",
-17.2,
+17.4,
 "K2 Think V2",
 "MBZUAI Institute of Foundation Models"
 ],
@@ -1866,7 +1866,7 @@ DATA = [
 ],
 [
 "2025-12-31",
-22.4,
+22.5,
 "K-EXAONE",
 "LG AI Research"
 ],
@@ -1968,7 +1968,7 @@ DATA = [
 ],
 [
 "2026-02-11",
-11.2,
+11.0,
 "Nanbeige4.1-3B",
 "Nanbeige"
 ],
@@ -2040,13 +2040,13 @@ DATA = [
 ],
 [
 "2026-03-02",
-5.0,
+5.2,
 "Qwen3.5 0.8B",
 "Alibaba"
 ],
 [
 "2026-03-02",
-7.5,
+7.4,
 "Qwen3.5 2B",
 "Alibaba"
 ],
@@ -2106,7 +2106,7 @@ DATA = [
 ],
 [
 "2026-03-16",
-8.8,
+8.6,
 "NVIDIA Nemotron 3 Nano 4B",
 "NVIDIA"
 ],
@@ -2142,7 +2142,7 @@ DATA = [
 ],
 [
 "2026-03-19",
-18.0,
+17.8,
 "Nemotron Cascade 2 30B A3B",
 "NVIDIA"
 ],
@@ -2154,7 +2154,7 @@ DATA = [
 ],
 [
 "2026-03-27",
-33.9,
+34.5,
 "KAT Coder Pro V2",
 "KwaiKAT"
 ],
@@ -2178,7 +2178,7 @@ DATA = [
 ],
 [
 "2026-04-01",
-18.6,
+18.4,
 "Trinity Large Thinking",
 "Arcee AI"
 ],
@@ -2190,7 +2190,7 @@ DATA = [
 ],
 [
 "2026-04-02",
-9.8,
+9.5,
 "Gemma 4 E2B",
 "Google"
 ],
@@ -2220,7 +2220,7 @@ DATA = [
 ],
 [
 "2026-04-03",
-12.4,
+12.2,
 "Gemma 4 E4B",
 "Google"
 ],
@@ -2244,7 +2244,7 @@ DATA = [
 ],
 [
 "2026-04-08",
-43.5,
+44.3,
 "Muse Spark",
 "Meta"
 ],
@@ -2340,7 +2340,7 @@ DATA = [
 ],
 [
 "2026-04-29",
-4.7,
+4.4,
 "Granite 4.1 3B",
 "IBM"
 ],
@@ -2352,7 +2352,7 @@ DATA = [
 ],
 [
 "2026-04-29",
-8.9,
+8.7,
 "Granite 4.1 30B",
 "IBM"
 ],
@@ -2382,13 +2382,13 @@ DATA = [
 ],
 [
 "2026-05-08",
-31.1,
+31.3,
 "Ring-2.6-1T",
 "InclusionAI"
 ],
 [
 "2026-05-11",
-4.3,
+3.8,
 "MiniCPM-V 4.6 1.3B",
 "OpenBMB"
 ],
@@ -2460,13 +2460,13 @@ DATA = [
 ],
 [
 "2026-06-02",
-41.7,
+42.1,
 "Nex-N2-Pro",
 "Nex AGI"
 ],
 [
 "2026-06-03",
-22.3,
+22.2,
 "Gemma 4 12B",
 "Google"
 ],
@@ -2490,7 +2490,7 @@ DATA = [
 ],
 [
 "2026-06-10",
-13.8,
+13.5,
 "DiffusionGemma 26B A4B",
 "Google"
 ],
@@ -2520,7 +2520,7 @@ DATA = [
 ],
 [
 "2026-06-29",
-33.9,
+34.3,
 "LongCat 2.0",
 "LongCat"
 ],
@@ -2544,7 +2544,7 @@ DATA = [
 ],
 [
 "2026-07-09",
-39.8,
+39.9,
 "JT-4.1 Flash 236B A21B",
 "China Mobile"
 ],
@@ -2574,7 +2574,7 @@ DATA = [
 ],
 [
 "2026-07-14",
-44.9,
+45.3,
 "Motif 3",
 "Motif Technologies"
 ],
@@ -2604,13 +2604,13 @@ DATA = [
 ],
 [
 "2026-07-23",
-16.5,
+16.2,
 "G9v3-3B",
 "AI9Stars"
 ],
 [
 "2026-07-24",
-12.5,
+12.4,
 "Celeris-1",
 "Celeris"
 ],
@@ -2640,7 +2640,7 @@ DATA = [
 ],
 [
 "2026-08-03",
-31.4,
+31.6,
 "G9v3-39A5B",
 "AI9Stars"
 ],
@@ -2667,6 +2667,12 @@ DATA = [
 24.5,
 "Ling 3.0 Tiny",
 "InclusionAI"
+],
+[
+"2026-08-10",
+35.1,
+"Muse Glimmer",
+"Meta"
 ]
 ]
 

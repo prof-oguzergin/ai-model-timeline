@@ -91,6 +91,7 @@ data = [
     ("Llama 3.2", "Meta", "2024-09-25", False),
     ("Llama 3.3", "Meta", "2024-12-06", False),
     ("Llama 4", "Meta", "2025-04-05", True),
+    ("Muse Glimmer", "Meta", "2026-08-10", True),
 
     # Meta Muse (Closed Source)
     ("Muse Spark", "Meta Muse", "2026-04-08", True),
@@ -302,6 +303,7 @@ short_labels = {
     "Llama 3.2":        "3.2",
     "Llama 3.3":        "3.3",
     "Llama 4":          "4",
+    "Muse Glimmer":     "Glimmer",
 
     # Microsoft Phi
     "Phi-1":            "1",
@@ -422,7 +424,7 @@ series_name = {
     "Google":       "Gemini",
     "Anthropic":    "Claude",
     "xAI":          "Grok",
-    "Meta":         "Llama",
+    "Meta":         "Llama · Muse",
     "Meta Muse":    "Muse",
     "Microsoft MAI": "MAI",
     "Microsoft":    "Phi",
