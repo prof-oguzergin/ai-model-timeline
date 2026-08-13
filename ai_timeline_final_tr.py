@@ -49,6 +49,7 @@ data = [
     ("Gemini 3.1 Pro", "Google", "2026-02-19", False),
     ("Gemini 3.5 Flash", "Google", "2026-05-19", False),
     ("Gemini 3.6 Flash", "Google", "2026-07-21", False),
+    ("Gemini 3.7 Flash", "Google", "2026-08-13", True),
 
     # Anthropic
     ("Claude 1", "Anthropic", "2023-03-14", True),
@@ -82,6 +83,7 @@ data = [
     ("Grok 4.20", "xAI", "2026-02-17", False),
     ("Grok-4.3", "xAI", "2026-04-17", False),
     ("Grok-4.5", "xAI", "2026-07-08", True),
+    ("Grok-4.6", "xAI", "2026-08-12", True),
 
     # Meta
     ("Llama 1", "Meta", "2023-02-24", True),
@@ -261,6 +263,7 @@ short_labels = {
     "Gemini 3.1 Pro":       "3.1 Pro",
     "Gemini 3.5 Flash":     "3.5 Flash",
     "Gemini 3.6 Flash":     "3.6 Flash",
+    "Gemini 3.7 Flash":     "3.7 Flash",
 
     # Anthropic Claude
     "Claude 1":             "1",
@@ -295,6 +298,7 @@ short_labels = {
     "Grok-4.3":         "4.3",
     "Grok-4.5":         "4.5",
 
+    "Grok-4.6":       "4.6",
     # Meta Llama
     "Llama 1":          "1",
     "Llama 2":          "2",
