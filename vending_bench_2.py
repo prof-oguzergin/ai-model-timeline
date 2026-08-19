@@ -25,6 +25,7 @@ leaderboard = [
     ("Claude Sonnet 5",              "Anthropic", "2026-06-30",  6377.70),
     ("Claude Opus 4.6",              "Anthropic", "2026-02-05",  8017.59),
     ("GPT-5.6 Sol",                  "OpenAI",    "2026-06-26",  9619.37),
+    ("Grok 4.6",                     "xAI",       "2026-08-12",  9047.03),
     ("GPT-5.5",                      "OpenAI",    "2026-04-23",  7523.84),
     ("GPT-5.6 Terra",                "OpenAI",    "2026-07-09",  7343.21),
     ("Claude Sonnet 4.6",            "Anthropic", "2026-02-17",  7204.14),
@@ -36,6 +37,7 @@ leaderboard = [
     ("GPT-5.4",                      "OpenAI",    "2026-03-05",  6144.18),
     ("GPT-5.3-Codex",                "OpenAI",    "2026-02-05",  5940.12),
     ("GLM-5.2",                      "Z.ai",      "2026-06-13",  8313.78),
+    ("GLM-5.3",                      "Z.ai",      "2026-08-14",  8163.61),
     ("GLM-5.1",                      "Z.ai",      "2026-03-27",  5634.41),
     ("Gemini 3 Pro",                 "Google",    "2025-11-18",  5478.16),
     ("Gemini 3.5 Flash",             "Google",    "2026-05-19",  5396.42),
@@ -127,6 +129,8 @@ date_sources = {
     "GPT-5.6 Luna":                "Andon Labs vb2 2026-08-11; date AA (2026-07-09)",
     "Muse Spark 1.1":              "Andon Labs vb2 2026-08-11; date ai_timeline_final_tr.py",
     "Claude Opus 4.8":             "Andon Labs vb2 2026-08-11 (base variant; High/Max separate rows)",
+    "Grok 4.6":                    "Andon Labs vb2 2026-08-18; date x.ai announcement",
+    "GLM-5.3":                     "Andon Labs vb2 2026-08-18; date Z.ai announcement (Aug 14)",
     "GPT-5 mini":                  "GPT-5 date used (2025-08-07)",
 }
 
@@ -188,6 +192,8 @@ for i, (d, v, c, n) in enumerate(zip(dates, values, companies, names)):
 # LABELS - smart offsets
 # ============================================================
 manual_offsets = {
+    "Grok 4.6":                   ( -66,  6),
+    "GLM-5.3":                    (   5,  6),
     "GPT-5.6 Terra":              (-78,   6),
     "Muse Spark 1.1":             (  6,   7),
     "Claude Opus 4.8":            (-84,   5),

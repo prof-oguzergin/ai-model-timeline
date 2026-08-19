@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # Yapay zeka basarimi tek sayiyla: Artificial Analysis Zeka Endeksi (Intelligence Index)
-# Veri kaynagi: artificialanalysis.ai  (435 model, 2022-11-30 - 2026-07-24)
+# Veri kaynagi: artificialanalysis.ai  (443 model, 2022-11-30 - 2026-08-06)
 # Bu dosya scratchpad/make_ii_scripts.py ile uretildi; veri asagida GOMULU.
 import matplotlib
 matplotlib.use('Agg')
@@ -12,55 +12,55 @@ import pandas as pd
 DATA = [
 [
 "2024-06-01",
-950.5,
+948.1,
 "Kling 1.0",
 "Kling"
 ],
 [
 "2024-06-12",
-973.8,
+973.7,
 "Ray 1",
 "Luma"
 ],
 [
 "2024-06-17",
-983.2,
+982.7,
 "Runway Gen 3 Alpha",
 "Runway"
 ],
 [
 "2024-08-27",
-802.9,
+801.1,
 "CogVideoX-5B",
 "Z.ai"
 ],
 [
 "2024-09-01",
-1022.7,
+1020.3,
 "T2V-01",
 "MiniMax"
 ],
 [
 "2024-09-19",
-1029.2,
+1026.8,
 "Kling 1.5 Pro",
 "Kling"
 ],
 [
 "2024-10-01",
-935.9,
+934.3,
 "Pika 1.5",
 "Pika Art"
 ],
 [
 "2024-10-10",
-765.0,
+762.9,
 "Pyramid Flow",
 "Open Source"
 ],
 [
 "2024-10-21",
-937.0,
+935.5,
 "Haiper 2.0",
 "Haiper"
 ],
@@ -72,103 +72,103 @@ DATA = [
 ],
 [
 "2024-12-03",
-997.4,
+995.5,
 "Hunyuan Video (Fal)",
 "Tencent"
 ],
 [
 "2024-12-09",
-1041.7,
+1040.0,
 "Sora",
 "OpenAI"
 ],
 [
 "2024-12-13",
-1025.7,
+1023.9,
 "Pika 2.0",
 "Pika Art"
 ],
 [
 "2024-12-16",
-1113.8,
+1111.5,
 "Veo 2",
 "Google"
 ],
 [
 "2024-12-19",
-1014.7,
-"Kling 1.6 Standard",
-"Kling"
-],
-[
-"2024-12-19",
-1014.9,
+1012.4,
 "Kling 1.6 Pro",
 "Kling"
 ],
 [
+"2024-12-19",
+1013.4,
+"Kling 1.6 Standard",
+"Kling"
+],
+[
 "2025-01-28",
-1021.0,
+1017.8,
 "T2V-01-Director",
 "MiniMax"
 ],
 [
 "2025-02-10",
-944.9,
+943.3,
 "Ray 2",
 "Luma"
 ],
 [
 "2025-02-17",
-916.2,
+914.6,
 "Step-Video-T2V",
 "StepFun"
 ],
 [
 "2025-02-25",
-1013.3,
+1013.4,
 "Wan 2.1 14B",
 "Alibaba"
 ],
 [
 "2025-02-27",
-947.9,
+946.8,
 "Pika 2.2",
 "Pika Art"
 ],
 [
 "2025-04-15",
-1081.3,
+1082.3,
 "Kling 2.0",
 "Kling"
 ],
 [
 "2025-04-21",
-1005.3,
+1003.6,
 "Vidu Q1",
 "Vidu"
 ],
 [
 "2025-05-16",
-1077.6,
+1076.3,
 "PixVerse V4.5",
 "PixVerse"
 ],
 [
 "2025-05-21",
-1213.1,
+1209.9,
 "Veo 3 Preview",
 "Google"
 ],
 [
 "2025-05-29",
-1130.8,
+1129.1,
 "Kling 2.1 Master",
 "Kling"
 ],
 [
 "2025-06-01",
-1174.2,
+1173.1,
 "Veo 3 Fast Preview",
 "Google"
 ],
@@ -180,361 +180,367 @@ DATA = [
 ],
 [
 "2025-06-10",
-1082.5,
+1079.5,
 "Seedance 1.0 Mini",
 "ByteDance"
 ],
 [
 "2025-06-18",
-1149.8,
+1148.2,
 "Hailuo 02 Pro",
 "MiniMax"
 ],
 [
 "2025-06-18",
-1171.1,
+1169.5,
 "Hailuo 02 Standard",
 "MiniMax"
 ],
 [
 "2025-07-08",
-1050.8,
+1049.1,
 "Marey",
 "Moonvalley"
 ],
 [
 "2025-07-28",
-949.8,
+948.8,
 "Wan 2.2 5B",
 "Alibaba"
 ],
 [
 "2025-07-28",
-1108.6,
+1106.7,
 "Wan 2.2 A14B",
 "Alibaba"
 ],
 [
 "2025-07-29",
-1214.1,
+1211.6,
 "Veo 3",
 "Google"
 ],
 [
 "2025-07-30",
-1011.4,
+1009.9,
 "Motion 2.0",
 "Leonardo.Ai"
 ],
 [
 "2025-08-26",
-1168.6,
+1167.7,
 "PixVerse V5",
 "PixVerse"
 ],
 [
 "2025-09-19",
-1185.7,
+1184.2,
 "Ray 3",
 "Luma"
 ],
 [
 "2025-09-23",
-1199.5,
+1197.8,
 "Kling 2.5 Turbo 1080p",
 "Kling"
 ],
 [
 "2025-09-24",
-1157.9,
+1157.4,
 "Wan 2.5 Preview",
 "Alibaba"
 ],
 [
 "2025-09-30",
-1162.0,
+1160.5,
 "Sora 2 (October)",
 "OpenAI"
 ],
 [
 "2025-09-30",
-1181.4,
+1179.9,
 "Sora 2 Pro",
 "OpenAI"
 ],
 [
 "2025-10-15",
-1166.2,
+1164.2,
 "Vidu Q2",
 "Vidu"
 ],
 [
 "2025-10-15",
-1212.8,
+1209.7,
 "Veo 3.1 Fast Preview",
 "Google"
 ],
 [
 "2025-10-15",
-1214.8,
+1212.5,
 "Veo 3.1 Preview",
 "Google"
 ],
 [
 "2025-10-20",
-966.1,
+964.9,
 "Krea Realtime",
 "Krea"
 ],
 [
 "2025-10-23",
-1120.1,
+1120.4,
 "LTX-2 Fast",
 "Lightricks"
 ],
 [
 "2025-10-23",
-1123.1,
+1121.0,
 "LTX-2 Pro",
 "Lightricks"
 ],
 [
 "2025-10-28",
-1171.8,
+1170.5,
 "Hailuo 2.3",
 "MiniMax"
 ],
 [
 "2025-11-20",
-1018.9,
+1016.3,
 "HunyuanVideo-1.5 (Fal)",
 "Tencent"
 ],
 [
 "2025-11-22",
-1077.6,
+1076.4,
 "Pika 2.5",
 "Pika Art"
 ],
 [
 "2025-12-01",
-1189.0,
+1187.1,
 "Kling O1 Standard (December)",
 "Kling"
 ],
 [
 "2025-12-01",
-1192.1,
+1190.9,
 "Kling O1 Pro (December)",
 "Kling"
 ],
 [
 "2025-12-01",
-1214.3,
+1213.7,
 "Runway Gen-4.5",
 "Runway"
 ],
 [
 "2025-12-03",
-1187.8,
+1184.6,
 "Kling 2.6 Pro (December)",
 "Kling"
 ],
 [
 "2025-12-03",
-1196.1,
+1194.3,
 "PixVerse V5.5",
 "PixVerse"
 ],
 [
 "2025-12-15",
-1169.1,
+1167.5,
 "Sora 2 (December)",
 "OpenAI"
 ],
 [
 "2025-12-15",
-1171.7,
+1170.9,
 "Seedance 1.5 pro",
 "ByteDance"
 ],
 [
 "2025-12-16",
-1186.1,
+1184.8,
 "Wan 2.6",
 "Alibaba"
 ],
 [
 "2026-01-13",
-1182.7,
+1181.8,
 "Kling 2.6 Standard (January)",
 "Kling"
 ],
 [
 "2026-01-13",
-1188.4,
+1186.2,
 "Kling O1 Standard (January)",
 "Kling"
 ],
 [
 "2026-01-13",
-1197.5,
+1194.6,
 "Kling O1 Pro (January)",
 "Kling"
 ],
 [
 "2026-01-13",
-1198.6,
+1195.6,
 "Kling 2.6 Pro (January)",
 "Kling"
 ],
 [
 "2026-01-26",
-1131.8,
+1128.5,
 "PixVerse V5.6 (January)",
 "PixVerse"
 ],
 [
 "2026-01-27",
-1223.9,
+1221.6,
 "grok-imagine-video",
 "xAI"
 ],
 [
 "2026-01-30",
-1201.3,
+1197.9,
 "Veo 3.1 Fast",
 "Google"
 ],
 [
 "2026-01-30",
-1201.5,
+1199.2,
 "Veo 3.1",
 "Google"
 ],
 [
 "2026-01-30",
-1216.4,
+1214.4,
 "Vidu Q3 Pro",
 "Vidu"
 ],
 [
 "2026-02-04",
-1211.3,
+1209.6,
 "Kling 3.0 720p (Standard)",
 "Kling"
 ],
 [
 "2026-02-04",
-1214.6,
+1213.7,
 "Kling 3.0 Omni 720p (Standard)",
 "Kling"
 ],
 [
 "2026-02-04",
-1228.1,
+1227.4,
 "Kling 3.0 Omni 1080p (Pro)",
 "Kling"
 ],
 [
 "2026-02-04",
-1240.2,
+1239.0,
 "Kling 3.0 1080p (Pro)",
 "Kling"
 ],
 [
+"2026-02-09",
+1105.8,
+"Vidu Q3 Turbo",
+"Vidu"
+],
+[
 "2026-02-25",
-1214.0,
+1211.3,
 "PixVerse V5.6",
 "PixVerse"
 ],
 [
 "2026-02-26",
-1063.5,
+1062.0,
 "P-Video",
 "Pruna AI"
 ],
 [
 "2026-03-05",
-1106.2,
+1105.1,
 "LTX-2.3 Pro",
 "Lightricks"
 ],
 [
 "2026-03-05",
-1123.1,
+1120.1,
 "LTX-2.3 Fast",
 "Lightricks"
 ],
 [
 "2026-03-18",
-1211.0,
+1209.7,
 "SkyReels V4",
 "Skywork AI"
 ],
 [
 "2026-03-18",
-1265.8,
+1265.4,
 "Dreamina Seedance 2.0 720p",
 "ByteDance"
 ],
 [
 "2026-03-23",
-1211.0,
+1209.2,
 "PixVerse V6",
 "PixVerse"
 ],
 [
 "2026-03-31",
-1207.3,
+1206.5,
 "Veo 3.1 Lite",
 "Google"
 ],
 [
 "2026-04-07",
-1284.1,
+1283.9,
 "HappyHorse-1.0",
 "Alibaba-ATH"
 ],
 [
 "2026-04-25",
-1216.8,
+1214.6,
 "Wan 2.7",
 "Alibaba"
 ],
 [
 "2026-04-30",
-1216.7,
+1215.2,
 "Bach-1.0 Preview",
 "Video Rebirth"
 ],
 [
 "2026-05-19",
-1323.7,
+1322.3,
 "Gemini Omni Flash",
 "Google"
 ],
 [
 "2026-05-20",
-1052.4,
+1051.3,
 "Agnes-Video-V2.0",
 "Sapiens AI"
 ],
 [
 "2026-06-12",
-1241.5,
+1242.0,
 "Wan2.7-260612",
 "Alibaba"
 ],
 [
 "2026-06-22",
-1263.0,
+1261.8,
 "HappyHorse-1.1",
 "Alibaba-ATH"
 ],
 [
 "2026-07-30",
-1305.2,
+1304.9,
 "MiniMax H3",
 "MiniMax"
 ]
