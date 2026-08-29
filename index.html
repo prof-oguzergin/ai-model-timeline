@@ -86,6 +86,102 @@
     width: 22px; height: 16px; border-radius: 2px;
     object-fit: cover; display: block;
   }
+
+  /* ---- Acilis ekrani ---- */
+  header { text-align: left; padding: 0; }
+  .hero {
+    max-width: 1180px; margin: 0 auto;
+    padding: 54px 24px 46px;
+    display: grid; grid-template-columns: 1.12fr 0.88fr;
+    gap: 44px; align-items: center;
+  }
+  .hero .eyebrow {
+    display: inline-block; font-size: 0.74rem; letter-spacing: 0.12em;
+    text-transform: uppercase; font-weight: 700; color: #ffc2cc;
+    background: rgba(200,16,46,0.28); border: 1px solid rgba(255,255,255,0.16);
+    padding: 5px 13px; border-radius: 999px; margin-bottom: 18px;
+  }
+  header h1 {
+    font-size: clamp(1.8rem, 4.2vw, 2.9rem); line-height: 1.12;
+    font-weight: 800; margin-bottom: 14px; letter-spacing: -0.01em;
+  }
+  .hero .lede {
+    font-size: clamp(0.95rem, 1.5vw, 1.06rem); opacity: 0.85;
+    max-width: 58ch; margin: 0; text-align: left;
+  }
+  .hero-stat { display: flex; gap: 30px; margin: 26px 0 24px; flex-wrap: wrap; }
+  .hero-stat b {
+    display: block; font-size: 1.75rem; font-weight: 800;
+    color: #fff; line-height: 1.05; letter-spacing: -0.02em;
+  }
+  .hero-stat span { font-size: 0.78rem; opacity: 0.68; display: block; margin-top: 2px; }
+  .hero-cta { display: flex; gap: 10px; flex-wrap: wrap; }
+  .hero-cta .btn {
+    display: inline-block; padding: 11px 22px; border-radius: 24px;
+    font-size: 0.94rem; font-weight: 700; cursor: pointer;
+    text-decoration: none; border: 1px solid transparent; transition: all 0.2s;
+  }
+  .hero-cta .btn-ana { background: var(--primary); color: #fff; }
+  .hero-cta .btn-ana:hover { background: #e01438; transform: translateY(-1px); }
+  .hero-cta .btn-sade {
+    background: rgba(255,255,255,0.08); color: #fff;
+    border-color: rgba(255,255,255,0.28);
+  }
+  .hero-cta .btn-sade:hover { background: rgba(255,255,255,0.16); }
+  .hero .byline {
+    display: flex; align-items: center; gap: 9px;
+    margin: 22px 0 0; font-size: 0.87rem; opacity: 0.8; text-align: left;
+  }
+  .hero .byline .avatar {
+    width: 30px; height: 30px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), #8a0b20);
+    color: #fff; font-size: 0.72rem; font-weight: 800;
+    display: flex; align-items: center; justify-content: center; flex: none;
+  }
+  .hero .byline a { color: #ffd6dc; text-decoration: none; }
+  .hero .byline a:hover { text-decoration: underline; }
+  .hero .updated { margin-top: 14px; }
+
+  /* deste */
+  .hero-deck { position: relative; height: 330px; margin: 0; }
+  .hero-deck .dcard {
+    position: absolute; padding: 0; border: none; cursor: pointer;
+    background: #0d1117; border-radius: 12px; overflow: hidden;
+    box-shadow: 0 18px 44px rgba(0,0,0,0.5);
+    outline: 1px solid rgba(255,255,255,0.22);
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+    width: 78%; aspect-ratio: 3 / 2;
+  }
+  .hero-deck .dcard img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .hero-deck .dcard .cap {
+    position: absolute; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.86));
+    color: #fff; font-size: 0.76rem; font-weight: 700;
+    padding: 20px 10px 8px; text-align: left;
+    opacity: 0; transition: opacity 0.22s ease;
+  }
+  /* arkadaki kartlarin yazisi ondekinin altinda kaliyordu: yalniz on kart
+     ve uzerine gelinen kart yazisini gosterir */
+  .hero-deck .d3 .cap { opacity: 1; }
+  .hero-deck .dcard:hover .cap,
+  .hero-deck .dcard:focus-visible .cap { opacity: 1; }
+  .hero-deck .d1 { top: 0;    left: 0;   transform: rotate(-6deg); z-index: 1; }
+  .hero-deck .d2 { top: 46px; left: 11%; transform: rotate(-1deg); z-index: 2; }
+  .hero-deck .d3 { top: 92px; left: 22%; transform: rotate(4deg);  z-index: 3; }
+  .hero-deck .dcard:hover, .hero-deck .dcard:focus-visible {
+    transform: translateY(-10px) rotate(0deg) scale(1.03);
+    box-shadow: 0 26px 60px rgba(0,0,0,0.62); z-index: 4;
+  }
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; gap: 30px; padding: 40px 20px 34px; }
+    .hero-deck { height: 260px; max-width: 460px; }
+    .hero-stat { gap: 22px; }
+  }
+  @media (max-width: 560px) {
+    .hero-deck { height: 214px; }
+    .hero-stat b { font-size: 1.45rem; }
+  }
+
   .category-tabs {
     display: flex; justify-content: center; flex-wrap: wrap; gap: 6px;
     background: white; padding: 14px 16px;
@@ -287,12 +383,35 @@
       <img class="flag" src="https://flagcdn.com/w40/gb.png" alt="EN" width="22" height="16"><span>EN</span>
     </button>
   </div>
-  <h1 id="title">Yapay Zeka Zaman Çizelgeleri</h1>
-  <p id="subtitle">LLM modelleri, görsel üretme, karşılaştırma tabloları ve benchmark grafikleri</p>
-  <div class="author">
-    <span id="author-label">Derleyen:</span> <a href="https://www.oguzergin.net" target="_blank">Prof. Dr. Oğuz Ergin</a>
+  <div class="hero">
+    <div class="hero-copy">
+      <span class="eyebrow" id="hero-eyebrow">Bağımsız ölçümlerle · Kasım 2022 – Ağustos 2026</span>
+      <h1 id="title">Yapay zeka üç buçuk yılda nereye geldi?</h1>
+      <p class="lede" id="subtitle">Dil modelleri, görsel ve video üretme araçları, hızlandırıcı yongalar; bir de başarımı tek sayıya indiren üç grafik. Dokuz çizelge, hepsi birincil kaynaktan betikle çıkarıldı.</p>
+      <div class="hero-stat">
+        <div><b id="stat1-n">17×</b><span id="stat1-l">zekâ endeksi: 3,6 → 63,1</span></div>
+        <div><b id="stat2-n">455</b><span id="stat2-l">bağımsız ölçülen model</span></div>
+        <div><b id="stat3-n">9</b><span id="stat3-l">çizelge ve tablo</span></div>
+      </div>
+      <div class="hero-cta">
+        <a class="btn btn-ana" id="cta-1" href="#pane-llm" onclick="setCategory('llm');return false;">Çizelgelere başla</a>
+        <a class="btn btn-sade" id="cta-2" href="#pane-intel" onclick="setCategory('intel');return false;">Başarımı tek sayıyla gör</a>
+      </div>
+      <p class="byline"><span class="avatar">OE</span><span><span id="author-label">Derleyen:</span> <a href="https://www.oguzergin.net" target="_blank" rel="noopener">Prof. Dr. Oğuz Ergin</a></span></p>
+      <div class="updated" id="updated">Son güncelleme: 29 Ağustos 2026</div>
+    </div>
+    <figure class="hero-deck">
+      <button class="dcard d1" id="deck-1" onclick="setCategory('llm')" aria-label="LLM zaman çizelgesi">
+        <img src="onizleme-llm.png" alt="" width="720" height="480" loading="eager">
+        <span class="cap" id="deck-1-cap">168 dil modeli</span></button>
+      <button class="dcard d2" id="deck-2" onclick="setCategory('intel')" aria-label="Zekâ endeksi">
+        <img src="onizleme-intel.png" alt="" width="720" height="480" loading="eager">
+        <span class="cap" id="deck-2-cap">Başarım tek sayıyla</span></button>
+      <button class="dcard d3" id="deck-3" onclick="setCategory('vending')" aria-label="Vending-Bench 2">
+        <img src="onizleme-vending.png" alt="" width="720" height="480" loading="eager">
+        <span class="cap" id="deck-3-cap">Bir yıllık otomat işletmesi</span></button>
+    </figure>
   </div>
-  <div class="updated" id="updated">Son güncelleme: 15 Haziran 2026</div>
 </header>
 
 <div class="category-tabs">
@@ -451,15 +570,24 @@
 </footer>
 
 <script>
-  const ASSET_V = "20260829a";
+  const ASSET_V = "20260829b";
   // Karsilastirma tablosu artik sayfaya gomulu (shadow DOM); iframe/fitCmp yok.
   const labels = {
     tr: {
       htmlLang: "tr",
-      title: "Yapay Zeka Zaman Çizelgeleri",
-      subtitle: "LLM modelleri, görsel üretme, karşılaştırma tabloları ve benchmark grafikleri",
+      hero_eyebrow: "Bağımsız ölçümlerle · Kasım 2022 – Ağustos 2026",
+      stat1_n: "17×", stat1_l: "zekâ endeksi: 3,6 → 63,1",
+      stat2_n: "455", stat2_l: "bağımsız ölçülen model",
+      stat3_n: "9",   stat3_l: "çizelge ve tablo",
+      cta1: "Çizelgelere başla",
+      cta2: "Başarımı tek sayıyla gör",
+      deck1: "168 dil modeli",
+      deck2: "Başarım tek sayıyla",
+      deck3: "Bir yıllık otomat işletmesi",
+      title: "Yapay zeka üç buçuk yılda nereye geldi?",
+      subtitle: "Dil modelleri, görsel ve video üretme araçları, hızlandırıcı yongalar; bir de başarımı tek sayıya indiren üç grafik. Dokuz çizelge, hepsi birincil kaynaktan betikle çıkarıldı.",
       author: "Derleyen:",
-      updated: "Son güncelleme: 16 Haziran 2026",
+      updated: "Son güncelleme: 29 Ağustos 2026",
       footer: 'Bu çizelgeler düzenli olarak güncellenmektedir. Eksik veya hatalı bir model gördüyseniz lütfen <a href="mailto:bilgi@oguzergin.net">bilgi@oguzergin.net</a> adresine bildirin.',
       cat_llm: "LLM Modelleri",
       cat_image: "Görsel Üretme",
@@ -481,7 +609,7 @@
       dl_source: "Kaynak: Andon Labs",
       show_all: "Hepsini Göster",
       hide_all: "Hepsini Gizle",
-      desc_llm: "<strong>120+ büyük dil modeli</strong>, çıkış tarihine göre sıralı. 15 şirket (açık ve kapalı kaynak), Kasım 2022'den günümüze.",
+      desc_llm: "<strong>168 büyük dil modeli</strong>, çıkış tarihine göre sıralı. 19 model ailesi (açık ve kapalı ağırlıklı), Kasım 2022'den günümüze.",
       desc_image: "<strong>19 görsel üretme aracı, 95 sürüm.</strong> DALL-E, Midjourney, Imagen, FLUX, Stable Diffusion ve daha fazlası — 2021'den günümüze.",
       desc_video: "<strong>Yapay Zeka Video Üretme Araçları Zaman Çizelgesi.</strong> 20 araç · 75 sürüm · Şubat 2023 – Ağustos 2026",
       desc_compare: "<strong>Öncü LLM karşılaştırma tablosu.</strong> 37 model × 65 benchmark. Her satır renk skalalı (yeşil = en iyi, kırmızı = en kötü), en yüksek skor çerçeveli. Anthropic, OpenAI, Google, Moonshot, Z.AI, Alibaba, DeepSeek, xAI, Meta modelleri yan yana.",
@@ -510,10 +638,19 @@
     },
     en: {
       htmlLang: "en",
-      title: "AI Timelines",
-      subtitle: "LLM models, image generation tools, comparison tables and benchmark charts",
+      hero_eyebrow: "Independently measured · November 2022 – August 2026",
+      stat1_n: "17×", stat1_l: "intelligence index: 3.6 to 63.1",
+      stat2_n: "455", stat2_l: "independently measured models",
+      stat3_n: "9",   stat3_l: "charts and tables",
+      cta1: "Start with the timelines",
+      cta2: "Capability as one number",
+      deck1: "168 language models",
+      deck2: "Capability as one number",
+      deck3: "A year of running a vending business",
+      title: "Where has AI got to in three and a half years?",
+      subtitle: "Language models, image and video generation tools, accelerator chips, plus three charts that reduce capability to a single number. Nine charts, every number pulled from primary sources by script.",
       author: "Compiled by:",
-      updated: "Last updated: June 16, 2026",
+      updated: "Last updated: August 29, 2026",
       footer: 'These timelines are updated regularly. If you spot a missing or incorrect model, please report to <a href="mailto:bilgi@oguzergin.net">bilgi@oguzergin.net</a>.',
       cat_llm: "LLM Models",
       cat_image: "Image Generation",
@@ -535,7 +672,7 @@
       dl_source: "Source: Andon Labs",
       show_all: "Show All",
       hide_all: "Hide All",
-      desc_llm: "<strong>120+ large language models</strong>, sorted by release date. 15 companies (open and closed source), from November 2022 to today.",
+      desc_llm: "<strong>168 large language models</strong>, sorted by release date. 19 model families (open and closed weights), from November 2022 to today.",
       desc_image: "<strong>19 image generation tools, 95 versions.</strong> DALL-E, Midjourney, Imagen, FLUX, Stable Diffusion and more — from 2021 to today.",
       desc_video: "<strong>AI Video Generation Tools Timeline.</strong> 20 tools · 75 versions · Feb 2023 – Aug 2026",
       desc_compare: "<strong>Frontier LLM comparison table.</strong> 37 models × 65 benchmarks. Each row color-scaled (green = best, red = worst), top score framed. Anthropic, OpenAI, Google, Moonshot, Z.AI, Alibaba, DeepSeek, xAI, Meta models side by side.",
@@ -573,8 +710,33 @@
     document.getElementById("title").textContent = L.title;
     document.getElementById("subtitle").textContent = L.subtitle;
     document.getElementById("author-label").textContent = L.author;
-    document.getElementById("updated").textContent = L.updated;
+    // "Son guncelleme" ASSET_V'den turetilir; elle yazilinca bayatliyordu
+    (function () {
+      var m = ASSET_V.match(/^(\d{4})(\d{2})(\d{2})/);
+      var el = document.getElementById("updated");
+      if (!m) { el.textContent = L.updated; return; }
+      var yil = +m[1], ay = +m[2] - 1, gun = +m[3];
+      var AY_TR = ["Ocak","Şubat","Mart","Nisan","Mayıs","Haziran",
+                   "Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık"];
+      var AY_EN = ["January","February","March","April","May","June",
+                   "July","August","September","October","November","December"];
+      el.textContent = state.lang === "tr"
+        ? "Son güncelleme: " + gun + " " + AY_TR[ay] + " " + yil
+        : "Last updated: " + AY_EN[ay] + " " + gun + ", " + yil;
+    })();
     document.getElementById("footer-note").innerHTML = L.footer;
+    document.getElementById("hero-eyebrow").textContent = L.hero_eyebrow;
+    document.getElementById("stat1-n").textContent = L.stat1_n;
+    document.getElementById("stat1-l").textContent = L.stat1_l;
+    document.getElementById("stat2-n").textContent = L.stat2_n;
+    document.getElementById("stat2-l").textContent = L.stat2_l;
+    document.getElementById("stat3-n").textContent = L.stat3_n;
+    document.getElementById("stat3-l").textContent = L.stat3_l;
+    document.getElementById("cta-1").textContent = L.cta1;
+    document.getElementById("cta-2").textContent = L.cta2;
+    document.getElementById("deck-1-cap").textContent = L.deck1;
+    document.getElementById("deck-2-cap").textContent = L.deck2;
+    document.getElementById("deck-3-cap").textContent = L.deck3;
 
     // Category tabs
     document.getElementById("cat-llm").textContent = L.cat_llm;
