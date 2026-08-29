@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # Yapay zeka basarimi tek sayiyla: Artificial Analysis Zeka Endeksi (Intelligence Index)
-# Veri kaynagi: artificialanalysis.ai  (455 model, 2022-11-30 - 2026-08-18)
+# Veri kaynagi: artificialanalysis.ai  (465 model, 2022-11-30 - 2026-08-26)
 # Bu dosya scratchpad/make_ii_scripts.py ile uretildi; veri asagida GOMULU.
 import matplotlib
 matplotlib.use('Agg')
@@ -3092,6 +3092,13 @@ DATA = [
 ],
 [
 "2026-08-04",
+11.0,
+"LFM2.5-2.6B",
+"Liquid AI",
+1
+],
+[
+"2026-08-04",
 37.8,
 "Ling 3.0 Flash",
 "InclusionAI",
@@ -3130,6 +3137,13 @@ DATA = [
 23.6,
 "Nemotron 3.5 Lightning",
 "NVIDIA",
+1
+],
+[
+"2026-08-12",
+31.0,
+"K-EXAONE 2.0",
+"LG AI Research",
 1
 ],
 [
@@ -3189,11 +3203,67 @@ DATA = [
 0
 ],
 [
+"2026-08-14",
+52.0,
+"Qwen3.8 27B",
+"Alibaba",
+1
+],
+[
 "2026-08-18",
 59.5,
 "GLM-5.3",
 "Z.ai",
 0
+],
+[
+"2026-08-21",
+51.5,
+"DeepSeek V4 Flash Vision",
+"DeepSeek",
+0
+],
+[
+"2026-08-25",
+14.3,
+"Granite 4.2 3B",
+"IBM",
+1
+],
+[
+"2026-08-25",
+19.6,
+"Granite 4.2 8B",
+"IBM",
+1
+],
+[
+"2026-08-25",
+23.7,
+"Granite 4.2 30B",
+"IBM",
+1
+],
+[
+"2026-08-26",
+49.1,
+"Agnes 2.5 Pro Beta",
+"Sapiens AI",
+0
+],
+[
+"2026-08-26",
+55.8,
+"Qwen3.8-Flash-Next",
+"Alibaba",
+1
+],
+[
+"2026-08-26",
+57.5,
+"GLM-5.3-Flash",
+"Z.ai",
+1
 ]
 ]
 

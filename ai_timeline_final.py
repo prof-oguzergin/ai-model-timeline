@@ -142,6 +142,7 @@ data = [
     ("Qwen3.7-Max", "Qwen", "2026-05-20", True),
     ("Qwen3.8-Max", "Qwen", "2026-08-03", True),
     ("Qwen3.8-A95B", "Qwen", "2026-08-12", False),
+    ("Qwen3.8-Flash-Next", "Qwen", "2026-08-26", False),
 
     # DeepSeek
     ("DeepSeek Coder", "DeepSeek", "2023-11-02", True),
@@ -164,6 +165,7 @@ data = [
     ("GLM-5.1", "Z.ai", "2026-03-27", False),
     ("GLM-5.2", "Z.ai", "2026-06-13", False),
     ("GLM-5.3", "Z.ai", "2026-08-14", True),
+    ("GLM-5.3-Flash", "Z.ai", "2026-08-26", False),
 
     # Kimi (Moonshot AI)
     ("Kimi Chat", "Kimi", "2023-10-09", True),
@@ -349,6 +351,7 @@ short_labels = {
     "Qwen3.7-Max":      "3.7-Max",
     "Qwen3.8-Max":      "3.8-Max",
     "Qwen3.8-A95B":     "3.8-A95B",
+    "Qwen3.8-Flash-Next": "3.8-Flash",
 
     # DeepSeek
     "DeepSeek Coder":   "Coder",
@@ -373,6 +376,7 @@ short_labels = {
     "GLM-5.1":          "5.1",
     "GLM-5.2":          "5.2",
     "GLM-5.3":          "5.3",
+    "GLM-5.3-Flash":    "5.3 Flash",
 
     # Kimi
     "Kimi Chat":        "Chat",
