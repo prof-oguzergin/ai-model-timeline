@@ -70,6 +70,7 @@ data = [
     ("Claude Fable 5", "Anthropic", "2026-06-09", True),
     ("Claude Sonnet 5", "Anthropic", "2026-06-30", True),
     ("Claude Opus 5", "Anthropic", "2026-07-24", True),
+    ("Claude Fable 5.1", "Anthropic", "2026-09-01", True),
 
     # xAI
     ("Grok-1", "xAI", "2023-11-04", True),
@@ -286,6 +287,7 @@ short_labels = {
     "Claude Opus 4.7":      "Opus 4.7",
     "Claude Opus 4.8":      "Opus 4.8",
     "Claude Fable 5":       "Fable 5",
+    "Claude Fable 5.1":     "Fable 5.1",
     "Claude Sonnet 5":      "Sonnet 5",
     "Claude Opus 5":        "Opus 5",
 
