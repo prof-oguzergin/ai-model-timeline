@@ -34,6 +34,7 @@ data = [
     ("GPT-5.4 mini", "OpenAI", "2026-03-17", False),
     ("GPT-5.5", "OpenAI", "2026-04-23", False),
     ("GPT-5.6 Sol", "OpenAI", "2026-06-26", True),
+    ("GPT-6 Astra", "OpenAI", "2026-09-03", True),
 
     # Google
     ("Gemini 1.0 Pro", "Google", "2023-12-06", True),
@@ -100,6 +101,7 @@ data = [
     ("Muse Spark", "Meta Muse", "2026-04-08", True),
     ("Muse Spark 1.1", "Meta Muse", "2026-07-09", False),
     ("Muse Spark 1.2", "Meta Muse", "2026-08-05", False),
+    ("Muse Spark 1.3", "Meta Muse", "2026-09-02", True),
 
     # Microsoft MAI (Closed Source)
     ("MAI-Thinking-1", "Microsoft MAI", "2026-06-02", True),
@@ -254,6 +256,7 @@ short_labels = {
     "GPT-5.5":          "5.5",
     "GPT-5.6 Sol":      "5.6 Sol",
 
+    "GPT-6 Astra":      "6 Astra",
     # Google Gemini
     "Gemini 1.0 Pro":       "1.0 Pro",
     "Gemini 1.5 Pro":       "1.5 Pro",
@@ -415,6 +418,7 @@ short_labels = {
     "Muse Spark":           "Spark 1.0",
     "Muse Spark 1.1":       "Spark 1.1",
     "Muse Spark 1.2":       "Spark 1.2",
+    "Muse Spark 1.3":       "Spark 1.3",
     "MAI-Thinking-1":       "Thinking-1",
 
     # Amazon Nova

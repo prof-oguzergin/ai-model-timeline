@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # Yapay zeka basarimi tek sayiyla: Artificial Analysis Zeka Endeksi (Intelligence Index)
-# Veri kaynagi: artificialanalysis.ai  (468 model, 2022-11-30 - 2026-09-01)
+# Veri kaynagi: artificialanalysis.ai  (472 model, 2022-11-30 - 2026-09-03)
 # Bu dosya scratchpad/make_ii_scripts.py ile uretildi; veri asagida GOMULU.
 import matplotlib
 matplotlib.use('Agg')
@@ -3284,6 +3284,34 @@ DATA = [
 65.7,
 "Claude Fable 5.1",
 "Anthropic",
+0
+],
+[
+"2026-09-02",
+58.7,
+"Gemini 3.8 Flash",
+"Google",
+0
+],
+[
+"2026-09-02",
+62.1,
+"Muse Spark 1.3",
+"Meta",
+0
+],
+[
+"2026-09-03",
+47.3,
+"K2 Horizon 375B A23B",
+"MBZUAI Institute of Foundation Models",
+1
+],
+[
+"2026-09-03",
+61.2,
+"GPT-6 Astra",
+"OpenAI",
 0
 ]
 ]
