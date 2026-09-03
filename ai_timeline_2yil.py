@@ -697,7 +697,7 @@ company_overrides = {
     ("Anthropic", "Fable 5"): (0, 55),
         ("Anthropic", "Sonnet 5"): (0, -55),
 ("Anthropic", "Opus 5"): (0, 55),
-    ("Anthropic", "Fable 5.1"): (0, -55),
+    ("Anthropic", "Fable 5.1"): (0, 55),
     # Mistral - all labels equal distance from line (no multi-level stacking)
     ("Mistral", "Medium 3"): (0, -55),
     ("Mistral", "Devstral"): (0, -55),
