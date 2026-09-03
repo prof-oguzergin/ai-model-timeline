@@ -688,7 +688,7 @@ company_overrides = {
     ("Anthropic", "Opus 4"):    (0, 55),
     ("Anthropic", "Sonnet 4"):  (0, -55),
     ("Anthropic", "Sonnet 4.6"): (0, -55),
-    ("Anthropic", "Opus 4.7"):   (0, 55),
+    ("Anthropic", "Opus 4.7"): (-55, 55),
     ("Anthropic", "Opus 4.8"):   (-78, -55),
     ("Anthropic", "Fable 5"): (0, 55),
         ("Anthropic", "Sonnet 5"): (0, -55),
