@@ -1092,11 +1092,11 @@ ax.set_ylim(y_min, y_max)
 plt.tight_layout(rect=[0.11, 0.03, 0.98, 0.98])
 
 output_dir = "G:/My Drive/Claude Code/YZ Model Zaman Cizelgesi"
-plt.savefig(f"{output_dir}/ai_timeline_final.png", dpi=150, bbox_inches="tight",
+plt.savefig(f"{output_dir}/ai_timeline_2yil.png", dpi=150, bbox_inches="tight",
             pad_inches=1.0, facecolor="#0d1117", edgecolor="none")
 print("Main PNG saved!")
 
 # LinkedIn version (cropped/resized for LinkedIn post format)
-plt.savefig(f"{output_dir}/ai_timeline_final_linkedin.png", dpi=100, bbox_inches="tight",
+plt.savefig(f"{output_dir}/ai_timeline_2yil_linkedin.png", dpi=100, bbox_inches="tight",
             pad_inches=0.5, facecolor="#0d1117", edgecolor="none")
 print("LinkedIn PNG saved!")
