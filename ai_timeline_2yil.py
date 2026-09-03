@@ -226,6 +226,8 @@ data = [
 
 df = pd.DataFrame(data, columns=["Model", "Company", "Date", "Milestone"])
 df["Date"] = pd.to_datetime(df["Date"])
+# --- SON IKI YIL SURUMU: veri esikten filtrelenir ---
+df = df[df["Date"] >= "2025-01-01"].reset_index(drop=True)
 
 # =============================================
 # SHORT LABELS: strip company/series prefix
@@ -589,21 +591,21 @@ labels_y = []
 # Manual overrides: SHORT_LABEL -> (x_offset, y_offset)
 manual_overrides = {
     # OpenAI
-    "3.5":              (50, -55),
+    "3.5": (0, -55),
     "5.1":              (0, -55),
     "o1":               (0, -55),
-    "4.1":              (-80, -55),
-    "o3-pro":           (65, -55),
+    "4.1": (0, -55),
+    "o3-pro": (0, -55),
     "5.4 mini":         (0, -55),
 
     # Google - end of timeline very crowded
-    "2.0 Pro":          (-40, 55),
-    "2.5 Pro":          (40, 55),
+    "2.0 Pro": (0, 55),
+    "2.5 Pro": (0, 55),
     "1.0 Pro":          (0, -55),
-    "3 Pro":            (-80, 55),
+    "3 Pro": (0, 55),
     "3 Flash":          (0, 55),
     "3.1 Pro":          (0, 55),
-    "3.1 FL":           (120, -55),
+    "3.1 FL": (0, -55),
 
     # DeepSeek
     "V3.1":             (0, 55),
@@ -612,11 +614,11 @@ manual_overrides = {
     "7B":               (0, 55),
     "Mixtral 8x7B":     (0, -55),
     "Pixtral 12B":      (0, 55),
-    "Small 3.1":        (-50, 55),
+    "Small 3.1": (0, 55),
 
     # xAI - Grok-3 and Grok-3 Mini same day
     "3":                (0, 55),
-    "3 Mini":           (65, -55),
+    "3 Mini": (0, -55),
 
     # Meta - Llama 2 -> above (milestone)
     "2":                (0, 55),
@@ -642,6 +644,7 @@ manual_overrides = {
 
 # Company-specific overrides for labels that clash across companies
 company_overrides = {
+    ("OpenAI", "4.1"): (-30, -55),
     ("Anthropic", "Opus 4.6"): (0, 55),
     ("Qwen", "3.8-Flash"): (0, -55),
     ("Google", "3.6 Flash"): (0, 55),
@@ -649,15 +652,15 @@ company_overrides = {
     ("Google", "3.7 Flash"): (0, -55),
     ("Meta Muse", "Spark 1.3"): (0, 55),
     ("Meta Muse", "Spark 1.2"): (0, -38),
-    ("Meta Muse", "Spark 1.1"): (-60, 55),
+    ("Meta Muse", "Spark 1.1"): (0, 55),
     ("xAI", "4.6"): (0, 55),
     ("xAI", "4.5"): (0, 55),
     ("OpenAI", "4"):        (0, -55),
     ("OpenAI", "4.5"):      (0, 55),
     ("OpenAI", "o3"):       (0, 55),
-    ("OpenAI", "o4-mini"):  (60, -55),
+    ("OpenAI", "o4-mini"): (30, -55),
     ("OpenAI", "5.2"):      (0, 55),
-    ("OpenAI", "5.3-Codex"): (-60, -55),
+    ("OpenAI", "5.3-Codex"): (0, -55),
     ("DeepSeek", "V3"):     (0, 55),
     ("DeepSeek", "R1"):     (0, -55),
     ("OpenAI", "5.4"):      (0, 55),
@@ -689,15 +692,15 @@ company_overrides = {
     ("Anthropic", "Opus 4"):    (0, 55),
     ("Anthropic", "Sonnet 4"):  (0, -55),
     ("Anthropic", "Sonnet 4.6"): (0, -55),
-    ("Anthropic", "Opus 4.7"): (-40, 55),
-    ("Anthropic", "Opus 4.8"):   (-78, -55),
-    ("Anthropic", "Fable 5"): (0, 55),
+    ("Anthropic", "Opus 4.7"): (0, 55),
+    ("Anthropic", "Opus 4.8"): (0, -55),
+    ("Anthropic", "Fable 5"): (-30, 55),
         ("Anthropic", "Sonnet 5"): (0, -55),
-("Anthropic", "Opus 5"): (55, 55),
+("Anthropic", "Opus 5"): (30, 55),
     ("Anthropic", "Fable 5.1"): (0, -55),
     # Mistral - all labels equal distance from line (no multi-level stacking)
-    ("Mistral", "Medium 3"):    (-55, -55),
-    ("Mistral", "Devstral"):    (55, -55),
+    ("Mistral", "Medium 3"): (-30, -55),
+    ("Mistral", "Devstral"): (30, -55),
     ("Mistral", "Pixtral Large"): (0, -55),
     ("Mistral", "Magistral"):   (0, 55),
     ("Mistral", "Small 4"):     (0, -55),
@@ -709,9 +712,9 @@ company_overrides = {
     ("DeepSeek", "Coder"):  (0, 55),
     ("DeepSeek", "LLM"):    (0, -55),
     # Cohere - A Vision, A Reasoning, A Translate close together
-    ("Cohere", "A Vision"):     (-50, -55),
+    ("Cohere", "A Vision"): (0, -55),
     ("Cohere", "A Reasoning"):  (0, 55),
-    ("Cohere", "A Translate"):  (50, -55),
+    ("Cohere", "A Translate"): (0, -55),
     # MiniMax - M2.1 and M2.5 both False in same cluster, keep M2.5 close
     ("MiniMax", "M2.5"):        (0, -55),
     ("MiniMax", "M2.7"):        (0, -55),
@@ -913,7 +916,7 @@ for y_pos, company in labels_y:
 ax.xaxis.set_major_locator(mdates.MonthLocator(interval=2))
 ax.xaxis.set_minor_locator(mdates.MonthLocator())
 ax.xaxis.set_major_formatter(mdates.DateFormatter("%b %Y"))
-ax.set_xlim(mdates.date2num(pd.Timestamp("2022-11-01")), mdates.date2num(df["Date"].max() + pd.Timedelta(days=60)))
+ax.set_xlim(mdates.date2num(df["Date"].min() - pd.Timedelta(days=20)), mdates.date2num(df["Date"].max() + pd.Timedelta(days=60)))
 plt.xticks(rotation=45, fontsize=22, color="#8b949e")
 
 # Grid
@@ -923,7 +926,7 @@ ax.grid(True, axis="x", which="major", linestyle="--", alpha=0.11, color="white"
 models_per_year = df.groupby(df["Date"].dt.year).size().to_dict()
 
 # Year markers - vertical dashed lines at Jan 1 of each year
-for year in [2023, 2024, 2025, 2026]:
+for year in [2025, 2026]:
     year_date = mdates.date2num(pd.Timestamp(f"{year}-01-01"))
     ax.axvline(x=year_date, color="#58a6ff", linewidth=1.5, linestyle=":", alpha=0.4, zorder=1)
     count = models_per_year.get(year, 0)
@@ -954,7 +957,7 @@ ax.tick_params(axis="x", colors="#8b949e", length=6, pad=15)
 ax.tick_params(axis="x", which="minor", length=4, color="#8b949e", width=0.8)
 
 # Title
-plt.title("AI Model Release Timeline",
+plt.title("The Last Two Years · AI Models",
           fontsize=58, pad=80, color="white", fontweight="bold")
 
 # Top-left corner icon: speech bubble (chat/LLM symbol)

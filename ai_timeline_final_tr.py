@@ -575,11 +575,11 @@ open_rect = mpatches.FancyBboxPatch(
 ax.add_patch(open_rect)
 
 # Section labels - large watermark-style, more visible
-ax.text(df["Date"].min() + pd.Timedelta(days=30), y_positions["MiniMax"] + 0.5,
+ax.text(df["Date"].min() + pd.Timedelta(days=30), y_positions["MiniMax"] - 1.1,
         "AÇIK KAYNAK / AÇIK AĞIRLIK",
         fontsize=56, color="#3fb950", va="center", ha="left",
         fontweight="bold", alpha=0.22)
-ax.text(df["Date"].min() + pd.Timedelta(days=30), y_positions["Cohere"] + 0.5,
+ax.text(df["Date"].min() + pd.Timedelta(days=30), y_positions["Cohere"] - 1.1,
         "KAPALI KAYNAK",
         fontsize=56, color="#f778ba", va="center", ha="left",
         fontweight="bold", alpha=0.22)
@@ -994,8 +994,15 @@ for i, dot_x in enumerate([-0.008, 0.000, 0.008]):
     d.set_clip_on(False)
     ax.add_patch(d)
 
+# Alt baslik sayilari HESAPLANIR. Elle yazilinca bayatliyordu:
+# TR "15 Sirket" / EN "17 Companies" diyordu, dogrusu 16; tarih araligi
+# da "Kas 2022 - Haz 2026"de kalmisti. Iki dosya birbiriyle de tutmuyordu.
+_AY = {1:"Oca",2:"Şub",3:"Mar",4:"Nis",5:"May",6:"Haz",7:"Tem",8:"Ağu",9:"Eyl",10:"Eki",11:"Kas",12:"Ara"}
+_SIRKET = len({company_name[c] for c in df["Company"].unique()})
+_ILK = "%s %d" % (_AY[df["Date"].min().month], df["Date"].min().year)
+_SON = "%s %d" % (_AY[df["Date"].max().month], df["Date"].max().year)
 ax.text(0.5, 1.008,
-        f"15 Şirket  |  {len(df)} Model  |  Kas 2022 – Haz 2026  |  ● Büyük = Dönüm Noktası  |  ● Küçük = Güncelleme",
+        f"{_SIRKET} Şirket  |  {len(df)} Model  |  {_ILK} – {_SON}  |  ● Büyük = Dönüm Noktası  |  ● Küçük = Güncelleme",
         transform=ax.transAxes, ha="center", fontsize=28,
         color="#8b949e", fontstyle="italic")
 

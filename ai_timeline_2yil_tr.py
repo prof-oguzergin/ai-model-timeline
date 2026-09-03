@@ -215,7 +215,7 @@ data = [
     ("Command A Translate", "Cohere", "2025-08-28", False),
     ("Command A+", "Cohere", "2026-05-20", True),
 
-    # Ai2 (Allen Institute) - Fully Open (weights + data + code)
+    # Ai2 (Allen Institute) - Tam Acik (agirlik + veri + kod)
     ("OLMo", "Ai2", "2024-02-01", True),
     ("Molmo", "Ai2", "2024-09-25", True),
     ("OLMo 2", "Ai2", "2024-11-26", True),
@@ -226,6 +226,8 @@ data = [
 
 df = pd.DataFrame(data, columns=["Model", "Company", "Date", "Milestone"])
 df["Date"] = pd.to_datetime(df["Date"])
+# --- SON IKI YIL SURUMU: veri esikten filtrelenir ---
+df = df[df["Date"] >= "2025-01-01"].reset_index(drop=True)
 
 # =============================================
 # SHORT LABELS: strip company/series prefix
@@ -504,33 +506,33 @@ company_name = {
 }
 
 country_text = {
-    "OpenAI":    "USA",
-    "Google":    "USA",
-    "Anthropic": "USA",
-    "xAI":       "USA",
-    "Meta":      "USA",
-    "Meta Muse": "USA",
-    "Microsoft MAI": "USA",
-    "Microsoft": "USA",
-    "Mistral":   "France",
-    "Qwen":      "China",
-    "DeepSeek":  "China",
-    "Z.ai":      "China",
-    "Kimi":      "China",
-    "MiniMax":   "China",
-    "Google Gemma": "USA",
-    "ByteDance":    "China",
-    "Amazon":       "USA",
-    "Cohere":       "Canada",
-    "Ai2":          "USA",
+    "OpenAI":    "ABD",
+    "Google":    "ABD",
+    "Anthropic": "ABD",
+    "xAI":       "ABD",
+    "Meta":      "ABD",
+    "Meta Muse": "ABD",
+    "Microsoft MAI": "ABD",
+    "Microsoft": "ABD",
+    "Mistral":   "Fransa",
+    "Qwen":      "Çin",
+    "DeepSeek":  "Çin",
+    "Z.ai":      "Çin",
+    "Kimi":      "Çin",
+    "MiniMax":   "Çin",
+    "Google Gemma": "ABD",
+    "ByteDance":    "Çin",
+    "Amazon":       "ABD",
+    "Cohere":       "Kanada",
+    "Ai2":          "ABD",
 }
 
 # Flag image files
 flag_images = {
-    "USA": "C:/Users/Z GAMES/flags/us.png",
-    "France":        "C:/Users/Z GAMES/flags/fr.png",
-    "China":         "C:/Users/Z GAMES/flags/cn.png",
-    "Canada":        "C:/Users/Z GAMES/flags/ca.png",
+    "ABD":    "C:/Users/Z GAMES/flags/us.png",
+    "Fransa": "C:/Users/Z GAMES/flags/fr.png",
+    "Çin":    "C:/Users/Z GAMES/flags/cn.png",
+    "Kanada": "C:/Users/Z GAMES/flags/ca.png",
 }
 
 company_order = ["OpenAI", "Google", "Anthropic", "xAI", "Microsoft MAI", "Meta Muse", "Amazon", "ByteDance", "Cohere",
@@ -576,11 +578,11 @@ ax.add_patch(open_rect)
 
 # Section labels - large watermark-style, more visible
 ax.text(df["Date"].min() + pd.Timedelta(days=30), y_positions["MiniMax"] - 1.1,
-        "OPEN SOURCE / OPEN WEIGHT",
+        "AÇIK KAYNAK / AÇIK AĞIRLIK",
         fontsize=56, color="#3fb950", va="center", ha="left",
         fontweight="bold", alpha=0.22)
 ax.text(df["Date"].min() + pd.Timedelta(days=30), y_positions["Cohere"] - 1.1,
-        "CLOSED SOURCE",
+        "KAPALI KAYNAK",
         fontsize=56, color="#f778ba", va="center", ha="left",
         fontweight="bold", alpha=0.22)
 
@@ -589,21 +591,21 @@ labels_y = []
 # Manual overrides: SHORT_LABEL -> (x_offset, y_offset)
 manual_overrides = {
     # OpenAI
-    "3.5":              (50, -55),
+    "3.5": (0, -55),
     "5.1":              (0, -55),
     "o1":               (0, -55),
-    "4.1":              (-80, -55),
-    "o3-pro":           (65, -55),
+    "4.1": (0, -55),
+    "o3-pro": (0, -55),
     "5.4 mini":         (0, -55),
 
     # Google - end of timeline very crowded
-    "2.0 Pro":          (-40, 55),
-    "2.5 Pro":          (40, 55),
+    "2.0 Pro": (0, 55),
+    "2.5 Pro": (0, 55),
     "1.0 Pro":          (0, -55),
-    "3 Pro":            (-80, 55),
+    "3 Pro": (0, 55),
     "3 Flash":          (0, 55),
     "3.1 Pro":          (0, 55),
-    "3.1 FL":           (120, -55),
+    "3.1 FL": (0, -55),
 
     # DeepSeek
     "V3.1":             (0, 55),
@@ -612,13 +614,13 @@ manual_overrides = {
     "7B":               (0, 55),
     "Mixtral 8x7B":     (0, -55),
     "Pixtral 12B":      (0, 55),
-    "Small 3.1":        (-50, 55),
+    "Small 3.1": (0, 55),
 
     # xAI - Grok-3 and Grok-3 Mini same day
     "3":                (0, 55),
-    "3 Mini":           (65, -55),
+    "3 Mini": (0, -55),
 
-    # Meta - Llama 2 -> above (milestone)
+    # Meta - Llama 2 -> üste (milestone)
     "2":                (0, 55),
 
     # Microsoft
@@ -641,7 +643,9 @@ manual_overrides = {
 }
 
 # Company-specific overrides for labels that clash across companies
+# (e.g. "2" is used by Meta/Llama, Anthropic/Claude, xAI/Grok, Microsoft/Phi)
 company_overrides = {
+    ("OpenAI", "4.1"): (-30, -55),
     ("Anthropic", "Opus 4.6"): (0, 55),
     ("Qwen", "3.8-Flash"): (0, -55),
     ("Google", "3.6 Flash"): (0, 55),
@@ -649,15 +653,15 @@ company_overrides = {
     ("Google", "3.7 Flash"): (0, -55),
     ("Meta Muse", "Spark 1.3"): (0, 55),
     ("Meta Muse", "Spark 1.2"): (0, -38),
-    ("Meta Muse", "Spark 1.1"): (-60, 55),
+    ("Meta Muse", "Spark 1.1"): (0, 55),
     ("xAI", "4.6"): (0, 55),
     ("xAI", "4.5"): (0, 55),
     ("OpenAI", "4"):        (0, -55),
     ("OpenAI", "4.5"):      (0, 55),
     ("OpenAI", "o3"):       (0, 55),
-    ("OpenAI", "o4-mini"):  (60, -55),
+    ("OpenAI", "o4-mini"): (30, -55),
     ("OpenAI", "5.2"):      (0, 55),
-    ("OpenAI", "5.3-Codex"): (-60, -55),
+    ("OpenAI", "5.3-Codex"): (0, -55),
     ("DeepSeek", "V3"):     (0, 55),
     ("DeepSeek", "R1"):     (0, -55),
     ("OpenAI", "5.4"):      (0, 55),
@@ -679,7 +683,7 @@ company_overrides = {
     ("xAI", "3 Mini"):      (0, -55),
     ("xAI", "4.1"):         (0, -55),
     ("xAI", "4.3"):         (0, -55),
-    # Google - Gemini 3.1 Pro aligned
+    # Google - Gemini 3.1 Pro tam dot üstüne otursun, gap adjustment nudge atlansın
     ("Google", "3.1 Pro"):  (0, 55),
     ("Google", "3 Deep Think"): (0, -55),
     ("Google", "3.5 Flash"): (0, -55),
@@ -689,15 +693,15 @@ company_overrides = {
     ("Anthropic", "Opus 4"):    (0, 55),
     ("Anthropic", "Sonnet 4"):  (0, -55),
     ("Anthropic", "Sonnet 4.6"): (0, -55),
-    ("Anthropic", "Opus 4.7"): (-40, 55),
-    ("Anthropic", "Opus 4.8"):   (-78, -55),
-    ("Anthropic", "Fable 5"): (0, 55),
+    ("Anthropic", "Opus 4.7"): (0, 55),
+    ("Anthropic", "Opus 4.8"): (0, -55),
+    ("Anthropic", "Fable 5"): (-30, 55),
         ("Anthropic", "Sonnet 5"): (0, -55),
-("Anthropic", "Opus 5"): (55, 55),
+("Anthropic", "Opus 5"): (30, 55),
     ("Anthropic", "Fable 5.1"): (0, -55),
     # Mistral - all labels equal distance from line (no multi-level stacking)
-    ("Mistral", "Medium 3"):    (-55, -55),
-    ("Mistral", "Devstral"):    (55, -55),
+    ("Mistral", "Medium 3"): (-30, -55),
+    ("Mistral", "Devstral"): (30, -55),
     ("Mistral", "Pixtral Large"): (0, -55),
     ("Mistral", "Magistral"):   (0, 55),
     ("Mistral", "Small 4"):     (0, -55),
@@ -709,9 +713,9 @@ company_overrides = {
     ("DeepSeek", "Coder"):  (0, 55),
     ("DeepSeek", "LLM"):    (0, -55),
     # Cohere - A Vision, A Reasoning, A Translate close together
-    ("Cohere", "A Vision"):     (-50, -55),
+    ("Cohere", "A Vision"): (0, -55),
     ("Cohere", "A Reasoning"):  (0, 55),
-    ("Cohere", "A Translate"):  (50, -55),
+    ("Cohere", "A Translate"): (0, -55),
     # MiniMax - M2.1 and M2.5 both False in same cluster, keep M2.5 close
     ("MiniMax", "M2.5"):        (0, -55),
     ("MiniMax", "M2.7"):        (0, -55),
@@ -912,8 +916,12 @@ for y_pos, company in labels_y:
 # X axis
 ax.xaxis.set_major_locator(mdates.MonthLocator(interval=2))
 ax.xaxis.set_minor_locator(mdates.MonthLocator())
-ax.xaxis.set_major_formatter(mdates.DateFormatter("%b %Y"))
-ax.set_xlim(mdates.date2num(pd.Timestamp("2022-11-01")), mdates.date2num(df["Date"].max() + pd.Timedelta(days=60)))
+_TR_AY_KISA = {1:'Oca', 2:'Şub', 3:'Mar', 4:'Nis', 5:'May', 6:'Haz',
+               7:'Tem', 8:'Ağu', 9:'Eyl', 10:'Eki', 11:'Kas', 12:'Ara'}
+ax.xaxis.set_major_formatter(plt.FuncFormatter(
+    lambda x, pos: f"{_TR_AY_KISA[mdates.num2date(x).month]} {mdates.num2date(x).year}"
+))
+ax.set_xlim(mdates.date2num(df["Date"].min() - pd.Timedelta(days=20)), mdates.date2num(df["Date"].max() + pd.Timedelta(days=60)))
 plt.xticks(rotation=45, fontsize=22, color="#8b949e")
 
 # Grid
@@ -923,14 +931,14 @@ ax.grid(True, axis="x", which="major", linestyle="--", alpha=0.11, color="white"
 models_per_year = df.groupby(df["Date"].dt.year).size().to_dict()
 
 # Year markers - vertical dashed lines at Jan 1 of each year
-for year in [2023, 2024, 2025, 2026]:
+for year in [2025, 2026]:
     year_date = mdates.date2num(pd.Timestamp(f"{year}-01-01"))
     ax.axvline(x=year_date, color="#58a6ff", linewidth=1.5, linestyle=":", alpha=0.4, zorder=1)
     count = models_per_year.get(year, 0)
     ax.text(year_date, y_max - 0.2, str(year),
             fontsize=32, fontweight="bold", color="#58a6ff", alpha=0.5,
             ha="center", va="top")
-    ax.annotate(f"({count} models)", (year_date, y_max - 0.2),
+    ax.annotate(f"({count} model)", (year_date, y_max - 0.2),
                 xytext=(70, -2), textcoords="offset points",
                 fontsize=26, fontweight="normal", color="#58a6ff", alpha=0.38,
                 ha="left", va="top")
@@ -954,7 +962,7 @@ ax.tick_params(axis="x", colors="#8b949e", length=6, pad=15)
 ax.tick_params(axis="x", which="minor", length=4, color="#8b949e", width=0.8)
 
 # Title
-plt.title("AI Model Release Timeline",
+plt.title("Son İki Yıl · Yapay Zeka Modelleri",
           fontsize=58, pad=80, color="white", fontweight="bold")
 
 # Top-left corner icon: speech bubble (chat/LLM symbol)
@@ -992,12 +1000,12 @@ for i, dot_x in enumerate([-0.008, 0.000, 0.008]):
 # Alt baslik sayilari HESAPLANIR. Elle yazilinca bayatliyordu:
 # TR "15 Sirket" / EN "17 Companies" diyordu, dogrusu 16; tarih araligi
 # da "Kas 2022 - Haz 2026"de kalmisti. Iki dosya birbiriyle de tutmuyordu.
-_AY = {1:"Jan",2:"Feb",3:"Mar",4:"Apr",5:"May",6:"Jun",7:"Jul",8:"Aug",9:"Sep",10:"Oct",11:"Nov",12:"Dec"}
+_AY = {1:"Oca",2:"Şub",3:"Mar",4:"Nis",5:"May",6:"Haz",7:"Tem",8:"Ağu",9:"Eyl",10:"Eki",11:"Kas",12:"Ara"}
 _SIRKET = len({company_name[c] for c in df["Company"].unique()})
 _ILK = "%s %d" % (_AY[df["Date"].min().month], df["Date"].min().year)
 _SON = "%s %d" % (_AY[df["Date"].max().month], df["Date"].max().year)
 ax.text(0.5, 1.008,
-        f"{_SIRKET} Companies  |  {len(df)} Models  |  {_ILK} – {_SON}  |  ● Large = Milestone  |  ● Small = Update",
+        f"{_SIRKET} Şirket  |  {len(df)} Model  |  {_ILK} – {_SON}  |  ● Büyük = Dönüm Noktası  |  ● Küçük = Güncelleme",
         transform=ax.transAxes, ha="center", fontsize=28,
         color="#8b949e", fontstyle="italic")
 
@@ -1009,10 +1017,10 @@ legend_elements = [Line2D([0], [0], marker="o", color="w",
 legend_elements.append(Line2D([0], [0], marker="o", color="w",
                               markerfacecolor="#888", markersize=22,
                               markeredgecolor="white", markeredgewidth=2,
-                              label="Milestone", linewidth=0))
+                              label="Dönüm Noktası", linewidth=0))
 legend_elements.append(Line2D([0], [0], marker="o", color="w",
                               markerfacecolor="#888", markersize=13,
-                              label="Update", linewidth=0))
+                              label="Güncelleme", linewidth=0))
 
 legend = ax.legend(handles=legend_elements, loc="upper center",
                    fontsize=20, framealpha=0.4, facecolor="#161b22",
@@ -1027,7 +1035,7 @@ sig_box = mpatches.FancyBboxPatch(
     linewidth=1.5, alpha=0.85, transform=ax.transAxes, zorder=25)
 sig_box.set_clip_on(False)
 ax.add_patch(sig_box)
-ax.text(0.905, 1.030, "Prof. Dr. Oguz Ergin",
+ax.text(0.905, 1.030, "Prof. Dr. Oğuz Ergin",
         transform=ax.transAxes, ha="center", va="center",
         fontsize=36, fontfamily="Segoe Script", color="#58a6ff",
         alpha=0.9, zorder=26).set_clip_on(False)
@@ -1087,13 +1095,11 @@ for _tur in range(8):
 plt.margins(y=0.01, x=0.06)
 ax.set_ylim(y_min, y_max)
 plt.tight_layout(rect=[0.11, 0.03, 0.98, 0.98])
-
-output_dir = "G:/My Drive/Claude Code/YZ Model Zaman Cizelgesi"
-plt.savefig(f"{output_dir}/ai_timeline_final.png", dpi=150, bbox_inches="tight",
+plt.savefig("G:/My Drive/Claude Code/YZ Model Zaman Cizelgesi/ai_timeline_2yil_tr.png", dpi=150, bbox_inches="tight",
             pad_inches=1.0, facecolor="#0d1117", edgecolor="none")
-print("Main PNG saved!")
+print("Türkçe grafik kaydedildi!")
 
-# LinkedIn version (cropped/resized for LinkedIn post format)
-plt.savefig(f"{output_dir}/ai_timeline_final_linkedin.png", dpi=100, bbox_inches="tight",
+# LinkedIn sürümü (aynı figür, düşük dpi)
+plt.savefig("G:/My Drive/Claude Code/YZ Model Zaman Cizelgesi/ai_timeline_2yil_tr_linkedin.png", dpi=100, bbox_inches="tight",
             pad_inches=0.5, facecolor="#0d1117", edgecolor="none")
-print("LinkedIn PNG saved!")
+print("LinkedIn PNG kaydedildi!")
