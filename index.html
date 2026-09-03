@@ -8,7 +8,7 @@
 <link rel="canonical" href="https://yapayzeka.oguzergin.net/">
 <meta property="og:title" content="Yapay Zekâ Çizelgeleri">
 <meta property="og:description" content="Dokuz çizelge: dil modelleri, görsel ve video üretme araçları, yongalar, karşılaştırma tablosu ve başarımı tek sayıyla gösteren grafikler.">
-<meta property="og:image" content="https://yapayzeka.oguzergin.net/sosyal-kart.png?v=20260904f">
+<meta property="og:image" content="https://yapayzeka.oguzergin.net/sosyal-kart.png?v=20260904g">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:url" content="https://yapayzeka.oguzergin.net/">
@@ -16,7 +16,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Yapay Zekâ Çizelgeleri">
 <meta name="twitter:description" content="Dokuz çizelge: dil modelleri, görsel ve video üretme araçları, yongalar, karşılaştırma tablosu ve başarımı tek sayıyla gösteren grafikler.">
-<meta name="twitter:image" content="https://yapayzeka.oguzergin.net/sosyal-kart.png?v=20260904f">
+<meta name="twitter:image" content="https://yapayzeka.oguzergin.net/sosyal-kart.png?v=20260904g">
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-D3K0RB95JJ"></script>
 <script>
@@ -190,6 +190,21 @@
     .hero-stat b { font-size: 1.45rem; }
   }
 
+  /* ---- LLM aralik secici ---- */
+  .range-bar {
+    display: flex; gap: 6px; justify-content: center;
+    margin: 0 0 14px; flex-wrap: wrap;
+  }
+  .range-bar button {
+    background: transparent; border: 1px solid var(--border);
+    padding: 7px 18px; font-size: 0.9rem; font-weight: 600;
+    color: var(--muted); cursor: pointer; border-radius: 18px;
+    transition: all 0.2s;
+  }
+  .range-bar button.active {
+    background: var(--primary); color: #fff; border-color: var(--primary);
+  }
+  .range-bar button:hover:not(.active) { background: #f0f0f0; color: var(--text); }
   .category-tabs {
     display: flex; justify-content: center; flex-wrap: wrap; gap: 6px;
     background: white; padding: 14px 16px;
@@ -440,10 +455,15 @@
     <h2 class="section-title"><span class="num">1</span><span id="sectitle-llm"></span></h2>
     <p id="desc-llm" class="desc"></p>
     <div class="timeline-container">
-      <img id="img-llm" src="ai_timeline_final_tr.png?v=20260904f" alt="" loading="eager">
+      <div class="range-bar">
+        <button id="rng-2y" class="active" onclick="setLlmRange('2y')"></button>
+        <button id="rng-all" onclick="setLlmRange('all')"></button>
+      </div>
+      <img id="img-llm" src="ai_timeline_2yil_tr.png?v=20260904g" alt="" loading="eager">
       <div class="download-bar">
         <a id="dl-llm-main" href="ai_timeline_final_tr.png" download>Yüksek Çözünürlük (PNG)</a>
         <a id="dl-llm-linkedin" href="ai_timeline_final_tr_linkedin.png" download>LinkedIn Biçimi</a>
+        <a id="dl-llm-other" href="ai_timeline_final_tr.png" download></a>
       </div>
     </div>
   </div>
@@ -453,7 +473,7 @@
     <h2 class="section-title"><span class="num">2</span><span id="sectitle-image"></span></h2>
     <p id="desc-image" class="desc"></p>
     <div class="timeline-container">
-      <img id="img-image" src="ai_image_gen_timeline_tr.png?v=20260904f" alt="" loading="lazy">
+      <img id="img-image" src="ai_image_gen_timeline_tr.png?v=20260904g" alt="" loading="lazy">
       <div class="download-bar">
         <a id="dl-image-main" href="ai_image_gen_timeline_tr.png" download>Yüksek Çözünürlük (PNG)</a>
       </div>
@@ -465,7 +485,7 @@
     <h2 class="section-title"><span class="num">3</span><span id="sectitle-video"></span></h2>
     <p id="desc-video" class="desc"></p>
     <div class="timeline-container">
-      <img id="img-video" src="ai_video_gen_timeline_tr.png?v=20260904f" alt="" loading="lazy">
+      <img id="img-video" src="ai_video_gen_timeline_tr.png?v=20260904g" alt="" loading="lazy">
       <div class="download-bar">
         <a id="dl-video-main" href="ai_video_gen_timeline_tr.png" download>Yüksek Çözünürlük (PNG)</a>
       </div>
@@ -477,7 +497,7 @@
     <h2 class="section-title"><span class="num">4</span><span id="sectitle-hardware"></span></h2>
     <p id="desc-hardware" class="desc"></p>
     <div class="timeline-container">
-      <img id="img-hardware" src="ai_hardware_timeline_tr.png?v=20260904f" alt="" loading="lazy">
+      <img id="img-hardware" src="ai_hardware_timeline_tr.png?v=20260904g" alt="" loading="lazy">
       <div class="download-bar">
         <a id="dl-hardware-main" href="ai_hardware_timeline_tr.png" download>Yüksek Çözünürlük (PNG)</a>
       </div>
@@ -578,7 +598,7 @@
 </footer>
 
 <script>
-  const ASSET_V = "20260904f";
+  const ASSET_V = "20260904g";
   // Karsilastirma tablosu artik sayfaya gomulu (shadow DOM); iframe/fitCmp yok.
   const labels = {
     tr: {
@@ -626,6 +646,13 @@
       alt_image: "Yapay Zeka Görsel Üretme Araçları Zaman Çizelgesi",
       alt_video: "Yapay Zeka Video Üretme Araçları Zaman Çizelgesi",
       alt_vending: "Vending-Bench 2 Grafiği",
+      rng_2y: "Son 2 yıl",
+      rng_all: "Tüm zaman",
+      dl_other_2y: "Tüm zaman · PNG",
+      dl_other_all: "Son 2 yıl · PNG",
+      img_llm_2y: "ai_timeline_2yil_tr.png",
+      img_llm_2y_linkedin: "ai_timeline_2yil_tr_linkedin.png",
+      desc_llm_2y: "<strong>117 büyük dil modeli</strong>, çıkış tarihine göre sıralı. Ocak 2025'ten günümüze; modellerin üçte ikisi bu iki yıla sığıyor, o yüzden burada daha rahat okunuyor.",
       img_llm: "ai_timeline_final_tr.png",
       img_llm_linkedin: "ai_timeline_final_tr_linkedin.png",
       img_image: "ai_image_gen_timeline_tr.png",
@@ -689,6 +716,13 @@
       alt_image: "AI Image Generation Tools Timeline",
       alt_video: "AI Video Generation Tools Timeline",
       alt_vending: "Vending-Bench 2 Chart",
+      rng_2y: "Last 2 years",
+      rng_all: "All time",
+      dl_other_2y: "All time · PNG",
+      dl_other_all: "Last 2 years · PNG",
+      img_llm_2y: "ai_timeline_2yil.png",
+      img_llm_2y_linkedin: "ai_timeline_2yil_linkedin.png",
+      desc_llm_2y: "<strong>117 large language models</strong>, sorted by release date. From January 2025 to today; two thirds of all tracked models fall in these two years, which is why they read more clearly here.",
       img_llm: "ai_timeline_final.png",
       img_llm_linkedin: "ai_timeline_final_linkedin.png",
       img_image: "ai_image_gen_timeline.png",
@@ -709,8 +743,13 @@
     }
   };
 
-  const state = { lang: "tr", category: "llm" };
+  const state = { lang: "tr", category: "llm" , llmRange: "2y"};
   var loadedCompare = false, loadedVending = false, loadedIntel = false, loadedImgElo = false, loadedVidElo = false;
+
+  function setLlmRange(r) {
+    state.llmRange = r;
+    applyLang();
+  }
 
   function applyLang() {
     const L = labels[state.lang];
@@ -772,7 +811,6 @@
     document.getElementById("sectitle-vending").textContent = L.cat_vending;
 
     // Descriptions
-    document.getElementById("desc-llm").innerHTML = L.desc_llm;
     document.getElementById("desc-image").innerHTML = L.desc_image;
     document.getElementById("desc-video").innerHTML = L.desc_video;
     document.getElementById("desc-hardware").innerHTML = L.desc_hardware;
@@ -780,11 +818,23 @@
     document.getElementById("desc-vending").innerHTML = L.desc_vending;
 
     // LLM images
-    document.getElementById("img-llm").src = L.img_llm + "?v=" + ASSET_V;
+    // LLM aralik secici: ontanimli "son 2 yil" (modellerin ucte ikisi orada)
+    var _2y = state.llmRange !== "all";
+    var _im = _2y ? L.img_llm_2y : L.img_llm;
+    var _li = _2y ? L.img_llm_2y_linkedin : L.img_llm_linkedin;
+    var _ot = _2y ? L.img_llm : L.img_llm_2y;
+    document.getElementById("rng-2y").textContent = L.rng_2y;
+    document.getElementById("rng-all").textContent = L.rng_all;
+    document.getElementById("rng-2y").classList.toggle("active", _2y);
+    document.getElementById("rng-all").classList.toggle("active", !_2y);
+    document.getElementById("desc-llm").innerHTML = _2y ? L.desc_llm_2y : L.desc_llm;
+    document.getElementById("dl-llm-other").href = _ot + "?v=" + ASSET_V;
+    document.getElementById("dl-llm-other").textContent = _2y ? L.dl_other_2y : L.dl_other_all;
+    document.getElementById("img-llm").src = _im + "?v=" + ASSET_V;
     document.getElementById("img-llm").alt = L.alt_llm;
-    document.getElementById("dl-llm-main").href = L.img_llm + "?v=" + ASSET_V;
+    document.getElementById("dl-llm-main").href = _im + "?v=" + ASSET_V;
     document.getElementById("dl-llm-main").textContent = L.dl_main;
-    document.getElementById("dl-llm-linkedin").href = L.img_llm_linkedin + "?v=" + ASSET_V;
+    document.getElementById("dl-llm-linkedin").href = _li + "?v=" + ASSET_V;
     document.getElementById("dl-llm-linkedin").textContent = L.dl_linkedin;
 
     // Image Gen
