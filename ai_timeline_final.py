@@ -642,6 +642,7 @@ manual_overrides = {
 
 # Company-specific overrides for labels that clash across companies
 company_overrides = {
+    ("Anthropic", "Opus 4.6"): (0, 55),
     ("Qwen", "3.8-Flash"): (0, -55),
     ("Google", "3.6 Flash"): (0, 55),
     ("Google", "3.8 Flash"): (0, 55),
@@ -688,7 +689,7 @@ company_overrides = {
     ("Anthropic", "Opus 4"):    (0, 55),
     ("Anthropic", "Sonnet 4"):  (0, -55),
     ("Anthropic", "Sonnet 4.6"): (0, -55),
-    ("Anthropic", "Opus 4.7"): (-55, 55),
+    ("Anthropic", "Opus 4.7"): (-40, 55),
     ("Anthropic", "Opus 4.8"):   (-78, -55),
     ("Anthropic", "Fable 5"): (0, 55),
         ("Anthropic", "Sonnet 5"): (0, -55),
