@@ -46,11 +46,12 @@ data = [
     ("Gemini 2.5 Flash", "Google", "2025-05-20", False),
     ("Gemini 3 Pro", "Google", "2025-11-18", True),
     ("Gemini 3 Flash", "Google", "2025-12-17", False),
-    ("Gemini 3 Deep Think", "Google", "2026-02-12", True),
-    ("Gemini 3.1 Pro", "Google", "2026-02-19", False),
+    ("Gemini 3 Deep Think", "Google", "2026-02-12", False),
+    ("Gemini 3.1 Pro", "Google", "2026-02-19", True),
     ("Gemini 3.5 Flash", "Google", "2026-05-19", False),
     ("Gemini 3.6 Flash", "Google", "2026-07-21", False),
     ("Gemini 3.7 Flash", "Google", "2026-08-13", True),
+    ("Gemini 3.8 Flash", "Google", "2026-09-02", True),
 
     # Anthropic
     ("Claude 1", "Anthropic", "2023-03-14", True),
@@ -273,6 +274,7 @@ short_labels = {
     "Gemini 3.6 Flash":     "3.6 Flash",
     "Gemini 3.7 Flash":     "3.7 Flash",
 
+    "Gemini 3.8 Flash":     "3.8 Flash",
     # Anthropic Claude
     "Claude 1":             "1",
     "Claude 2":             "2",
@@ -643,6 +645,13 @@ manual_overrides = {
 # Company-specific overrides for labels that clash across companies
 # (e.g. "2" is used by Meta/Llama, Anthropic/Claude, xAI/Grok, Microsoft/Phi)
 company_overrides = {
+    ("Google", "3.8 Flash"): (45, 55),
+    ("Google", "3.7 Flash"): (-45, 55),
+    ("Meta Muse", "Spark 1.3"): (0, 55),
+    ("Meta Muse", "Spark 1.2"): (0, -38),
+    ("Meta Muse", "Spark 1.1"): (0, 55),
+    ("xAI", "4.6"): (0, 55),
+    ("xAI", "4.5"): (0, 55),
     ("OpenAI", "4"):        (0, -55),
     ("OpenAI", "4.5"):      (0, 55),
     ("OpenAI", "o3"):       (0, 55),
@@ -683,8 +692,9 @@ company_overrides = {
     ("Anthropic", "Opus 4.7"):   (0, 55),
     ("Anthropic", "Opus 4.8"):   (-78, -55),
     ("Anthropic", "Fable 5"):    (45, -55),
-    ("Anthropic", "Sonnet 5"):   (-25, 55),
-    ("Anthropic", "Opus 5"):     (55, 55),
+        ("Anthropic", "Sonnet 5"):   (-25, 55),
+("Anthropic", "Opus 5"): (55, 55),
+    ("Anthropic", "Fable 5.1"): (0, -55),
     # Mistral - all labels equal distance from line (no multi-level stacking)
     ("Mistral", "Medium 3"):    (-55, -55),
     ("Mistral", "Devstral"):    (55, -55),
@@ -824,6 +834,10 @@ for company in company_order:
         if sname_prev in manual_overrides and manual_overrides[sname_prev][0] != 0:
             continue
         gap_days = abs(dates_num[i] - dates_num[i-1]) / 86400
+        # Zit taraftaki iki etiket zaten dikey ayrilmis; yatay itmek gereksiz
+        # egik cizgi uretir. Yatay itme yalnizca AYNI TARAFTA.
+        if (offsets_y[i] > 0) != (offsets_y[i-1] > 0):
+            continue
         if gap_days < 2:
             offsets_x[i-1] = -80
             offsets_x[i] = 80
@@ -1014,6 +1028,58 @@ ax.text(0.905, 1.030, "Prof. Dr. Oğuz Ergin",
         transform=ax.transAxes, ha="center", va="center",
         fontsize=36, fontfamily="Segoe Script", color="#58a6ff",
         alpha=0.9, zorder=26).set_clip_on(False)
+
+
+# ============================================================
+# ETIKET YERLESIMI - KISITLI cozucu
+# KURAL: etiket noktanin tam ustunde/altinda durur, cizgi DIK iner-cikar.
+# Elle ayarlanmis yerlesim korunur; SADECE gercekten cakisan etiketler
+# oynatilir, otekiler sabit engel sayilir. Once dik konum denenir, sonra
+# artan yatay adimlar.
+# NEDEN DIKEY KAT YOK: bu cizelgede satirlar birbirine yakin; ikinci kata
+# cikan etiket komsu sirketin satirina giriyor (olculdu: cakisma 10 -> 23).
+# Sikisik satirlarda (2026 ortasi Anthropic, Gemini Flash dizisi) yatay
+# ayirma kacinilmaz; kural bunu "cok acil durum" istisnasi sayiyor.
+# ============================================================
+fig.canvas.draw()
+_r = fig.canvas.get_renderer()
+_P2X = fig.dpi / 72.0
+from matplotlib.transforms import Bbox
+
+_ann = []
+for _t in ax.texts:
+    _p = getattr(_t, "xyann", None)
+    if not isinstance(_p, tuple) or abs(_p[1]) < 20: continue
+    _ann.append([_t, list(_p), _t.get_window_extent(_r)])
+
+def _kesisir(_a, _b):
+    return (min(_a.x1, _b.x1) - max(_a.x0, _b.x0)) > 1 and (min(_a.y1, _b.y1) - max(_a.y0, _b.y0)) > 1
+def _otele(_bb, _dx, _dy):
+    return Bbox.from_extents(_bb.x0 + _dx*_P2X, _bb.y0 + _dy*_P2X,
+                             _bb.x1 + _dx*_P2X, _bb.y1 + _dy*_P2X)
+
+_YATAY = [0, -26, 26, -52, 52, -80, 80, -110, 110, -145, 145,
+          -180, 180, -215, 215, -250, 250]
+for _tur in range(8):
+    _kutular = [e[2] for e in _ann]
+    _sorun = set()
+    for _i in range(len(_ann)):
+        for _j in range(_i+1, len(_ann)):
+            if _kesisir(_kutular[_i], _kutular[_j]): _sorun.add(_i); _sorun.add(_j)
+    if not _sorun: break
+    for _i in sorted(_sorun):
+        _t, _p, _bb = _ann[_i]
+        _digerleri = [_ann[_k][2] for _k in range(len(_ann)) if _k != _i]
+        _en, _encez, _enbb = None, None, None
+        for _v in _YATAY:
+            _b = _otele(_bb, _v - _p[0], 0)
+            _cez = sum(1 for _o in _digerleri if _kesisir(_b, _o)) * 1000 + abs(_v) * 2
+            if _encez is None or _cez < _encez: _en, _encez, _enbb = _v, _cez, _b
+            if _cez == abs(_v) * 2 and _v == 0: break
+        _t.set_position((_en, _p[1]))
+        _ann[_i][1][0] = _en
+        _ann[_i][2] = _enbb
+
 
 plt.margins(y=0.01, x=0.06)
 ax.set_ylim(y_min, y_max)
