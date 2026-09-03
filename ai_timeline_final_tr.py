@@ -50,7 +50,7 @@ data = [
     ("Gemini 3.1 Pro", "Google", "2026-02-19", True),
     ("Gemini 3.5 Flash", "Google", "2026-05-19", False),
     ("Gemini 3.6 Flash", "Google", "2026-07-21", False),
-    ("Gemini 3.7 Flash", "Google", "2026-08-13", True),
+    ("Gemini 3.7 Flash", "Google", "2026-08-13", False),
     ("Gemini 3.8 Flash", "Google", "2026-09-02", True),
 
     # Anthropic
@@ -70,7 +70,7 @@ data = [
     ("Claude Opus 4.7", "Anthropic", "2026-04-16", False),
     ("Claude Opus 4.8", "Anthropic", "2026-05-28", False),
     ("Claude Fable 5", "Anthropic", "2026-06-09", True),
-    ("Claude Sonnet 5", "Anthropic", "2026-06-30", True),
+    ("Claude Sonnet 5", "Anthropic", "2026-06-30", False),
     ("Claude Opus 5", "Anthropic", "2026-07-24", True),
     ("Claude Fable 5.1", "Anthropic", "2026-09-01", True),
 
@@ -145,7 +145,6 @@ data = [
     ("Qwen 3.6", "Qwen", "2026-03-31", False),
     ("Qwen3.7-Max", "Qwen", "2026-05-20", True),
     ("Qwen3.8-Max", "Qwen", "2026-08-03", True),
-    ("Qwen3.8-A95B", "Qwen", "2026-08-12", False),
     ("Qwen3.8-Flash-Next", "Qwen", "2026-08-26", False),
 
     # DeepSeek
@@ -357,7 +356,6 @@ short_labels = {
     "Qwen 3.6":         "3.6",
     "Qwen3.7-Max":      "3.7-Max",
     "Qwen3.8-Max":      "3.8-Max",
-    "Qwen3.8-A95B":     "3.8-A95B",
     "Qwen3.8-Flash-Next": "3.8-Flash",
 
     # DeepSeek
@@ -645,11 +643,13 @@ manual_overrides = {
 # Company-specific overrides for labels that clash across companies
 # (e.g. "2" is used by Meta/Llama, Anthropic/Claude, xAI/Grok, Microsoft/Phi)
 company_overrides = {
-    ("Google", "3.8 Flash"): (45, 55),
-    ("Google", "3.7 Flash"): (-45, 55),
+    ("Qwen", "3.8-Flash"): (0, -55),
+    ("Google", "3.6 Flash"): (0, 55),
+    ("Google", "3.8 Flash"): (0, 55),
+    ("Google", "3.7 Flash"): (0, -55),
     ("Meta Muse", "Spark 1.3"): (0, 55),
     ("Meta Muse", "Spark 1.2"): (0, -38),
-    ("Meta Muse", "Spark 1.1"): (0, 55),
+    ("Meta Muse", "Spark 1.1"): (-60, 55),
     ("xAI", "4.6"): (0, 55),
     ("xAI", "4.5"): (0, 55),
     ("OpenAI", "4"):        (0, -55),
@@ -682,7 +682,7 @@ company_overrides = {
     # Google - Gemini 3.1 Pro tam dot üstüne otursun, gap adjustment nudge atlansın
     ("Google", "3.1 Pro"):  (0, 55),
     ("Google", "3 Deep Think"): (0, -55),
-    ("Google", "3.5 Flash"):    (0, 55),
+    ("Google", "3.5 Flash"): (0, -55),
     # Z.ai - GLM-4 uses "4" which clashes with other companies
     ("Z.ai", "4"):          (0, 55),
     # Anthropic - Opus 4 and Sonnet 4 same day, aligned with dots
@@ -691,8 +691,8 @@ company_overrides = {
     ("Anthropic", "Sonnet 4.6"): (0, -55),
     ("Anthropic", "Opus 4.7"):   (0, 55),
     ("Anthropic", "Opus 4.8"):   (-78, -55),
-    ("Anthropic", "Fable 5"):    (45, -55),
-        ("Anthropic", "Sonnet 5"):   (-25, 55),
+    ("Anthropic", "Fable 5"): (0, 55),
+        ("Anthropic", "Sonnet 5"): (0, -55),
 ("Anthropic", "Opus 5"): (55, 55),
     ("Anthropic", "Fable 5.1"): (0, -55),
     # Mistral - all labels equal distance from line (no multi-level stacking)
