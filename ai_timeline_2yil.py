@@ -644,7 +644,7 @@ manual_overrides = {
 
 # Company-specific overrides for labels that clash across companies
 company_overrides = {
-    ("OpenAI", "4.1"): (-30, -55),
+    ("OpenAI", "4.1"): (-80, -55),
     ("Anthropic", "Opus 4.6"): (0, 55),
     ("Qwen", "3.8-Flash"): (0, -55),
     ("Google", "3.6 Flash"): (0, 55),
@@ -658,7 +658,7 @@ company_overrides = {
     ("OpenAI", "4"):        (0, -55),
     ("OpenAI", "4.5"):      (0, 55),
     ("OpenAI", "o3"):       (0, 55),
-    ("OpenAI", "o4-mini"): (30, -55),
+    ("OpenAI", "o4-mini"): (80, -55),
     ("OpenAI", "5.2"):      (0, 55),
     ("OpenAI", "5.3-Codex"): (0, -55),
     ("DeepSeek", "V3"):     (0, 55),
@@ -694,13 +694,13 @@ company_overrides = {
     ("Anthropic", "Sonnet 4.6"): (0, -55),
     ("Anthropic", "Opus 4.7"): (0, 55),
     ("Anthropic", "Opus 4.8"): (0, -55),
-    ("Anthropic", "Fable 5"): (-30, 55),
+    ("Anthropic", "Fable 5"): (0, 55),
         ("Anthropic", "Sonnet 5"): (0, -55),
-("Anthropic", "Opus 5"): (30, 55),
+("Anthropic", "Opus 5"): (0, 55),
     ("Anthropic", "Fable 5.1"): (0, -55),
     # Mistral - all labels equal distance from line (no multi-level stacking)
-    ("Mistral", "Medium 3"): (-30, -55),
-    ("Mistral", "Devstral"): (30, -55),
+    ("Mistral", "Medium 3"): (0, -55),
+    ("Mistral", "Devstral"): (0, -55),
     ("Mistral", "Pixtral Large"): (0, -55),
     ("Mistral", "Magistral"):   (0, 55),
     ("Mistral", "Small 4"):     (0, -55),
