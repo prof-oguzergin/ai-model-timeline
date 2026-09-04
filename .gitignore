@@ -1,4 +1,9 @@
-__pycache__/
-*.pyc
-.DS_Store
-Thumbs.db
+# yerel deneme ciktilari (yanlislikla yayimlanmasin)
+_*.png
+_*.json
+ai_timeline_vertical.*
+ai_timeline_*_reversed.*
+ai_timeline_microsoft_test.*
+*_karsilastirma.png
+*_karsilastirma.py
+llm_test.png
