@@ -41,6 +41,7 @@ leaderboard = [
     ("GLM-5.1",                      "Z.ai",      "2026-03-27",  5634.41),
     ("Gemini 3 Pro",                 "Google",    "2025-11-18",  5478.16),
     ("Gemini 3.5 Flash",             "Google",    "2026-05-19",  5396.42),
+    ("Claude Fable 5.1",             "Anthropic", "2026-09-01",  5421.61),
     ("Qwen 3.6 Plus",                "Qwen",      "2026-03-31",  5114.87),
     ("Claude Opus 4.5",              "Anthropic", "2025-11-24",  4967.06),
     ("Grok 4.5",                     "xAI",       "2026-07-08",  3887.43),
@@ -131,6 +132,7 @@ tarih_kaynak = {
     "Claude Opus 4.8":             "Andon Labs vb2 2026-08-11 (temel surum; High/Max ayri satir)",
     "Grok 4.6":                    "Andon Labs vb2 2026-08-18; tarih x.ai duyurusu",
     "GLM-5.3":                     "Andon Labs vb2 2026-08-18; tarih Z.ai duyurusu (14 Agu)",
+    "Claude Fable 5.1":            "Andon Labs vb2 2026-09-04; tarih Anthropic duyurusu (1 Eyl)",
     "GPT-5 mini":                  "GPT-5 tarihi kullanildi",
 }
 
@@ -210,6 +212,7 @@ def get_offset(i, v):
 
 # Ozel offsetler (gosel cakisma onleme)
 manual_offsets = {
+    "Claude Fable 5.1":           (   6,   7),
     "Grok 4.6":                   ( -66,  6),
     "GLM-5.3":                    (   5,  6),
     "GPT-5.6 Terra":              (-78,   6),
@@ -355,7 +358,7 @@ fig.text(
 )
 fig.text(
     0.5, 0.895,
-    "57 Model  ·  Kaynak: andonlabs.com  ·  Başlangıç: $500 (1 yıllık simülasyon sonucu bakiye $-31'den $11.182'ye)",
+    "58 Model  ·  Kaynak: andonlabs.com  ·  Başlangıç: $500 (1 yıllık simülasyon sonucu bakiye $-31'den $11.182'ye)",
     ha="center", va="center", fontsize=7.5, color="#8090a8"
 )
 

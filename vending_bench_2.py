@@ -41,6 +41,7 @@ leaderboard = [
     ("GLM-5.1",                      "Z.ai",      "2026-03-27",  5634.41),
     ("Gemini 3 Pro",                 "Google",    "2025-11-18",  5478.16),
     ("Gemini 3.5 Flash",             "Google",    "2026-05-19",  5396.42),
+    ("Claude Fable 5.1",             "Anthropic", "2026-09-01",  5421.61),
     ("Qwen 3.6 Plus",                "Qwen",      "2026-03-31",  5114.87),
     ("Claude Opus 4.5",              "Anthropic", "2025-11-24",  4967.06),
     ("Grok 4.5",                     "xAI",       "2026-07-08",  3887.43),
@@ -131,6 +132,7 @@ date_sources = {
     "Claude Opus 4.8":             "Andon Labs vb2 2026-08-11 (base variant; High/Max separate rows)",
     "Grok 4.6":                    "Andon Labs vb2 2026-08-18; date x.ai announcement",
     "GLM-5.3":                     "Andon Labs vb2 2026-08-18; date Z.ai announcement (Aug 14)",
+    "Claude Fable 5.1":            "Andon Labs vb2 2026-09-04; date Anthropic announcement (Sep 1)",
     "GPT-5 mini":                  "GPT-5 date used (2025-08-07)",
 }
 
@@ -192,6 +194,7 @@ for i, (d, v, c, n) in enumerate(zip(dates, values, companies, names)):
 # LABELS - smart offsets
 # ============================================================
 manual_offsets = {
+    "Claude Fable 5.1":           (   6,   7),
     "Grok 4.6":                   ( -66,  6),
     "GLM-5.3":                    (   5,  6),
     "GPT-5.6 Terra":              (-78,   6),
