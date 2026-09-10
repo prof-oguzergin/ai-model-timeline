@@ -157,6 +157,7 @@ data = [
     ("DeepSeek-V3.2", "DeepSeek", "2025-12-01", False),
     ("DeepSeek-V4", "DeepSeek", "2026-04-24", True),
     ("DeepSeek-V4 Flash", "DeepSeek", "2026-07-31", False),
+    ("DeepSeek-V4.1 Flash", "DeepSeek", "2026-09-10", True),
 
     # Z.ai (Zhipu AI)
     ("ChatGLM", "Z.ai", "2023-03-14", True),
@@ -370,6 +371,7 @@ short_labels = {
     "DeepSeek-V3.2":    "V3.2",
     "DeepSeek-V4":      "V4",
     "DeepSeek-V4 Flash": "V4 Flash",
+    "DeepSeek-V4.1 Flash": "V4.1 Flash",
 
     # Z.ai GLM
     "ChatGLM":          "ChatGLM",
