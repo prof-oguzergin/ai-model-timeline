@@ -130,7 +130,9 @@ data = [
     ("Magistral", "Mistral", "2025-06-10", True),
     ("Mistral Large 3", "Mistral", "2025-12-02", True),
     ("Mistral Small 4", "Mistral", "2026-03-16", False),
+    ("Leanstral", "Mistral", "2026-03-16", False),
     ("Mistral Medium 3.5", "Mistral", "2026-04-29", False),
+    ("Leanstral 1.5", "Mistral", "2026-06-30", False),
 
     # Qwen (Alibaba)
     ("Qwen 1", "Qwen", "2023-09-28", True),
@@ -345,6 +347,8 @@ short_labels = {
     "Magistral":        "Magistral",
     "Mistral Large 3":  "Large 3",
     "Mistral Small 4":  "Small 4",
+    "Leanstral":        "Leanstral",
+    "Leanstral 1.5":    "Leanstral 1.5",
 
     # Qwen
     "Qwen 1":           "1",
@@ -705,6 +709,9 @@ company_overrides = {
     ("Mistral", "Devstral"): (0, -55),
     ("Mistral", "Pixtral Large"): (0, -55),
     ("Mistral", "Magistral"):   (0, 55),
+    # Small 4 ile Leanstral AYNI GUN (16 Mar 2026). Ikisi de dik kalsin diye
+    # Small 4 altta (varsayilan), Leanstral uste; yatay kaydirma yok.
+    ("Mistral", "Leanstral"):   (0, 55),
     ("Mistral", "Small 4"):     (0, -55),
     ("Mistral", "Medium 3.5"):  (0, 55),
     # Cohere - R and R+ aligned with dots
