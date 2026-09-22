@@ -692,6 +692,11 @@ company_overrides = {
     ("OpenAI", "5.4"):      (0, 55),
     ("OpenAI", "5.5"):      (0, 55),
     ("OpenAI", "6 Sol"):    (0, -55),
+    # MiMo: V2-Pro (18 Mar) ile V2.5-Pro (22 Nis) ikisi de altta kalinca
+    # cozucu birini yana, otekini ikinci kata (-121) itiyordu. Ust/alt
+    # bolunerek ikisi de DIK ve standart +-55 uzaklikta tutuldu.
+    ("Xiaomi", "V2-Pro"):   (0, -55),
+    ("Xiaomi", "V2.5-Pro"): (0, 55),
     ("Anthropic", "2"):     (0, 55),
     ("xAI", "2"):           (0, 55),
     ("Microsoft", "2"):     (0, 55),
@@ -913,31 +918,45 @@ ax.set_yticklabels([""] * len(labels_y))
 date_min = df["Date"].min()
 x_label_pos = date_min - pd.Timedelta(days=30)
 
+# Sol etiket blogu: capa EKSENIN SOL KENARI, konumlar NOKTA cinsinden.
+# Boylece blok eksenin gun olceginden bagimsiz; tam cizelge ile iki yillik
+# surumde birebir ayni goruntu cikiyor. Onceden gun cinsindendi ve ikisinde
+# farkli kayiyordu; ayrica adlar saga dayali, bayrak baska merkezdeydi.
+SOL_MERKEZ = -152   # seri adi / sirket adi / bayrak ORTAK merkezi
+SOL_ULKE = -196     # ulke adinin sag kenari (bayragin solunda 8 pt boslukla)
+
+
+def _sol_etiket(metin, y_veri, dx_pt, **kw):
+    return ax.annotate(metin, xy=(0, y_veri),
+                       xycoords=("axes fraction", "data"),
+                       xytext=(dx_pt, 0), textcoords="offset points",
+                       annotation_clip=False, **kw)
+
+
 for y_pos, company in labels_y:
-    # Model series name - top, big, bold, colored
     sname = series_name[company]
     display_top = sname if sname else company_name[company]
-    ax.text(x_label_pos, y_pos + 0.7, display_top,
-            fontsize=36, fontweight="bold", color=colors[company],
-            ha="right", va="center")
-    # Company name - middle, smaller, white/gray
+    # Seri adi - ustte, buyuk, kalin, renkli; bayragin USTUNDE ORTALI
+    _sol_etiket(display_top, y_pos + 0.7, SOL_MERKEZ,
+                fontsize=36, fontweight="bold", color=colors[company],
+                ha="center", va="center")
+    # Sirket adi - ortada, kucuk, gri; ayni merkezde
     if sname:
-        ax.text(x_label_pos, y_pos + 0.05, company_name[company],
-                fontsize=26, fontweight="normal", color="#8b949e",
-                ha="right", va="center")
-    # Country name - below, shifted left to make room for flag
+        _sol_etiket(company_name[company], y_pos + 0.05, SOL_MERKEZ,
+                    fontsize=26, fontweight="normal", color="#8b949e",
+                    ha="center", va="center")
+    # Ulke adi - bayragin hemen solunda
     country = country_text[company]
-    flag_x_offset = date_min - pd.Timedelta(days=65)
-    ax.text(mdates.date2num(flag_x_offset), y_pos - 0.65, country,
-            fontsize=24, fontweight="normal", color="#8b949e",
-            ha="right", va="center", fontstyle="italic")
+    _sol_etiket(country, y_pos - 0.65, SOL_ULKE,
+                fontsize=24, fontweight="normal", color="#8b949e",
+                ha="right", va="center", fontstyle="italic")
 
-    # Place real flag image to the right of country text
-    flag_path = flag_images[country]
-    flag_img = plt.imread(flag_path)
-    imagebox = OffsetImage(flag_img, zoom=0.40)
-    flag_date = date_min - pd.Timedelta(days=45)
-    ab = AnnotationBbox(imagebox, (mdates.date2num(flag_date), y_pos - 0.65),
+    # Bayrak - adlarla ayni merkezde
+    flag_img = plt.imread(flag_images[country])
+    ab = AnnotationBbox(OffsetImage(flag_img, zoom=0.40),
+                        (0, y_pos - 0.65),
+                        xycoords=("axes fraction", "data"),
+                        xybox=(SOL_MERKEZ, 0), boxcoords="offset points",
                         frameon=False, zorder=10,
                         clip_on=False, annotation_clip=False)
     ax.add_artist(ab)

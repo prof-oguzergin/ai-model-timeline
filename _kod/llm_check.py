@@ -18,6 +18,10 @@ for _t in ax.texts:
     try: _bb = _t.get_window_extent(_r)
     except Exception: continue
     if _bb.width < 2 or _bb.height < 2: continue
+    # Sol etiket blogu (sirket adi / ulke / bayrak) cizim alaninin
+    # DISINDA ve kendi nokta kaymasi var; model etiketi degil, sayilmaz.
+    # Sayilinca "egik" sayisi 24 -> 82 gorunuyordu.
+    if _bb.x1 <= ax.get_window_extent(_r).x0: continue
     _kutu.append((_t.get_text(), _bb, _p if isinstance(_p, tuple) else (0, 0)))
 _cak = []
 for _i in range(len(_kutu)):
