@@ -73,6 +73,7 @@ data = [
     ("Claude Sonnet 5", "Anthropic", "2026-06-30", False),
     ("Claude Opus 5", "Anthropic", "2026-07-24", True),
     ("Claude Fable 5.1", "Anthropic", "2026-09-01", True),
+    ("Claude Opus 5.5", "Anthropic", "2026-09-22", True),
 
     # xAI
     ("Grok-1", "xAI", "2023-11-04", True),
@@ -87,6 +88,7 @@ data = [
     ("Grok-4.3", "xAI", "2026-04-17", False),
     ("Grok-4.5", "xAI", "2026-07-08", True),
     ("Grok-4.6", "xAI", "2026-08-12", True),
+    ("Grok-4.7", "xAI", "2026-09-21", True),
 
     # Meta
     ("Llama 1", "Meta", "2023-02-24", True),
@@ -297,6 +299,7 @@ short_labels = {
     "Claude Opus 4.8":      "Opus 4.8",
     "Claude Fable 5":       "Fable 5",
     "Claude Fable 5.1":     "Fable 5.1",
+    "Claude Opus 5.5":      "Opus 5.5",
     "Claude Sonnet 5":      "Sonnet 5",
     "Claude Opus 5":        "Opus 5",
 
@@ -314,6 +317,7 @@ short_labels = {
     "Grok-4.5":         "4.5",
 
     "Grok-4.6":       "4.6",
+    "Grok-4.7":       "4.7",
     # Meta Llama
     "Llama 1":          "1",
     "Llama 2":          "2",

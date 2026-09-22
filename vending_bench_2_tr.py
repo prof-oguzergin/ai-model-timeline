@@ -16,6 +16,7 @@ import os
 
 # (Model adi, sirket, yayın tarihi, son bakiye $)
 leaderboard = [
+    ("GPT-6 Astra",                 "OpenAI",    "2026-09-03", 15514.70),
     ("Claude Opus 5",                "Anthropic", "2026-07-24", 11181.87),
     ("Claude Opus 4.7",              "Anthropic", "2026-04-16", 10936.76),
     ("Claude Opus 4.8 High",         "Anthropic", "2026-05-28",  5787.43),
@@ -80,6 +81,7 @@ leaderboard = [
 tarih_kaynak = {
     "Kimi K3":                     "Andon Labs vb2 2026-08-11: birinci-el Moonshot ucu (Fireworks 4907, 3. uc 3194)",
     "Grok 4.5":                    "Andon Labs vb2 runs 2026-07-25",
+    "GPT-6 Astra":                 "Andon Labs leaderboard 2026-09-22 (ilk 10 tablosu)",
     "Claude Opus 5":               "Andon Labs leaderboard 2026-07-25 dogrulandi",
     "GPT-5.6 Sol":                 "Andon Labs leaderboard 2026-07-25 dogrulandi",
     "Claude Opus 4.7":             "ai_timeline_final_tr.py",

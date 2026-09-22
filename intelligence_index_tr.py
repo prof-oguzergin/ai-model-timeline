@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # Yapay zeka basarimi tek sayiyla: Artificial Analysis Zeka Endeksi (Intelligence Index)
-# Veri kaynagi: artificialanalysis.ai  (472 model, 2022-11-30 - 2026-09-03)
+# Veri kaynagi: artificialanalysis.ai  (486 model, 2022-11-30 - 2026-09-22)
 # Bu dosya scratchpad/make_ii_scripts.py ile uretildi; veri asagida GOMULU.
 import matplotlib
 matplotlib.use('Agg')
@@ -944,7 +944,7 @@ DATA = [
 ],
 [
 "2025-03-17",
-7.4,
+7.1,
 "Mistral Small 3.1",
 "Mistral",
 1
@@ -986,14 +986,14 @@ DATA = [
 ],
 [
 "2025-04-05",
-6.5,
+8.1,
 "Llama 4 Scout",
 "Meta",
 1
 ],
 [
 "2025-04-05",
-9.3,
+10.0,
 "Llama 4 Maverick",
 "Meta",
 1
@@ -1070,20 +1070,6 @@ DATA = [
 ],
 [
 "2025-04-28",
-6.0,
-"Qwen3 8B",
-"Alibaba",
-1
-],
-[
-"2025-04-28",
-6.7,
-"Qwen3 14B",
-"Alibaba",
-1
-],
-[
-"2025-04-28",
 7.2,
 "Qwen3 4B",
 "Alibaba",
@@ -1092,7 +1078,7 @@ DATA = [
 [
 "2025-04-28",
 7.3,
-"Qwen3 32B",
+"Qwen3 8B",
 "Alibaba",
 1
 ],
@@ -1100,6 +1086,20 @@ DATA = [
 "2025-04-28",
 7.6,
 "Qwen3 30B A3B",
+"Alibaba",
+1
+],
+[
+"2025-04-28",
+8.2,
+"Qwen3 14B",
+"Alibaba",
+1
+],
+[
+"2025-04-28",
+8.6,
+"Qwen3 32B",
 "Alibaba",
 1
 ],
@@ -1203,7 +1203,7 @@ DATA = [
 ],
 [
 "2025-06-05",
-16.7,
+16.1,
 "Gemini 2.5 Pro",
 "Google",
 0
@@ -1252,7 +1252,7 @@ DATA = [
 ],
 [
 "2025-06-20",
-7.0,
+8.2,
 "Mistral Small 3.2",
 "Mistral",
 1
@@ -1420,7 +1420,7 @@ DATA = [
 ],
 [
 "2025-08-05",
-12.3,
+11.6,
 "gpt-oss-120b",
 "OpenAI",
 1
@@ -1476,7 +1476,7 @@ DATA = [
 ],
 [
 "2025-08-12",
-9.9,
+9.2,
 "Mistral Medium 3.1",
 "Mistral",
 0
@@ -1651,7 +1651,7 @@ DATA = [
 ],
 [
 "2025-09-22",
-15.4,
+14.8,
 "DeepSeek V3.1 Terminus",
 "DeepSeek",
 1
@@ -1714,7 +1714,7 @@ DATA = [
 ],
 [
 "2025-09-29",
-21.2,
+20.7,
 "Claude 4.5 Sonnet",
 "Anthropic",
 0
@@ -1805,7 +1805,7 @@ DATA = [
 ],
 [
 "2025-10-15",
-17.6,
+16.9,
 "Claude 4.5 Haiku",
 "Anthropic",
 0
@@ -2043,7 +2043,7 @@ DATA = [
 ],
 [
 "2025-12-02",
-9.7,
+9.3,
 "Mistral Large 3",
 "Mistral",
 1
@@ -2071,14 +2071,14 @@ DATA = [
 ],
 [
 "2025-12-09",
-8.4,
+7.5,
 "Devstral Small 2",
 "Mistral",
 1
 ],
 [
 "2025-12-09",
-9.4,
+8.6,
 "Devstral 2",
 "Mistral",
 1
@@ -2260,7 +2260,7 @@ DATA = [
 ],
 [
 "2026-02-03",
-10.1,
+9.2,
 "Qwen3 Coder Next",
 "Alibaba",
 1
@@ -2330,21 +2330,21 @@ DATA = [
 ],
 [
 "2026-02-17",
-30.5,
+30.1,
 "Claude Sonnet 4.6",
 "Anthropic",
 0
 ],
 [
 "2026-02-19",
-30.4,
+29.7,
 "Gemini 3.1 Pro Preview",
 "Google",
 0
 ],
 [
 "2026-02-20",
-11.5,
+13.8,
 "Mercury 2",
 "Inception",
 0
@@ -2407,7 +2407,7 @@ DATA = [
 ],
 [
 "2026-03-03",
-16.0,
+15.6,
 "Gemini 3.1 Flash-Lite",
 "Google",
 0
@@ -2442,7 +2442,7 @@ DATA = [
 ],
 [
 "2026-03-11",
-13.6,
+12.8,
 "Nemotron 3 Super 120B A12B",
 "NVIDIA",
 1
@@ -2463,28 +2463,28 @@ DATA = [
 ],
 [
 "2026-03-16",
-11.5,
+11.3,
 "Mistral Small 4",
 "Mistral",
 1
 ],
 [
 "2026-03-17",
-21.2,
+20.7,
 "GPT-5.4 nano",
 "OpenAI",
 0
 ],
 [
 "2026-03-17",
-24.6,
+24.1,
 "GPT-5.4 mini",
 "OpenAI",
 0
 ],
 [
 "2026-03-18",
-23.2,
+22.8,
 "MiniMax-M2.7",
 "MiniMax",
 1
@@ -2540,7 +2540,7 @@ DATA = [
 ],
 [
 "2026-04-01",
-10.9,
+10.8,
 "Trinity Large Thinking",
 "Arcee AI",
 1
@@ -2561,13 +2561,6 @@ DATA = [
 ],
 [
 "2026-04-02",
-15.4,
-"Gemma 4 31B",
-"Google",
-1
-],
-[
-"2026-04-02",
 16.7,
 "Gemma 4 26B A4B",
 "Google",
@@ -2579,6 +2572,13 @@ DATA = [
 "Step 3.5 Flash 2603",
 "StepFun",
 0
+],
+[
+"2026-04-02",
+19.0,
+"Gemma 4 31B",
+"Google",
+1
 ],
 [
 "2026-04-02",
@@ -2610,7 +2610,7 @@ DATA = [
 ],
 [
 "2026-04-07",
-27.4,
+26.1,
 "GLM-5.1",
 "Z.ai",
 1
@@ -2638,7 +2638,7 @@ DATA = [
 ],
 [
 "2026-04-16",
-22.3,
+18.2,
 "Qwen3.6 35B A3B",
 "Alibaba",
 1
@@ -2652,17 +2652,17 @@ DATA = [
 ],
 [
 "2026-04-20",
+27.0,
+"Kimi K2.6",
+"Kimi",
+1
+],
+[
+"2026-04-20",
 28.4,
 "Qwen3.6 Max Preview",
 "Alibaba",
 0
-],
-[
-"2026-04-20",
-31.3,
-"Kimi K2.6",
-"Kimi",
-1
 ],
 [
 "2026-04-21",
@@ -2673,21 +2673,21 @@ DATA = [
 ],
 [
 "2026-04-22",
-21.9,
+21.4,
 "Qwen3.6 27B",
 "Alibaba",
 1
 ],
 [
 "2026-04-22",
-22.3,
+25.2,
 "MiMo-V2.5",
 "Xiaomi",
 1
 ],
 [
 "2026-04-22",
-26.4,
+26.0,
 "MiMo-V2.5-Pro",
 "Xiaomi",
 1
@@ -2708,7 +2708,7 @@ DATA = [
 ],
 [
 "2026-04-23",
-38.6,
+38.4,
 "GPT-5.5",
 "OpenAI",
 0
@@ -2757,14 +2757,14 @@ DATA = [
 ],
 [
 "2026-04-29",
-14.9,
+14.2,
 "Mistral Medium 3.5",
 "Mistral",
 1
 ],
 [
 "2026-04-30",
-25.4,
+24.9,
 "Grok 4.3",
 "xAI",
 0
@@ -2778,7 +2778,7 @@ DATA = [
 ],
 [
 "2026-05-08",
-17.3,
+16.6,
 "Ring-2.6-1T",
 "InclusionAI",
 1
@@ -2799,7 +2799,7 @@ DATA = [
 ],
 [
 "2026-05-19",
-29.9,
+29.5,
 "Qwen3.7 Max",
 "Alibaba",
 0
@@ -2813,7 +2813,7 @@ DATA = [
 ],
 [
 "2026-05-20",
-13.9,
+13.1,
 "Command A+",
 "Cohere",
 1
@@ -2841,7 +2841,7 @@ DATA = [
 ],
 [
 "2026-05-28",
-42.0,
+41.8,
 "Claude Opus 4.8",
 "Anthropic",
 0
@@ -2855,14 +2855,14 @@ DATA = [
 ],
 [
 "2026-06-01",
-25.8,
+25.2,
 "Qwen3.7 Plus",
 "Alibaba",
 0
 ],
 [
 "2026-06-01",
-29.6,
+29.2,
 "MiniMax-M3",
 "MiniMax",
 1
@@ -2883,21 +2883,21 @@ DATA = [
 ],
 [
 "2026-06-04",
-23.4,
+22.9,
 "Nemotron 3 Ultra 550B A55B",
 "NVIDIA",
 1
 ],
 [
 "2026-06-09",
-12.8,
+9.9,
 "North Mini Code",
 "Cohere",
 1
 ],
 [
 "2026-06-09",
-49.7,
+49.6,
 "Claude Fable 5",
 "Anthropic",
 0
@@ -2911,7 +2911,7 @@ DATA = [
 ],
 [
 "2026-06-12",
-26.3,
+25.8,
 "Kimi K2.7 Code",
 "Kimi",
 1
@@ -2925,42 +2925,42 @@ DATA = [
 ],
 [
 "2026-06-16",
-38.6,
+33.7,
 "GLM-5.2",
 "Z.ai",
 1
 ],
 [
 "2026-06-25",
-26.8,
+26.0,
 "GPT-5.5 Instant",
 "OpenAI",
 0
 ],
 [
 "2026-06-29",
-19.7,
+19.1,
 "LongCat 2.0",
 "LongCat",
 1
 ],
 [
 "2026-06-30",
-38.4,
+38.2,
 "Claude Sonnet 5",
 "Anthropic",
 0
 ],
 [
 "2026-07-06",
-25.8,
+25.3,
 "Hy3",
 "Tencent",
 1
 ],
 [
 "2026-07-08",
-39.1,
+38.8,
 "Grok 4.5",
 "xAI",
 0
@@ -2974,28 +2974,28 @@ DATA = [
 ],
 [
 "2026-07-09",
-34.3,
+33.7,
 "Muse Spark 1.1",
 "Meta",
 0
 ],
 [
 "2026-07-09",
-37.5,
+37.3,
 "GPT-5.6 Luna",
 "OpenAI",
 0
 ],
 [
 "2026-07-09",
-42.3,
+42.1,
 "GPT-5.6 Terra",
 "OpenAI",
 0
 ],
 [
 "2026-07-09",
-47.1,
+47.0,
 "GPT-5.6 Sol",
 "OpenAI",
 0
@@ -3009,28 +3009,28 @@ DATA = [
 ],
 [
 "2026-07-15",
-25.5,
+25.0,
 "Inkling",
 "Thinking Machines",
 1
 ],
 [
 "2026-07-16",
-43.8,
+43.6,
 "Kimi K3",
 "Kimi",
 1
 ],
 [
 "2026-07-21",
-22.7,
+22.2,
 "Gemini 3.5 Flash-Lite",
 "Google",
 0
 ],
 [
 "2026-07-21",
-34.3,
+34.0,
 "Gemini 3.6 Flash",
 "Google",
 0
@@ -3058,21 +3058,21 @@ DATA = [
 ],
 [
 "2026-07-24",
-50.7,
+50.8,
 "Claude Opus 5",
 "Anthropic",
 0
 ],
 [
 "2026-07-30",
-26.1,
+27.8,
 "Inkling Small",
 "Thinking Machines",
 1
 ],
 [
 "2026-07-31",
-34.5,
+34.3,
 "DeepSeek V4 Flash 0731",
 "DeepSeek",
 1
@@ -3086,7 +3086,7 @@ DATA = [
 ],
 [
 "2026-08-03",
-40.3,
+40.2,
 "Qwen3.8 Max",
 "Alibaba",
 0
@@ -3107,14 +3107,14 @@ DATA = [
 ],
 [
 "2026-08-05",
-39.8,
+39.6,
 "Muse Spark 1.2",
 "Meta",
 0
 ],
 [
 "2026-08-06",
-11.9,
+15.3,
 "Ling 3.0 Tiny",
 "InclusionAI",
 0
@@ -3128,7 +3128,7 @@ DATA = [
 ],
 [
 "2026-08-10",
-18.1,
+17.5,
 "Muse Glimmer",
 "Meta",
 1
@@ -3142,7 +3142,7 @@ DATA = [
 ],
 [
 "2026-08-11",
-13.6,
+12.9,
 "Nemotron 3.5 Lightning",
 "NVIDIA",
 1
@@ -3184,21 +3184,21 @@ DATA = [
 ],
 [
 "2026-08-12",
-40.0,
+39.9,
 "Qwen3.8 2.4T A95B",
 "Alibaba",
 1
 ],
 [
 "2026-08-12",
-44.4,
+44.3,
 "Grok 4.6",
 "xAI",
 0
 ],
 [
 "2026-08-13",
-36.3,
+36.0,
 "DeepSeek V4 Pro 0813",
 "DeepSeek",
 1
@@ -3212,21 +3212,21 @@ DATA = [
 ],
 [
 "2026-08-14",
-33.9,
+33.7,
 "Qwen3.8 27B",
 "Alibaba",
 1
 ],
 [
 "2026-08-18",
-44.9,
+44.8,
 "GLM-5.3",
 "Z.ai",
 0
 ],
 [
 "2026-08-21",
-35.0,
+34.8,
 "DeepSeek V4 Flash Vision",
 "DeepSeek",
 0
@@ -3240,7 +3240,7 @@ DATA = [
 ],
 [
 "2026-08-25",
-12.4,
+11.1,
 "Granite 4.2 8B",
 "IBM",
 1
@@ -3261,16 +3261,16 @@ DATA = [
 ],
 [
 "2026-08-26",
-41.9,
-"GLM-5.3-Flash",
-"Z.ai",
+39.8,
+"Qwen3.8-Flash-Next",
+"Alibaba",
 1
 ],
 [
 "2026-08-26",
-42.2,
-"Qwen3.8-Flash-Next",
-"Alibaba",
+41.9,
+"GLM-5.3-Flash",
+"Z.ai",
 1
 ],
 [
@@ -3289,30 +3289,128 @@ DATA = [
 ],
 [
 "2026-09-02",
-41.2,
+40.9,
 "Gemini 3.8 Flash",
 "Google",
 0
 ],
 [
 "2026-09-02",
-48.2,
+48.1,
 "Muse Spark 1.3",
 "Meta",
 0
 ],
 [
 "2026-09-03",
-33.9,
+3.0,
+"K2 Horizon 0.9B",
+"Institute of Foundation Models",
+1
+],
+[
+"2026-09-03",
+15.6,
+"K2 Horizon 3.7B",
+"Institute of Foundation Models",
+1
+],
+[
+"2026-09-03",
+20.6,
+"K2 Horizon 7B",
+"Institute of Foundation Models",
+1
+],
+[
+"2026-09-03",
+25.3,
+"K2 Horizon MoVA 36B A4B",
+"Institute of Foundation Models",
+1
+],
+[
+"2026-09-03",
+30.5,
 "K2 Horizon 375B A23B",
 "MBZUAI Institute of Foundation Models",
 1
 ],
 [
 "2026-09-03",
-52.8,
+52.7,
 "GPT-6 Astra",
 "OpenAI",
+0
+],
+[
+"2026-09-07",
+12.5,
+"MiniCPM5-2B",
+"OpenBMB",
+1
+],
+[
+"2026-09-10",
+24.6,
+"Ling-3.0-flash-VL",
+"InclusionAI",
+1
+],
+[
+"2026-09-10",
+39.5,
+"DeepSeek V4.1 Flash",
+"DeepSeek",
+1
+],
+[
+"2026-09-11",
+22.6,
+"Ling-3.0-flash-Fin",
+"InclusionAI",
+1
+],
+[
+"2026-09-11",
+35.5,
+"Agnes 3.0 Flash",
+"Sapiens AI",
+0
+],
+[
+"2026-09-17",
+56.0,
+"Claude Opus 5.5",
+"Anthropic",
+0
+],
+[
+"2026-09-18",
+43.7,
+"Step 5 Preview",
+"StepFun",
+0
+],
+[
+"2026-09-21",
+46.3,
+"MiMo-V2.6-Pro",
+"Xiaomi",
+1
+],
+[
+"2026-09-21",
+46.4,
+"Grok 4.7",
+"xAI",
+0
+],
+[
+"2026-09-22",
+57.6,
+"Claude Opus 5.5",
+"Anthropic",
 0
 ]
 ]
