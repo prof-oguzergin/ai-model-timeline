@@ -11,6 +11,7 @@ s = open(SRC, encoding='utf-8').read()
 CHECK = '''
 # ---- OLCUM (gecici) ----
 fig.canvas.draw(); _r = fig.canvas.get_renderer()
+_PAY = 8   # piksel: bu kadar yakin etiketler de kusur sayilir
 _kutu = []
 for _t in ax.texts:
     _p = getattr(_t, "xyann", None)
@@ -24,10 +25,13 @@ for _i in range(len(_kutu)):
         _a, _ba, _ = _kutu[_i]; _b, _bb2, _ = _kutu[_j]
         _ox = min(_ba.x1, _bb2.x1) - max(_ba.x0, _bb2.x0)
         _oy = min(_ba.y1, _bb2.y1) - max(_ba.y0, _bb2.y0)
-        if _ox > 1 and _oy > 1: _cak.append((_a, _b, _ox, _oy))
+        # PAY: kutular birbirine DEGIYOR ama ust uste binmiyorsa eski olcut
+        # 0 cakisma diyordu; gozle bakinca etiketler yapisik gorunuyordu
+        # (Opus 5 | Fable 5.1 | Opus 5.5). Bosluk payi eklendi.
+        if _ox > -_PAY and _oy > 1: _cak.append((_a, _b, _ox, _oy))
 _egik = [(t, p) for t, b, p in _kutu if abs(p[0]) > 0.5]
 print("=" * 60)
-print("ETIKET: %d | CAKISMA: %d | YATAY KAYMALI (egik): %d" % (len(_kutu), len(_cak), len(_egik)))
+print("ETIKET: %d | CAKISMA/YAPISIK: %d | YATAY KAYMALI (egik): %d" % (len(_kutu), len(_cak), len(_egik)))
 for _a, _b, _ox, _oy in _cak[:18]:
     print("   CAKISMA  %-22s <-> %-22s %.0fx%.0f" % (_a[:22], _b[:22], _ox, _oy))
 for _t, _p in _egik[:22]:

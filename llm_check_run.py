@@ -227,7 +227,7 @@ data = [
     ("Command A Translate", "Cohere", "2025-08-28", False),
     ("Command A+", "Cohere", "2026-05-20", True),
 
-    # Ai2 (Allen Institute) - Fully Open (weights + data + code)
+    # Ai2 (Allen Institute) - Tam Acik (agirlik + veri + kod)
     ("OLMo", "Ai2", "2024-02-01", True),
     ("Molmo", "Ai2", "2024-09-25", True),
     ("OLMo 2", "Ai2", "2024-11-26", True),
@@ -529,34 +529,34 @@ company_name = {
 }
 
 country_text = {
-    "OpenAI":    "USA",
-    "Google":    "USA",
-    "Anthropic": "USA",
-    "xAI":       "USA",
-    "Meta":      "USA",
-    "Meta Muse": "USA",
-    "Microsoft MAI": "USA",
-    "Microsoft": "USA",
-    "Mistral":   "France",
-    "Qwen":      "China",
-    "DeepSeek":  "China",
-    "Z.ai":      "China",
-    "Kimi":      "China",
-    "MiniMax":   "China",
-    "Xiaomi":    "China",
-    "Google Gemma": "USA",
-    "ByteDance":    "China",
-    "Amazon":       "USA",
-    "Cohere":       "Canada",
-    "Ai2":          "USA",
+    "OpenAI":    "ABD",
+    "Google":    "ABD",
+    "Anthropic": "ABD",
+    "xAI":       "ABD",
+    "Meta":      "ABD",
+    "Meta Muse": "ABD",
+    "Microsoft MAI": "ABD",
+    "Microsoft": "ABD",
+    "Mistral":   "Fransa",
+    "Qwen":      "Çin",
+    "DeepSeek":  "Çin",
+    "Z.ai":      "Çin",
+    "Kimi":      "Çin",
+    "MiniMax":   "Çin",
+    "Xiaomi":    "Çin",
+    "Google Gemma": "ABD",
+    "ByteDance":    "Çin",
+    "Amazon":       "ABD",
+    "Cohere":       "Kanada",
+    "Ai2":          "ABD",
 }
 
 # Flag image files
 flag_images = {
-    "USA": "C:/Users/Z GAMES/flags/us.png",
-    "France":        "C:/Users/Z GAMES/flags/fr.png",
-    "China":         "C:/Users/Z GAMES/flags/cn.png",
-    "Canada":        "C:/Users/Z GAMES/flags/ca.png",
+    "ABD":    "C:/Users/Z GAMES/flags/us.png",
+    "Fransa": "C:/Users/Z GAMES/flags/fr.png",
+    "Çin":    "C:/Users/Z GAMES/flags/cn.png",
+    "Kanada": "C:/Users/Z GAMES/flags/ca.png",
 }
 
 company_order = ["OpenAI", "Google", "Anthropic", "xAI", "Microsoft MAI", "Meta Muse", "Amazon", "ByteDance", "Cohere",
@@ -602,11 +602,11 @@ ax.add_patch(open_rect)
 
 # Section labels - large watermark-style, more visible
 ax.text(df["Date"].min() + pd.Timedelta(days=30), y_positions["MiniMax"] - 1.1,
-        "OPEN SOURCE / OPEN WEIGHT",
+        "AÇIK KAYNAK / AÇIK AĞIRLIK",
         fontsize=56, color="#3fb950", va="center", ha="left",
         fontweight="bold", alpha=0.22)
 ax.text(df["Date"].min() + pd.Timedelta(days=30), y_positions["Cohere"] - 1.1,
-        "CLOSED SOURCE",
+        "KAPALI KAYNAK",
         fontsize=56, color="#f778ba", va="center", ha="left",
         fontweight="bold", alpha=0.22)
 
@@ -644,7 +644,7 @@ manual_overrides = {
     "3":                (0, 55),
     "3 Mini":           (65, -55),
 
-    # Meta - Llama 2 -> above (milestone)
+    # Meta - Llama 2 -> üste (milestone)
     "2":                (0, 55),
 
     # Microsoft
@@ -667,6 +667,7 @@ manual_overrides = {
 }
 
 # Company-specific overrides for labels that clash across companies
+# (e.g. "2" is used by Meta/Llama, Anthropic/Claude, xAI/Grok, Microsoft/Phi)
 company_overrides = {
     ("Anthropic", "Opus 4.6"): (0, 55),
     ("Qwen", "3.8-Flash"): (0, -55),
@@ -706,7 +707,7 @@ company_overrides = {
     ("xAI", "3 Mini"):      (0, -55),
     ("xAI", "4.1"):         (0, -55),
     ("xAI", "4.3"):         (0, -55),
-    # Google - Gemini 3.1 Pro aligned
+    # Google - Gemini 3.1 Pro tam dot üstüne otursun, gap adjustment nudge atlansın
     ("Google", "3.1 Pro"):  (0, 55),
     ("Google", "3 Deep Think"): (0, -55),
     ("Google", "3.5 Flash"): (0, -55),
@@ -942,7 +943,11 @@ for y_pos, company in labels_y:
 # X axis
 ax.xaxis.set_major_locator(mdates.MonthLocator(interval=2))
 ax.xaxis.set_minor_locator(mdates.MonthLocator())
-ax.xaxis.set_major_formatter(mdates.DateFormatter("%b %Y"))
+_TR_AY_KISA = {1:'Oca', 2:'Şub', 3:'Mar', 4:'Nis', 5:'May', 6:'Haz',
+               7:'Tem', 8:'Ağu', 9:'Eyl', 10:'Eki', 11:'Kas', 12:'Ara'}
+ax.xaxis.set_major_formatter(plt.FuncFormatter(
+    lambda x, pos: f"{_TR_AY_KISA[mdates.num2date(x).month]} {mdates.num2date(x).year}"
+))
 ax.set_xlim(mdates.date2num(pd.Timestamp("2022-11-01")), mdates.date2num(df["Date"].max() + pd.Timedelta(days=60)))
 plt.xticks(rotation=45, fontsize=22, color="#8b949e")
 
@@ -960,7 +965,7 @@ for year in [2023, 2024, 2025, 2026]:
     ax.text(year_date, y_max - 0.2, str(year),
             fontsize=32, fontweight="bold", color="#58a6ff", alpha=0.5,
             ha="center", va="top")
-    ax.annotate(f"({count} models)", (year_date, y_max - 0.2),
+    ax.annotate(f"({count} model)", (year_date, y_max - 0.2),
                 xytext=(70, -2), textcoords="offset points",
                 fontsize=26, fontweight="normal", color="#58a6ff", alpha=0.38,
                 ha="left", va="top")
@@ -984,7 +989,7 @@ ax.tick_params(axis="x", colors="#8b949e", length=6, pad=15)
 ax.tick_params(axis="x", which="minor", length=4, color="#8b949e", width=0.8)
 
 # Title
-plt.title("AI Model Release Timeline",
+plt.title("Yapay Zeka Model Yayınlanma Zaman Çizelgesi",
           fontsize=58, pad=80, color="white", fontweight="bold")
 
 # Top-left corner icon: speech bubble (chat/LLM symbol)
@@ -1022,12 +1027,12 @@ for i, dot_x in enumerate([-0.008, 0.000, 0.008]):
 # Alt baslik sayilari HESAPLANIR. Elle yazilinca bayatliyordu:
 # TR "15 Sirket" / EN "17 Companies" diyordu, dogrusu 16; tarih araligi
 # da "Kas 2022 - Haz 2026"de kalmisti. Iki dosya birbiriyle de tutmuyordu.
-_AY = {1:"Jan",2:"Feb",3:"Mar",4:"Apr",5:"May",6:"Jun",7:"Jul",8:"Aug",9:"Sep",10:"Oct",11:"Nov",12:"Dec"}
+_AY = {1:"Oca",2:"Şub",3:"Mar",4:"Nis",5:"May",6:"Haz",7:"Tem",8:"Ağu",9:"Eyl",10:"Eki",11:"Kas",12:"Ara"}
 _SIRKET = len({company_name[c] for c in df["Company"].unique()})
 _ILK = "%s %d" % (_AY[df["Date"].min().month], df["Date"].min().year)
 _SON = "%s %d" % (_AY[df["Date"].max().month], df["Date"].max().year)
 ax.text(0.5, 1.008,
-        f"{_SIRKET} Companies  |  {len(df)} Models  |  {_ILK} – {_SON}  |  ● Large = Milestone  |  ● Small = Update",
+        f"{_SIRKET} Şirket  |  {len(df)} Model  |  {_ILK} – {_SON}  |  ● Büyük = Dönüm Noktası  |  ● Küçük = Güncelleme",
         transform=ax.transAxes, ha="center", fontsize=28,
         color="#8b949e", fontstyle="italic")
 
@@ -1039,10 +1044,10 @@ legend_elements = [Line2D([0], [0], marker="o", color="w",
 legend_elements.append(Line2D([0], [0], marker="o", color="w",
                               markerfacecolor="#888", markersize=22,
                               markeredgecolor="white", markeredgewidth=2,
-                              label="Milestone", linewidth=0))
+                              label="Dönüm Noktası", linewidth=0))
 legend_elements.append(Line2D([0], [0], marker="o", color="w",
                               markerfacecolor="#888", markersize=13,
-                              label="Update", linewidth=0))
+                              label="Güncelleme", linewidth=0))
 
 legend = ax.legend(handles=legend_elements, loc="upper center",
                    fontsize=20, framealpha=0.4, facecolor="#161b22",
@@ -1057,7 +1062,7 @@ sig_box = mpatches.FancyBboxPatch(
     linewidth=1.5, alpha=0.85, transform=ax.transAxes, zorder=25)
 sig_box.set_clip_on(False)
 ax.add_patch(sig_box)
-ax.text(0.905, 1.030, "Prof. Dr. Oguz Ergin",
+ax.text(0.905, 1.030, "Prof. Dr. Oğuz Ergin",
         transform=ax.transAxes, ha="center", va="center",
         fontsize=36, fontfamily="Segoe Script", color="#58a6ff",
         alpha=0.9, zorder=26).set_clip_on(False)
@@ -1118,12 +1123,40 @@ plt.margins(y=0.01, x=0.06)
 ax.set_ylim(y_min, y_max)
 plt.tight_layout(rect=[0.11, 0.03, 0.98, 0.98])
 
-output_dir = "G:/My Drive/Claude Code/YZ Model Zaman Cizelgesi"
-plt.savefig(f"{output_dir}/ai_timeline_final.png", dpi=150, bbox_inches="tight",
-            pad_inches=1.0, facecolor="#0d1117", edgecolor="none")
-print("Main PNG saved!")
+# ---- OLCUM (gecici) ----
+fig.canvas.draw(); _r = fig.canvas.get_renderer()
+_PAY = 8   # piksel: bu kadar yakin etiketler de kusur sayilir
+_kutu = []
+for _t in ax.texts:
+    _p = getattr(_t, "xyann", None)
+    try: _bb = _t.get_window_extent(_r)
+    except Exception: continue
+    if _bb.width < 2 or _bb.height < 2: continue
+    _kutu.append((_t.get_text(), _bb, _p if isinstance(_p, tuple) else (0, 0)))
+_cak = []
+for _i in range(len(_kutu)):
+    for _j in range(_i+1, len(_kutu)):
+        _a, _ba, _ = _kutu[_i]; _b, _bb2, _ = _kutu[_j]
+        _ox = min(_ba.x1, _bb2.x1) - max(_ba.x0, _bb2.x0)
+        _oy = min(_ba.y1, _bb2.y1) - max(_ba.y0, _bb2.y0)
+        # PAY: kutular birbirine DEGIYOR ama ust uste binmiyorsa eski olcut
+        # 0 cakisma diyordu; gozle bakinca etiketler yapisik gorunuyordu
+        # (Opus 5 | Fable 5.1 | Opus 5.5). Bosluk payi eklendi.
+        if _ox > -_PAY and _oy > 1: _cak.append((_a, _b, _ox, _oy))
+_egik = [(t, p) for t, b, p in _kutu if abs(p[0]) > 0.5]
+print("=" * 60)
+print("ETIKET: %d | CAKISMA/YAPISIK: %d | YATAY KAYMALI (egik): %d" % (len(_kutu), len(_cak), len(_egik)))
+for _a, _b, _ox, _oy in _cak[:18]:
+    print("   CAKISMA  %-22s <-> %-22s %.0fx%.0f" % (_a[:22], _b[:22], _ox, _oy))
+for _t, _p in _egik[:22]:
+    print("   EGIK     %-22s dx=%s dy=%s" % (_t[:22], _p[0], _p[1]))
+print("=" * 60)
 
-# LinkedIn version (cropped/resized for LinkedIn post format)
-plt.savefig(f"{output_dir}/ai_timeline_final_linkedin.png", dpi=100, bbox_inches="tight",
+plt.savefig("llm_test.png", dpi=150, bbox_inches="tight",
+            pad_inches=1.0, facecolor="#0d1117", edgecolor="none")
+print("Türkçe grafik kaydedildi!")
+
+# LinkedIn sürümü (aynı figür, düşük dpi)
+plt.savefig("llm_test.png", dpi=100, bbox_inches="tight",
             pad_inches=0.5, facecolor="#0d1117", edgecolor="none")
-print("LinkedIn PNG saved!")
+print("LinkedIn PNG kaydedildi!")

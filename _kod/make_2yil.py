@@ -19,8 +19,10 @@ ISLER = [
 ]
 
 # Kaymalar sifirlandiktan sonra kalan gercek cakismalar icin hedefli deger
+# Fable 5.1 (1 Eyl) ile Opus 5.5 (22 Eyl) ikisi de ustte kalinca Opus 5 ile
+# birlikte uc etiket yan yana yapisiyordu; Fable 5.1 cizginin ALTINA alindi.
 IKI_YIL = [('OpenAI', '4.1', '(-80, -55)'), ('OpenAI', 'o4-mini', '(80, -55)'),
-           ('Anthropic', 'Fable 5.1', '(0, 55)')]   # 2 gun arayla, ayni tarafta: yatay sart
+           ('Anthropic', 'Fable 5.1', '(0, -55)')]   # 2 gun arayla, ayni tarafta: yatay sart
 
 for src, hedef, png, eski_baslik, yeni_baslik in ISLER:
     s = open(os.path.join(BASE, src), encoding='utf-8').read()

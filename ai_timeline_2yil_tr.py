@@ -35,6 +35,7 @@ data = [
     ("GPT-5.5", "OpenAI", "2026-04-23", False),
     ("GPT-5.6 Sol", "OpenAI", "2026-06-26", True),
     ("GPT-6 Astra", "OpenAI", "2026-09-03", True),
+    ("GPT-6 Sol", "OpenAI", "2026-09-22", False),
 
     # Google
     ("Gemini 1.0 Pro", "Google", "2023-12-06", True),
@@ -206,6 +207,12 @@ data = [
     ("Doubao-1.5-Pro", "ByteDance", "2025-01-22", False),
     ("Doubao-Seed-2.0", "ByteDance", "2026-02-14", True),
 
+    # Xiaomi MiMo (Open Weight)
+    ("MiMo-V2-Flash", "Xiaomi", "2025-12-16", True),
+    ("MiMo-V2-Pro", "Xiaomi", "2026-03-18", False),
+    ("MiMo-V2.5-Pro", "Xiaomi", "2026-04-22", False),
+    ("MiMo-V2.6-Pro", "Xiaomi", "2026-09-21", True),
+
     # Amazon (Nova) - Closed Source
     ("Amazon Nova Pro", "Amazon", "2024-12-03", True),
     ("Amazon Nova Premier", "Amazon", "2025-04-30", True),
@@ -264,6 +271,11 @@ short_labels = {
     "GPT-5.6 Sol":      "5.6 Sol",
 
     "GPT-6 Astra":      "6 Astra",
+    "GPT-6 Sol":        "6 Sol",
+    "MiMo-V2-Flash":    "V2-Flash",
+    "MiMo-V2-Pro":      "V2-Pro",
+    "MiMo-V2.5-Pro":    "V2.5-Pro",
+    "MiMo-V2.6-Pro":    "V2.6-Pro",
     # Google Gemini
     "Gemini 1.0 Pro":       "1.0 Pro",
     "Gemini 1.5 Pro":       "1.5 Pro",
@@ -464,6 +476,7 @@ series_name = {
     "Z.ai":         "GLM",
     "Kimi":         "Kimi",
     "MiniMax":      "MiniMax",
+    "Xiaomi":       "MiMo",
     "Google Gemma": "Gemma",
     "ByteDance":    "Doubao",
     "Amazon":       "Nova",
@@ -486,6 +499,7 @@ colors = {
     "Z.ai":      "#00C853",
     "Kimi":      "#FF4D6D",
     "MiniMax":   "#C77DFF",
+    "Xiaomi":    "#FF6700",
     "Google Gemma": "#34A853",
     "ByteDance":    "#00F0FF",
     "Amazon":       "#FF9900",
@@ -508,6 +522,7 @@ company_name = {
     "Z.ai":      "Z.ai / Zhipu",
     "Kimi":      "Kimi / Moonshot",
     "MiniMax":   "MiniMax",
+    "Xiaomi":    "MiMo / Xiaomi",
     "Google Gemma": "Google",
     "ByteDance":    "ByteDance",
     "Amazon":       "Amazon / AWS",
@@ -530,6 +545,7 @@ country_text = {
     "Z.ai":      "Çin",
     "Kimi":      "Çin",
     "MiniMax":   "Çin",
+    "Xiaomi":    "Çin",
     "Google Gemma": "ABD",
     "ByteDance":    "Çin",
     "Amazon":       "ABD",
@@ -547,7 +563,7 @@ flag_images = {
 
 company_order = ["OpenAI", "Google", "Anthropic", "xAI", "Microsoft MAI", "Meta Muse", "Amazon", "ByteDance", "Cohere",
                  "Meta", "Microsoft", "Google Gemma", "Ai2", "Mistral",
-                 "Qwen", "DeepSeek", "Z.ai", "Kimi", "MiniMax"]
+                 "Qwen", "DeepSeek", "Z.ai", "Kimi", "MiniMax", "Xiaomi"]
 
 # Vertical spacing: each company gets 3.0 units
 y_positions = {c: (len(company_order) - 1 - i) * 3.0 for i, c in enumerate(company_order)}
@@ -676,6 +692,7 @@ company_overrides = {
     ("DeepSeek", "R1"):     (0, -55),
     ("OpenAI", "5.4"):      (0, 55),
     ("OpenAI", "5.5"):      (0, 55),
+    ("OpenAI", "6 Sol"):    (0, -55),
     ("Anthropic", "2"):     (0, 55),
     ("xAI", "2"):           (0, 55),
     ("Microsoft", "2"):     (0, 55),
@@ -708,7 +725,7 @@ company_overrides = {
     ("Anthropic", "Fable 5"): (0, 55),
         ("Anthropic", "Sonnet 5"): (0, -55),
 ("Anthropic", "Opus 5"): (0, 55),
-    ("Anthropic", "Fable 5.1"): (0, 55),
+    ("Anthropic", "Fable 5.1"): (0, -55),
     # Mistral - all labels equal distance from line (no multi-level stacking)
     ("Mistral", "Medium 3"): (0, -55),
     ("Mistral", "Devstral"): (0, -55),
