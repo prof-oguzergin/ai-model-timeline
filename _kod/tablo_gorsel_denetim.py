@@ -66,6 +66,32 @@ with sync_playwright() as p:
             toplam += len(r['kusur'])
         sayfa.screenshot(path=os.path.join(os.environ.get('TEMP', '.'), 'tablo_' + os.path.basename(h.split('?')[0]) + '.png'),
                          clip={'x': 0, 'y': 250, 'width': 1500, 'height': 260})
+    # TELEFON (390 px): sayfa ekrani asmamali (tablo kendi kutusunda kaymali),
+    # etiket sutunu dar olmali, bantlar hizali olmali. 1 Eki 2026'ya kadar tablo
+    # sayfayi ~1000 px'e genisletiyor, ekranda yalniz kiyaslama adlari kaliyordu.
+    tel = tarayici.new_context(viewport={'width': 390, 'height': 844}, device_scale_factor=2,
+                               is_mobile=True, has_touch=True)
+    sp = tel.new_page()
+    for h in hedefler:
+        url = h if h.startswith('http') else pathlib.Path(h).as_uri()
+        sp.goto(url)
+        sp.wait_for_timeout(800)
+        r = sp.evaluate(OLC)
+        b = sp.evaluate('''() => ({sayfa: document.documentElement.scrollWidth, ekran: innerWidth,
+            etiket: document.querySelector('.tbl-scroll tbody tr:nth-child(2) td').getBoundingClientRect().width})''')
+        ad = os.path.basename(h.split('?')[0])
+        k = list(r['kusur'])
+        # innerWidth'e guvenme: tasan sayfada telefon tarayicisi gorunum alanini da genisletiyor
+        if b['sayfa'] > 391 or b['ekran'] > 391:
+            k.append('telefonda sayfa %d px, ekran %d px: tablo sayfayi genisletiyor' % (b['sayfa'], b['ekran']))
+        if b['etiket'] > 140:
+            k.append('telefonda etiket sutunu %.0f px, ekranin cogunu kapliyor' % b['etiket'])
+        print('%-26s %-7s %2d sutun, sayfa %d/%d px, etiket %.0f px | kusur %d'
+              % (ad, 'telefon', r['sutun'], b['sayfa'], b['ekran'], b['etiket'], len(k)))
+        for x in k[:6]:
+            print('      ', x)
+        toplam += len(k)
+    tel.close()
     tarayici.close()
 print()
 print('SONUC: %s' % ('%d KUSUR, YAYIMLAMA' % toplam if toplam else 'bantlar sutunlarla hizali'))
