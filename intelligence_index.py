@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # Yapay zeka basarimi tek sayiyla: Artificial Analysis Zeka Endeksi (Intelligence Index)
-# Veri kaynagi: artificialanalysis.ai  (486 model, 2022-11-30 - 2026-09-22)
+# Veri kaynagi: artificialanalysis.ai  (493 model, 2022-11-30 - 2026-09-30)
 # Bu dosya scratchpad/make_ii_scripts.py ile uretildi; veri asagida GOMULU.
 import matplotlib
 matplotlib.use('Agg')
@@ -2400,7 +2400,7 @@ DATA = [
 ],
 [
 "2026-03-02",
-13.7,
+13.3,
 "Qwen3.5 9B",
 "Alibaba",
 1
@@ -2561,6 +2561,13 @@ DATA = [
 ],
 [
 "2026-04-02",
+14.7,
+"Gemma 4 31B",
+"Google",
+1
+],
+[
+"2026-04-02",
 16.7,
 "Gemma 4 26B A4B",
 "Google",
@@ -2572,13 +2579,6 @@ DATA = [
 "Step 3.5 Flash 2603",
 "StepFun",
 0
-],
-[
-"2026-04-02",
-19.0,
-"Gemma 4 31B",
-"Google",
-1
 ],
 [
 "2026-04-02",
@@ -3065,7 +3065,7 @@ DATA = [
 ],
 [
 "2026-07-30",
-27.8,
+25.7,
 "Inkling Small",
 "Thinking Machines",
 1
@@ -3100,7 +3100,7 @@ DATA = [
 ],
 [
 "2026-08-04",
-24.9,
+20.1,
 "Ling 3.0 Flash",
 "InclusionAI",
 1
@@ -3114,7 +3114,7 @@ DATA = [
 ],
 [
 "2026-08-06",
-15.3,
+11.1,
 "Ling 3.0 Tiny",
 "InclusionAI",
 0
@@ -3275,7 +3275,7 @@ DATA = [
 ],
 [
 "2026-08-30",
-30.4,
+26.4,
 "Apodex 1.1",
 "Apodex",
 0
@@ -3351,6 +3351,13 @@ DATA = [
 1
 ],
 [
+"2026-09-08",
+12.3,
+"Mercury 2.5",
+"Inception",
+0
+],
+[
 "2026-09-10",
 24.6,
 "Ling-3.0-flash-VL",
@@ -3379,18 +3386,18 @@ DATA = [
 0
 ],
 [
-"2026-09-17",
-56.0,
-"Claude Opus 5.5",
-"Anthropic",
-0
-],
-[
 "2026-09-18",
 43.7,
 "Step 5 Preview",
 "StepFun",
 0
+],
+[
+"2026-09-21",
+37.9,
+"MiMo-V2.6-Flash",
+"Xiaomi",
+1
 ],
 [
 "2026-09-21",
@@ -3408,9 +3415,51 @@ DATA = [
 ],
 [
 "2026-09-22",
+24.1,
+"Solar Mini 4",
+"Upstage",
+0
+],
+[
+"2026-09-22",
+38.1,
+"GPT-6 Luna",
+"OpenAI",
+0
+],
+[
+"2026-09-22",
+47.6,
+"GPT-6 Sol",
+"OpenAI",
+0
+],
+[
+"2026-09-22",
 57.6,
 "Claude Opus 5.5",
 "Anthropic",
+0
+],
+[
+"2026-09-28",
+56.0,
+"Claude Sonnet 5.5",
+"Anthropic",
+0
+],
+[
+"2026-09-29",
+51.8,
+"GPT-6.1 Sol",
+"OpenAI",
+0
+],
+[
+"2026-09-30",
+52.6,
+"Gemini 4 Argon",
+"Google",
 0
 ]
 ]

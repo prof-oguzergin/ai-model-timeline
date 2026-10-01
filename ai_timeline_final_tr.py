@@ -36,6 +36,7 @@ data = [
     ("GPT-5.6 Sol", "OpenAI", "2026-06-26", True),
     ("GPT-6 Astra", "OpenAI", "2026-09-03", True),
     ("GPT-6 Sol", "OpenAI", "2026-09-22", False),
+    ("GPT-6.1 Sol", "OpenAI", "2026-09-29", False),
 
     # Google
     ("Gemini 1.0 Pro", "Google", "2023-12-06", True),
@@ -53,6 +54,7 @@ data = [
     ("Gemini 3.6 Flash", "Google", "2026-07-21", False),
     ("Gemini 3.7 Flash", "Google", "2026-08-13", False),
     ("Gemini 3.8 Flash", "Google", "2026-09-02", True),
+    ("Gemini 4 Argon", "Google", "2026-09-30", True),
 
     # Anthropic
     ("Claude 1", "Anthropic", "2023-03-14", True),
@@ -75,6 +77,7 @@ data = [
     ("Claude Opus 5", "Anthropic", "2026-07-24", True),
     ("Claude Fable 5.1", "Anthropic", "2026-09-01", True),
     ("Claude Opus 5.5", "Anthropic", "2026-09-22", True),
+    ("Claude Sonnet 5.5", "Anthropic", "2026-09-28", False),
 
     # xAI
     ("Grok-1", "xAI", "2023-11-04", True),
@@ -270,6 +273,7 @@ short_labels = {
 
     "GPT-6 Astra":      "6 Astra",
     "GPT-6 Sol":        "6 Sol",
+    "GPT-6.1 Sol":      "6.1 Sol",
     "MiMo-V2-Flash":    "V2-Flash",
     "MiMo-V2-Pro":      "V2-Pro",
     "MiMo-V2.5-Pro":    "V2.5-Pro",
@@ -291,6 +295,7 @@ short_labels = {
     "Gemini 3.7 Flash":     "3.7 Flash",
 
     "Gemini 3.8 Flash":     "3.8 Flash",
+    "Gemini 4 Argon":       "4 Argon",
     # Anthropic Claude
     "Claude 1":             "1",
     "Claude 2":             "2",
@@ -310,6 +315,7 @@ short_labels = {
     "Claude Fable 5":       "Fable 5",
     "Claude Fable 5.1":     "Fable 5.1",
     "Claude Opus 5.5":      "Opus 5.5",
+    "Claude Sonnet 5.5":    "Sonnet 5.5",
     "Claude Sonnet 5":      "Sonnet 5",
     "Claude Opus 5":        "Opus 5",
 
@@ -690,6 +696,12 @@ company_overrides = {
     ("OpenAI", "5.4"):      (0, 55),
     ("OpenAI", "5.5"):      (0, 55),
     ("OpenAI", "6 Sol"):    (0, -55),
+    # Eylul sonu her satirda 4 haftada 3 model. Taraf burada, gerekirse yatay
+    # kaydirmayi cozucu en kucuk adimla verir (iki yillik surumde dik kalir).
+    ("OpenAI", "6.1 Sol"):  (0, 55),
+    ("Anthropic", "Sonnet 5.5"): (0, -55),
+    # Google satiri alt/ust donusumlu (3.5 alt, 3.6 ust, 3.7 alt, 3.8 ust)
+    ("Google", "4 Argon"):  (0, -55),
     # MiMo: V2-Pro (18 Mar) ile V2.5-Pro (22 Nis) ikisi de altta kalinca
     # cozucu birini yana, otekini ikinci kata (-121) itiyordu. Ust/alt
     # bolunerek ikisi de DIK ve standart +-55 uzaklikta tutuldu.
@@ -1088,59 +1100,122 @@ ax.text(0.905, 1.030, "Prof. Dr. Oğuz Ergin",
 
 
 # ============================================================
+# Son yerlesim cozucudan ONCE: margins/ylim/tight_layout eksen olcegini
+# degistirir; cozucu son olcekle olcmezse temiz sandigi etiketler degiyor.
+plt.margins(y=0.01, x=0.06)
+ax.set_ylim(y_min, y_max)
+plt.tight_layout(rect=[0.11, 0.03, 0.98, 0.98])
+
 # ETIKET YERLESIMI - KISITLI cozucu
 # KURAL: etiket noktanin tam ustunde/altinda durur, cizgi DIK iner-cikar.
 # Elle ayarlanmis yerlesim korunur; SADECE gercekten cakisan etiketler
 # oynatilir, otekiler sabit engel sayilir. Once dik konum denenir, sonra
-# artan yatay adimlar.
-# NEDEN DIKEY KAT YOK: bu cizelgede satirlar birbirine yakin; ikinci kata
-# cikan etiket komsu sirketin satirina giriyor (olculdu: cakisma 10 -> 23).
-# Sikisik satirlarda (2026 ortasi Anthropic, Gemini Flash dizisi) yatay
-# ayirma kacinilmaz; kural bunu "cok acil durum" istisnasi sayiyor.
+# artan yatay adimlar. Cakisan ciftte yalniz DAHA YENI tarihli etiket oynar.
+# NEDEN DIKEY KAT YOK: satirlar birbirine yakin; ikinci kata cikan etiket
+# komsu sirketin satirina giriyor (olculdu: cakisma 10 -> 23).
+# OLCUM (1 Eki 2026): Annotation.get_window_extent() baglanti cizgisini de
+# kutuya katiyordu; egik etiketlerde kutu noktadan etikete uzanan dikdortgene
+# donusuyor, gorunmeyen cakismalar uretiyordu. Artik etiket kutusu = cizilen
+# yuvarlak kutu, baglanti = noktadan kutu merkezine dogru parcasi.
 # ============================================================
-fig.canvas.draw()
-_r = fig.canvas.get_renderer()
-_P2X = fig.dpi / 72.0
+import matplotlib.dates as _md
+from matplotlib.text import Text as _Text
 from matplotlib.transforms import Bbox
+_PAY = 8          # piksel: bundan yakin iki etiket kusur sayilir
+_P2X = fig.dpi / 72.0
 
-_ann = []
-for _t in ax.texts:
-    _p = getattr(_t, "xyann", None)
-    if not isinstance(_p, tuple) or abs(_p[1]) < 20: continue
-    _ann.append([_t, list(_p), _t.get_window_extent(_r)])
 
-def _kesisir(_a, _b):
-    return (min(_a.x1, _b.x1) - max(_a.x0, _b.x0)) > 1 and (min(_a.y1, _b.y1) - max(_a.y0, _b.y0)) > 1
-def _otele(_bb, _dx, _dy):
-    return Bbox.from_extents(_bb.x0 + _dx*_P2X, _bb.y0 + _dy*_P2X,
-                             _bb.x1 + _dx*_P2X, _bb.y1 + _dy*_P2X)
+def _kutu(_t, _r):
+    _bp = _t.get_bbox_patch()
+    return _bp.get_window_extent(_r) if _bp is not None else _Text.get_window_extent(_t, _r)
 
+
+def _nokta(_t):
+    _x, _y = _t.xy
+    if not isinstance(_x, (int, float)):
+        _x = _md.date2num(_x)
+    return ax.transData.transform((_x, _y))
+
+
+def _kutu_kutu(_a, _b):
+    return (min(_a.x1, _b.x1) - max(_a.x0, _b.x0)) > -_PAY and \
+           (min(_a.y1, _b.y1) - max(_a.y0, _b.y0)) > 1
+
+
+def _parca_kutu(_p0, _p1, _b):
+    # dogru parcasi kutunun ICINDEN geciyor mu (ornekleme; kutu 2 px icten)
+    for _k in range(1, 40):
+        _u = _k / 40.0
+        _x = _p0[0] + (_p1[0] - _p0[0]) * _u
+        _y = _p0[1] + (_p1[1] - _p0[1]) * _u
+        if _b.x0 + 2 < _x < _b.x1 - 2 and _b.y0 + 2 < _y < _b.y1 - 2:
+            return True
+    return False
+
+
+def _merkez(_b):
+    return ((_b.x0 + _b.x1) / 2.0, (_b.y0 + _b.y1) / 2.0)
+
+
+def _cakisma(_ka, _na, _kb, _nb):
+    return (_kutu_kutu(_ka, _kb) or _parca_kutu(_na, _merkez(_ka), _kb)
+            or _parca_kutu(_nb, _merkez(_kb), _ka))
+
+
+def _otele(_bb, _dx):
+    return Bbox.from_extents(_bb.x0 + _dx * _P2X, _bb.y0, _bb.x1 + _dx * _P2X, _bb.y1)
+
+
+_ann = [_t for _t in ax.texts
+        if isinstance(getattr(_t, "xyann", None), tuple) and abs(_t.xyann[1]) >= 20]
+# ONAYLI DUZEN: yayimlanmis cizelgedeki her etiket o konumda SABIT kalir;
+# cozucu yalniz yeni eklenen etiketleri yerlestirir. Anahtar "etiket|satir_y".
+import json as _json, os as _os
+_ONAYLI_DOSYA = r"G:/My Drive/Claude Code/YZ Model Zaman Cizelgesi/_kod/onayli_final.json"
+_onayli = _json.load(open(_ONAYLI_DOSYA, encoding="utf-8")) if _os.path.exists(_ONAYLI_DOSYA) else {}
+_sabit = set()
+for _k, _t in enumerate(_ann):
+    _key = "%s|%s" % (_t.get_text(), round(float(_t.xy[1]), 4))
+    if _key in _onayli:
+        _t.set_position(tuple(_onayli[_key]))
+        _sabit.add(_k)
 _YATAY = [0, -26, 26, -52, 52, -80, 80, -110, 110, -145, 145,
           -180, 180, -215, 215, -250, 250]
-for _tur in range(8):
-    _kutular = [e[2] for e in _ann]
+for _tur in range(10):
+    fig.canvas.draw()
+    _r = fig.canvas.get_renderer()
+    _K = [_kutu(_t, _r) for _t in _ann]
+    _N = [_nokta(_t) for _t in _ann]
     _sorun = set()
     for _i in range(len(_ann)):
-        for _j in range(_i+1, len(_ann)):
-            if _kesisir(_kutular[_i], _kutular[_j]): _sorun.add(_i); _sorun.add(_j)
-    if not _sorun: break
+        for _j in range(_i + 1, len(_ann)):
+            if _cakisma(_K[_i], _N[_i], _K[_j], _N[_j]):
+                if _i in _sabit and _j in _sabit:
+                    continue          # iki onayli etiket: dokunulmaz
+                if _i in _sabit:
+                    _sorun.add(_j)
+                elif _j in _sabit:
+                    _sorun.add(_i)
+                else:
+                    _sorun.add(_i if _md.date2num(_ann[_i].xy[0]) >= _md.date2num(_ann[_j].xy[0]) else _j)
+    if not _sorun:
+        break
     for _i in sorted(_sorun):
-        _t, _p, _bb = _ann[_i]
-        _digerleri = [_ann[_k][2] for _k in range(len(_ann)) if _k != _i]
-        _en, _encez, _enbb = None, None, None
+        _t = _ann[_i]
+        _x0, _y0 = _t.xyann
+        _en, _encez = None, None
         for _v in _YATAY:
-            _b = _otele(_bb, _v - _p[0], 0)
-            _cez = sum(1 for _o in _digerleri if _kesisir(_b, _o)) * 1000 + abs(_v) * 2
-            if _encez is None or _cez < _encez: _en, _encez, _enbb = _v, _cez, _b
-            if _cez == abs(_v) * 2 and _v == 0: break
-        _t.set_position((_en, _p[1]))
-        _ann[_i][1][0] = _en
-        _ann[_i][2] = _enbb
+            _b = _otele(_K[_i], _v - _x0)
+            _c = sum(1 for _k in range(len(_ann))
+                     if _k != _i and _cakisma(_b, _N[_i], _K[_k], _N[_k])) * 1000 + abs(_v) * 2
+            if _encez is None or _c < _encez:
+                _en, _encez = _v, _c
+            if _c == 0:
+                break
+        _t.set_position((_en, _y0))
+        _K[_i] = _otele(_K[_i], _en - _x0)
 
 
-plt.margins(y=0.01, x=0.06)
-ax.set_ylim(y_min, y_max)
-plt.tight_layout(rect=[0.11, 0.03, 0.98, 0.98])
 plt.savefig("G:/My Drive/Claude Code/YZ Model Zaman Cizelgesi/ai_timeline_final_tr.png", dpi=150, bbox_inches="tight",
             pad_inches=1.0, facecolor="#0d1117", edgecolor="none")
 print("Türkçe grafik kaydedildi!")

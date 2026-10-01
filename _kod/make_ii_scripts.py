@@ -1,7 +1,8 @@
 import json, re, sys, os
 sys.stdout.reconfigure(encoding='utf-8')
 OUT = r'G:/My Drive/Claude Code/YZ Model Zaman Cizelgesi'
-rows = json.load(open('ii_data_open.json', encoding='utf-8'))
+import os as _os
+rows = json.load(open(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), 'ii_data_open.json'), encoding='utf-8'))
 
 CRE = {'SpaceXAI': 'xAI', 'Z AI': 'Z.ai', 'ByteDance Seed': 'ByteDance', 'Moonshot AI': 'Moonshot',
        'Meta Superintelligence Labs': 'Meta', 'Mistral AI': 'Mistral'}

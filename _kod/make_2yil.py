@@ -68,5 +68,7 @@ for src, hedef, png, eski_baslik, yeni_baslik in ISLER:
             m2 = re.search(r'(company_overrides\s*=\s*\{' + NL + ')', s)
             s = s[:m2.end()] + '    ("%s", "%s"): %s,%s' % (sr, ad, ofs, NL) + s[m2.end():]
 
+    # iki yillik cizelgenin onayli duzeni ayri (olcek farkli)
+    s = s.replace('onayli_final.json', 'onayli_2yil.json')
     open(os.path.join(BASE, hedef), 'w', encoding='utf-8').write(s)
     print('%-26s -> %-24s (%d yatay kayma sifirlandi, %d hedefli)' % (src, hedef, n[0], len(IKI_YIL)))
