@@ -70,6 +70,22 @@ for dosya in ['model_comparison_tr.html', 'model_comparison_en.html']:
                 k('%s: %s sutunu %s bandinin altinda, %s olmali' % (dosya, c, ad, bant(c)))
         i += cs
 
+    # 1b) SINIF ESLESMESI: sayfanin JS'i bant genisligini m-X sinifli GORUNUR
+    # sutunlari sayarak hesaplar. m-X hicbir company-X ile eslesmezse sutun
+    # hicbir banda sayilmaz ve bantlar kayar (1 Eki 2026: m-opus, m-gpt,
+    # m-gemini, m-grok, m-sonnet tahminle yazilmisti).
+    bant_sinif = set(re.findall(r'company-([\w-]+)', trs[0]))
+    for a, v in re.findall(r'<th([^>]*)>(.*?)</th>', trs[1], re.S):
+        c = re.search(r'col-([A-Za-z0-9_-]+)', a)
+        if not c:
+            continue
+        m = re.search(r'\bm-([\w-]+)', a)
+        if not m:
+            k('%s: %s sutununda m- sinifi yok' % (dosya, c.group(1)))
+        elif m.group(1) not in bant_sinif:
+            k('%s: %s sutununun sinifi m-%s, hicbir bant company-%s degil (gecerli: %s)'
+              % (dosya, c.group(1), m.group(1), m.group(1), sorted(bant_sinif)))
+
     # 2) govde
     body = s[s.find('<tbody'):s.find('</tbody>')]
     nveri = 0
