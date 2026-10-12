@@ -20,7 +20,7 @@ AY_TR = ['OCAK', 'ŞUBAT', 'MART', 'NİSAN', 'MAYIS', 'HAZİRAN', 'TEMMUZ', 'AĞ
 AY_TR_K = ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık']
 AY_EN = ['JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER']
 
-RENK = [('fable', '#a78bfa'), ('mythos', '#a78bfa'), ('opus', '#f5b98c'), ('sonnet', '#d4866a'),
+RENK = [('fable', '#a78bfa'), ('mythos', '#a78bfa'), ('opus', '#f5b98c'), ('sonnet', '#d4866a'), ('haiku', '#e8b58a'),
         ('gpt', '#6ee7a0'), ('gemini', '#7db8ff'), ('deepseek', '#ef4444'), ('grok', '#5cb8ff'),
         ('kimi', '#2DD4BF'), ('glm', '#EC4899'), ('qwen', '#A78BFA'), ('minimax', '#C77DFF'),
         ('muse', '#4a9eff')]

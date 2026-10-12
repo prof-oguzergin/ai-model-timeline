@@ -16,7 +16,7 @@ BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MARKA = [('opus55', 'ANTHROPIC'), ('fable', 'ANTHROPIC'), ('mythos', 'ANTHROPIC'),
          ('opus', 'ANTHROPIC'), ('sonnet', 'ANTHROPIC'), ('gpt', 'OPENAI'),
          ('gemini', 'GOOGLE'), ('kimi', 'MOONSHOT'), ('glm', 'Z.AI'), ('qwen', 'ALIBABA'),
-         ('deepseek', 'DEEPSEEK'), ('minimax', 'MINIMAX'), ('grok', 'xAI'), ('muse', 'META')]
+         ('deepseek', 'DEEPSEEK'), ('minimax', 'MINIMAX'), ('grok', 'xAI'), ('muse', 'META'), ('haiku', 'ANTHROPIC')]
 
 
 def bant(c):

@@ -67,6 +67,7 @@ data = [
     ("Claude Sonnet 4", "Anthropic", "2025-05-22", False),
     ("Claude Opus 4.1", "Anthropic", "2025-08-05", False),
     ("Claude Sonnet 4.5", "Anthropic", "2025-09-29", False),
+    ("Claude Haiku 4.5", "Anthropic", "2025-10-15", False),
     ("Claude Opus 4.5", "Anthropic", "2025-11-24", False),
     ("Claude Opus 4.6", "Anthropic", "2026-02-05", False),
     ("Claude Sonnet 4.6", "Anthropic", "2026-02-17", False),
@@ -78,6 +79,7 @@ data = [
     ("Claude Fable 5.1", "Anthropic", "2026-09-01", True),
     ("Claude Opus 5.5", "Anthropic", "2026-09-22", True),
     ("Claude Sonnet 5.5", "Anthropic", "2026-09-28", False),
+    ("Claude Haiku 5.5", "Anthropic", "2026-10-07", False),
 
     # xAI
     ("Grok-1", "xAI", "2023-11-04", True),
@@ -109,6 +111,8 @@ data = [
     ("Muse Spark 1.1", "Meta Muse", "2026-07-09", False),
     ("Muse Spark 1.2", "Meta Muse", "2026-08-05", False),
     ("Muse Spark 1.3", "Meta Muse", "2026-09-02", True),
+    ("Muse Wonder", "Meta Muse", "2026-10-12", True),
+    ("Muse Wonder Full", "Meta Muse", "2026-10-12", False),
 
     # Microsoft MAI (Closed Source)
     ("MAI-Thinking-1", "Microsoft MAI", "2026-06-02", True),
@@ -310,6 +314,7 @@ short_labels = {
     "Claude Sonnet 4":      "Sonnet 4",
     "Claude Opus 4.1":      "Opus 4.1",
     "Claude Sonnet 4.5":    "Sonnet 4.5",
+    "Claude Haiku 4.5":     "Haiku 4.5",
     "Claude Opus 4.5":      "Opus 4.5",
     "Claude Opus 4.6":      "Opus 4.6",
     "Claude Sonnet 4.6":    "Sonnet 4.6",
@@ -319,6 +324,7 @@ short_labels = {
     "Claude Fable 5.1":     "Fable 5.1",
     "Claude Opus 5.5":      "Opus 5.5",
     "Claude Sonnet 5.5":    "Sonnet 5.5",
+    "Claude Haiku 5.5":     "Haiku 5.5",
     "Claude Sonnet 5":      "Sonnet 5",
     "Claude Opus 5":        "Opus 5",
 
@@ -451,6 +457,8 @@ short_labels = {
     "Muse Spark 1.1":       "Spark 1.1",
     "Muse Spark 1.2":       "Spark 1.2",
     "Muse Spark 1.3":       "Spark 1.3",
+    "Muse Wonder":          "Wonder",
+    "Muse Wonder Full":     "Wonder Full",
     "MAI-Thinking-1":       "Thinking-1",
 
     # Amazon Nova
@@ -705,6 +713,9 @@ company_overrides = {
     # kaydirmayi cozucu en kucuk adimla verir (iki yillik surumde dik kalir).
     ("OpenAI", "6.1 Sol"):  (0, 55),
     ("Anthropic", "Sonnet 5.5"): (0, -55),
+    ("Meta Muse", "Wonder"): (0, 55),
+    ("Meta Muse", "Wonder Full"): (0, -55),
+    ("Anthropic", "Haiku 5.5"): (0, 55),
     # Google satiri alt/ust donusumlu (3.5 alt, 3.6 ust, 3.7 alt, 3.8 ust)
     ("Google", "4 Argon"):  (0, -55),
     # MiMo: V2-Pro (18 Mar) ile V2.5-Pro (22 Nis) ikisi de altta kalinca
