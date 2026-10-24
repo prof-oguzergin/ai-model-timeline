@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # Yapay zeka basarimi tek sayiyla: Artificial Analysis Zeka Endeksi (Intelligence Index)
-# Veri kaynagi: artificialanalysis.ai  (498 model, 2022-11-30 - 2026-10-12)
+# Veri kaynagi: artificialanalysis.ai  (505 model, 2022-11-30 - 2026-10-23)
 # Bu dosya scratchpad/make_ii_scripts.py ile uretildi; veri asagida GOMULU.
 import matplotlib
 matplotlib.use('Agg')
@@ -986,14 +986,14 @@ DATA = [
 ],
 [
 "2025-04-05",
-8.1,
+6.5,
 "Llama 4 Scout",
 "Meta",
 1
 ],
 [
 "2025-04-05",
-10.0,
+9.3,
 "Llama 4 Maverick",
 "Meta",
 1
@@ -1070,6 +1070,20 @@ DATA = [
 ],
 [
 "2025-04-28",
+6.0,
+"Qwen3 8B",
+"Alibaba",
+1
+],
+[
+"2025-04-28",
+6.7,
+"Qwen3 14B",
+"Alibaba",
+1
+],
+[
+"2025-04-28",
 7.2,
 "Qwen3 4B",
 "Alibaba",
@@ -1078,7 +1092,7 @@ DATA = [
 [
 "2025-04-28",
 7.3,
-"Qwen3 8B",
+"Qwen3 32B",
 "Alibaba",
 1
 ],
@@ -1086,20 +1100,6 @@ DATA = [
 "2025-04-28",
 7.6,
 "Qwen3 30B A3B",
-"Alibaba",
-1
-],
-[
-"2025-04-28",
-8.2,
-"Qwen3 14B",
-"Alibaba",
-1
-],
-[
-"2025-04-28",
-8.6,
-"Qwen3 32B",
 "Alibaba",
 1
 ],
@@ -1252,7 +1252,7 @@ DATA = [
 ],
 [
 "2025-06-20",
-8.2,
+7.0,
 "Mistral Small 3.2",
 "Mistral",
 1
@@ -2344,7 +2344,7 @@ DATA = [
 ],
 [
 "2026-02-20",
-13.8,
+10.8,
 "Mercury 2",
 "Inception",
 0
@@ -2680,7 +2680,7 @@ DATA = [
 ],
 [
 "2026-04-22",
-25.2,
+21.8,
 "MiMo-V2.5",
 "Xiaomi",
 1
@@ -3121,7 +3121,7 @@ DATA = [
 ],
 [
 "2026-08-06",
-28.2,
+26.6,
 "Solar Pro 4",
 "Upstage",
 0
@@ -3495,6 +3495,55 @@ DATA = [
 55.8,
 "Muse Wonder Full",
 "Meta",
+0
+],
+[
+"2026-10-15",
+21.4,
+"Nemotron 3.5 Bolt 74B-A9B",
+"NVIDIA",
+1
+],
+[
+"2026-10-15",
+26.5,
+"Nemotron 3.5 Super VL",
+"NVIDIA",
+1
+],
+[
+"2026-10-15",
+38.9,
+"Muse Spark Open",
+"Meta",
+1
+],
+[
+"2026-10-16",
+30.3,
+"Beam 1.0",
+"Reflection",
+1
+],
+[
+"2026-10-17",
+45.1,
+"DeepSeek V4.1 Flash 1017",
+"DeepSeek",
+1
+],
+[
+"2026-10-19",
+42.7,
+"MiniMax-M3.1-Flash",
+"MiniMax",
+0
+],
+[
+"2026-10-23",
+55.1,
+"Kimi K3.1 Pro",
+"Kimi",
 0
 ]
 ]

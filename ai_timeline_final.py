@@ -105,6 +105,7 @@ data = [
     ("Llama 3.3", "Meta", "2024-12-06", False),
     ("Llama 4", "Meta", "2025-04-05", True),
     ("Muse Glimmer", "Meta", "2026-08-10", True),
+    ("Muse Spark Open", "Meta", "2026-10-15", True),
 
     # Meta Muse (Closed Source)
     ("Muse Spark", "Meta Muse", "2026-04-08", True),
@@ -193,6 +194,7 @@ data = [
     ("Kimi K2.6", "Kimi", "2026-04-13", False),
     ("Kimi K2.7 Code", "Kimi", "2026-06-12", False),
     ("Kimi K3", "Kimi", "2026-07-16", True),
+    ("Kimi K3.1 Pro", "Kimi", "2026-10-23", False),
 
     # MiniMax
     ("MiniMax-Text-01", "MiniMax", "2025-01-15", True),
@@ -202,6 +204,7 @@ data = [
     ("MiniMax-M2.5", "MiniMax", "2026-02-12", False),
     ("MiniMax-M2.7", "MiniMax", "2026-03-18", False),
     ("MiniMax-M3", "MiniMax", "2026-06-01", True),
+    ("MiniMax-M3.1 Flash", "MiniMax", "2026-10-19", False),
 
     # Google Gemma (Open Source / Open Weight)
     ("Gemma 1", "Google Gemma", "2024-02-21", True),
@@ -350,6 +353,7 @@ short_labels = {
     "Llama 3.3":        "3.3",
     "Llama 4":          "4",
     "Muse Glimmer":     "Glimmer",
+    "Muse Spark Open":  "Spark Open",
 
     # Microsoft Phi
     "Phi-1":            "1",
@@ -428,6 +432,7 @@ short_labels = {
     "Kimi K2.6":        "K2.6",
     "Kimi K2.7 Code":   "K2.7 Code",
     "Kimi K3":          "K3",
+    "Kimi K3.1 Pro":    "K3.1 Pro",
 
     # MiniMax
     "MiniMax-Text-01":  "Text-01",
@@ -437,6 +442,7 @@ short_labels = {
     "MiniMax-M2.5":     "M2.5",
     "MiniMax-M2.7":     "M2.7",
     "MiniMax-M3":       "M3",
+    "MiniMax-M3.1 Flash": "M3.1 Flash",
 
     # Google Gemma
     "Gemma 1":          "1",
