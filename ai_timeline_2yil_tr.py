@@ -115,6 +115,15 @@ data = [
     ("Muse Wonder", "Meta Muse", "2026-10-12", True),
     ("Muse Wonder Full", "Meta Muse", "2026-10-12", False),
 
+    # NVIDIA Nemotron (acik agirlikli)
+    ("Nemotron Nano 9B V2", "NVIDIA", "2025-08-18", True),
+    ("Nemotron 3 Nano 30B A3B", "NVIDIA", "2025-12-15", True),
+    ("Nemotron 3 Super 120B A12B", "NVIDIA", "2026-03-11", False),
+    ("Nemotron 3 Ultra 550B A55B", "NVIDIA", "2026-06-04", False),
+    ("Nemotron 3.5 Lightning", "NVIDIA", "2026-08-11", True),
+    ("Nemotron 3.5 Super VL", "NVIDIA", "2026-10-15", False),
+    ("Nemotron 3.5 Bolt 74B-A9B", "NVIDIA", "2026-10-15", False),
+
     # Microsoft MAI (Closed Source)
     ("MAI-Thinking-1", "Microsoft MAI", "2026-06-02", True),
 
@@ -458,6 +467,15 @@ short_labels = {
     "Doubao-1.5-Pro":       "1.5 Pro",
     "Doubao-Seed-2.0":      "Seed 2.0",
 
+    # NVIDIA Nemotron
+    "Nemotron Nano 9B V2":     "Nano 9B",
+    "Nemotron 3 Nano 30B A3B": "3 Nano",
+    "Nemotron 3 Super 120B A12B": "3 Super",
+    "Nemotron 3 Ultra 550B A55B": "3 Ultra",
+    "Nemotron 3.5 Lightning":  "3.5 Lightning",
+    "Nemotron 3.5 Super VL":   "3.5 Super VL",
+    "Nemotron 3.5 Bolt 74B-A9B": "3.5 Bolt",
+
     # Meta Muse
     "Muse Spark":           "Spark 1.0",
     "Muse Spark 1.1":       "Spark 1.1",
@@ -484,6 +502,7 @@ short_labels = {
 
 # Series name shown on Y-axis next to company name
 series_name = {
+    "NVIDIA":    "Nemotron",
     "OpenAI":       "GPT / o",
     "Google":       "Gemini",
     "Anthropic":    "Claude",
@@ -507,6 +526,7 @@ series_name = {
 }
 
 colors = {
+    "NVIDIA":    "#76B900",
     "OpenAI":    "#10a37f",
     "Google":    "#4285F4",
     "Anthropic": "#d97757",
@@ -530,6 +550,7 @@ colors = {
 }
 
 company_name = {
+    "NVIDIA":    "NVIDIA",
     "OpenAI":    "OpenAI",
     "Google":    "Google",
     "Anthropic": "Anthropic",
@@ -553,6 +574,7 @@ company_name = {
 }
 
 country_text = {
+    "NVIDIA":    "ABD",
     "OpenAI":    "ABD",
     "Google":    "ABD",
     "Anthropic": "ABD",
@@ -584,7 +606,7 @@ flag_images = {
 }
 
 company_order = ["OpenAI", "Google", "Anthropic", "xAI", "Microsoft MAI", "Meta Muse", "Amazon", "ByteDance", "Cohere",
-                 "Meta", "Microsoft", "Google Gemma", "Ai2", "Mistral",
+                 "Meta", "Microsoft", "Google Gemma", "Ai2", "Mistral", "NVIDIA",
                  "Qwen", "DeepSeek", "Z.ai", "Kimi", "MiniMax", "Xiaomi"]
 
 # Vertical spacing: each company gets 3.0 units
@@ -592,7 +614,7 @@ y_positions = {c: (len(company_order) - 1 - i) * 3.0 for i, c in enumerate(compa
 
 # Dark theme
 plt.style.use("dark_background")
-fig, ax = plt.subplots(figsize=(60, 58.5))
+fig, ax = plt.subplots(figsize=(60, 61.5))
 fig.patch.set_facecolor("#0d1117")
 ax.set_facecolor("#0d1117")
 
@@ -694,6 +716,9 @@ manual_overrides = {
 # (e.g. "2" is used by Meta/Llama, Anthropic/Claude, xAI/Grok, Microsoft/Phi)
 company_overrides = {
     ("OpenAI", "4.1"): (-80, -55),
+    ("NVIDIA", "3 Super"): (0, 55),
+    ("NVIDIA", "3.5 Super VL"): (0, 55),
+    ("NVIDIA", "3.5 Bolt"): (0, -55),
     ("Anthropic", "Opus 4.6"): (0, 55),
     ("Qwen", "3.8-Flash"): (0, -55),
     ("Google", "3.6 Flash"): (0, 55),
