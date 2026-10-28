@@ -37,6 +37,7 @@ data = [
     ("GPT-6 Astra", "OpenAI", "2026-09-03", True),
     ("GPT-6 Sol", "OpenAI", "2026-09-22", False),
     ("GPT-6.1 Sol", "OpenAI", "2026-09-29", False),
+    ("GPT-6.1 Terra", "OpenAI", "2026-10-26", False),
 
     # Google
     ("Gemini 1.0 Pro", "Google", "2023-12-06", True),
@@ -55,6 +56,7 @@ data = [
     ("Gemini 3.7 Flash", "Google", "2026-08-13", False),
     ("Gemini 3.8 Flash", "Google", "2026-09-02", True),
     ("Gemini 4 Argon", "Google", "2026-09-30", True),
+    ("Gemini 4 Carbon", "Google", "2026-10-28", False),
 
     # Anthropic
     ("Claude 1", "Anthropic", "2023-03-14", True),
@@ -291,6 +293,7 @@ short_labels = {
     "GPT-6 Astra":      "6 Astra",
     "GPT-6 Sol":        "6 Sol",
     "GPT-6.1 Sol":      "6.1 Sol",
+    "GPT-6.1 Terra":    "6.1 Terra",
     "MiMo-V2-Flash":    "V2-Flash",
     "MiMo-V2-Pro":      "V2-Pro",
     "MiMo-V2.5-Pro":    "V2.5-Pro",
@@ -313,6 +316,7 @@ short_labels = {
 
     "Gemini 3.8 Flash":     "3.8 Flash",
     "Gemini 4 Argon":       "4 Argon",
+    "Gemini 4 Carbon":      "4 Carbon",
     # Anthropic Claude
     "Claude 1":             "1",
     "Claude 2":             "2",
@@ -746,6 +750,7 @@ company_overrides = {
     ("Anthropic", "Haiku 5.5"): (0, 55),
     # Google satiri alt/ust donusumlu (3.5 alt, 3.6 ust, 3.7 alt, 3.8 ust)
     ("Google", "4 Argon"):  (0, -55),
+    ("Google", "4 Carbon"): (140, -55),
     # MiMo: V2-Pro (18 Mar) ile V2.5-Pro (22 Nis) ikisi de altta kalinca
     # cozucu birini yana, otekini ikinci kata (-121) itiyordu. Ust/alt
     # bolunerek ikisi de DIK ve standart +-55 uzaklikta tutuldu.
