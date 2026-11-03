@@ -228,6 +228,7 @@ data = [
     ("Doubao Pro", "ByteDance", "2024-05-15", True),
     ("Doubao-1.5-Pro", "ByteDance", "2025-01-22", False),
     ("Doubao-Seed-2.0", "ByteDance", "2026-02-14", True),
+    ("Doubao-Seed-2.1-Pro", "ByteDance", "2026-06-23", False),
 
     # Xiaomi MiMo (Open Weight)
     ("MiMo-V2-Flash", "Xiaomi", "2025-12-16", True),
@@ -470,6 +471,7 @@ short_labels = {
     "Doubao Pro":           "Pro",
     "Doubao-1.5-Pro":       "1.5 Pro",
     "Doubao-Seed-2.0":      "Seed 2.0",
+    "Doubao-Seed-2.1-Pro":  "Seed 2.1 Pro",
 
     # NVIDIA Nemotron
     "Nemotron Nano 9B V2":     "Nano 9B",

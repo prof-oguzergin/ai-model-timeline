@@ -3474,7 +3474,7 @@ DATA = [
 38.4,
 "Mistral Large 4",
 "Mistral",
-0
+1
 ],
 [
 "2026-10-07",
