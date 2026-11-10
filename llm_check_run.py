@@ -36,6 +36,8 @@ data = [
     ("GPT-5.6 Sol", "OpenAI", "2026-06-26", True),
     ("GPT-6 Astra", "OpenAI", "2026-09-03", True),
     ("GPT-6 Sol", "OpenAI", "2026-09-22", False),
+    ("GPT-6.1 Sol", "OpenAI", "2026-09-29", False),
+    ("GPT-6.1 Terra", "OpenAI", "2026-10-26", False),
 
     # Google
     ("Gemini 1.0 Pro", "Google", "2023-12-06", True),
@@ -53,6 +55,8 @@ data = [
     ("Gemini 3.6 Flash", "Google", "2026-07-21", False),
     ("Gemini 3.7 Flash", "Google", "2026-08-13", False),
     ("Gemini 3.8 Flash", "Google", "2026-09-02", True),
+    ("Gemini 4 Argon", "Google", "2026-09-30", True),
+    ("Gemini 4 Carbon", "Google", "2026-10-28", False),
 
     # Anthropic
     ("Claude 1", "Anthropic", "2023-03-14", True),
@@ -65,6 +69,7 @@ data = [
     ("Claude Sonnet 4", "Anthropic", "2025-05-22", False),
     ("Claude Opus 4.1", "Anthropic", "2025-08-05", False),
     ("Claude Sonnet 4.5", "Anthropic", "2025-09-29", False),
+    ("Claude Haiku 4.5", "Anthropic", "2025-10-15", False),
     ("Claude Opus 4.5", "Anthropic", "2025-11-24", False),
     ("Claude Opus 4.6", "Anthropic", "2026-02-05", False),
     ("Claude Sonnet 4.6", "Anthropic", "2026-02-17", False),
@@ -75,6 +80,9 @@ data = [
     ("Claude Opus 5", "Anthropic", "2026-07-24", True),
     ("Claude Fable 5.1", "Anthropic", "2026-09-01", True),
     ("Claude Opus 5.5", "Anthropic", "2026-09-22", True),
+    ("Claude Sonnet 5.5", "Anthropic", "2026-09-28", False),
+    ("Claude Haiku 5.5", "Anthropic", "2026-10-07", False),
+    ("Claude Fable 5.2", "Anthropic", "2026-11-09", True),
 
     # xAI
     ("Grok-1", "xAI", "2023-11-04", True),
@@ -100,12 +108,24 @@ data = [
     ("Llama 3.3", "Meta", "2024-12-06", False),
     ("Llama 4", "Meta", "2025-04-05", True),
     ("Muse Glimmer", "Meta", "2026-08-10", True),
+    ("Muse Spark Open", "Meta", "2026-10-15", True),
 
     # Meta Muse (Closed Source)
     ("Muse Spark", "Meta Muse", "2026-04-08", True),
     ("Muse Spark 1.1", "Meta Muse", "2026-07-09", False),
     ("Muse Spark 1.2", "Meta Muse", "2026-08-05", False),
     ("Muse Spark 1.3", "Meta Muse", "2026-09-02", True),
+    ("Muse Wonder", "Meta Muse", "2026-10-12", True),
+    ("Muse Wonder Full", "Meta Muse", "2026-10-12", False),
+
+    # NVIDIA Nemotron (acik agirlikli)
+    ("Nemotron Nano 9B V2", "NVIDIA", "2025-08-18", True),
+    ("Nemotron 3 Nano 30B A3B", "NVIDIA", "2025-12-15", True),
+    ("Nemotron 3 Super 120B A12B", "NVIDIA", "2026-03-11", False),
+    ("Nemotron 3 Ultra 550B A55B", "NVIDIA", "2026-06-04", False),
+    ("Nemotron 3.5 Lightning", "NVIDIA", "2026-08-11", True),
+    ("Nemotron 3.5 Super VL", "NVIDIA", "2026-10-15", False),
+    ("Nemotron 3.5 Bolt 74B-A9B", "NVIDIA", "2026-10-15", False),
 
     # Microsoft MAI (Closed Source)
     ("MAI-Thinking-1", "Microsoft MAI", "2026-06-02", True),
@@ -132,6 +152,7 @@ data = [
     ("Devstral", "Mistral", "2025-05-21", False),
     ("Magistral", "Mistral", "2025-06-10", True),
     ("Mistral Large 3", "Mistral", "2025-12-02", True),
+    ("Mistral Large 4", "Mistral", "2026-10-06", True),
     ("Mistral Small 4", "Mistral", "2026-03-16", False),
     ("Leanstral", "Mistral", "2026-03-16", False),
     ("Mistral Medium 3.5", "Mistral", "2026-04-29", False),
@@ -185,6 +206,7 @@ data = [
     ("Kimi K2.6", "Kimi", "2026-04-13", False),
     ("Kimi K2.7 Code", "Kimi", "2026-06-12", False),
     ("Kimi K3", "Kimi", "2026-07-16", True),
+    ("Kimi K3.1 Pro", "Kimi", "2026-10-23", False),
 
     # MiniMax
     ("MiniMax-Text-01", "MiniMax", "2025-01-15", True),
@@ -194,6 +216,7 @@ data = [
     ("MiniMax-M2.5", "MiniMax", "2026-02-12", False),
     ("MiniMax-M2.7", "MiniMax", "2026-03-18", False),
     ("MiniMax-M3", "MiniMax", "2026-06-01", True),
+    ("MiniMax-M3.1 Flash", "MiniMax", "2026-10-19", False),
 
     # Google Gemma (Open Source / Open Weight)
     ("Gemma 1", "Google Gemma", "2024-02-21", True),
@@ -206,6 +229,7 @@ data = [
     ("Doubao Pro", "ByteDance", "2024-05-15", True),
     ("Doubao-1.5-Pro", "ByteDance", "2025-01-22", False),
     ("Doubao-Seed-2.0", "ByteDance", "2026-02-14", True),
+    ("Doubao-Seed-2.1-Pro", "ByteDance", "2026-06-23", False),
 
     # Xiaomi MiMo (Open Weight)
     ("MiMo-V2-Flash", "Xiaomi", "2025-12-16", True),
@@ -270,6 +294,8 @@ short_labels = {
 
     "GPT-6 Astra":      "6 Astra",
     "GPT-6 Sol":        "6 Sol",
+    "GPT-6.1 Sol":      "6.1 Sol",
+    "GPT-6.1 Terra":    "6.1 Terra",
     "MiMo-V2-Flash":    "V2-Flash",
     "MiMo-V2-Pro":      "V2-Pro",
     "MiMo-V2.5-Pro":    "V2.5-Pro",
@@ -291,6 +317,8 @@ short_labels = {
     "Gemini 3.7 Flash":     "3.7 Flash",
 
     "Gemini 3.8 Flash":     "3.8 Flash",
+    "Gemini 4 Argon":       "4 Argon",
+    "Gemini 4 Carbon":      "4 Carbon",
     # Anthropic Claude
     "Claude 1":             "1",
     "Claude 2":             "2",
@@ -302,6 +330,7 @@ short_labels = {
     "Claude Sonnet 4":      "Sonnet 4",
     "Claude Opus 4.1":      "Opus 4.1",
     "Claude Sonnet 4.5":    "Sonnet 4.5",
+    "Claude Haiku 4.5":     "Haiku 4.5",
     "Claude Opus 4.5":      "Opus 4.5",
     "Claude Opus 4.6":      "Opus 4.6",
     "Claude Sonnet 4.6":    "Sonnet 4.6",
@@ -309,7 +338,10 @@ short_labels = {
     "Claude Opus 4.8":      "Opus 4.8",
     "Claude Fable 5":       "Fable 5",
     "Claude Fable 5.1":     "Fable 5.1",
+    "Claude Fable 5.2":     "Fable 5.2",
     "Claude Opus 5.5":      "Opus 5.5",
+    "Claude Sonnet 5.5":    "Sonnet 5.5",
+    "Claude Haiku 5.5":     "Haiku 5.5",
     "Claude Sonnet 5":      "Sonnet 5",
     "Claude Opus 5":        "Opus 5",
 
@@ -337,6 +369,7 @@ short_labels = {
     "Llama 3.3":        "3.3",
     "Llama 4":          "4",
     "Muse Glimmer":     "Glimmer",
+    "Muse Spark Open":  "Spark Open",
 
     # Microsoft Phi
     "Phi-1":            "1",
@@ -360,6 +393,7 @@ short_labels = {
     "Mistral Medium 3.5": "Medium 3.5",
     "Magistral":        "Magistral",
     "Mistral Large 3":  "Large 3",
+    "Mistral Large 4":  "Large 4",
     "Mistral Small 4":  "Small 4",
     "Leanstral":        "Leanstral",
     "Leanstral 1.5":    "Leanstral 1.5",
@@ -414,6 +448,7 @@ short_labels = {
     "Kimi K2.6":        "K2.6",
     "Kimi K2.7 Code":   "K2.7 Code",
     "Kimi K3":          "K3",
+    "Kimi K3.1 Pro":    "K3.1 Pro",
 
     # MiniMax
     "MiniMax-Text-01":  "Text-01",
@@ -423,6 +458,7 @@ short_labels = {
     "MiniMax-M2.5":     "M2.5",
     "MiniMax-M2.7":     "M2.7",
     "MiniMax-M3":       "M3",
+    "MiniMax-M3.1 Flash": "M3.1 Flash",
 
     # Google Gemma
     "Gemma 1":          "1",
@@ -435,12 +471,24 @@ short_labels = {
     "Doubao Pro":           "Pro",
     "Doubao-1.5-Pro":       "1.5 Pro",
     "Doubao-Seed-2.0":      "Seed 2.0",
+    "Doubao-Seed-2.1-Pro":  "Seed 2.1 Pro",
+
+    # NVIDIA Nemotron
+    "Nemotron Nano 9B V2":     "Nano 9B",
+    "Nemotron 3 Nano 30B A3B": "3 Nano",
+    "Nemotron 3 Super 120B A12B": "3 Super",
+    "Nemotron 3 Ultra 550B A55B": "3 Ultra",
+    "Nemotron 3.5 Lightning":  "3.5 Lightning",
+    "Nemotron 3.5 Super VL":   "3.5 Super VL",
+    "Nemotron 3.5 Bolt 74B-A9B": "3.5 Bolt",
 
     # Meta Muse
     "Muse Spark":           "Spark 1.0",
     "Muse Spark 1.1":       "Spark 1.1",
     "Muse Spark 1.2":       "Spark 1.2",
     "Muse Spark 1.3":       "Spark 1.3",
+    "Muse Wonder":          "Wonder",
+    "Muse Wonder Full":     "Wonder Full",
     "MAI-Thinking-1":       "Thinking-1",
 
     # Amazon Nova
@@ -460,6 +508,7 @@ short_labels = {
 
 # Series name shown on Y-axis next to company name
 series_name = {
+    "NVIDIA":    "Nemotron",
     "OpenAI":       "GPT / o",
     "Google":       "Gemini",
     "Anthropic":    "Claude",
@@ -483,6 +532,7 @@ series_name = {
 }
 
 colors = {
+    "NVIDIA":    "#76B900",
     "OpenAI":    "#10a37f",
     "Google":    "#4285F4",
     "Anthropic": "#d97757",
@@ -506,6 +556,7 @@ colors = {
 }
 
 company_name = {
+    "NVIDIA":    "NVIDIA",
     "OpenAI":    "OpenAI",
     "Google":    "Google",
     "Anthropic": "Anthropic",
@@ -529,6 +580,7 @@ company_name = {
 }
 
 country_text = {
+    "NVIDIA":    "ABD",
     "OpenAI":    "ABD",
     "Google":    "ABD",
     "Anthropic": "ABD",
@@ -560,7 +612,7 @@ flag_images = {
 }
 
 company_order = ["OpenAI", "Google", "Anthropic", "xAI", "Microsoft MAI", "Meta Muse", "Amazon", "ByteDance", "Cohere",
-                 "Meta", "Microsoft", "Google Gemma", "Ai2", "Mistral",
+                 "Meta", "Microsoft", "Google Gemma", "Ai2", "Mistral", "NVIDIA",
                  "Qwen", "DeepSeek", "Z.ai", "Kimi", "MiniMax", "Xiaomi"]
 
 # Vertical spacing: each company gets 3.0 units
@@ -568,7 +620,7 @@ y_positions = {c: (len(company_order) - 1 - i) * 3.0 for i, c in enumerate(compa
 
 # Dark theme
 plt.style.use("dark_background")
-fig, ax = plt.subplots(figsize=(60, 58.5))
+fig, ax = plt.subplots(figsize=(60, 61.5))
 fig.patch.set_facecolor("#0d1117")
 ax.set_facecolor("#0d1117")
 
@@ -669,6 +721,9 @@ manual_overrides = {
 # Company-specific overrides for labels that clash across companies
 # (e.g. "2" is used by Meta/Llama, Anthropic/Claude, xAI/Grok, Microsoft/Phi)
 company_overrides = {
+    ("NVIDIA", "3 Super"): (0, 55),
+    ("NVIDIA", "3.5 Super VL"): (0, 55),
+    ("NVIDIA", "3.5 Bolt"): (0, -55),
     ("Anthropic", "Opus 4.6"): (0, 55),
     ("Qwen", "3.8-Flash"): (0, -55),
     ("Google", "3.6 Flash"): (0, 55),
@@ -690,6 +745,21 @@ company_overrides = {
     ("OpenAI", "5.4"):      (0, 55),
     ("OpenAI", "5.5"):      (0, 55),
     ("OpenAI", "6 Sol"):    (0, -55),
+    # Eylul sonu her satirda 4 haftada 3 model. Taraf burada, gerekirse yatay
+    # kaydirmayi cozucu en kucuk adimla verir (iki yillik surumde dik kalir).
+    ("OpenAI", "6.1 Sol"):  (0, 55),
+    ("Anthropic", "Sonnet 5.5"): (0, -55),
+    ("Meta Muse", "Wonder"): (0, 55),
+    ("Meta Muse", "Wonder Full"): (0, -55),
+    ("Anthropic", "Haiku 5.5"): (0, 55),
+    # Google satiri alt/ust donusumlu (3.5 alt, 3.6 ust, 3.7 alt, 3.8 ust)
+    ("Google", "4 Argon"):  (0, -55),
+    ("Google", "4 Carbon"): (140, -55),
+    # MiMo: V2-Pro (18 Mar) ile V2.5-Pro (22 Nis) ikisi de altta kalinca
+    # cozucu birini yana, otekini ikinci kata (-121) itiyordu. Ust/alt
+    # bolunerek ikisi de DIK ve standart +-55 uzaklikta tutuldu.
+    ("Xiaomi", "V2-Pro"):   (0, -55),
+    ("Xiaomi", "V2.5-Pro"): (0, 55),
     ("Anthropic", "2"):     (0, 55),
     ("xAI", "2"):           (0, 55),
     ("Microsoft", "2"):     (0, 55),
@@ -723,6 +793,7 @@ company_overrides = {
         ("Anthropic", "Sonnet 5"): (0, -55),
 ("Anthropic", "Opus 5"): (55, 55),
     ("Anthropic", "Fable 5.1"): (0, -55),
+    ("Anthropic", "Fable 5.2"): (0, -55),
     # Mistral - all labels equal distance from line (no multi-level stacking)
     ("Mistral", "Medium 3"):    (-55, -55),
     ("Mistral", "Devstral"):    (55, -55),
@@ -911,31 +982,45 @@ ax.set_yticklabels([""] * len(labels_y))
 date_min = df["Date"].min()
 x_label_pos = date_min - pd.Timedelta(days=30)
 
+# Sol etiket blogu: capa EKSENIN SOL KENARI, konumlar NOKTA cinsinden.
+# Boylece blok eksenin gun olceginden bagimsiz; tam cizelge ile iki yillik
+# surumde birebir ayni goruntu cikiyor. Onceden gun cinsindendi ve ikisinde
+# farkli kayiyordu; ayrica adlar saga dayali, bayrak baska merkezdeydi.
+SOL_MERKEZ = -152   # seri adi / sirket adi / bayrak ORTAK merkezi
+SOL_ULKE = -196     # ulke adinin sag kenari (bayragin solunda 8 pt boslukla)
+
+
+def _sol_etiket(metin, y_veri, dx_pt, **kw):
+    return ax.annotate(metin, xy=(0, y_veri),
+                       xycoords=("axes fraction", "data"),
+                       xytext=(dx_pt, 0), textcoords="offset points",
+                       annotation_clip=False, **kw)
+
+
 for y_pos, company in labels_y:
-    # Model series name - top, big, bold, colored
     sname = series_name[company]
     display_top = sname if sname else company_name[company]
-    ax.text(x_label_pos, y_pos + 0.7, display_top,
-            fontsize=36, fontweight="bold", color=colors[company],
-            ha="right", va="center")
-    # Company name - middle, smaller, white/gray
+    # Seri adi - ustte, buyuk, kalin, renkli; bayragin USTUNDE ORTALI
+    _sol_etiket(display_top, y_pos + 0.7, SOL_MERKEZ,
+                fontsize=36, fontweight="bold", color=colors[company],
+                ha="center", va="center")
+    # Sirket adi - ortada, kucuk, gri; ayni merkezde
     if sname:
-        ax.text(x_label_pos, y_pos + 0.05, company_name[company],
-                fontsize=26, fontweight="normal", color="#8b949e",
-                ha="right", va="center")
-    # Country name - below, shifted left to make room for flag
+        _sol_etiket(company_name[company], y_pos + 0.05, SOL_MERKEZ,
+                    fontsize=26, fontweight="normal", color="#8b949e",
+                    ha="center", va="center")
+    # Ulke adi - bayragin hemen solunda
     country = country_text[company]
-    flag_x_offset = date_min - pd.Timedelta(days=65)
-    ax.text(mdates.date2num(flag_x_offset), y_pos - 0.65, country,
-            fontsize=24, fontweight="normal", color="#8b949e",
-            ha="right", va="center", fontstyle="italic")
+    _sol_etiket(country, y_pos - 0.65, SOL_ULKE,
+                fontsize=24, fontweight="normal", color="#8b949e",
+                ha="right", va="center", fontstyle="italic")
 
-    # Place real flag image to the right of country text
-    flag_path = flag_images[country]
-    flag_img = plt.imread(flag_path)
-    imagebox = OffsetImage(flag_img, zoom=0.40)
-    flag_date = date_min - pd.Timedelta(days=45)
-    ab = AnnotationBbox(imagebox, (mdates.date2num(flag_date), y_pos - 0.65),
+    # Bayrak - adlarla ayni merkezde
+    flag_img = plt.imread(flag_images[country])
+    ab = AnnotationBbox(OffsetImage(flag_img, zoom=0.40),
+                        (0, y_pos - 0.65),
+                        xycoords=("axes fraction", "data"),
+                        xybox=(SOL_MERKEZ, 0), boxcoords="offset points",
                         frameon=False, zorder=10,
                         clip_on=False, annotation_clip=False)
     ax.add_artist(ab)
@@ -1069,86 +1154,172 @@ ax.text(0.905, 1.030, "Prof. Dr. Oğuz Ergin",
 
 
 # ============================================================
-# ETIKET YERLESIMI - KISITLI cozucu
-# KURAL: etiket noktanin tam ustunde/altinda durur, cizgi DIK iner-cikar.
-# Elle ayarlanmis yerlesim korunur; SADECE gercekten cakisan etiketler
-# oynatilir, otekiler sabit engel sayilir. Once dik konum denenir, sonra
-# artan yatay adimlar.
-# NEDEN DIKEY KAT YOK: bu cizelgede satirlar birbirine yakin; ikinci kata
-# cikan etiket komsu sirketin satirina giriyor (olculdu: cakisma 10 -> 23).
-# Sikisik satirlarda (2026 ortasi Anthropic, Gemini Flash dizisi) yatay
-# ayirma kacinilmaz; kural bunu "cok acil durum" istisnasi sayiyor.
-# ============================================================
-fig.canvas.draw()
-_r = fig.canvas.get_renderer()
-_P2X = fig.dpi / 72.0
-from matplotlib.transforms import Bbox
-
-_ann = []
-for _t in ax.texts:
-    _p = getattr(_t, "xyann", None)
-    if not isinstance(_p, tuple) or abs(_p[1]) < 20: continue
-    _ann.append([_t, list(_p), _t.get_window_extent(_r)])
-
-def _kesisir(_a, _b):
-    return (min(_a.x1, _b.x1) - max(_a.x0, _b.x0)) > 1 and (min(_a.y1, _b.y1) - max(_a.y0, _b.y0)) > 1
-def _otele(_bb, _dx, _dy):
-    return Bbox.from_extents(_bb.x0 + _dx*_P2X, _bb.y0 + _dy*_P2X,
-                             _bb.x1 + _dx*_P2X, _bb.y1 + _dy*_P2X)
-
-_YATAY = [0, -26, 26, -52, 52, -80, 80, -110, 110, -145, 145,
-          -180, 180, -215, 215, -250, 250]
-for _tur in range(8):
-    _kutular = [e[2] for e in _ann]
-    _sorun = set()
-    for _i in range(len(_ann)):
-        for _j in range(_i+1, len(_ann)):
-            if _kesisir(_kutular[_i], _kutular[_j]): _sorun.add(_i); _sorun.add(_j)
-    if not _sorun: break
-    for _i in sorted(_sorun):
-        _t, _p, _bb = _ann[_i]
-        _digerleri = [_ann[_k][2] for _k in range(len(_ann)) if _k != _i]
-        _en, _encez, _enbb = None, None, None
-        for _v in _YATAY:
-            _b = _otele(_bb, _v - _p[0], 0)
-            _cez = sum(1 for _o in _digerleri if _kesisir(_b, _o)) * 1000 + abs(_v) * 2
-            if _encez is None or _cez < _encez: _en, _encez, _enbb = _v, _cez, _b
-            if _cez == abs(_v) * 2 and _v == 0: break
-        _t.set_position((_en, _p[1]))
-        _ann[_i][1][0] = _en
-        _ann[_i][2] = _enbb
-
-
+# Son yerlesim cozucudan ONCE: margins/ylim/tight_layout eksen olcegini
+# degistirir; cozucu son olcekle olcmezse temiz sandigi etiketler degiyor.
 plt.margins(y=0.01, x=0.06)
 ax.set_ylim(y_min, y_max)
 plt.tight_layout(rect=[0.11, 0.03, 0.98, 0.98])
 
+# ETIKET YERLESIMI - KISITLI cozucu
+# KURAL: etiket noktanin tam ustunde/altinda durur, cizgi DIK iner-cikar.
+# Elle ayarlanmis yerlesim korunur; SADECE gercekten cakisan etiketler
+# oynatilir, otekiler sabit engel sayilir. Once dik konum denenir, sonra
+# artan yatay adimlar. Cakisan ciftte yalniz DAHA YENI tarihli etiket oynar.
+# NEDEN DIKEY KAT YOK: satirlar birbirine yakin; ikinci kata cikan etiket
+# komsu sirketin satirina giriyor (olculdu: cakisma 10 -> 23).
+# OLCUM (1 Eki 2026): Annotation.get_window_extent() baglanti cizgisini de
+# kutuya katiyordu; egik etiketlerde kutu noktadan etikete uzanan dikdortgene
+# donusuyor, gorunmeyen cakismalar uretiyordu. Artik etiket kutusu = cizilen
+# yuvarlak kutu, baglanti = noktadan kutu merkezine dogru parcasi.
+# ============================================================
+import matplotlib.dates as _md
+from matplotlib.text import Text as _Text
+from matplotlib.transforms import Bbox
+_PAY = 8          # piksel: bundan yakin iki etiket kusur sayilir
+_P2X = fig.dpi / 72.0
+
+
+def _kutu(_t, _r):
+    _bp = _t.get_bbox_patch()
+    return _bp.get_window_extent(_r) if _bp is not None else _Text.get_window_extent(_t, _r)
+
+
+def _nokta(_t):
+    _x, _y = _t.xy
+    if not isinstance(_x, (int, float)):
+        _x = _md.date2num(_x)
+    return ax.transData.transform((_x, _y))
+
+
+def _kutu_kutu(_a, _b):
+    return (min(_a.x1, _b.x1) - max(_a.x0, _b.x0)) > -_PAY and \
+           (min(_a.y1, _b.y1) - max(_a.y0, _b.y0)) > 1
+
+
+def _parca_kutu(_p0, _p1, _b):
+    # dogru parcasi kutunun ICINDEN geciyor mu (ornekleme; kutu 2 px icten)
+    for _k in range(1, 40):
+        _u = _k / 40.0
+        _x = _p0[0] + (_p1[0] - _p0[0]) * _u
+        _y = _p0[1] + (_p1[1] - _p0[1]) * _u
+        if _b.x0 + 2 < _x < _b.x1 - 2 and _b.y0 + 2 < _y < _b.y1 - 2:
+            return True
+    return False
+
+
+def _merkez(_b):
+    return ((_b.x0 + _b.x1) / 2.0, (_b.y0 + _b.y1) / 2.0)
+
+
+def _cakisma(_ka, _na, _kb, _nb):
+    return (_kutu_kutu(_ka, _kb) or _parca_kutu(_na, _merkez(_ka), _kb)
+            or _parca_kutu(_nb, _merkez(_kb), _ka))
+
+
+def _otele(_bb, _dx):
+    return Bbox.from_extents(_bb.x0 + _dx * _P2X, _bb.y0, _bb.x1 + _dx * _P2X, _bb.y1)
+
+
+_ann = [_t for _t in ax.texts
+        if isinstance(getattr(_t, "xyann", None), tuple) and abs(_t.xyann[1]) >= 20]
+# ONAYLI DUZEN: yayimlanmis cizelgedeki her etiket o konumda SABIT kalir;
+# cozucu yalniz yeni eklenen etiketleri yerlestirir. Anahtar "etiket|satir_y".
+import json as _json, os as _os
+_ONAYLI_DOSYA = r"G:/My Drive/Claude Code/YZ Model Zaman Cizelgesi/_kod/onayli_final.json"
+_onayli = _json.load(open(_ONAYLI_DOSYA, encoding="utf-8")) if _os.path.exists(_ONAYLI_DOSYA) else {}
+_sabit = set()
+for _k, _t in enumerate(_ann):
+    _key = "%s|%s" % (_t.get_text(), round(float(_t.xy[1]), 4))
+    if _key in _onayli:
+        _t.set_position(tuple(_onayli[_key]))
+        _sabit.add(_k)
+_YATAY = [0, -26, 26, -52, 52, -80, 80, -110, 110, -145, 145,
+          -180, 180, -215, 215, -250, 250]
+for _tur in range(10):
+    fig.canvas.draw()
+    _r = fig.canvas.get_renderer()
+    _K = [_kutu(_t, _r) for _t in _ann]
+    _N = [_nokta(_t) for _t in _ann]
+    _sorun = set()
+    for _i in range(len(_ann)):
+        for _j in range(_i + 1, len(_ann)):
+            if _cakisma(_K[_i], _N[_i], _K[_j], _N[_j]):
+                if _i in _sabit and _j in _sabit:
+                    continue          # iki onayli etiket: dokunulmaz
+                if _i in _sabit:
+                    _sorun.add(_j)
+                elif _j in _sabit:
+                    _sorun.add(_i)
+                else:
+                    _sorun.add(_i if _md.date2num(_ann[_i].xy[0]) >= _md.date2num(_ann[_j].xy[0]) else _j)
+    if not _sorun:
+        break
+    for _i in sorted(_sorun):
+        _t = _ann[_i]
+        _x0, _y0 = _t.xyann
+        _en, _encez = None, None
+        for _v in _YATAY:
+            _b = _otele(_K[_i], _v - _x0)
+            _c = sum(1 for _k in range(len(_ann))
+                     if _k != _i and _cakisma(_b, _N[_i], _K[_k], _N[_k])) * 1000 + abs(_v) * 2
+            if _encez is None or _c < _encez:
+                _en, _encez = _v, _c
+            if _c == 0:
+                break
+        _t.set_position((_en, _y0))
+        _K[_i] = _otele(_K[_i], _en - _x0)
+
+
+
 # ---- OLCUM (gecici) ----
-fig.canvas.draw(); _r = fig.canvas.get_renderer()
-_PAY = 8   # piksel: bu kadar yakin etiketler de kusur sayilir
-_kutu = []
+import matplotlib.dates as _mdx
+from matplotlib.text import Text as _TextX
+fig.canvas.draw(); _rr = fig.canvas.get_renderer()
+_PAYX = 8
+_sol = ax.get_window_extent(_rr).x0
+def _kx(_t):
+    _bp = _t.get_bbox_patch()
+    return _bp.get_window_extent(_rr) if _bp is not None else _TextX.get_window_extent(_t, _rr)
+def _nx(_t):
+    _x, _y = _t.xy
+    if not isinstance(_x, (int, float)): _x = _mdx.date2num(_x)
+    return ax.transData.transform((_x, _y))
+def _ix(_p0, _p1, _b):
+    for _k in range(1, 40):
+        _u = _k / 40.0
+        _x = _p0[0] + (_p1[0] - _p0[0]) * _u; _y = _p0[1] + (_p1[1] - _p0[1]) * _u
+        if _b.x0 + 2 < _x < _b.x1 - 2 and _b.y0 + 2 < _y < _b.y1 - 2: return True
+    return False
+_L = []
 for _t in ax.texts:
     _p = getattr(_t, "xyann", None)
-    try: _bb = _t.get_window_extent(_r)
-    except Exception: continue
-    if _bb.width < 2 or _bb.height < 2: continue
-    _kutu.append((_t.get_text(), _bb, _p if isinstance(_p, tuple) else (0, 0)))
+    if not isinstance(_p, tuple) or abs(_p[1]) < 20: continue
+    _b = _kx(_t)
+    if _b.x1 <= _sol: continue
+    _L.append((_t.get_text(), _b, _nx(_t), _p))
 _cak = []
-for _i in range(len(_kutu)):
-    for _j in range(_i+1, len(_kutu)):
-        _a, _ba, _ = _kutu[_i]; _b, _bb2, _ = _kutu[_j]
-        _ox = min(_ba.x1, _bb2.x1) - max(_ba.x0, _bb2.x0)
-        _oy = min(_ba.y1, _bb2.y1) - max(_ba.y0, _bb2.y0)
-        # PAY: kutular birbirine DEGIYOR ama ust uste binmiyorsa eski olcut
-        # 0 cakisma diyordu; gozle bakinca etiketler yapisik gorunuyordu
-        # (Opus 5 | Fable 5.1 | Opus 5.5). Bosluk payi eklendi.
-        if _ox > -_PAY and _oy > 1: _cak.append((_a, _b, _ox, _oy))
-_egik = [(t, p) for t, b, p in _kutu if abs(p[0]) > 0.5]
+for _i in range(len(_L)):
+    for _j in range(_i + 1, len(_L)):
+        _a, _ba, _na, _ = _L[_i]; _c, _bc, _nc, _ = _L[_j]
+        _ox = min(_ba.x1, _bc.x1) - max(_ba.x0, _bc.x0)
+        _oy = min(_ba.y1, _bc.y1) - max(_ba.y0, _bc.y0)
+        _ma = ((_ba.x0 + _ba.x1) / 2, (_ba.y0 + _ba.y1) / 2)
+        _mc = ((_bc.x0 + _bc.x1) / 2, (_bc.y0 + _bc.y1) / 2)
+        if _ox > -_PAYX and _oy > 1:
+            _cak.append(("KUTU", _a, _c, _ox))
+        elif _ix(_na, _ma, _bc):
+            _cak.append(("CIZGI", _a, _c, 0))
+        elif _ix(_nc, _mc, _ba):
+            _cak.append(("CIZGI", _c, _a, 0))
+_egik = [(t, p) for t, b, n, p in _L if abs(p[0]) > 0.5]
 print("=" * 60)
-print("ETIKET: %d | CAKISMA/YAPISIK: %d | YATAY KAYMALI (egik): %d" % (len(_kutu), len(_cak), len(_egik)))
-for _a, _b, _ox, _oy in _cak[:18]:
-    print("   CAKISMA  %-22s <-> %-22s %.0fx%.0f" % (_a[:22], _b[:22], _ox, _oy))
-for _t, _p in _egik[:22]:
+print("ETIKET: %d | CAKISMA/YAPISIK: %d | YATAY KAYMALI (egik): %d" % (len(_L), len(_cak), len(_egik)))
+for _tip, _a, _c, _ox in _cak[:18]:
+    if _tip == "KUTU":
+        print("   CAKISMA  %-22s <-> %-22s %.0f px" % (_a[:22], _c[:22], _ox))
+    else:
+        print("   CIZGI    %-22s cizgisi %-22s kutusundan geciyor" % (_a[:22], _c[:22]))
+for _t, _p in _egik[:30]:
     print("   EGIK     %-22s dx=%s dy=%s" % (_t[:22], _p[0], _p[1]))
 print("=" * 60)
 
