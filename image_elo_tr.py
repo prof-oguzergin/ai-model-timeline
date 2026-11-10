@@ -960,7 +960,7 @@ DATA = [
 ]
 ]
 
-L = {'ylabel': 'Görsel Kalite Elo (Artificial Analysis Arena)', 'title': 'Görsel Üretme Modellerinin Başarımı — Tek Sayıyla', 'sub': '{n} modelin körlemesine insan oylamasıyla Elo puanı ({lo} – {hi})  ·  sarı merdiven: o güne kadarki en iyi', 'growth': 'Son 12 ayda\n{a:.0f} → {b:.0f}  (+{d:.0f} puan)', 'cloud': 'diğer ölçülen modeller', 'credit': 'Kaynak: artificialanalysis.ai (Image Arena)  ·  Derleyen: Prof. Dr. Oğuz Ergin'}
+L = {'ylabel': 'Görsel Kalite Elo (Artificial Analysis Arena)', 'title': 'Görsel Üretme Modellerinin Başarımı — Tek Sayıyla', 'sub': '{n} modelin körlemesine insan oylamasıyla Elo puanı ({lo} – {hi})  ·  sarı merdiven: o güne kadarki en iyi', 'growth': 'Son 12 ayda\n{a:.0f} → {b:.0f}  (+{d:.0f} puan)', 'cloud': 'diğer ölçülen modeller', 'credit': 'Kaynak: artificialanalysis.ai (Image Arena)  ·  Derleyen: Prof. Dr. Oğuz Ergin', 'frozen': 'DONDURULDU — eski ölçek\nArtificial Analysis görsel arenasını\nAA-Image-T2I v2.1 ölçeğine taşıdı.\nYeni ölçekteki çizelge ayrı.'}
 
 COLORS = {"Anthropic": "#d97757", "OpenAI": "#10a37f", "Google": "#4285F4", "xAI": "#1da1f2",
           "Meta": "#0668E1", "DeepSeek": "#ef4444", "Alibaba": "#7C3AED", "Moonshot": "#14B8A6",
@@ -1045,6 +1045,12 @@ ax.text(0.5, 1.045, L["sub"].format(n=len(df), lo=df["Date"].min().strftime("%b 
 ax.text(0.015, 0.965, L["growth"].format(a=bir_yil, b=son["ii"], k=son["ii"] / bir_yil, d=son["ii"] - bir_yil),
         transform=ax.transAxes, ha="left", va="top", fontsize=17, color="#ffd166", fontweight="bold",
         bbox=dict(boxstyle="round,pad=0.6", fc="#161b22", ec="#ffd166", lw=1.8, alpha=.95))
+
+
+# --- DONDURMA NOTU (10 Kas 2026): AA olcegi v2.1'e tasidi, bu seri eski olcekte kaldi ---
+ax.text(0.015, 0.845, L["frozen"], transform=ax.transAxes, ha="left", va="top",
+        fontsize=14, color="#ff7b72", fontweight="bold", linespacing=1.45,
+        bbox=dict(boxstyle="round,pad=0.6", fc="#161b22", ec="#ff7b72", lw=1.8, alpha=.95))
 
 # lejant (sinirdaki sirketler)
 import matplotlib.lines as mlines

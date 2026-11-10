@@ -1,0 +1,200 @@
+[
+ {
+  "model": "Wan 3.0",
+  "uretici": "Alibaba",
+  "elo": 1175,
+  "cikis": "Aug 2026"
+ },
+ {
+  "model": "Utopai X",
+  "uretici": "Utopai Studios",
+  "elo": 1168,
+  "cikis": "Sep 2026"
+ },
+ {
+  "model": "MiniMax H3 (768p)",
+  "uretici": "MiniMax",
+  "elo": 1161,
+  "cikis": "Jul 2026"
+ },
+ {
+  "model": "Dreamina Seedance 2.5",
+  "uretici": "ByteDance Seed",
+  "elo": 1155,
+  "cikis": "Jul 2026"
+ },
+ {
+  "model": "FLUX 3 Max",
+  "uretici": "Fal",
+  "elo": 1155,
+  "cikis": "Oct 2026"
+ },
+ {
+  "model": "HeyGen Video 1",
+  "uretici": "HeyGen",
+  "elo": 1153,
+  "cikis": "Oct 2026"
+ },
+ {
+  "model": "MiniMax H3 Max",
+  "uretici": "Fal",
+  "elo": 1147,
+  "cikis": "Aug 2026"
+ },
+ {
+  "model": "SkyReels V4",
+  "uretici": "Skywork AI",
+  "elo": 1138,
+  "cikis": "Mar 2026"
+ },
+ {
+  "model": "FLUX 3",
+  "uretici": "Black Forest Labs",
+  "elo": 1138,
+  "cikis": "Jul 2026"
+ },
+ {
+  "model": "Dreamina Seedance 2.0",
+  "uretici": "ByteDance Seed",
+  "elo": 1137,
+  "cikis": "Mar 2026"
+ },
+ {
+  "model": "P-Video-2-Pro",
+  "uretici": "Pruna AI",
+  "elo": 1129,
+  "cikis": "Sep 2026"
+ },
+ {
+  "model": "Gemini Omni Flash 1.1",
+  "uretici": "Google",
+  "elo": 1128,
+  "cikis": "Aug 2026"
+ },
+ {
+  "model": "Pika H3 Flex",
+  "uretici": "Pika Art",
+  "elo": 1125,
+  "cikis": "Oct 2026"
+ },
+ {
+  "model": "Agnes-Video-2.5",
+  "uretici": "Sapiens AI",
+  "elo": 1064,
+  "cikis": "Aug 2026"
+ },
+ {
+  "model": "Grok Imagine Video 1.5",
+  "uretici": "SpaceXAI",
+  "elo": 1056,
+  "cikis": "May 2026"
+ },
+ {
+  "model": "HappyHorse-1.1",
+  "uretici": "Alibaba-ATH",
+  "elo": 1049,
+  "cikis": "Jun 2026"
+ },
+ {
+  "model": "MAGI-2 Preview",
+  "uretici": "Sand.ai",
+  "elo": 1041,
+  "cikis": "Sep 2026"
+ },
+ {
+  "model": "Wan2.7-260612",
+  "uretici": "Alibaba",
+  "elo": 1037,
+  "cikis": "Jun 2026"
+ },
+ {
+  "model": "HappyHorse-1.0",
+  "uretici": "Alibaba-ATH",
+  "elo": 1032,
+  "cikis": "Apr 2026"
+ },
+ {
+  "model": "Kling 3.0 Omni 1080p (Pro)",
+  "uretici": "KlingAI",
+  "elo": 1021,
+  "cikis": "Feb 2026"
+ },
+ {
+  "model": "Kling 3.0 1080p (Pro)",
+  "uretici": "KlingAI",
+  "elo": 1000,
+  "cikis": "Feb 2026"
+ },
+ {
+  "model": "Grok Imagine Video 1.5 Lite",
+  "uretici": "SpaceXAI",
+  "elo": 989,
+  "cikis": "Aug 2026"
+ },
+ {
+  "model": "PixVerse V6",
+  "uretici": "PixVerse",
+  "elo": 981,
+  "cikis": "Mar 2026"
+ },
+ {
+  "model": "Veo 3.1",
+  "uretici": "Google",
+  "elo": 965,
+  "cikis": "Jan 2026"
+ },
+ {
+  "model": "Veo 3.1 Fast",
+  "uretici": "Google",
+  "elo": 956,
+  "cikis": "Jan 2026"
+ },
+ {
+  "model": "Veo 3.1 Lite",
+  "uretici": "Google",
+  "elo": 949,
+  "cikis": "Mar 2026"
+ },
+ {
+  "model": "LTX-2.5 Fast",
+  "uretici": "Lightricks",
+  "elo": 943,
+  "cikis": "Aug 2026"
+ },
+ {
+  "model": "LTX-2.5 Pro",
+  "uretici": "Lightricks",
+  "elo": 939,
+  "cikis": "Aug 2026"
+ },
+ {
+  "model": "Vidu Q3 Pro",
+  "uretici": "Vidu",
+  "elo": 939,
+  "cikis": "Jan 2026"
+ },
+ {
+  "model": "Vidu Q3 Turbo",
+  "uretici": "Vidu",
+  "elo": 910,
+  "cikis": "Feb 2026"
+ },
+ {
+  "model": "LTX-2.3 Pro",
+  "uretici": "Lightricks",
+  "elo": 884,
+  "cikis": "Mar 2026"
+ },
+ {
+  "model": "LTX-2.3 Fast",
+  "uretici": "Lightricks",
+  "elo": 841,
+  "cikis": "Mar 2026"
+ },
+ {
+  "model": "Boreal",
+  "uretici": "Creatify",
+  "elo": 828,
+  "cikis": "Sep 2026"
+ }
+]

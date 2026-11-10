@@ -1,0 +1,650 @@
+[
+ {
+  "model": "GPT Image 2.6 Sunburst (max)",
+  "uretici": "OpenAI",
+  "elo": 1259,
+  "cikis": "Nov 2026"
+ },
+ {
+  "model": "GPT Image 2.5 Sunburst (max)",
+  "uretici": "OpenAI",
+  "elo": 1228,
+  "cikis": "Sep 2026"
+ },
+ {
+  "model": "GPT Image 2.6 Flare (max)",
+  "uretici": "OpenAI",
+  "elo": 1227,
+  "cikis": "Nov 2026"
+ },
+ {
+  "model": "GPT Image 2.5 Flare (max)",
+  "uretici": "OpenAI",
+  "elo": 1209,
+  "cikis": "Sep 2026"
+ },
+ {
+  "model": "GPT Image 2 (high)",
+  "uretici": "OpenAI",
+  "elo": 1189,
+  "cikis": "Apr 2026"
+ },
+ {
+  "model": "Nano Banana 2.1",
+  "uretici": "Google",
+  "elo": 1176,
+  "cikis": "Oct 2026"
+ },
+ {
+  "model": "MAI-Image-2.6",
+  "uretici": "Microsoft AI",
+  "elo": 1168,
+  "cikis": "Aug 2026"
+ },
+ {
+  "model": "Grok Imagine Image 2.0",
+  "uretici": "SpaceXAI",
+  "elo": 1167,
+  "cikis": "Aug 2026"
+ },
+ {
+  "model": "Nano Banana 2 (Gemini 3.1 Flash Image)",
+  "uretici": "Google",
+  "elo": 1142,
+  "cikis": "Feb 2026"
+ },
+ {
+  "model": "Muse Image",
+  "uretici": "Meta",
+  "elo": 1128,
+  "cikis": "Jul 2026"
+ },
+ {
+  "model": "GPT Image 1.5 (high)",
+  "uretici": "OpenAI",
+  "elo": 1124,
+  "cikis": "Dec 2025"
+ },
+ {
+  "model": "MAI-Image-2.6-Flash",
+  "uretici": "Microsoft AI",
+  "elo": 1123,
+  "cikis": "Sep 2026"
+ },
+ {
+  "model": "MAI-Image-2.5",
+  "uretici": "Microsoft AI",
+  "elo": 1119,
+  "cikis": "Jun 2026"
+ },
+ {
+  "model": "Nano Banana Pro (Gemini 3 Pro Image)",
+  "uretici": "Google",
+  "elo": 1119,
+  "cikis": "Nov 2025"
+ },
+ {
+  "model": "MAI-Image-2.5-Pro",
+  "uretici": "Microsoft AI",
+  "elo": 1116,
+  "cikis": "Jul 2026"
+ },
+ {
+  "model": "FLUX 3 Image",
+  "uretici": "Black Forest Labs",
+  "elo": 1116,
+  "cikis": "Oct 2026"
+ },
+ {
+  "model": "Nano Banana 2 Lite (Gemini 3.1 Flash Lite Image)",
+  "uretici": "Google",
+  "elo": 1110,
+  "cikis": "Jun 2026"
+ },
+ {
+  "model": "Seedream 5.0 Pro",
+  "uretici": "ByteDance Seed",
+  "elo": 1101,
+  "cikis": "Jul 2026"
+ },
+ {
+  "model": "Qwen-Image-3.0-Pro",
+  "uretici": "Alibaba",
+  "elo": 1094,
+  "cikis": "Jul 2026"
+ },
+ {
+  "model": "Qwen-Image-3.0",
+  "uretici": "Alibaba",
+  "elo": 1074,
+  "cikis": "Jul 2026"
+ },
+ {
+  "model": "Qwen-Image-2.1-Pro",
+  "uretici": "Alibaba",
+  "elo": 1058,
+  "cikis": "Oct 2026"
+ },
+ {
+  "model": "grok-imagine-image-quality",
+  "uretici": "SpaceXAI",
+  "elo": 1049,
+  "cikis": "May 2026"
+ },
+ {
+  "model": "Qwen-Image-2.1",
+  "uretici": "Alibaba",
+  "elo": 1046,
+  "cikis": "Sep 2026"
+ },
+ {
+  "model": "FLUX 3 Image Klein",
+  "uretici": "Black Forest Labs",
+  "elo": 1042,
+  "cikis": "Oct 2026"
+ },
+ {
+  "model": "Fibo 2.0",
+  "uretici": "Bria",
+  "elo": 1040,
+  "cikis": "Oct 2026"
+ },
+ {
+  "model": "Krea 2 Large",
+  "uretici": "Krea",
+  "elo": 1035,
+  "cikis": "May 2026"
+ },
+ {
+  "model": "MAI-Image-2.5-Flash",
+  "uretici": "Microsoft AI",
+  "elo": 1033,
+  "cikis": "Jun 2026"
+ },
+ {
+  "model": "Qwen Image 2.0 Pro (2026-04-22)",
+  "uretici": "Alibaba",
+  "elo": 1031,
+  "cikis": "Apr 2026"
+ },
+ {
+  "model": "Seedream 4.5",
+  "uretici": "ByteDance Seed",
+  "elo": 1029,
+  "cikis": "Dec 2025"
+ },
+ {
+  "model": "FLUX.2 [flex]",
+  "uretici": "Black Forest Labs",
+  "elo": 1028,
+  "cikis": "Nov 2025"
+ },
+ {
+  "model": "Recraft V4.1 Utility",
+  "uretici": "Recraft",
+  "elo": 1028,
+  "cikis": "May 2026"
+ },
+ {
+  "model": "Ideogram 4.0 (Quality)",
+  "uretici": "Ideogram",
+  "elo": 1028,
+  "cikis": "Jun 2026"
+ },
+ {
+  "model": "Wan 2.6 Image",
+  "uretici": "Alibaba",
+  "elo": 1027,
+  "cikis": "Dec 2025"
+ },
+ {
+  "model": "Qwen-Image-2.1-Turbo",
+  "uretici": "Alibaba",
+  "elo": 1026,
+  "cikis": "Oct 2026"
+ },
+ {
+  "model": "Luma UNI 1 Max",
+  "uretici": "Luma Labs",
+  "elo": 1026,
+  "cikis": "May 2026"
+ },
+ {
+  "model": "grok-imagine-image",
+  "uretici": "SpaceXAI",
+  "elo": 1024,
+  "cikis": "Jan 2026"
+ },
+ {
+  "model": "Krea 2 Medium Turbo",
+  "uretici": "Krea",
+  "elo": 1021,
+  "cikis": "Jun 2026"
+ },
+ {
+  "model": "FLUX.2 [max]",
+  "uretici": "Black Forest Labs",
+  "elo": 1021,
+  "cikis": "Dec 2025"
+ },
+ {
+  "model": "Seedream 5.0 Lite",
+  "uretici": "ByteDance Seed",
+  "elo": 1020,
+  "cikis": "Feb 2026"
+ },
+ {
+  "model": "Wan2.6 Text to Image",
+  "uretici": "Alibaba",
+  "elo": 1019,
+  "cikis": "Jan 2026"
+ },
+ {
+  "model": "Recraft V4.1 Utility Pro",
+  "uretici": "Recraft",
+  "elo": 1019,
+  "cikis": "May 2026"
+ },
+ {
+  "model": "HiDream-O1-Image-1.5",
+  "uretici": "HiDream",
+  "elo": 1018,
+  "cikis": "Jun 2026"
+ },
+ {
+  "model": "GPT Image 1 (high)",
+  "uretici": "OpenAI",
+  "elo": 1015,
+  "cikis": "Apr 2025"
+ },
+ {
+  "model": "Ideogram 4.5 (High)",
+  "uretici": "Ideogram",
+  "elo": 1014,
+  "cikis": "Sep 2026"
+ },
+ {
+  "model": "Krea 2 Medium",
+  "uretici": "Krea",
+  "elo": 1013,
+  "cikis": "May 2026"
+ },
+ {
+  "model": "FLUX.2 [pro]",
+  "uretici": "Black Forest Labs",
+  "elo": 1003,
+  "cikis": "Nov 2025"
+ },
+ {
+  "model": "Ideogram 4.0",
+  "uretici": "Ideogram",
+  "elo": 1003,
+  "cikis": "Jun 2026"
+ },
+ {
+  "model": "Ming-Image-0.1-Design",
+  "uretici": "InclusionAI",
+  "elo": 1000,
+  "cikis": "Sep 2026"
+ },
+ {
+  "model": "FLUX.2 [dev]",
+  "uretici": "Black Forest Labs",
+  "elo": 1000,
+  "cikis": "Nov 2025"
+ },
+ {
+  "model": "P-Image-Ideogram (High)",
+  "uretici": "Pruna AI",
+  "elo": 998,
+  "cikis": "Jul 2026"
+ },
+ {
+  "model": "FLUX.2 [dev] Turbo",
+  "uretici": "Fal",
+  "elo": 995,
+  "cikis": "Dec 2025"
+ },
+ {
+  "model": "Cosmos3-Super-Text2Image (agentic)",
+  "uretici": "NVIDIA",
+  "elo": 995,
+  "cikis": "May 2026"
+ },
+ {
+  "model": "Luma UNI 1",
+  "uretici": "Luma Labs",
+  "elo": 994,
+  "cikis": "May 2026"
+ },
+ {
+  "model": "HunyuanImage 3.0 (Tencent Cloud)",
+  "uretici": "Tencent",
+  "elo": 994,
+  "cikis": "Sep 2025"
+ },
+ {
+  "model": "P-Image-Ideogram (Very High)",
+  "uretici": "Pruna AI",
+  "elo": 993,
+  "cikis": "Jul 2026"
+ },
+ {
+  "model": "Qwen Image 2.0 (2026-03-03)",
+  "uretici": "Alibaba",
+  "elo": 992,
+  "cikis": "Mar 2026"
+ },
+ {
+  "model": "FLUX.2 [dev] Flash",
+  "uretici": "Fal",
+  "elo": 989,
+  "cikis": "Dec 2025"
+ },
+ {
+  "model": "Wan 2.7",
+  "uretici": "Alibaba",
+  "elo": 988,
+  "cikis": "Apr 2026"
+ },
+ {
+  "model": "Cosmos3-Super-Text2Image",
+  "uretici": "NVIDIA",
+  "elo": 988,
+  "cikis": "May 2026"
+ },
+ {
+  "model": "HunyuanImage 3.0 Instruct",
+  "uretici": "Tencent",
+  "elo": 988,
+  "cikis": "Jan 2026"
+ },
+ {
+  "model": "Nano Banana (Gemini 2.5 Flash Image)",
+  "uretici": "Google",
+  "elo": 986,
+  "cikis": "Aug 2025"
+ },
+ {
+  "model": "Ideogram 4.0 Instant",
+  "uretici": "Fal",
+  "elo": 986,
+  "cikis": "Jul 2026"
+ },
+ {
+  "model": "Ideogram 4.0 Fast (Quality)",
+  "uretici": "Fal",
+  "elo": 984,
+  "cikis": "Jul 2026"
+ },
+ {
+  "model": "Wan 2.7 Pro",
+  "uretici": "Alibaba",
+  "elo": 981,
+  "cikis": "Apr 2026"
+ },
+ {
+  "model": "HiDream-O1-Image",
+  "uretici": "HiDream",
+  "elo": 979,
+  "cikis": "May 2026"
+ },
+ {
+  "model": "P-Image-Ideogram (Medium)",
+  "uretici": "Pruna AI",
+  "elo": 976,
+  "cikis": "Jul 2026"
+ },
+ {
+  "model": "HunyuanImage 3.5 (Preview)",
+  "uretici": "Tencent",
+  "elo": 974,
+  "cikis": "Sep 2026"
+ },
+ {
+  "model": "Cosmos3-Super-Text2Image-4Step",
+  "uretici": "NVIDIA",
+  "elo": 972,
+  "cikis": "Jul 2026"
+ },
+ {
+  "model": "Ideogram 4.0 Fast",
+  "uretici": "Fal",
+  "elo": 965,
+  "cikis": "Jul 2026"
+ },
+ {
+  "model": "P-Image-Ideogram (Low)",
+  "uretici": "Pruna AI",
+  "elo": 964,
+  "cikis": "Jul 2026"
+ },
+ {
+  "model": "Qwen Image Plus 2601",
+  "uretici": "Alibaba",
+  "elo": 960,
+  "cikis": "Jan 2026"
+ },
+ {
+  "model": "Recraft V4.1 Flash",
+  "uretici": "Recraft",
+  "elo": 951,
+  "cikis": "Sep 2026"
+ },
+ {
+  "model": "GPT Image 1 Mini (medium)",
+  "uretici": "OpenAI",
+  "elo": 937,
+  "cikis": "Oct 2025"
+ },
+ {
+  "model": "Z-Image Turbo",
+  "uretici": "Alibaba",
+  "elo": 936,
+  "cikis": "Dec 2025"
+ },
+ {
+  "model": "FLUX.2 [klein] 9B",
+  "uretici": "Black Forest Labs",
+  "elo": 932,
+  "cikis": "Jan 2026"
+ },
+ {
+  "model": "Dreamina 3.1",
+  "uretici": "Bytedance",
+  "elo": 932,
+  "cikis": "Aug 2025"
+ },
+ {
+  "model": "HunyuanImage 3.0",
+  "uretici": "Tencent",
+  "elo": 932,
+  "cikis": "Sep 2025"
+ },
+ {
+  "model": "FLUX.1 Kontext [max]",
+  "uretici": "Black Forest Labs",
+  "elo": 931,
+  "cikis": "May 2025"
+ },
+ {
+  "model": "FLUX.1 Kontext [pro]",
+  "uretici": "Black Forest Labs",
+  "elo": 924,
+  "cikis": "May 2025"
+ },
+ {
+  "model": "Kling Image 3.0 Omni",
+  "uretici": "KlingAI",
+  "elo": 921,
+  "cikis": "Feb 2026"
+ },
+ {
+  "model": "ERNIE Image Turbo",
+  "uretici": "Baidu",
+  "elo": 915,
+  "cikis": "Apr 2026"
+ },
+ {
+  "model": "P-Image-Ideogram (Very Low)",
+  "uretici": "Pruna AI",
+  "elo": 912,
+  "cikis": "Jul 2026"
+ },
+ {
+  "model": "Ideogram 3.0",
+  "uretici": "Ideogram",
+  "elo": 911,
+  "cikis": "Mar 2025"
+ },
+ {
+  "model": "ERNIE Image",
+  "uretici": "Baidu",
+  "elo": 909,
+  "cikis": "Apr 2026"
+ },
+ {
+  "model": "Qwen Image",
+  "uretici": "Alibaba",
+  "elo": 903,
+  "cikis": "Aug 2025"
+ },
+ {
+  "model": "P-Image",
+  "uretici": "Pruna AI",
+  "elo": 896,
+  "cikis": "Dec 2025"
+ },
+ {
+  "model": "Z-Image Base",
+  "uretici": "Alibaba",
+  "elo": 895,
+  "cikis": "Jan 2026"
+ },
+ {
+  "model": "Vidu Q2",
+  "uretici": "Vidu",
+  "elo": 895,
+  "cikis": "Nov 2025"
+ },
+ {
+  "model": "GLM-Image",
+  "uretici": "Z AI",
+  "elo": 892,
+  "cikis": "Jan 2026"
+ },
+ {
+  "model": "Lucid Origin Ultra",
+  "uretici": "Leonardo.Ai",
+  "elo": 878,
+  "cikis": "Aug 2025"
+ },
+ {
+  "model": "FLUX1.1 [pro]",
+  "uretici": "Black Forest Labs",
+  "elo": 871,
+  "cikis": "Oct 2024"
+ },
+ {
+  "model": "FLUX.1 Krea [dev]",
+  "uretici": "Black Forest Labs",
+  "elo": 865,
+  "cikis": "Jul 2025"
+ },
+ {
+  "model": "Lucid Origin Fast",
+  "uretici": "Leonardo.Ai",
+  "elo": 864,
+  "cikis": "Aug 2025"
+ },
+ {
+  "model": "LongCat Image",
+  "uretici": "Meituan",
+  "elo": 861,
+  "cikis": "Dec 2025"
+ },
+ {
+  "model": "FIBO",
+  "uretici": "Bria",
+  "elo": 855,
+  "cikis": "Oct 2025"
+ },
+ {
+  "model": "FLUX1.1 [pro] Ultra",
+  "uretici": "Black Forest Labs",
+  "elo": 854,
+  "cikis": "Nov 2024"
+ },
+ {
+  "model": "Luma Photon",
+  "uretici": "Luma Labs",
+  "elo": 844,
+  "cikis": "Dec 2024"
+ },
+ {
+  "model": "FLUX.2 [klein] 4B",
+  "uretici": "Black Forest Labs",
+  "elo": 840,
+  "cikis": "Jan 2026"
+ },
+ {
+  "model": "Phoenix 0.9 Ultra",
+  "uretici": "Leonardo.Ai",
+  "elo": 832,
+  "cikis": "Jun 2024"
+ },
+ {
+  "model": "SRPO",
+  "uretici": "Tencent",
+  "elo": 831,
+  "cikis": "Sep 2025"
+ },
+ {
+  "model": "Phoenix 1.0 Fast",
+  "uretici": "Leonardo.Ai",
+  "elo": 829,
+  "cikis": "Dec 2024"
+ },
+ {
+  "model": "FLUX.1 [dev]",
+  "uretici": "Black Forest Labs",
+  "elo": 816,
+  "cikis": "Aug 2024"
+ },
+ {
+  "model": "FIBO Lite",
+  "uretici": "Bria",
+  "elo": 814,
+  "cikis": "Nov 2025"
+ },
+ {
+  "model": "HiDream-O1-Image-Dev",
+  "uretici": "HiDream",
+  "elo": 813,
+  "cikis": "May 2026"
+ },
+ {
+  "model": "Luma Photon Flash",
+  "uretici": "Luma Labs",
+  "elo": 774,
+  "cikis": "Dec 2024"
+ },
+ {
+  "model": "FLUX.1 [schnell]",
+  "uretici": "Black Forest Labs",
+  "elo": 742,
+  "cikis": "Aug 2024"
+ },
+ {
+  "model": "OmniGen V2",
+  "uretici": "VectorSpaceLab",
+  "elo": 710,
+  "cikis": "Jun 2025"
+ },
+ {
+  "model": "Bagel",
+  "uretici": "Bytedance",
+  "elo": 601,
+  "cikis": "May 2025"
+ }
+]

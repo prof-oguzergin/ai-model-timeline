@@ -27,6 +27,7 @@ data = [
     ("o4-mini", "OpenAI", "2025-04-16", False),
     ("o3-pro", "OpenAI", "2025-06-10", False),
     ("GPT-5", "OpenAI", "2025-08-07", True),
+    ("gpt-oss", "OpenAI", "2025-08-05", True),
     ("GPT-5.1", "OpenAI", "2025-11-12", False),
     ("GPT-5.2", "OpenAI", "2025-12-11", False),
     ("GPT-5.3-Codex", "OpenAI", "2026-02-05", False),
@@ -36,6 +37,7 @@ data = [
     ("GPT-5.6 Sol", "OpenAI", "2026-06-26", True),
     ("GPT-6 Astra", "OpenAI", "2026-09-03", True),
     ("GPT-6 Sol", "OpenAI", "2026-09-22", False),
+    ("GPT-6 Luna", "OpenAI", "2026-09-22", False),
     ("GPT-6.1 Sol", "OpenAI", "2026-09-29", False),
     ("GPT-6.1 Terra", "OpenAI", "2026-10-26", False),
 
@@ -43,13 +45,13 @@ data = [
     ("Gemini 1.0 Pro", "Google", "2023-12-06", True),
     ("Gemini 1.5 Pro", "Google", "2024-02-15", True),
     ("Gemini 1.5 Flash", "Google", "2024-05-14", False),
-    ("Gemini 2.0 Flash", "Google", "2025-01-30", False),
+    ("Gemini 2.0 Flash", "Google", "2024-12-11", False),
     ("Gemini 2.0 Pro", "Google", "2025-02-05", True),
     ("Gemini 2.5 Pro", "Google", "2025-03-25", True),
-    ("Gemini 2.5 Flash", "Google", "2025-05-20", False),
+    ("Gemini 2.5 Flash", "Google", "2025-04-17", False),
     ("Gemini 3 Pro", "Google", "2025-11-18", True),
     ("Gemini 3 Flash", "Google", "2025-12-17", False),
-    ("Gemini 3 Deep Think", "Google", "2026-02-12", False),
+    ("Gemini 3 Deep Think", "Google", "2025-12-04", False),
     ("Gemini 3.1 Pro", "Google", "2026-02-19", True),
     ("Gemini 3.5 Flash", "Google", "2026-05-19", False),
     ("Gemini 3.6 Flash", "Google", "2026-07-21", False),
@@ -74,6 +76,7 @@ data = [
     ("Claude Opus 4.6", "Anthropic", "2026-02-05", False),
     ("Claude Sonnet 4.6", "Anthropic", "2026-02-17", False),
     ("Claude Opus 4.7", "Anthropic", "2026-04-16", False),
+    ("Claude Mythos Preview", "Anthropic", "2026-04-07", True),
     ("Claude Opus 4.8", "Anthropic", "2026-05-28", False),
     ("Claude Fable 5", "Anthropic", "2026-06-09", True),
     ("Claude Sonnet 5", "Anthropic", "2026-06-30", False),
@@ -86,12 +89,13 @@ data = [
 
     # xAI
     ("Grok-1", "xAI", "2023-11-04", True),
-    ("Grok-1.5", "xAI", "2024-03-29", False),
-    ("Grok-2", "xAI", "2024-08-14", True),
+    ("Grok-1.5", "xAI", "2024-03-28", False),
+    ("Grok-2", "xAI", "2024-08-13", True),
     ("Grok-3", "xAI", "2025-02-17", True),
     ("Grok-3 Mini", "xAI", "2025-02-17", False),
     ("Grok-4", "xAI", "2025-07-09", True),
-    ("Grok Code Fast", "xAI", "2025-08-28", False),
+    ("Grok Code Fast 1", "xAI", "2025-08-28", False),
+    ("Grok 4 Fast", "xAI", "2025-09-19", False),
     ("Grok-4.1", "xAI", "2025-11-17", False),
     ("Grok 4.20", "xAI", "2026-02-17", False),
     ("Grok-4.3", "xAI", "2026-04-17", False),
@@ -129,6 +133,8 @@ data = [
 
     # Microsoft MAI (Closed Source)
     ("MAI-Thinking-1", "Microsoft MAI", "2026-06-02", True),
+    ("MAI-1-preview", "Microsoft MAI", "2025-08-28", True),
+    ("MAI-Code-1-Flash", "Microsoft MAI", "2026-06-02", False),
 
     # Microsoft Phi (Open Source)
     ("Phi-1", "Microsoft", "2023-06-20", True),
@@ -138,6 +144,7 @@ data = [
     ("Phi-4", "Microsoft", "2024-12-12", True),
     ("Phi-4-multimodal", "Microsoft", "2025-02-26", False),
     ("Phi-4-reasoning", "Microsoft", "2025-05-01", False),
+    ("Phi-4-reasoning-vision", "Microsoft", "2026-03-04", False),
 
     # Mistral
     ("Mistral 7B", "Mistral", "2023-09-27", True),
@@ -152,6 +159,7 @@ data = [
     ("Devstral", "Mistral", "2025-05-21", False),
     ("Magistral", "Mistral", "2025-06-10", True),
     ("Mistral Large 3", "Mistral", "2025-12-02", True),
+    ("Devstral 2", "Mistral", "2025-12-09", False),
     ("Mistral Large 4", "Mistral", "2026-10-06", True),
     ("Mistral Small 4", "Mistral", "2026-03-16", False),
     ("Leanstral", "Mistral", "2026-03-16", False),
@@ -159,18 +167,19 @@ data = [
     ("Leanstral 1.5", "Mistral", "2026-06-30", False),
 
     # Qwen (Alibaba)
-    ("Qwen 1", "Qwen", "2023-09-28", True),
+    ("Qwen 1", "Qwen", "2023-08-03", True),
     ("Qwen 1.5", "Qwen", "2024-02-04", False),
-    ("Qwen 2", "Qwen", "2024-06-06", True),
+    ("Qwen 2", "Qwen", "2024-06-07", True),
     ("Qwen 2.5", "Qwen", "2024-09-19", True),
     ("QwQ-32B", "Qwen", "2025-03-05", False),
     ("Qwen 3", "Qwen", "2025-04-28", True),
     ("Qwen3-Max", "Qwen", "2025-09-05", False),
-    ("Qwen3-Coder", "Qwen", "2026-02-02", False),
+    ("Qwen3-Coder-Next", "Qwen", "2026-02-03", False),
     ("Qwen 3.5", "Qwen", "2026-02-16", False),
-    ("Qwen 3.6", "Qwen", "2026-03-31", False),
+    ("Qwen 3.6", "Qwen", "2026-04-02", False),
     ("Qwen3.7-Max", "Qwen", "2026-05-20", True),
     ("Qwen3.8-Max", "Qwen", "2026-08-03", True),
+    ("Qwen3.8-2.4T", "Qwen", "2026-08-12", True),
     ("Qwen3.8-Flash-Next", "Qwen", "2026-08-26", False),
 
     # DeepSeek
@@ -182,8 +191,8 @@ data = [
     ("DeepSeek-V3.1", "DeepSeek", "2025-08-21", False),
     ("DeepSeek-V3.2", "DeepSeek", "2025-12-01", False),
     ("DeepSeek-V4", "DeepSeek", "2026-04-24", True),
-    ("DeepSeek-V4 Flash", "DeepSeek", "2026-07-31", False),
-    ("DeepSeek-V4.1 Flash", "DeepSeek", "2026-09-10", True),
+    ("DeepSeek-V4-Flash", "DeepSeek", "2026-04-24", False),
+    ("DeepSeek-V4.1-Flash", "DeepSeek", "2026-09-10", True),
 
     # Z.ai (Zhipu AI)
     ("ChatGLM", "Z.ai", "2023-03-14", True),
@@ -203,7 +212,7 @@ data = [
     ("Kimi K2", "Kimi", "2025-07-11", True),
     ("Kimi K2 Thinking", "Kimi", "2025-11-06", False),
     ("Kimi K2.5", "Kimi", "2026-01-27", False),
-    ("Kimi K2.6", "Kimi", "2026-04-13", False),
+    ("Kimi K2.6", "Kimi", "2026-04-20", False),
     ("Kimi K2.7 Code", "Kimi", "2026-06-12", False),
     ("Kimi K3", "Kimi", "2026-07-16", True),
     ("Kimi K3.1 Pro", "Kimi", "2026-10-23", False),
@@ -211,8 +220,8 @@ data = [
     # MiniMax
     ("MiniMax-Text-01", "MiniMax", "2025-01-15", True),
     ("MiniMax-M1", "MiniMax", "2025-06-16", True),
-    ("MiniMax-M2", "MiniMax", "2025-10-23", True),
-    ("MiniMax-M2.1", "MiniMax", "2025-12-25", False),
+    ("MiniMax-M2", "MiniMax", "2025-10-27", True),
+    ("MiniMax-M2.1", "MiniMax", "2025-12-23", False),
     ("MiniMax-M2.5", "MiniMax", "2026-02-12", False),
     ("MiniMax-M2.7", "MiniMax", "2026-03-18", False),
     ("MiniMax-M3", "MiniMax", "2026-06-01", True),
@@ -228,6 +237,9 @@ data = [
     # ByteDance (Doubao) - Closed Source
     ("Doubao Pro", "ByteDance", "2024-05-15", True),
     ("Doubao-1.5-Pro", "ByteDance", "2025-01-22", False),
+    ("Doubao-Seed-1.6", "ByteDance", "2025-06-11", False),
+    ("Seed-OSS-36B", "ByteDance", "2025-08-20", True),
+    ("Doubao-Seed-1.8", "ByteDance", "2025-12-18", False),
     ("Doubao-Seed-2.0", "ByteDance", "2026-02-14", True),
     ("Doubao-Seed-2.1-Pro", "ByteDance", "2026-06-23", False),
 
@@ -250,14 +262,18 @@ data = [
     ("Command A Reasoning", "Cohere", "2025-08-21", False),
     ("Command A Translate", "Cohere", "2025-08-28", False),
     ("Command A+", "Cohere", "2026-05-20", True),
+    ("Tiny Aya", "Cohere", "2026-02-17", False),
 
     # Ai2 (Allen Institute) - Fully Open (weights + data + code)
     ("OLMo", "Ai2", "2024-02-01", True),
     ("Molmo", "Ai2", "2024-09-25", True),
     ("OLMo 2", "Ai2", "2024-11-26", True),
     ("OLMo 2 32B", "Ai2", "2025-03-13", False),
-    ("OLMo 3", "Ai2", "2025-11-20", True),
-    ("Molmo 2", "Ai2", "2025-12-11", True),
+    ("Olmo 3", "Ai2", "2025-11-20", True),
+    ("Molmo 2", "Ai2", "2025-12-16", True),
+
+    # StepFun Step (acik agirlikli)
+    ("Step 5", "StepFun", "2026-10-15", True),
 ]
 
 df = pd.DataFrame(data, columns=["Model", "Company", "Date", "Milestone"])
@@ -296,12 +312,17 @@ short_labels = {
 
     "GPT-6 Astra":      "6 Astra",
     "GPT-6 Sol":        "6 Sol",
+    "GPT-6 Luna":       "6 Luna",
+    "gpt-oss":          "gpt-oss",
     "GPT-6.1 Sol":      "6.1 Sol",
     "GPT-6.1 Terra":    "6.1 Terra",
     "MiMo-V2-Flash":    "V2-Flash",
     "MiMo-V2-Pro":      "V2-Pro",
     "MiMo-V2.5-Pro":    "V2.5-Pro",
     "MiMo-V2.6-Pro":    "V2.6-Pro",
+
+    # StepFun
+    "Step 5":           "5",
     # Google Gemini
     "Gemini 1.0 Pro":       "1.0 Pro",
     "Gemini 1.5 Pro":       "1.5 Pro",
@@ -341,6 +362,7 @@ short_labels = {
     "Claude Fable 5":       "Fable 5",
     "Claude Fable 5.1":     "Fable 5.1",
     "Claude Fable 5.2":     "Fable 5.2",
+    "Claude Mythos Preview": "Mythos Preview",
     "Claude Opus 5.5":      "Opus 5.5",
     "Claude Sonnet 5.5":    "Sonnet 5.5",
     "Claude Haiku 5.5":     "Haiku 5.5",
@@ -354,7 +376,8 @@ short_labels = {
     "Grok-3":           "3",
     "Grok-3 Mini":      "3 Mini",
     "Grok-4":           "4",
-    "Grok Code Fast":   "Code Fast",
+    "Grok Code Fast 1": "Code Fast 1",
+    "Grok 4 Fast":      "4 Fast",
     "Grok-4.1":         "4.1",
     "Grok 4.20":        "4.20",
     "Grok-4.3":         "4.3",
@@ -381,6 +404,7 @@ short_labels = {
     "Phi-4":            "4",
     "Phi-4-multimodal": "4-multimodal",
     "Phi-4-reasoning":  "4-reasoning",
+    "Phi-4-reasoning-vision": "4-reasoning-vision",
 
     # Mistral - mixed names, keep distinctive ones full
     "Mistral 7B":       "7B",
@@ -408,12 +432,13 @@ short_labels = {
     "QwQ-32B":          "QwQ-32B",
     "Qwen 3":           "3",
     "Qwen3-Max":        "3-Max",
-    "Qwen3-Coder":      "3-Coder",
+    "Qwen3-Coder-Next":  "3-Coder-Next",
     "Qwen 3.5":         "3.5",
     "Qwen 3.6":         "3.6",
     "Qwen3.7-Max":      "3.7-Max",
     "Qwen3.8-Max":      "3.8-Max",
     "Qwen3.8-Flash-Next": "3.8-Flash",
+    "Qwen3.8-2.4T":     "3.8-2.4T",
 
     # DeepSeek
     "DeepSeek Coder":   "Coder",
@@ -426,8 +451,8 @@ short_labels = {
     "DeepSeek-V3.1":    "V3.1",
     "DeepSeek-V3.2":    "V3.2",
     "DeepSeek-V4":      "V4",
-    "DeepSeek-V4 Flash": "V4 Flash",
-    "DeepSeek-V4.1 Flash": "V4.1 Flash",
+    "DeepSeek-V4-Flash": "V4 Flash",
+    "DeepSeek-V4.1-Flash": "V4.1 Flash",
 
     # Z.ai GLM
     "ChatGLM":          "ChatGLM",
@@ -474,6 +499,9 @@ short_labels = {
     "Doubao-1.5-Pro":       "1.5 Pro",
     "Doubao-Seed-2.0":      "Seed 2.0",
     "Doubao-Seed-2.1-Pro":  "Seed 2.1 Pro",
+    "Doubao-Seed-1.6":      "Seed 1.6",
+    "Doubao-Seed-1.8":      "Seed 1.8",
+    "Seed-OSS-36B":         "Seed-OSS 36B",
 
     # NVIDIA Nemotron
     "Nemotron Nano 9B V2":     "Nano 9B",
@@ -492,6 +520,8 @@ short_labels = {
     "Muse Wonder":          "Wonder",
     "Muse Wonder Full":     "Wonder Full",
     "MAI-Thinking-1":       "Thinking-1",
+    "MAI-1-preview":        "1-preview",
+    "MAI-Code-1-Flash":     "Code-1-Flash",
 
     # Amazon Nova
     "Amazon Nova Pro":      "Pro",
@@ -531,6 +561,7 @@ series_name = {
     "Amazon":       "Nova",
     "Cohere":       "Command",
     "Ai2":          "OLMo / Molmo",
+    "StepFun":      "Step",
 }
 
 colors = {
@@ -555,6 +586,7 @@ colors = {
     "Amazon":       "#FF9900",
     "Cohere":       "#D18EE2",
     "Ai2":          "#F0529C",
+    "StepFun":      "#00BFA5",
 }
 
 company_name = {
@@ -579,6 +611,7 @@ company_name = {
     "Amazon":       "Amazon / AWS",
     "Cohere":       "Cohere",
     "Ai2":          "Ai2",
+    "StepFun":      "StepFun",
 }
 
 country_text = {
@@ -603,6 +636,7 @@ country_text = {
     "Amazon":       "USA",
     "Cohere":       "Canada",
     "Ai2":          "USA",
+    "StepFun":      "China",
 }
 
 # Flag image files
@@ -615,7 +649,7 @@ flag_images = {
 
 company_order = ["OpenAI", "Google", "Anthropic", "xAI", "Microsoft MAI", "Meta Muse", "Amazon", "ByteDance", "Cohere",
                  "Meta", "Microsoft", "Google Gemma", "Ai2", "Mistral", "NVIDIA",
-                 "Qwen", "DeepSeek", "Z.ai", "Kimi", "MiniMax", "Xiaomi"]
+                 "Qwen", "DeepSeek", "Z.ai", "Kimi", "MiniMax", "Xiaomi", "StepFun"]
 
 # Vertical spacing: each company gets 3.0 units
 y_positions = {c: (len(company_order) - 1 - i) * 3.0 for i, c in enumerate(company_order)}
@@ -796,6 +830,7 @@ company_overrides = {
 ("Anthropic", "Opus 5"): (0, 55),
     ("Anthropic", "Fable 5.1"): (0, -55),
     ("Anthropic", "Fable 5.2"): (0, -55),
+    ("Anthropic", "Mythos Preview"): (0, -121),
     # Mistral - all labels equal distance from line (no multi-level stacking)
     ("Mistral", "Medium 3"): (0, -55),
     ("Mistral", "Devstral"): (0, -55),
@@ -821,11 +856,12 @@ company_overrides = {
     ("MiniMax", "M2.7"):        (0, -55),
     ("ByteDance", "Seed 2.0"):  (0, -55),
     ("Z.ai", "5.1"):            (0, 55),
-    ("Ai2", "OLMo 3"):          (0, 55),
+    ("Ai2", "Olmo 3"):          (0, 55),
     ("Ai2", "Molmo 2"):         (0, -55),
     ("Kimi", "K2.6"):           (0, -55),
     ("Kimi", "K2.7 Code"):     (0, -55),
     ("Kimi", "K3"):             (0, 55),
+    ("Qwen", "3.8-2.4T"): (0, 55),
 }
 
 

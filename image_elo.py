@@ -960,7 +960,7 @@ DATA = [
 ]
 ]
 
-L = {'ylabel': 'Image Quality Elo (Artificial Analysis Arena)', 'title': 'Image Generation Capability Over Time — A Single Number', 'sub': 'Elo from blind human votes for {n} models ({lo} – {hi})  ·  yellow steps: best at the time', 'growth': 'Last 12 months\n{a:.0f} → {b:.0f}  (+{d:.0f} pts)', 'cloud': 'other measured models', 'credit': 'Source: artificialanalysis.ai (Image Arena)  ·  Compiled by Prof. Dr. Oğuz Ergin'}
+L = {'ylabel': 'Image Quality Elo (Artificial Analysis Arena)', 'title': 'Image Generation Capability Over Time — A Single Number', 'sub': 'Elo from blind human votes for {n} models ({lo} – {hi})  ·  yellow steps: best at the time', 'growth': 'Last 12 months\n{a:.0f} → {b:.0f}  (+{d:.0f} pts)', 'cloud': 'other measured models', 'credit': 'Source: artificialanalysis.ai (Image Arena)  ·  Compiled by Prof. Dr. Oğuz Ergin', 'frozen': 'FROZEN — old scale\nArtificial Analysis moved the image arena\nto the AA-Image-T2I v2.1 scale.\nThe new-scale chart is separate.'}
 
 COLORS = {"Anthropic": "#d97757", "OpenAI": "#10a37f", "Google": "#4285F4", "xAI": "#1da1f2",
           "Meta": "#0668E1", "DeepSeek": "#ef4444", "Alibaba": "#7C3AED", "Moonshot": "#14B8A6",
@@ -1045,6 +1045,12 @@ ax.text(0.5, 1.045, L["sub"].format(n=len(df), lo=df["Date"].min().strftime("%b 
 ax.text(0.015, 0.965, L["growth"].format(a=bir_yil, b=son["ii"], k=son["ii"] / bir_yil, d=son["ii"] - bir_yil),
         transform=ax.transAxes, ha="left", va="top", fontsize=17, color="#ffd166", fontweight="bold",
         bbox=dict(boxstyle="round,pad=0.6", fc="#161b22", ec="#ffd166", lw=1.8, alpha=.95))
+
+
+# --- DONDURMA NOTU (10 Kas 2026): AA olcegi v2.1'e tasidi, bu seri eski olcekte kaldi ---
+ax.text(0.015, 0.845, L["frozen"], transform=ax.transAxes, ha="left", va="top",
+        fontsize=14, color="#ff7b72", fontweight="bold", linespacing=1.45,
+        bbox=dict(boxstyle="round,pad=0.6", fc="#161b22", ec="#ff7b72", lw=1.8, alpha=.95))
 
 # lejant (sinirdaki sirketler)
 import matplotlib.lines as mlines
