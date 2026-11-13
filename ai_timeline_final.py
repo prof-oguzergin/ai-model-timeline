@@ -59,6 +59,7 @@ data = [
     ("Gemini 3.8 Flash", "Google", "2026-09-02", True),
     ("Gemini 4 Argon", "Google", "2026-09-30", True),
     ("Gemini 4 Carbon", "Google", "2026-10-28", False),
+    ("Gemini 4 Hydrogen", "Google", "2026-11-12", False),
 
     # Anthropic
     ("Claude 1", "Anthropic", "2023-03-14", True),
@@ -348,6 +349,7 @@ short_labels = {
     "Gemini 3.8 Flash":     "3.8 Flash",
     "Gemini 4 Argon":       "4 Argon",
     "Gemini 4 Carbon":      "4 Carbon",
+    "Gemini 4 Hydrogen":    "4 Hydrogen",
     # Anthropic Claude
     "Claude 1":             "1",
     "Claude 2":             "2",
@@ -839,6 +841,7 @@ company_overrides = {
 ("Anthropic", "Opus 5"): (55, 55),
     ("Anthropic", "Fable 5.1"): (0, -55),
     ("Anthropic", "Fable 5.2"): (0, -55),
+    ("Google", "4 Hydrogen"): (0, 55),
     ("Anthropic", "Mythos Preview"): (-80, -121),
     # Mistral - all labels equal distance from line (no multi-level stacking)
     ("Mistral", "Medium 3"):    (-55, -55),
