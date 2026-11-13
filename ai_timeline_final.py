@@ -121,6 +121,7 @@ data = [
     ("Muse Spark 1.3", "Meta Muse", "2026-09-02", True),
     ("Muse Wonder", "Meta Muse", "2026-10-12", True),
     ("Muse Wonder Full", "Meta Muse", "2026-10-12", False),
+    ("Muse Ember 1.0", "Meta Muse", "2026-11-09", False),
 
     # NVIDIA Nemotron (acik agirlikli)
     ("Nemotron Nano 9B V2", "NVIDIA", "2025-08-18", True),
@@ -181,6 +182,7 @@ data = [
     ("Qwen3.8-Max", "Qwen", "2026-08-03", True),
     ("Qwen3.8-2.4T", "Qwen", "2026-08-12", True),
     ("Qwen3.8-Flash-Next", "Qwen", "2026-08-26", False),
+    ("Qwen4-Max-Preview", "Qwen", "2026-11-11", True),
 
     # DeepSeek
     ("DeepSeek Coder", "DeepSeek", "2023-11-02", True),
@@ -274,6 +276,9 @@ data = [
 
     # StepFun Step (acik agirlikli)
     ("Step 5", "StepFun", "2026-10-15", True),
+
+    # Tencent Hunyuan (agirliklar sozu verildi)
+    ("Hy4", "Tencent", "2026-11-04", True),
 ]
 
 df = pd.DataFrame(data, columns=["Model", "Company", "Date", "Milestone"])
@@ -321,6 +326,9 @@ short_labels = {
 
     # StepFun
     "Step 5":           "5",
+    "Hy4":              "Hy4",
+    "Muse Ember 1.0":   "Ember 1.0",
+    "Qwen4-Max-Preview": "4-Max Preview",
     # Google Gemini
     "Gemini 1.0 Pro":       "1.0 Pro",
     "Gemini 1.5 Pro":       "1.5 Pro",
@@ -560,6 +568,7 @@ series_name = {
     "Cohere":       "Command",
     "Ai2":          "OLMo / Molmo",
     "StepFun":      "Step",
+    "Tencent":      "Hunyuan",
 }
 
 colors = {
@@ -585,6 +594,7 @@ colors = {
     "Cohere":       "#D18EE2",
     "Ai2":          "#F0529C",
     "StepFun":      "#00BFA5",
+    "Tencent":      "#22b8cf",
 }
 
 company_name = {
@@ -610,6 +620,7 @@ company_name = {
     "Cohere":       "Cohere",
     "Ai2":          "Ai2",
     "StepFun":      "StepFun",
+    "Tencent":      "Tencent",
 }
 
 country_text = {
@@ -635,6 +646,7 @@ country_text = {
     "Cohere":       "Canada",
     "Ai2":          "USA",
     "StepFun":      "China",
+    "Tencent":      "China",
 }
 
 # Flag image files
@@ -647,7 +659,7 @@ flag_images = {
 
 company_order = ["OpenAI", "Google", "Anthropic", "xAI", "Microsoft MAI", "Meta Muse", "Amazon", "ByteDance", "Cohere",
                  "Meta", "Microsoft", "Google Gemma", "Ai2", "Mistral", "NVIDIA",
-                 "Qwen", "DeepSeek", "Z.ai", "Kimi", "MiniMax", "Xiaomi", "StepFun"]
+                 "Qwen", "DeepSeek", "Z.ai", "Kimi", "MiniMax", "Xiaomi", "StepFun", "Tencent"]
 
 # Vertical spacing: each company gets 3.0 units
 y_positions = {c: (len(company_order) - 1 - i) * 3.0 for i, c in enumerate(company_order)}
