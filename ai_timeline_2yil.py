@@ -40,6 +40,8 @@ data = [
     ("GPT-6 Luna", "OpenAI", "2026-09-22", False),
     ("GPT-6.1 Sol", "OpenAI", "2026-09-29", False),
     ("GPT-6.1 Terra", "OpenAI", "2026-10-26", False),
+    ("GPT-6.2 Astra", "OpenAI", "2026-11-17", True),
+    ("GPT-6.2 Sol", "OpenAI", "2026-11-17", False),
 
     # Google
     ("Gemini 1.0 Pro", "Google", "2023-12-06", True),
@@ -183,7 +185,7 @@ data = [
     ("Qwen3.8-Max", "Qwen", "2026-08-03", True),
     ("Qwen3.8-2.4T", "Qwen", "2026-08-12", True),
     ("Qwen3.8-Flash-Next", "Qwen", "2026-08-26", False),
-    ("Qwen4-Max-Preview", "Qwen", "2026-11-11", True),
+    ("Qwen4-Max", "Qwen", "2026-11-11", True),
 
     # DeepSeek
     ("DeepSeek Coder", "DeepSeek", "2023-11-02", True),
@@ -322,6 +324,8 @@ short_labels = {
     "gpt-oss":          "gpt-oss",
     "GPT-6.1 Sol":      "6.1 Sol",
     "GPT-6.1 Terra":    "6.1 Terra",
+    "GPT-6.2 Astra":    "6.2 Astra",
+    "GPT-6.2 Sol":      "6.2 Sol",
     "MiMo-V2-Flash":    "V2-Flash",
     "MiMo-V2-Pro":      "V2-Pro",
     "MiMo-V2.5-Pro":    "V2.5-Pro",
@@ -331,7 +335,7 @@ short_labels = {
     "Step 5":           "5",
     "Hy4":              "Hy4",
     "Muse Ember 1.0":   "Ember 1.0",
-    "Qwen4-Max-Preview": "4-Max Preview",
+    "Qwen4-Max":        "4-Max",
     # Google Gemini
     "Gemini 1.0 Pro":       "1.0 Pro",
     "Gemini 1.5 Pro":       "1.5 Pro",
@@ -845,6 +849,8 @@ company_overrides = {
     ("Anthropic", "Fable 5.1"): (0, -55),
     ("Anthropic", "Fable 5.2"): (0, -55),
     ("Google", "4 Hydrogen"): (0, 55),
+    ("OpenAI", "6.2 Sol"): (0, 55),
+    ("OpenAI", "6.2 Astra"): (0, 121),
     ("Anthropic", "Mythos Preview"): (0, -121),
     # Mistral - all labels equal distance from line (no multi-level stacking)
     ("Mistral", "Medium 3"): (0, -55),
